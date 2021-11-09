@@ -19,7 +19,7 @@ jobs:
       - name: Setup SSH agent
         uses: webfactory/ssh-agent@v0.4.0
         with:
-          ssh-private-key: ${{ secrets.SSH_SECRET }}
+          ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
         env:
           ACTIONS_ALLOW_UNSECURE_COMMANDS: 'true'
       - name: Sync project files
