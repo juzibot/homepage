@@ -23,4 +23,4 @@ jobs:
         env:
           ACTIONS_ALLOW_UNSECURE_COMMANDS: 'true'
       - name: Sync project files
-        run: rsync -avzr -e 'ssh -o StrictHostKeyChecking=no' --delete ${GITHUB_WORKSPACE}/build/ git@68.79.55.155:/home/git/Caddy/juzi-official-site
+        run: rsync -avzr -e 'ssh -o StrictHostKeyChecking=no' --delete ./build/ git@68.79.55.155:/home/git/Caddy/juzi-official-site
