@@ -2,6 +2,7 @@ import { ICompanyProps } from '@src/interfaces';
 import Aos from 'aos';
 import { NextPage } from 'next';
 import { useEffect, useState } from 'react';
+import Image from 'next/image';
 
 const Company: NextPage<ICompanyProps> = ({ iconUrl, title, subTitle, onHover, selected }) => {
   return (
@@ -12,7 +13,7 @@ const Company: NextPage<ICompanyProps> = ({ iconUrl, title, subTitle, onHover, s
       style={{ filter: selected ? 'unset' : 'grayscale(100%)' }}
     >
       <div className="title-bar">
-        <img src={iconUrl} alt={title} draggable="false"></img>
+        <Image src={iconUrl} alt={title} draggable="false" width="36" height="36"></Image>
         <span className="title">{title}</span>
       </div>
       <div className="subtitle">{subTitle}</div>
@@ -71,7 +72,9 @@ const CompanyDisplayBar: NextPage = () => {
   }, []);
   return (
     <>
-      <div className="title" data-aos="fade-in">现在，你也可以像他们一样</div>
+      <div className="title" data-aos="fade-in">
+        现在，你也可以像他们一样
+      </div>
       <div className="companies" data-aos="fade-in">
         {items.map((company, idx) => (
           <Company
@@ -84,23 +87,35 @@ const CompanyDisplayBar: NextPage = () => {
       </div>
 
       <div className="comment-bar" data-aos="fade-in">
-        <img className="quote" src="/images/icons/quote.svg" draggable="false" alt="quote"></img>
+        <Image
+          className="quote"
+          src="/images/icons/quote.svg"
+          draggable="false"
+          alt="quote-icon"
+          width="24"
+          height="16"
+        ></Image>
         <span className="comment">{items[selectedCompanyIdx]['comment']}</span>
-        <img
+
+        <Image
           className="quote reverse"
           src="/images/icons/quote.svg"
           draggable="false"
-          alt="quote"
-        ></img>
+          alt="quote-icon"
+          width="24"
+          height="16"
+        ></Image>
       </div>
 
       <div className="company-info" data-aos="fade-in">
-        <img
+        <Image
           className="logo"
           alt="logo"
           src={items[selectedCompanyIdx]['companyLogoUrl']}
           draggable="false"
-        ></img>
+          width="136"
+          height="50"
+        ></Image>
         <div className="divider"></div>
         <div className="info">
           <div className="name">{items[selectedCompanyIdx]['companyName']}</div>

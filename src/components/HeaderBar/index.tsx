@@ -29,7 +29,7 @@ const MenuItem: NextPage<IMenuItemProps> = ({ hasArrow, children, href }) => {
   );
 };
 
-const HeaderBar: NextPage<ITranslationProps> = ({ t }) => {
+const HeaderBar: NextPage<ITranslationProps> = ({t}) => {
   const [borderBottomVisible, setBorderBottomVisible] = useState(false);
 
   if (process.browser) {
@@ -45,7 +45,7 @@ const HeaderBar: NextPage<ITranslationProps> = ({ t }) => {
       <div className="container">
         <menu className="header-left">
           <a className="logo" href="https://juzi.bot">
-            <Image src="/images/logo.svg" width={120} height={64} draggable="false"></Image>
+            <Image alt="logo" src="/images/logo.svg" width={120} height={64} draggable="false"></Image>
           </a>
           <MenuItem hasArrow href="/">
             {t('products')}
