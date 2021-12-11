@@ -2,7 +2,9 @@
   position: fixed;
   top: 0;
   z-index: 99;
+  height: 64px;
   transition: border-bottom 0.3s;
+  overflow: hidden;
 
   .logo {
     user-select: none;
@@ -11,14 +13,13 @@
 
   &::before {
     content: '';
-    display: inline-block;
-    width: 100%;
+    width: calc(100vw + 20px);
+    left: -20px;
     position: absolute;
-    height: 64px;
+    height: 84px;
+    top: -10px;
     background-color: rgba(255, 255, 255, 0.8);
-    -webkit-filter: blur(10px);
     filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
     backdrop-filter: blur(10px);
     z-index: -1;
   }
@@ -30,6 +31,7 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+    overflow: hidden;
 
     .header-left,
     .header-right {

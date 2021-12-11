@@ -40,9 +40,17 @@ export const SolutionItem: NextPage<ISolutionItemProp> = ({
 };
 
 const SolutionPage: NextPage<ITranslationProps> = () => {
+  useEffect(() => {
+    if (process.browser) {
+      Aos.init({
+        offset: 120,
+        duration: 800,
+      });
+    }
+  }, []);
   return (
     <>
-      <h1 className="title">专注于效率提升的解决方案</h1>
+      <h1 className="title" data-aos="fade-in">专注于效率提升的解决方案</h1>
 
       <div className="solution-groups">
         <SolutionItem

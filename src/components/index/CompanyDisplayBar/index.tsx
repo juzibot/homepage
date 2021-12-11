@@ -1,6 +1,7 @@
 import { ICompanyProps } from '@src/interfaces';
+import Aos from 'aos';
 import { NextPage } from 'next';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 const Company: NextPage<ICompanyProps> = ({ iconUrl, title, subTitle, onHover, selected }) => {
   return (
@@ -63,10 +64,15 @@ const CompanyDisplayBar: NextPage = () => {
     },
   ];
   const [selectedCompanyIdx, setSelectedCompanyIdx] = useState(0);
+  useEffect(() => {
+    if (process.browser) {
+      Aos.init();
+    }
+  }, []);
   return (
     <>
-      <div className="title">现在，你也可以像他们一样</div>
-      <div className="companies">
+      <div className="title" data-aos="fade-in">现在，你也可以像他们一样</div>
+      <div className="companies" data-aos="fade-in">
         {items.map((company, idx) => (
           <Company
             {...company}
@@ -77,7 +83,7 @@ const CompanyDisplayBar: NextPage = () => {
         ))}
       </div>
 
-      <div className="comment-bar">
+      <div className="comment-bar" data-aos="fade-in">
         <img className="quote" src="/images/icons/quote.svg" draggable="false" alt="quote"></img>
         <span className="comment">{items[selectedCompanyIdx]['comment']}</span>
         <img
@@ -88,7 +94,7 @@ const CompanyDisplayBar: NextPage = () => {
         ></img>
       </div>
 
-      <div className="company-info">
+      <div className="company-info" data-aos="fade-in">
         <img
           className="logo"
           alt="logo"
