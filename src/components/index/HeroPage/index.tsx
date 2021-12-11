@@ -44,7 +44,7 @@ const HeroPage: NextPage<ITranslationProps> = ({ t, locale }) => {
           subTitle={t('card-2-subtitle')}
         />
         <FeatureCard
-          iconUrl="/images/icons/crown.svg"
+          iconUrl="/images/icons/crown.png"
           title={t('card-3-title')}
           subTitle={t('card-3-subtitle')}
         />
