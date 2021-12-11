@@ -2,6 +2,7 @@ import { ISolutionItemProp, ITranslationProps } from '@src/interfaces';
 import { NextPage } from 'next';
 import { useEffect } from 'react';
 import Aos from 'aos';
+import Image from 'next/image';
 
 export const SolutionItem: NextPage<ISolutionItemProp> = ({
   imagePosition,
@@ -25,10 +26,18 @@ export const SolutionItem: NextPage<ISolutionItemProp> = ({
       style={{ flexDirection: imagePosition === 'left' ? 'row' : 'row-reverse' }}
       data-aos="fade-in"
     >
-      <img className="solution-image" src={imageUrl} alt={title} draggable="false"></img>
+      <Image
+        className="solution-image"
+        src={imageUrl}
+        alt={title}
+        draggable="false"
+        width="560"
+        height="448"
+      ></Image>
       <div className="solution-content" style={style}>
-        <div className="title">{title}</div>
-        <img className="line" src={dividerUrl} alt="divider" draggable="false"></img>
+        <div className="title" style={{ backgroundImage: `url(${dividerUrl})` }}>
+          {title}
+        </div>
         <div className="brief">{brief}</div>
       </div>
     </div>
@@ -53,7 +62,7 @@ const SolutionPage: NextPage<ITranslationProps> = () => {
       <div className="solution-groups">
         <SolutionItem
           title="高效搭建私域冷启动流量池"
-          brief="将沉淀的客户手机号线索，用电话机器人批量筛选，高意向客户自动添加，帮助品牌实现零人工触达百万用户。单个私域好友成本低于5元。"
+          brief="将沉淀的客户手机号线索，用电话机器人批量筛选，高意向客户自动添加，帮助品牌实现零人工触达百万用户。单个私域好友成本低于 5 元。"
           imagePosition="left"
           imageUrl="/images/solution-01.svg"
           dividerUrl="/images/solution-01-divider.svg"

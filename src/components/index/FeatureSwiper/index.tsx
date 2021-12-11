@@ -24,7 +24,7 @@ const FeatureSwiperItem: NextPage<IFeatureSwiperItemProps> = ({
       <div className="content">
         <div data-swiper-parallax="-300">
           <div className="num">
-            <Image src={`/images/icons/0${index}.svg`} width="97" height="130" draggable="false" />
+            <Image src={`/images/icons/0${index}.svg`} width="97" height="130" draggable="false" alt="num" />
           </div>
           <h1 className="title">{title}</h1>
         </div>
@@ -42,7 +42,7 @@ const FeatureSwiperItem: NextPage<IFeatureSwiperItemProps> = ({
         </Link>
       </div>
       <div className="image">
-        <img src={iconUrl} draggable="false" />
+        <Image src={iconUrl} draggable="false" width="608" height="560" alt="picture" />
       </div>
     </div>
   );

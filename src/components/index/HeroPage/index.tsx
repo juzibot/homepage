@@ -1,13 +1,21 @@
 import { IFeatureCardProps, ITranslationProps } from '@src/interfaces';
 import Aos from 'aos';
 import { NextPage } from 'next';
-import Image from 'next/image';
 import { useEffect } from 'react';
+import Image from 'next/image';
 
-export const FeatureCard: NextPage<IFeatureCardProps> = ({ title, subTitle, iconUrl }) => {
+export const FeatureCard: NextPage<IFeatureCardProps> = ({
+  title,
+  subTitle,
+  iconUrl,
+  iconWidth,
+  iconHeight,
+}) => {
   return (
     <div className="card">
-      <Image src={iconUrl} width="88" height="72" draggable="false"></Image>
+      <div className="icon">
+        <Image alt="icon" src={iconUrl} draggable="false" width={iconWidth} height={iconHeight}></Image>
+      </div>
       <div className="title">{title}</div>
       <div className="subtitle">{subTitle}</div>
     </div>
@@ -34,19 +42,25 @@ const HeroPage: NextPage<ITranslationProps> = ({ t, locale }) => {
 
       <div className="card-bannar">
         <FeatureCard
-          iconUrl="/images/icons/cloud.svg"
+          iconUrl="/images/icons/cloud.png"
           title={t('card-1-title')}
           subTitle={t('card-1-subtitle')}
+          iconWidth="93"
+          iconHeight="77"
         />
         <FeatureCard
-          iconUrl="/images/icons/solution.svg"
+          iconUrl="/images/icons/solution.png"
           title={t('card-2-title')}
           subTitle={t('card-2-subtitle')}
+          iconWidth="92"
+          iconHeight="85"
         />
         <FeatureCard
           iconUrl="/images/icons/crown.png"
           title={t('card-3-title')}
           subTitle={t('card-3-subtitle')}
+          iconWidth="92"
+          iconHeight="73"
         />
       </div>
     </>

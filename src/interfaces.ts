@@ -20,6 +20,8 @@ export interface IFeatureCardProps {
   title: string;
   subTitle: string;
   redirectUrl?: string;
+  iconWidth: string;
+  iconHeight: string;
 }
 
 export interface IFeatureSwiperItemProps {

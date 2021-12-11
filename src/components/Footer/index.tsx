@@ -145,7 +145,7 @@ const Footer: NextPage = () => {
       <div className="container">
         <div className="menu-container">
           <div className="logo">
-            <Image src="/images/logo.svg" width={120} height={64} draggable="false"></Image>
+            <Image src="/images/logo.svg" width={120} height={64} draggable="false" alt="logo"></Image>
           </div>
 
           {menus.map((menu) => (
