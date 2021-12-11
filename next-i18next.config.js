@@ -1,4 +1,4 @@
-const path = require("path/posix");
+const path = require("path");
 
 module.exports = {
   i18n: {
