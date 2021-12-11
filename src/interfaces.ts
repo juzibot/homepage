@@ -1,4 +1,5 @@
 import { TFunction } from 'next-i18next';
+import { CSSProperties } from 'react';
 
 export interface ITranslationProps {
   t: TFunction;
@@ -36,6 +37,7 @@ export interface ISolutionItemProp {
   title: string;
   brief: string;
   imagePosition: 'left' | 'right';
+  style?: CSSProperties;
 }
 
 export interface ICompanyProps {

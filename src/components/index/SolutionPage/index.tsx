@@ -9,6 +9,7 @@ export const SolutionItem: NextPage<ISolutionItemProp> = ({
   title,
   dividerUrl,
   brief,
+  style,
 }) => {
   useEffect(() => {
     if (process.browser) {
@@ -24,13 +25,8 @@ export const SolutionItem: NextPage<ISolutionItemProp> = ({
       style={{ flexDirection: imagePosition === 'left' ? 'row' : 'row-reverse' }}
       data-aos="fade-in"
     >
-      <img
-        className="solution-image"
-        src={imageUrl}
-        alt={title}
-        draggable="false"
-      ></img>
-      <div className="solution-content">
+      <img className="solution-image" src={imageUrl} alt={title} draggable="false"></img>
+      <div className="solution-content" style={style}>
         <div className="title">{title}</div>
         <img className="line" src={dividerUrl} alt="divider" draggable="false"></img>
         <div className="brief">{brief}</div>
@@ -50,7 +46,9 @@ const SolutionPage: NextPage<ITranslationProps> = () => {
   }, []);
   return (
     <>
-      <h1 className="title" data-aos="fade-in">专注于效率提升的解决方案</h1>
+      <h1 className="title" data-aos="fade-in">
+        专注于效率提升的解决方案
+      </h1>
 
       <div className="solution-groups">
         <SolutionItem
@@ -67,6 +65,7 @@ const SolutionPage: NextPage<ITranslationProps> = () => {
           imagePosition="right"
           imageUrl="/images/solution-02.svg"
           dividerUrl="/images/solution-02-divider.svg"
+          style={{ transform: 'translateY(-10px)' }}
         />
 
         <SolutionItem
@@ -75,6 +74,7 @@ const SolutionPage: NextPage<ITranslationProps> = () => {
           imagePosition="left"
           imageUrl="/images/solution-03.svg"
           dividerUrl="/images/solution-03-divider.svg"
+          style={{ transform: 'translateY(8px)' }}
         />
 
         <SolutionItem
@@ -83,6 +83,7 @@ const SolutionPage: NextPage<ITranslationProps> = () => {
           imagePosition="right"
           imageUrl="/images/solution-04.svg"
           dividerUrl="/images/solution-04-divider.svg"
+          style={{ transform: 'translateY(-8px)' }}
         />
       </div>
     </>
