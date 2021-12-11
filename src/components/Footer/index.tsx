@@ -1,5 +1,6 @@
 import { NextPage } from 'next';
 import Image from 'next/image';
+import Link from 'next/link';
 
 const Footer: NextPage = () => {
   const menus = [
@@ -145,7 +146,13 @@ const Footer: NextPage = () => {
       <div className="container">
         <div className="menu-container">
           <div className="logo">
-            <Image src="/images/logo.svg" width={120} height={64} draggable="false" alt="logo"></Image>
+            <Image
+              src="/images/logo.svg"
+              width={120}
+              height={64}
+              draggable="false"
+              alt="logo"
+            ></Image>
           </div>
 
           {menus.map((menu) => (
@@ -153,7 +160,13 @@ const Footer: NextPage = () => {
               <div className="title">{menu.title}</div>
               <div className="menus">
                 {menu.child.map((item, idx) =>
-                  item.tooltip ? <div key={idx}>{item.title}</div> : <a href={item.url} key={idx}>{item.title}</a>
+                  item.tooltip ? (
+                    <div key={idx}>{item.title}</div>
+                  ) : (
+                    <a href={item.url} key={idx}>
+                      {item.title}
+                    </a>
+                  )
                 )}
               </div>
             </div>
@@ -163,7 +176,9 @@ const Footer: NextPage = () => {
 
       <div className="registration-info">
         <span className="copyright">© 北京句子科技有限公司</span>
-        <a className="beian" href="/">京ICP备 1000000 号-7</a>
+        <Link href="/">
+          <a className="beian">京ICP备 1000000 号-7</a>
+        </Link>
       </div>
     </footer>
   );
