@@ -12,7 +12,6 @@ const Home: NextPage<ITranslationPageProps> = ({ locale }) => {
   const { t } = useTranslation('index');
   return (
     <>
-      <script src="https://cdn.bootcdn.net/ajax/libs/wow/1.1.2/wow.js"></script>
       <div className="wrapper index-page">
         <div className="container">
           <HeroPage t={t} locale={locale} />
