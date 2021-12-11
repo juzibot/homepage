@@ -7,6 +7,8 @@
 .wrapper {
   width: 100%;
   min-width: 1280px;
+  padding-left: 22px;
+  padding-right: 22px;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -119,7 +121,7 @@
   background: #fbfbfd;
   order: 0;
   flex-grow: 0;
-  padding: 44px 0;
+  padding: 44px 22px;
 
   .container {
     display: flex;
