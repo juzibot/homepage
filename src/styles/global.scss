@@ -1,0 +1,118 @@
+@import '@styles/header-bar.module.scss';
+@import '@styles/index.module.scss';
+
+
+@import '@styles/footer.module.scss';
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'PingFang SC', -apple-system, BlinkMacSystemFont, 'Microsoft YaHei', 'Segoe UI',
+    'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+}
+
+body {
+  overflow-x: auto;
+
+  .app {
+    width: 100%;
+  }
+
+  a {
+    text-decoration: none;
+    user-select: none;
+  }
+}
+
+.primary-link {
+  font-family: PingFang SC;
+  font-style: normal;
+  font-size: 16px;
+  color: #0555ff !important;
+  transition: all 0.3s;
+
+  &.round {
+    height: 36px;
+    padding: 4px 16px;
+    border-radius: 18px;
+    border: 1px solid #0555ff;
+    font-size: 16px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+    &:hover {
+      background-color: #0555ff;
+      color: #fff !important;
+    }
+  }
+}
+
+button {
+  user-select: none;
+}
+
+button.primary-button {
+  height: 56px;
+  padding: 16px 42px;
+  background: #0555ff;
+  background-image: linear-gradient(90deg, #1c60f3, #0555ff);
+  box-shadow: 0px 35px 50px -15px rgba(52, 128, 239, 0.3);
+  border-radius: 100px;
+  color: #fff;
+  border-color: unset !important;
+  border-image: unset !important;
+  border-width: 0 !important;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  font-weight: 600;
+  font-size: 18px;
+  transition: all 0.3s;
+  cursor: pointer;
+
+  &:hover {
+    transform: translateY(-1px);
+    opacity: 0.8;
+  }
+
+  &:active {
+    transform: translateY(1px);
+    color: rgba(255, 255, 255, 0.95);
+  }
+}
+
+button.white-button {
+  height: 56px;
+  padding: 16px 42px;
+  background: inherit;
+  box-shadow: 0px 35px 50px -15px rgba(52, 128, 239, 0.3);
+  border-radius: 100px;
+  color: #fff;
+  border: 1px solid #fff !important;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  font-weight: 600;
+  font-size: 18px;
+  transition: all 0.3s;
+  cursor: pointer;
+
+  &:hover {
+    transform: translateY(-1px);
+    opacity: 0.8;
+  }
+
+  &:active {
+    transform: translateY(1px);
+    color: rgba(255, 255, 255, 0.95);
+  }
+}
+
+
+

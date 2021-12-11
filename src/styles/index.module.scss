@@ -1,0 +1,130 @@
+@import '@styles/feature-swiper.module.scss';
+@import '@styles/solution-page.module.scss';
+@import '@styles/company-display-bar.module.scss';
+@import '@styles/appeal-bar.module.scss';
+@import '~aos/dist/aos.css';
+
+.wrapper {
+  width: 100%;
+  min-width: 1280px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+
+  .container {
+    width: 100%;
+    max-width: 1280px;
+  }
+}
+
+.menu-item {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  font-family: PingFang SC;
+  font-style: normal;
+  font-size: 16px;
+  color: #54657e;
+
+  & {
+    margin: 0 24px;
+  }
+}
+
+.index-page {
+  width: 100%;
+  padding-top: calc(64px + 12px);
+  height: 960px;
+  background-image: url('/images/background.svg');
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: bottom;
+
+  .hero-page {
+    width: 100%;
+    height: 500px;
+    display: flex;
+    justify-content: space-between;
+    background-image: url('/images/index-picture.svg');
+    background-repeat: no-repeat;
+    background-position: right;
+
+    .bannar {
+      padding-top: 72px;
+      .slogan {
+        font-family: PingFang SC;
+        font-style: normal;
+        font-weight: 600;
+        font-size: 56px;
+        color: #364256;
+      }
+
+      .description {
+        margin-top: 32px;
+        max-width: 600px;
+        font-family: PingFang SC;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 16px;
+        line-height: 180%;
+        color: #869bb9;
+      }
+
+      .start-button {
+        margin-top: 54px;
+      }
+    }
+  }
+
+  .card-bannar {
+    display: grid;
+    width: 100%;
+    grid-template-columns: repeat(3, minmax(150px, 1fr));
+    grid-column-gap: 24px;
+
+    .card {
+      background: #ffffff;
+      border: 1px solid #f2f6ff;
+      box-sizing: border-box;
+      box-shadow: 0px 20px 60px -20px rgba(5, 85, 255, 0.1);
+      border-radius: 16px;
+      padding: 48px 32px;
+
+      .title {
+        padding: 0 8px;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 20px;
+        line-height: 32px;
+        color: #364256;
+      }
+
+      .subtitle {
+        padding: 0 8px;
+        margin-top: 8px;
+        width: 100%;
+        font-style: normal;
+        font-weight: 300;
+        font-size: 15px;
+        line-height: 24px;
+        text-align: justify;
+        color: #54657e;
+      }
+    }
+  }
+}
+
+.feature-page {
+  background: #fbfbfd;
+  order: 0;
+  flex-grow: 0;
+  padding: 44px 0;
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+  }
+}

@@ -1,10 +1,4 @@
-import Document, {
-  Html,
-  Head,
-  Main,
-  NextScript,
-  DocumentContext,
-} from 'next/document';
+import Document, { Html, Head, Main, NextScript, DocumentContext } from 'next/document';
 
 class JuziSiteDocument extends Document {
   static async getInitialProps(ctx: DocumentContext) {
@@ -15,6 +9,8 @@ class JuziSiteDocument extends Document {
   render() {
     return (
       <Html>
+        <meta name="viewport" content="width=1280, initial-scale=1.0" />
+        <title>句子互动官网</title>
         <Head />
         <body>
           <Main />

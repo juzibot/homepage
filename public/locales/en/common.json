@@ -1,3 +1,11 @@
 {
-  "hello": "hello world"
+  "products": "Products",
+  "solutions": "Solutions",
+  "cases": "Cases",
+  "course": "Courses",
+  "developer": "Developer",
+  "about": "About",
+  "language": "English",
+  "lets-talk": "Let's talk",
+  "login": "Login"
 }
