@@ -163,7 +163,7 @@ const Footer: NextPage = () => {
 
       <div className="registration-info">
         <span className="copyright">© 北京句子科技有限公司</span>
-        <a className="beian" href="">京ICP备 1000000 号-7</a>
+        <a className="beian" href="/">京ICP备 1000000 号-7</a>
       </div>
     </footer>
   );
