@@ -3,21 +3,26 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "rm -fr ./.next && next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "export": "next build && next export && rm -rf ./build && mv ./out ./build"
   },
   "dependencies": {
+    "aos": "^3.0.0-beta.6",
     "autoprefixer": "^10.3.7",
+    "fs": "^0.0.1-security",
     "next": "11.1.2",
     "next-i18next": "^8.9.0",
     "postcss": "^8.3.11",
     "react": "17.0.2",
     "react-dom": "17.0.2",
-    "tailwindcss": "^2.2.17"
+    "sass": "^1.44.0",
+    "swiper": "^7.3.1"
   },
   "devDependencies": {
+    "@types/aos": "^3.0.4",
     "@types/react": "17.0.31",
     "eslint": "7.32.0",
     "eslint-config-next": "11.1.2",

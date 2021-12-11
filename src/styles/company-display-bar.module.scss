@@ -1,0 +1,134 @@
+.company-display {
+  background: linear-gradient(180deg, #f7f7fb 0%, rgba(255, 255, 255, 0) 100%);
+  .container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 72px 0 84px 0;
+
+    .title {
+      font-family: PingFang SC;
+      font-style: normal;
+      font-weight: 600;
+      font-size: 36px;
+      text-align: center;
+      color: #384254;
+    }
+
+    .companies {
+      width: 100%;
+      height: 180px;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+      align-items: center;
+      border: 1px solid #f2f6ff;
+      box-sizing: border-box;
+      box-shadow: 0px 20px 60px -20px rgba(5, 85, 255, 0.1);
+      border-radius: 16px;
+      overflow: hidden;
+      margin: 72px 0;
+
+      .company {
+        width: 25%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-color: #fff;
+        cursor: pointer;
+        user-select: none;
+        transition: all 0.3s;
+
+        .title-bar {
+          display: flex;
+          flex-direction: row;
+          justify-content: flex-start;
+          align-items: center;
+
+          .title {
+            font-family: DINPro;
+            font-style: normal;
+            font-weight: bold;
+            font-size: 36px;
+            line-height: 57px;
+            text-align: center;
+            color: #0555ff;
+            margin-left: 16px;
+          }
+        }
+
+        .subtitle {
+          font-style: normal;
+          font-weight: normal;
+          font-size: 18px;
+          color: #0555ff;
+          margin-top: 8px;
+        }
+      }
+    }
+
+    .comment-bar {
+      margin-bottom: 48px;
+
+      .quote.reverse {
+        transform: rotate(180deg);
+      }
+
+      .comment {
+        font-family: PingFang SC;
+        font-style: normal;
+        font-weight: 600;
+        font-size: 26px;
+        color: #364256;
+        margin: 0 4px;
+        text-align: center;
+      }
+    }
+
+    .company-info {
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-start;
+      align-items: center;
+
+      .divider {
+        width: 1px;
+        height: 64px;
+        background-color: rgba(0, 0, 0, 0.2);
+        margin: 0 24px;
+      }
+
+      .info {
+        .name {
+          font-weight: 500;
+          font-size: 20px;
+          line-height: 28px;
+          color: #364256;
+        }
+
+        .brief {
+          width: 550px;
+          font-weight: 300;
+          font-size: 16px;
+          line-height: 22px;
+          color: #54657e;
+          margin-top: 8px;
+        }
+      }
+    }
+
+    .read-more {
+      align-self: flex-end;
+      font-weight: 500;
+      font-size: 18px;
+      line-height: 29px;
+      text-align: right;
+      color: #869bb9;
+      margin-top: 24px;
+    }
+  }
+}
