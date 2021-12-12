@@ -6,6 +6,7 @@ import Link from 'next/link';
 import { IFeatureSwiperItemProps } from '@src/interfaces';
 import { useEffect, useState } from 'react';
 import Aos from 'aos';
+import { debounce } from 'lodash';
 
 const FeatureSwiperItem: NextPage<IFeatureSwiperItemProps> = ({
   title,
@@ -24,7 +25,13 @@ const FeatureSwiperItem: NextPage<IFeatureSwiperItemProps> = ({
       <div className="content">
         <div data-swiper-parallax="-300">
           <div className="num">
-            <Image src={`/images/icons/0${index}.svg`} width="97" height="130" draggable="false" alt="num" />
+            <Image
+              src={`/images/icons/0${index}.svg`}
+              width="97"
+              height="130"
+              draggable="false"
+              alt="num"
+            />
           </div>
           <h1 className="title">{title}</h1>
         </div>
@@ -51,6 +58,7 @@ const FeatureSwiperItem: NextPage<IFeatureSwiperItemProps> = ({
 const FeatureSwiper: NextPage = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [swiper, setSwiper] = useState<SwiperType | undefined>(undefined);
+  const [autoPlayInterval, setAutoPlayInterval] = useState<NodeJS.Timer>();
   const items: IFeatureSwiperItemProps[] = [
     {
       title: '规模获客',
@@ -88,6 +96,25 @@ const FeatureSwiper: NextPage = () => {
       iconUrl: '/images/feat-05.png',
     },
   ];
+
+  function autoplay(s?: SwiperType) {
+    s = s || swiper;
+    if (autoPlayInterval) {
+      clearInterval(autoPlayInterval);
+    }
+    const _autoPlayInterval = setInterval(() => {
+      if (!s) return;
+      if (s.isEnd) {
+        s.slideTo(0);
+      } else {
+        s.slideNext();
+      }
+    }, 8000);
+    setAutoPlayInterval(_autoPlayInterval);
+  }
+
+  const debounceAutoPlay = debounce(() => autoplay(swiper));
+
   return (
     <>
       <div className="feature-swiper">
@@ -99,6 +126,7 @@ const FeatureSwiper: NextPage = () => {
           parallax={{ enabled: true }}
           onSwiper={(swiper) => {
             setSwiper(swiper);
+            autoplay(swiper);
           }}
           effect="fade"
           fadeEffect={{
@@ -106,6 +134,7 @@ const FeatureSwiper: NextPage = () => {
           }}
           onActiveIndexChange={(swiper) => {
             setCurrentIndex(swiper.activeIndex);
+            debounceAutoPlay();
           }}
           controller={{ control: swiper }}
         >
