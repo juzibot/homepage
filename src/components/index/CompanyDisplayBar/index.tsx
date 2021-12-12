@@ -55,7 +55,7 @@ const CompanyDisplayBar: NextPage = () => {
     },
     {
       title: '99.99%',
-      iconUrl: '/images/icons/contact.svg',
+      iconUrl: '/images/icons/safe.svg',
       subTitle: '稳定性',
       companyName: '啄木鸟家庭维修',
       companyLogoUrl: '/images/icons/zhuomuniao.svg',
