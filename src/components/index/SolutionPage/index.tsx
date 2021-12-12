@@ -66,6 +66,7 @@ const SolutionPage: NextPage<ITranslationProps> = () => {
           imagePosition="left"
           imageUrl="/images/solution-01.svg"
           dividerUrl="/images/solution-01-divider.svg"
+          style={{ transform: 'translateY(-10px)' }}
         />
 
         <SolutionItem
@@ -74,7 +75,7 @@ const SolutionPage: NextPage<ITranslationProps> = () => {
           imagePosition="right"
           imageUrl="/images/solution-02.svg"
           dividerUrl="/images/solution-02-divider.svg"
-          style={{ transform: 'translateY(-10px)' }}
+          style={{ transform: 'translateY(-30px)' }}
         />
 
         <SolutionItem
@@ -83,7 +84,7 @@ const SolutionPage: NextPage<ITranslationProps> = () => {
           imagePosition="left"
           imageUrl="/images/solution-03.svg"
           dividerUrl="/images/solution-03-divider.svg"
-          style={{ transform: 'translateY(8px)' }}
+          style={{ transform: 'translateY(-24px)' }}
         />
 
         <SolutionItem
@@ -92,7 +93,7 @@ const SolutionPage: NextPage<ITranslationProps> = () => {
           imagePosition="right"
           imageUrl="/images/solution-04.svg"
           dividerUrl="/images/solution-04-divider.svg"
-          style={{ transform: 'translateY(-8px)' }}
+          style={{ transform: 'translateY(-48px)' }}
         />
       </div>
     </>
