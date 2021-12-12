@@ -49,10 +49,21 @@
         width: 100%;
         height: 100%;
         background-color: #eaf0f7;
+        border-radius: 2px;
+      }
+
+      @keyframes progress {
+        from {
+          width: 0;
+        }
+        to {
+          width: 100%;
+        }
       }
 
       &.active > div {
         background-color: #fc790d;
+        animation: progress 8s linear;
       }
     }
   }
