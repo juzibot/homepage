@@ -1,6 +1,6 @@
 import { NextPage } from 'next';
 import { SwiperSlide, Swiper } from 'swiper/react';
-import { Navigation, Parallax, Controller, Swiper as SwiperType, EffectFade } from 'swiper';
+import { Navigation, Parallax, Controller, Swiper as SwiperType } from 'swiper';
 import Image from 'next/image';
 import Link from 'next/link';
 import { IFeatureSwiperItemProps } from '@src/interfaces';
@@ -121,16 +121,12 @@ const FeatureSwiper: NextPage = () => {
         <Swiper
           spaceBetween={0}
           slidesPerView={1}
-          modules={[Navigation, Parallax, Controller, EffectFade]}
+          modules={[Navigation, Parallax, Controller]}
           style={{ width: '100%' }}
           parallax={{ enabled: true }}
           onSwiper={(swiper) => {
             setSwiper(swiper);
             autoplay(swiper);
-          }}
-          effect="fade"
-          fadeEffect={{
-            crossFade: true,
           }}
           onActiveIndexChange={(swiper) => {
             setCurrentIndex(swiper.activeIndex);
