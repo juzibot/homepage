@@ -2,7 +2,7 @@ import { NextPage } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
 import { IMenuItemProps, ITranslationProps } from '@src/interfaces';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 const MenuItem: NextPage<IMenuItemProps> = ({ hasArrow, children, href }) => {
   return (
@@ -29,17 +29,22 @@ const MenuItem: NextPage<IMenuItemProps> = ({ hasArrow, children, href }) => {
   );
 };
 
-const HeaderBar: NextPage<ITranslationProps> = ({t}) => {
+const HeaderBar: NextPage<ITranslationProps> = ({ t }) => {
   const [borderBottomVisible, setBorderBottomVisible] = useState(false);
+  const [isChrome, setIsChrome] = useState(true);
 
-  if (process.browser) {
-    window.addEventListener('scroll', () => {
-      setBorderBottomVisible(window.scrollY > 0);
-    });
-  }
+  useEffect(() => {
+    if (process.browser) {
+      window.addEventListener('scroll', () => {
+        setBorderBottomVisible(window.scrollY > 0);
+      });
+      setIsChrome(/Chrome|Safari/.test(navigator.userAgent));
+    }
+  }, []);
+
   return (
     <header
-      className="wrapper header-bar"
+      className={`wrapper header-bar ${!isChrome ? 'opacity' : ''}`}
       style={{ borderBottom: borderBottomVisible ? '1px solid #eee' : '1px solid #ffffffff' }}
     >
       <div className="container">
