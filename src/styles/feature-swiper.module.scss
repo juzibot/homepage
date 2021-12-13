@@ -3,7 +3,7 @@
 @import '~swiper/scss/parallax';
 
 .mask-wrapper {
-  width: 1440px;
+  width: 100%;
   height: 700px;
   position: absolute;
   z-index: 80;
@@ -30,17 +30,6 @@
 
   .container {
     max-width: 1400px !important;
-
-    // &::after {
-    //   content: '';
-    //   width: 1440px;
-    //   height: 700px;
-    //   position: absolute;
-    //   z-index: 80;
-    //   pointer-events: none;
-    //   background-image: linear-gradient(90deg, #fbfbfd, hsla(0, 0%, 100%, 0));
-    //   background-position-x: -20px;
-    // }
   }
 
   .feature-swiper {
