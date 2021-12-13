@@ -21,7 +21,6 @@ function JuziApp({ Component, pageProps }: AppProps) {
 }
 
 export const getStaticProps: GetStaticProps = async ({ locale }) => {
-  console.log(`current lang: ${locale}`)
   return {
     props: {
       ...(await serverSideTranslations(locale || 'zh', ['common', 'index'])),

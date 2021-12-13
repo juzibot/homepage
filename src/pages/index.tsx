@@ -19,6 +19,10 @@ const Home: NextPage<ITranslationPageProps> = ({ locale }) => {
       </div>
 
       <div className="wrapper feature-page">
+        <div className="mask-wrapper">
+          <div className="mask" />
+          <div className="mask-reverse" />
+        </div>
         <div className="container">
           <FeatureSwiper />
         </div>
@@ -46,7 +50,6 @@ const Home: NextPage<ITranslationPageProps> = ({ locale }) => {
 };
 
 export const getStaticProps: GetStaticProps = async ({ locale }) => {
-  console.log(`current lang: ${locale}`);
   return {
     props: {
       ...(await serverSideTranslations(locale || 'zh', ['common', 'index'])),
