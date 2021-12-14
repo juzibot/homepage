@@ -7,7 +7,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "export": "next build && next export && rm -rf ./build && mv ./out ./build"
+    "export": "next build && next export && rm -rf ./build && mv ./out ./build",
+    "docker-ci": "./script/build_docker_ci.sh"
   },
   "dependencies": {
     "aos": "^3.0.0-beta.6",
