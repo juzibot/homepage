@@ -6,10 +6,19 @@ import SolutionPage from '@src/components/index/SolutionPage';
 import { ITranslationPageProps } from '@src/interfaces';
 import type { GetStaticProps, NextPage } from 'next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+import { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 
 const Home: NextPage<ITranslationPageProps> = ({ locale }) => {
   const { t } = useTranslation('index');
+  const [width, setWidth] = useState(0);
+  const SHOW_MASK_WINDOW_WIDTH = 1024;
+  useEffect(() => {
+    if (process.browser) {
+      window.addEventListener('resize', () => setWidth(window.innerWidth));
+      setWidth(window.innerWidth);
+    }
+  }, []);
   return (
     <>
       <div className="wrapper index-page">
@@ -19,11 +28,14 @@ const Home: NextPage<ITranslationPageProps> = ({ locale }) => {
       </div>
 
       <div className="wrapper feature-page">
-        <div className="mask-wrapper">
-          <div className="mask" />
-          <div className="mask-reverse" />
-        </div>
         <div className="container">
+          <div
+            className="mask-wrapper"
+            style={{ visibility: width > SHOW_MASK_WINDOW_WIDTH ? 'visible' : 'hidden' }}
+          >
+            <div className="mask" />
+            <div className="mask-reverse" />
+          </div>
           <FeatureSwiper />
         </div>
       </div>
