@@ -86,7 +86,7 @@ const CompanyDisplayBar: NextPage = () => {
         ))}
       </div>
 
-      <div className="comment-bar" data-aos="fade-in">
+      {/* <div className="comment-bar" data-aos="fade-in">
         <Image
           className="quote"
           src="/images/icons/quote.svg"
@@ -105,7 +105,7 @@ const CompanyDisplayBar: NextPage = () => {
           width="24"
           height="16"
         ></Image>
-      </div>
+      </div> */}
 
       <div className="company-info" data-aos="fade-in">
         <Image

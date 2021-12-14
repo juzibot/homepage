@@ -49,7 +49,7 @@ const HeaderBar: NextPage<ITranslationProps> = ({ t }) => {
     >
       <div className="container">
         <menu className="header-left">
-          <a className="logo" href="https://juzi.bot">
+          <a className="logo" href="https://www.juzibot.com/">
             <Image alt="logo" src="/images/logo.svg" width={120} height={64} draggable="false"></Image>
           </a>
           <MenuItem hasArrow href="/">
