@@ -15,8 +15,8 @@ const Home: NextPage<ITranslationPageProps> = ({ locale }) => {
   const SHOW_MASK_WINDOW_WIDTH = 1024;
   useEffect(() => {
     if (process.browser) {
-      window.addEventListener('resize', () => setWidth(window.innerWidth));
-      setWidth(window.innerWidth);
+      window.addEventListener('resize', () => setWidth(document.body.clientWidth));
+      setWidth(document.body.clientWidth);
     }
   }, []);
   return (
