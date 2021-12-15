@@ -4,10 +4,7 @@ on:
     branches:
       - main
 env:
-  DEPLOY_HOST: 161.189.200.77 
-  USER: root
   REPO: juzi-official-website
-  DEPLOY_DIR: /root/website
 
 jobs:
   build:
@@ -53,15 +50,15 @@ jobs:
       - name: deploy ${{env.REPO}}
         uses: docker://evaneos/ssh-action:0.1.0
         with:
-          hosts: ${{ env.DEPLOY_HOST }}
-          user: ${{ env.USER }}
+          hosts: ${{ secrets.DEPLOY_HOST }}
+          user: ${{ secrets.USER }}
           private_key: ${{ secrets.PRIVATE_SSH_KEY_INTEGRATION_RUNNER }}
           commands: |
             echo $(pwd)
             export CI_VERSION=${{ needs.build.outputs.version }}
             echo $CI_VERSION
-            mkdir -p ${{ env.DEPLOY_DIR }}
-            cd ${{ env.DEPLOY_DIR }}
+            mkdir -p ${{ secrets.DEPLOY_DIR }}
+            cd ${{ secrets.DEPLOY_DIR }}
             cat <<EOF > docker-compose.yml
             version: "3"
             services:
