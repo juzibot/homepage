@@ -63,3 +63,8 @@ export interface IFooterMenu {
     tooltip?: string;
   }[];
 }
+
+export interface IFriendLink {
+  title: string;
+  url: string;
+}

@@ -49,7 +49,7 @@ const FeatureSwiperItem: NextPage<IFeatureSwiperItemProps> = ({
         </Link>
       </div>
       <div className="image">
-        <Image src={iconUrl} draggable="false" width="608" height="560" alt="picture" />
+        <Image src={iconUrl} draggable="false" width="608" height="544" alt="picture" />
       </div>
     </div>
   );
@@ -79,21 +79,21 @@ const FeatureSwiper: NextPage = () => {
       subTitle: '一键应答客户在任意 IM 发来的消息',
       brief:
         '我们提供了聚合多种 IM 平台的能力，让你能在一个后台处理多种会话消息，主动触达多平台客户，无论他们来自微信、抖音、5G 短信、Whatsapp 还是其他。',
-      iconUrl: '/images/feat-03.png',
+      iconUrl: '/images/feat-03.svg',
     },
     {
       title: '绩效管理',
       subTitle: '人效 + 业务双引擎驱动管理提效',
       brief:
         '我们提供了聚合多种 IM 平台的能力，让你能在一个后台处理多种会话消息，主动触达多平台客户，无论他们来自微信、抖音、5G 短信、Whatsapp 还是其他。',
-      iconUrl: '/images/feat-04.png',
+      iconUrl: '/images/feat-04.svg',
     },
     {
       title: '数据驱动',
       subTitle: '让每一个决策更科学',
       brief:
         '我们提供从增长到活跃到转化的一切业务数据和人效数据统计，为管理者提供更科学的业务流程和团队管理决策依据。',
-      iconUrl: '/images/feat-05.png',
+      iconUrl: '/images/feat-05.svg',
     },
   ];
 
@@ -109,7 +109,7 @@ const FeatureSwiper: NextPage = () => {
       } else {
         s.slideNext();
       }
-    }, 8000);
+    }, 6000);
     setAutoPlayInterval(_autoPlayInterval);
   }
 

@@ -1,4 +1,4 @@
-import { IFooterMenu } from '@src/interfaces';
+import { IFooterMenu, IFriendLink } from '@src/interfaces';
 import { NextPage } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -146,6 +146,25 @@ const Footer: NextPage = () => {
       ],
     },
   ];
+
+  const friendLinks: IFriendLink[] = [
+    {
+      title: '企业微信',
+      url: 'https://work.weixin.qq.com/',
+    },
+    {
+      title: '云蝠智能',
+      url: 'https://work.weixin.qq.com/',
+    },
+    {
+      title: 'Authing',
+      url: 'https://www.authing.cn/',
+    },
+    {
+      title: '硬核桃社区',
+      url: 'https://www.5g-msg.com/',
+    },
+  ];
   return (
     <footer className="wrapper footer-bar">
       <div className="container">
@@ -179,13 +198,26 @@ const Footer: NextPage = () => {
         </div>
       </div>
 
-      <div className="registration-info">
-        <span className="copyright">© 2021 北京句子科技有限公司</span>
-        <Link href="https://beian.miit.gov.cn/">
-          <a className="beian" target="_blank">
-            京ICP备19049435号-1
-          </a>
-        </Link>
+      <div className="registration-container">
+        <div className="friendship-links">
+          <span className="copyright">友情链接：</span>
+          {friendLinks.map(({ title, url }) => (
+            <Link key={title} href={url}>
+              <a className="friendlink" target="_blank">
+                {title}
+              </a>
+            </Link>
+          ))}
+        </div>
+
+        <div className="registration">
+          <span className="copyright">© 北京句子科技有限公司</span>
+          <Link href="https://beian.miit.gov.cn/">
+            <a className="beian" target="_blank">
+              京ICP备19049435号-1
+            </a>
+          </Link>
+        </div>
       </div>
     </footer>
   );
