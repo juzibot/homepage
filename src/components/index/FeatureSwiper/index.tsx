@@ -107,7 +107,7 @@ const FeatureSwiper: NextPage = () => {
       if (s.isEnd) {
         s.slideTo(0);
       } else {
-        s.slideNext();
+        s.slideNext(300);
       }
     }, 6000);
     setAutoPlayInterval(_autoPlayInterval);

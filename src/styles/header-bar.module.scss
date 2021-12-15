@@ -52,3 +52,69 @@
     }
   }
 }
+
+.menu-box {
+  position: fixed;
+  margin-top: 80px;
+  z-index: 999;
+  pointer-events: none;
+
+  .container {
+    .contact-menu {
+      width: 260px;
+      height: 280px;
+      background-color: #fff;
+      border: 1px solid #eee;
+      transform: translateX(956px);
+      box-shadow: 0 36px 70px -10px rgb(61 64 76 / 15%),
+        0 18px 20px -10px rgb(61 64 76 / 5%);
+      border-radius: 16px;
+      z-index: 99;
+      transition: all 0.3s;
+
+      &.visible {
+        opacity: 1;
+      }
+
+      &.hidden {
+        opacity: 0;
+      }
+
+      &::before {
+        display: inline-block;
+        content: '';
+        width: 16px;
+        height: 16px;
+        background: #fff;
+        border: 1px solid #eee;
+        position: absolute;
+        top: -10px;
+        left: 50%;
+        transform: translateX(-50%) rotate(45deg);
+        z-index: -1;
+      }
+
+      .box {
+        width: 100%;
+        height: 100%;
+        background-color: #fff;
+        border-radius: 16px;
+        position: absolute;
+        pointer-events: all;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        span {
+          font-style: normal;
+          font-weight: normal;
+          font-size: 16px;
+          color: #364256;
+          margin-top: 8px;
+        }
+      }
+    }
+  }
+}
