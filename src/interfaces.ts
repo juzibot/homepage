@@ -13,6 +13,7 @@ export interface ITranslationPageProps {
 export interface IMenuItemProps {
   hasArrow?: boolean;
   href: string;
+  onClick?: () => void;
 }
 
 export interface IFeatureCardProps {

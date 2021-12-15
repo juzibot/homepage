@@ -5,10 +5,20 @@ import { IMenuItemProps, ITranslationProps } from '@src/interfaces';
 import { useState, useEffect } from 'react';
 import { host } from '@src/config';
 
-const MenuItem: NextPage<IMenuItemProps> = ({ hasArrow, children, href }) => {
+const MenuItem: NextPage<IMenuItemProps> = ({
+  hasArrow,
+  children,
+  href,
+  onClick
+}) => {
   return (
     <Link href={href}>
-      <a className="menu-item" draggable="false">
+      <a
+        className="menu-item"
+        draggable="false"
+        target="_self"
+        onClick={onClick}
+      >
         <span>{children}</span>
         {hasArrow ? (
           <svg
@@ -78,7 +88,10 @@ const HeaderBar: NextPage<ITranslationProps> = ({ t, locale }) => {
           <menu className="header-right">
             <MenuItem
               hasArrow
-              href={`${host}/${locale === 'zh' ? 'en' : 'zh'}`}
+              onClick={() =>
+                (location.href = `${host}/${locale === 'zh' ? 'en' : 'zh'}`)
+              }
+              href="#"
             >
               {t('language')}
             </MenuItem>
