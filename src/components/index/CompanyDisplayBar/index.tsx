@@ -54,7 +54,7 @@ const CompanyDisplayBar: NextPage = () => {
       comment: '用过句子互动产品后，再也不考虑其他 SCRM 产品了，加油！！',
     },
     {
-      title: '99.99%',
+      title: '99.9%',
       iconUrl: '/images/icons/safe.svg',
       subTitle: '稳定性',
       companyName: '啄木鸟家庭维修',

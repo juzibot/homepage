@@ -14,7 +14,13 @@ export const FeatureCard: NextPage<IFeatureCardProps> = ({
   return (
     <div className="card">
       <div className="icon">
-        <Image alt="icon" src={iconUrl} draggable="false" width={iconWidth} height={iconHeight}></Image>
+        <Image
+          alt="icon"
+          src={iconUrl}
+          draggable="false"
+          width={iconWidth}
+          height={iconHeight}
+        ></Image>
       </div>
       <div className="title">{title}</div>
       <div className="subtitle">{subTitle}</div>
@@ -36,7 +42,14 @@ const HeroPage: NextPage<ITranslationProps> = ({ t, locale }) => {
             {t('slogan')}
           </h1>
           <div className="description">{t('description')}</div>
-          <button className="primary-button start-button">{t('start-free')}</button>
+          <button
+            className="primary-button start-button"
+            onClick={() => {
+              if (process.browser) window.open('https://qiwei.juzibot.com/user/login');
+            }}
+          >
+            {t('start-free')}
+          </button>
         </div>
       </div>
 

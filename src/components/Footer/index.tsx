@@ -1,22 +1,23 @@
+import { IFooterMenu } from '@src/interfaces';
 import { NextPage } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
 
 const Footer: NextPage = () => {
-  const menus = [
+  const menus: IFooterMenu[] = [
     {
       title: '产品服务',
       child: [
         {
+          title: '规模化获客',
+          url: '/',
+        },
+        {
+          title: '自动化营销',
+          url: '/',
+        },
+        {
           title: '客户会话中台',
-          url: '/',
-        },
-        {
-          title: 'SOP 自动作业',
-          url: '/',
-        },
-        {
-          title: '用户画像 CDP',
           url: '/',
         },
         {
@@ -24,7 +25,7 @@ const Footer: NextPage = () => {
           url: '/',
         },
         {
-          title: '客户成功',
+          title: '管理中心',
           url: '/',
         },
         {
@@ -33,6 +34,10 @@ const Footer: NextPage = () => {
         },
         {
           title: '云原生',
+          url: '/',
+        },
+        {
+          title: 'RPA',
           url: '/',
         },
         {
@@ -45,7 +50,7 @@ const Footer: NextPage = () => {
       title: '解决方案',
       child: [
         {
-          title: '企业微信全场景方案',
+          title: '私域全场景解决方案',
           url: '/',
         },
         {
@@ -53,27 +58,27 @@ const Footer: NextPage = () => {
           url: '/',
         },
         {
-          title: '私域流量增长方案',
+          title: '增长解决方案',
           url: '/',
         },
         {
-          title: '规模化运营',
+          title: '转化解决方案',
           url: '/',
         },
         {
-          title: '消费品 & 线下门店',
+          title: '消费品行业解决方案',
           url: '/',
         },
         {
-          title: '泛金融行业',
+          title: '连锁门店解决方案',
           url: '/',
         },
         {
-          title: '政务',
+          title: '政务解决方案',
           url: '/',
         },
         {
-          title: '在线教育',
+          title: '互联网服务解决方案',
           url: '/',
         },
       ],
@@ -82,19 +87,19 @@ const Footer: NextPage = () => {
       title: '资料',
       child: [
         {
-          title: '使用手册',
-          url: '/',
+          title: '产品手册',
+          url: 'https://k0auuqcihb.feishu.cn/docs/doccnJMlpBUC1NAHW7ujCXVxaUB',
         },
         {
-          title: '博客',
-          url: '/',
-        },
-        {
-          title: '行业洞察',
-          url: '/',
+          title: '增长情报局',
+          url: 'https://blog.juzibot.com/',
         },
         {
           title: '培训 & 公开课',
+          url: '/',
+        },
+        {
+          title: '私域社群',
           url: '/',
         },
         {
@@ -115,7 +120,7 @@ const Footer: NextPage = () => {
       title: '公司',
       child: [
         {
-          title: '关于',
+          title: '关于我们',
           url: '/',
         },
         {
@@ -132,7 +137,7 @@ const Footer: NextPage = () => {
         },
         {
           title: '公司地址',
-          tooltip: 'sales@juzi.bot',
+          tooltip: '北京海淀区中关村智造大街 F 座 5 层',
         },
         {
           title: 'sales@juzi.bot',
@@ -175,9 +180,11 @@ const Footer: NextPage = () => {
       </div>
 
       <div className="registration-info">
-        <span className="copyright">© 北京句子科技有限公司</span>
+        <span className="copyright">© 2021 北京句子科技有限公司</span>
         <Link href="https://beian.miit.gov.cn/">
-          <a className="beian" target="_blank">京ICP备19049435号-1</a>
+          <a className="beian" target="_blank">
+            京ICP备19049435号-1
+          </a>
         </Link>
       </div>
     </footer>

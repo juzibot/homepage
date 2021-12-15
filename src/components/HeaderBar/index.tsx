@@ -50,18 +50,20 @@ const HeaderBar: NextPage<ITranslationProps> = ({ t }) => {
       <div className="container">
         <menu className="header-left">
           <a className="logo" href="https://www.juzibot.com/">
-            <Image alt="logo" src="/images/logo.svg" width={120} height={64} draggable="false"></Image>
+            <Image
+              alt="logo"
+              src="/images/logo.svg"
+              width={120}
+              height={64}
+              draggable="false"
+            ></Image>
           </a>
-          <MenuItem hasArrow href="/">
-            {t('products')}
-          </MenuItem>
-          <MenuItem hasArrow href="/">
-            {t('solutions')}
-          </MenuItem>
-          <MenuItem href="/">{t('cases')}</MenuItem>
-          <MenuItem href="/">{t('course')}</MenuItem>
-          <MenuItem href="/">{t('developer')}</MenuItem>
-          <MenuItem href="/">{t('about')}</MenuItem>
+          <MenuItem href="https://botorange.com/">{t('products')}</MenuItem>
+          <MenuItem href="https://botorange.com/">{t('solutions')}</MenuItem>
+          {/* <MenuItem href="/">{t('cases')}</MenuItem> */}
+          <MenuItem href="https://blog.juzibot.com/">{t('course')}</MenuItem>
+          <MenuItem href="https://wechaty.js.org/">{t('developer')}</MenuItem>
+          <MenuItem href="https://botorange.com/workabout.html">{t('about')}</MenuItem>
         </menu>
 
         <menu className="header-right">
@@ -73,7 +75,7 @@ const HeaderBar: NextPage<ITranslationProps> = ({ t }) => {
               {t('lets-talk')}
             </a>
           </Link>
-          <Link href="/">
+          <Link href="https://qiwei.juzibot.com/user/login">
             <a className="menu-item primary-link round" draggable="false">
               {t('login')}
             </a>
