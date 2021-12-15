@@ -4,10 +4,8 @@ on:
     branches:
       - main
 env:
-  DEPLOY_HOST: 161.189.200.77 
-  USER: root
   REPO: juzi-official-website
-  DEPLOY_DIR: /root/website
+  ECR_URL: ${{ secrets.ECR_URL }}
 
 jobs:
   build:
@@ -42,6 +40,7 @@ jobs:
           IMAGE_TAG: ${{ github.sha }}
         run: |
           export PACKAGE_VERSION=${{ github.sha }}
+          export ECR_URL=${{ env.ECR_URL }}
           npm run docker-ci
     outputs:
       version: ${{ github.sha }}
@@ -53,25 +52,25 @@ jobs:
       - name: deploy ${{env.REPO}}
         uses: docker://evaneos/ssh-action:0.1.0
         with:
-          hosts: ${{ env.DEPLOY_HOST }}
-          user: ${{ env.USER }}
+          hosts: ${{ secrets.DEPLOY_HOST }}
+          user: ${{ secrets.USER }}
           private_key: ${{ secrets.PRIVATE_SSH_KEY_INTEGRATION_RUNNER }}
           commands: |
             echo $(pwd)
             export CI_VERSION=${{ needs.build.outputs.version }}
             echo $CI_VERSION
-            mkdir -p ${{ env.DEPLOY_DIR }}
-            cd ${{ env.DEPLOY_DIR }}
+            mkdir -p ${{ secrets.DEPLOY_DIR }}
+            cd ${{ secrets.DEPLOY_DIR }}
             cat <<EOF > docker-compose.yml
             version: "3"
             services:
               juzi-official-website:
                 container_name: ${{ env.REPO }}
-                image: 789252305933.dkr.ecr.cn-northwest-1.amazonaws.com.cn/${{ env.REPO }}:$CI_VERSION
+                image: ${{ env.ECR_URL }}/${{ env.REPO }}:$CI_VERSION
                 network_mode: host
                 restart: always
             EOF
-            $(aws ecr get-login --no-include-email --region cn-northwest-1)
+            /usr/local/bin/aws ecr get-login-password | docker login --username AWS --password-stdin ${{ env.ECR_URL }} 2> /dev/null >&2
             docker-compose up -d
             docker ps
             docker image prune -af
