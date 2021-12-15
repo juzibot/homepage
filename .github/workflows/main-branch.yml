@@ -65,7 +65,7 @@ jobs:
             cat <<EOF > docker-compose.yml
             version: "3"
             services:
-              juzi-official:
+              juzi-official-website:
                 container_name: ${{ env.REPO }}
                 image: 789252305933.dkr.ecr.cn-northwest-1.amazonaws.com.cn/${{ env.REPO }}:$CI_VERSION
                 network_mode: host
