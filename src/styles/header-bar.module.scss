@@ -100,7 +100,8 @@
         background-color: #fff;
         border-radius: 16px;
         position: absolute;
-        pointer-events: all;
+        pointer-events: none;
+        user-select: none;
 
         display: flex;
         flex-direction: column;
