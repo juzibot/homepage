@@ -154,7 +154,7 @@ const Footer: NextPage = () => {
     },
     {
       title: '云蝠智能',
-      url: 'https://work.weixin.qq.com/',
+      url: 'https://www.telrobot.top/',
     },
     {
       title: 'Authing',
