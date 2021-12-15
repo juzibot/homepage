@@ -12,7 +12,7 @@ import { useTranslation } from 'react-i18next';
 const Home: NextPage<ITranslationPageProps> = ({ locale }) => {
   const { t } = useTranslation('index');
   const [width, setWidth] = useState(0);
-  const SHOW_MASK_WINDOW_WIDTH = 1024;
+  const SHOW_MASK_WINDOW_WIDTH = 1280;
   useEffect(() => {
     if (process.browser) {
       window.addEventListener('resize', () => setWidth(document.body.clientWidth));
