@@ -54,3 +54,12 @@ export interface ICompanyProps {
   redirectUrl: string;
   onHover?: () => void;
 }
+
+export interface IFooterMenu {
+  title: string;
+  child: {
+    title: string;
+    url?: string;
+    tooltip?: string;
+  }[];
+}
