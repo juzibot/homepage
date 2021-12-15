@@ -2,7 +2,8 @@
 set +e
 
 imageName='juzi-official-website'
-ECR_URL=789252305933.dkr.ecr.cn-northwest-1.amazonaws.com.cn
+
+# ECR_URL from CI build job
 
 #npm version | head -1 | grep -E -o '[0-9]{1}.[0-9]{1,2}.[0-9]{1,3}' > ./dist/release.version
 
