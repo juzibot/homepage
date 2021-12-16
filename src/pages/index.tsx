@@ -62,7 +62,7 @@ const Home: NextPage = ({  }) => {
 export const getStaticProps: GetStaticProps = async ({ locale }) => {
   return {
     props: {
-      ...(await serverSideTranslations(locale || 'zh', ['common', 'index'])),
+      ...(await serverSideTranslations(locale || 'zh', ['common', 'homepage'])),
       locale: locale?.toLowerCase() ?? 'zh',
     },
   };

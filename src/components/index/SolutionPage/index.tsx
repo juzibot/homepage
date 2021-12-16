@@ -51,7 +51,7 @@ export const SolutionItem: NextPage<ISolutionItemProp> = ({
 };
 
 const SolutionPage: NextPage = () => {
-  const { t } = useTranslation(['index']);
+  const { t } = useTranslation(['homepage']);
   useEffect(() => {
     if (process.browser) {
       Aos.init({
