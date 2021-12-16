@@ -4,7 +4,7 @@ import { useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 
 const AppealBar: NextPage = () => {
-  const { t } = useTranslation(["index"]);
+  const { t } = useTranslation(['homepage']);
   useEffect(() => {
     if (process.browser) {
       Aos.init();
