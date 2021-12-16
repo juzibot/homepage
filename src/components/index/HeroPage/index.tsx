@@ -30,7 +30,7 @@ export const FeatureCard: NextPage<IFeatureCardProps> = ({
 };
 
 const HeroPage: NextPage = () => {
-  const { t, i18n } = useTranslation(['index']);
+  const { t, i18n } = useTranslation(['homepage']);
   const { language } = i18n;
   useEffect(() => {
     if (process.browser) {

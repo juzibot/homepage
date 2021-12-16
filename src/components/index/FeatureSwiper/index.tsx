@@ -63,7 +63,7 @@ const FeatureSwiperItem: NextPage<IFeatureSwiperItemProps> = ({
 };
 
 const FeatureSwiper: NextPage = () => {
-  const { t } = useTranslation(['index']);
+  const { t } = useTranslation(['homepage']);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [swiper, setSwiper] = useState<SwiperType | undefined>(undefined);
   const [autoPlayInterval, setAutoPlayInterval] = useState<NodeJS.Timer>();

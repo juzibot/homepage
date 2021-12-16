@@ -35,7 +35,7 @@ const Company: NextPage<ICompanyProps> = ({
 };
 
 const CompanyDisplayBar: NextPage = () => {
-  const { t } = useTranslation(['index']);
+  const { t } = useTranslation(['homepage']);
   const items: ICompanyProps[] = [
     {
       iconUrl: '/images/icons/contact.svg',
