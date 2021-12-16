@@ -73,7 +73,7 @@ const FeatureSwiper: NextPage = () => {
       title: t(`feature-${index + 1}-title`),
       subTitle: t(`feature-${index + 1}-subtitle`),
       brief: t(`feature-${index + 1}-content`),
-      iconUrl: `/images/feat-0${index + 1}.png`,
+      iconUrl: `/images/feat-0${index + 1}.${index > 1 ? 'svg' : 'png'}`,
     }));
 
   function autoplay(s?: SwiperType) {
