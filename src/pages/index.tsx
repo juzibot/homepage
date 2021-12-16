@@ -3,14 +3,12 @@ import CompanyDisplayBar from '@src/components/index/CompanyDisplayBar/index';
 import FeatureSwiper from '@src/components/index/FeatureSwiper';
 import HeroPage from '@src/components/index/HeroPage';
 import SolutionPage from '@src/components/index/SolutionPage';
-import { ITranslationPageProps } from '@src/interfaces';
 import type { GetStaticProps, NextPage } from 'next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 
-const Home: NextPage<ITranslationPageProps> = ({ locale }) => {
-  const { t } = useTranslation('index');
+const Home: NextPage = ({  }) => {
   const [width, setWidth] = useState(0);
   const SHOW_MASK_WINDOW_WIDTH = 1280;
   useEffect(() => {
@@ -23,7 +21,7 @@ const Home: NextPage<ITranslationPageProps> = ({ locale }) => {
     <>
       <div className="wrapper index-page">
         <div className="container">
-          <HeroPage t={t} locale={locale} />
+          <HeroPage />
         </div>
       </div>
 
@@ -42,7 +40,7 @@ const Home: NextPage<ITranslationPageProps> = ({ locale }) => {
 
       <div className="wrapper solution-page">
         <div className="container">
-          <SolutionPage t={t} locale={locale} />
+          <SolutionPage />
         </div>
       </div>
 

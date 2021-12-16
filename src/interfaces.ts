@@ -1,15 +1,6 @@
 import { TFunction } from 'next-i18next';
 import { CSSProperties } from 'react';
 
-export interface ITranslationProps {
-  t: TFunction;
-  locale: 'zh' | 'en';
-}
-
-export interface ITranslationPageProps {
-  locale: 'zh' | 'en';
-}
-
 export interface IMenuItemProps {
   hasArrow?: boolean;
   href: string;

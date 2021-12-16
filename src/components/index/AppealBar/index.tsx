@@ -1,8 +1,10 @@
 import Aos from 'aos';
 import { NextPage } from 'next';
 import { useEffect } from 'react';
+import { useTranslation } from 'react-i18next';
 
 const AppealBar: NextPage = () => {
+  const { t } = useTranslation(["index"]);
   useEffect(() => {
     if (process.browser) {
       Aos.init();
@@ -10,14 +12,15 @@ const AppealBar: NextPage = () => {
   }, []);
   return (
     <div className="content" data-aos="fade-in">
-      <div className="title">即日起，建立以社交关系为核心的营销体系</div>
+      <div className="title">{t('appeal-title')}</div>
       <button
         className="white-button start-button"
         onClick={() => {
-          if (process.browser) window.open('https://qiwei.juzibot.com/user/login');
+          if (process.browser)
+            window.open('https://qiwei.juzibot.com/user/login');
         }}
       >
-        免费使用
+        {t('appeal-start-free')}
       </button>
     </div>
   );

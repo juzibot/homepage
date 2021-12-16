@@ -1,8 +1,9 @@
-import { IFeatureCardProps, ITranslationProps } from '@src/interfaces';
+import { IFeatureCardProps } from '@src/interfaces';
 import Aos from 'aos';
 import { NextPage } from 'next';
 import { useEffect } from 'react';
 import Image from 'next/image';
+import { useTranslation } from 'react-i18next';
 
 export const FeatureCard: NextPage<IFeatureCardProps> = ({
   title,
@@ -28,7 +29,9 @@ export const FeatureCard: NextPage<IFeatureCardProps> = ({
   );
 };
 
-const HeroPage: NextPage<ITranslationProps> = ({ t, locale }) => {
+const HeroPage: NextPage = () => {
+  const { t, i18n } = useTranslation(['index']);
+  const { language } = i18n;
   useEffect(() => {
     if (process.browser) {
       Aos.init();
@@ -38,14 +41,18 @@ const HeroPage: NextPage<ITranslationProps> = ({ t, locale }) => {
     <>
       <div className="hero-page" data-aos="fade-in">
         <div className="bannar">
-          <h1 className="slogan" style={{ fontSize: locale === 'en' ? 36 : 56 }}>
+          <h1
+            className="slogan"
+            style={{ fontSize: language === 'en' ? 36 : 56 }}
+          >
             {t('slogan')}
           </h1>
           <div className="description">{t('description')}</div>
           <button
             className="primary-button start-button"
             onClick={() => {
-              if (process.browser) window.open('https://qiwei.juzibot.com/user/login');
+              if (process.browser)
+                window.open('https://qiwei.juzibot.com/user/login');
             }}
           >
             {t('start-free')}

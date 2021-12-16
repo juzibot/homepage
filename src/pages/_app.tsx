@@ -8,10 +8,9 @@ import { useTranslation } from 'react-i18next';
 import Footer from '@src/components/Footer';
 
 function JuziApp({ Component, pageProps }: AppProps) {
-  const { t } = useTranslation('common')
   return (
     <>
-      <HeaderBar t={t} locale={pageProps.locale} />
+      <HeaderBar />
       <div className="app">
         <Component {...pageProps} />
       </div>

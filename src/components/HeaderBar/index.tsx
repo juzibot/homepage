@@ -1,15 +1,16 @@
 import { NextPage } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
-import { IMenuItemProps, ITranslationProps } from '@src/interfaces';
+import { IMenuItemProps } from '@src/interfaces';
 import { useState, useEffect } from 'react';
 import { host } from '@src/config';
+import { useTranslation } from 'react-i18next';
 
 const MenuItem: NextPage<IMenuItemProps> = ({
   hasArrow,
   children,
   href,
-  onClick
+  onClick,
 }) => {
   return (
     <Link href={href}>
@@ -40,7 +41,9 @@ const MenuItem: NextPage<IMenuItemProps> = ({
   );
 };
 
-const HeaderBar: NextPage<ITranslationProps> = ({ t, locale }) => {
+const HeaderBar: NextPage = () => {
+  const { t, i18n } = useTranslation(['common']);
+  const { language } = i18n;
   const [borderBottomVisible, setBorderBottomVisible] = useState(false);
   const [isChrome, setIsChrome] = useState(true);
   const [isContactQrcodeVisible, setIsContactQrcodeVisible] = useState(false);
@@ -61,7 +64,7 @@ const HeaderBar: NextPage<ITranslationProps> = ({ t, locale }) => {
         style={{
           borderBottom: borderBottomVisible
             ? '1px solid #eee'
-            : '1px solid #ffffffff'
+            : '1px solid #ffffffff',
         }}
       >
         <div className="container">
@@ -89,7 +92,7 @@ const HeaderBar: NextPage<ITranslationProps> = ({ t, locale }) => {
             <MenuItem
               hasArrow
               onClick={() =>
-                (location.href = `${host}/${locale === 'zh' ? 'en' : 'zh'}`)
+                location.replace(`${host}/${language === 'zh' ? 'en' : 'zh'}`)
               }
               href="#"
             >
@@ -130,7 +133,7 @@ const HeaderBar: NextPage<ITranslationProps> = ({ t, locale }) => {
                 draggable="false"
               />
 
-              <span>微信扫一扫，立即咨询</span>
+              <span>{t('lets-talk-scan-qrcode')}</span>
             </div>
           </div>
         </div>
