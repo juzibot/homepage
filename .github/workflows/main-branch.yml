@@ -1,0 +1,76 @@
+name: main-build-deploy
+on:
+  push:
+    branches:
+      - main
+env:
+  REPO: juzi-official-website
+  ECR_URL: ${{ secrets.ECR_URL }}
+
+jobs:
+  build:
+    runs-on: ubuntu-18.04
+    steps:
+      - name: Checkout Repositories
+        uses: actions/checkout@v2
+
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v1
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: cn-northwest-1
+
+      - name: Login to Amazon ECR
+        id: login-ecr
+        uses: aws-actions/amazon-ecr-login@v1
+
+      - name: Setup NodeJS
+        uses: actions/setup-node@v1
+        with:
+          node-version: 16.7.0
+          registry-url: https://npm.pkg.github.com/
+          scope: '@juzibot'
+
+      - name: Build, tag, and push image to Amazon ECR
+        id: build-image
+        env:
+          ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
+          ECR_REPOSITORY: my-ecr-repo
+          IMAGE_TAG: ${{ github.sha }}
+        run: |
+          export PACKAGE_VERSION=${{ github.sha }}
+          export ECR_URL=${{ env.ECR_URL }}
+          npm run docker-ci
+    outputs:
+      version: ${{ github.sha }}
+
+  deploy:
+    needs: build
+    runs-on: integration
+    steps:
+      - name: deploy ${{env.REPO}}
+        uses: docker://evaneos/ssh-action:0.1.0
+        with:
+          hosts: ${{ secrets.DEPLOY_HOST }}
+          user: ${{ secrets.USER }}
+          private_key: ${{ secrets.PRIVATE_SSH_KEY_INTEGRATION_RUNNER }}
+          commands: |
+            echo $(pwd)
+            export CI_VERSION=${{ needs.build.outputs.version }}
+            echo $CI_VERSION
+            mkdir -p ${{ secrets.DEPLOY_DIR }}
+            cd ${{ secrets.DEPLOY_DIR }}
+            cat <<EOF > docker-compose.yml
+            version: "3"
+            services:
+              juzi-official-website:
+                container_name: ${{ env.REPO }}
+                image: ${{ env.ECR_URL }}/${{ env.REPO }}:$CI_VERSION
+                network_mode: host
+                restart: always
+            EOF
+            /usr/local/bin/aws ecr get-login-password | docker login --username AWS --password-stdin ${{ env.ECR_URL }} 2> /dev/null >&2
+            docker-compose up -d
+            docker ps
+            docker image prune -af

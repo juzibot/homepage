@@ -1,0 +1,9 @@
+version: "3"
+services:
+  juzi-official-website:
+    container_name: juzi-official-website
+    image: website:0.0.1
+    #network_mode: host
+    #restart: always
+    ports:
+      - "3000:3000"
