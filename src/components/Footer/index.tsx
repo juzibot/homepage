@@ -60,7 +60,6 @@ const Footer: NextPage = () => {
     },
   ];
 
-
   const friendLinks: IFriendLink[] = [
     {
       title: t('friendlink-wework'),
@@ -125,10 +124,21 @@ const Footer: NextPage = () => {
         </div>
 
         <div className="registration">
-          <span className="copyright">© {t('copyright')}</span>
+          <span className="copyright">{t('copyright')}</span>
           <Link href="https://beian.miit.gov.cn/">
             <a className="beian" target="_blank">
               {t('registration')}
+            </a>
+          </Link>
+          <Link href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=11010802033527">
+            <a className="beian-portal" target="_blank">
+              <Image
+                src="/images/icons/beian.png"
+                alt="beian"
+                width="16"
+                height="16"
+              />
+              <span style={{ marginLeft: 4 }}>{t('registration-portal')}</span>
             </a>
           </Link>
         </div>
