@@ -2,12 +2,11 @@ import type { AppProps } from 'next/app';
 import { appWithTranslation } from 'next-i18next';
 import '@styles/global.scss';
 import HeaderBar from '@src/components/HeaderBar';
-import { GetStaticProps } from 'next';
+import { GetStaticProps, NextPage } from 'next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
-import { useTranslation } from 'react-i18next';
 import Footer from '@src/components/Footer';
 
-function JuziApp({ Component, pageProps }: AppProps) {
+const JuziApp: NextPage<AppProps> = ({ Component, pageProps }) => {
   return (
     <>
       <HeaderBar />
@@ -17,13 +16,13 @@ function JuziApp({ Component, pageProps }: AppProps) {
       <Footer />
     </>
   );
-}
+};
 
 export const getStaticProps: GetStaticProps = async ({ locale }) => {
   return {
     props: {
       ...(await serverSideTranslations(locale || 'zh', ['common', 'homepage'])),
-      locale: locale?.toLowerCase() ?? 'zh'
+      locale: locale?.toLowerCase() ?? 'zh',
     },
   };
 };

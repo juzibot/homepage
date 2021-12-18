@@ -1,16 +1,15 @@
 @import '@styles/header-bar.module.scss';
 @import '@styles/index.module.scss';
 
-
 @import '@styles/footer.module.scss';
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'PingFang SC', -apple-system, BlinkMacSystemFont, 'Microsoft YaHei', 'Segoe UI',
-    'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: 'PingFang SC', -apple-system, BlinkMacSystemFont,
+    'Microsoft YaHei', 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell',
+    'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
 }
 
 body {
@@ -114,5 +113,42 @@ button.white-button {
   }
 }
 
+.wrapper {
+  width: 100%;
+  min-width: 1280px;
+  padding-left: 22px;
+  padding-right: 22px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
 
+  .container {
+    width: 100%;
+    max-width: 1280px;
+  }
+}
 
+.not-found-page {
+  width: 100%;
+  background-color: #fbfbfd;
+  user-select: none;
+
+  .container {
+    padding-top: 64px;
+    min-height: 800px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .not-found {
+      font-style: normal;
+      font-weight: 400;
+      font-size: 20px;
+      line-height: 32px;
+      color: #364256;
+      margin-bottom: 44px;
+    }
+  }
+}

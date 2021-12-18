@@ -49,5 +49,7 @@
   "friendlink-authing": "Authing",
   "friendlink-5g-msg": "硬核桃社区",
   "copyright": "北京句子科技有限公司",
-  "registration": "京ICP备19049435号-1"
+  "registration": "京ICP备19049435号-1",
+  "404-not-found": "404，暂时没有找到你想访问的页面或资源",
+  "404-go-home": "返回主页"
 }

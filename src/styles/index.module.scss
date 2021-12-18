@@ -4,22 +4,6 @@
 @import '@styles/appeal-bar.module.scss';
 @import '~aos/dist/aos.css';
 
-.wrapper {
-  width: 100%;
-  min-width: 1280px;
-  padding-left: 22px;
-  padding-right: 22px;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
-
-  .container {
-    width: 100%;
-    max-width: 1280px;
-  }
-}
-
 .menu-item {
   display: flex;
   flex-direction: row;
