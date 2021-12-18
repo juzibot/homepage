@@ -31,8 +31,12 @@
     }
 
     .registration > span,
-    .registration > a {
+    .registration > a,
+    .registration > a > span {
       color: #aab9ca;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
     }
   }
 
