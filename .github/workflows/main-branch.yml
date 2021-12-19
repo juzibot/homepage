@@ -11,6 +11,9 @@ env:
 jobs:
   build:
     runs-on: ubuntu-18.04
+    permissions:
+      id-token: write
+      contents: read
     steps:
       - name: Checkout Repositories
         uses: actions/checkout@v2
