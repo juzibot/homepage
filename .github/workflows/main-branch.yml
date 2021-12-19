@@ -4,6 +4,9 @@ on:
     branches:
       - main
       - fix-ci
+permissions:
+  id-token: write
+  contents: read
 env:
   REPO: juzi-official-website
   ECR_URL: ${{ secrets.ECR_URL }}
@@ -16,7 +19,7 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Configure AWS credentials
-        uses: aws-actions/configure-aws-credentials@b8c74de
+        uses: aws-actions/configure-aws-credentials@v1
         with:
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
