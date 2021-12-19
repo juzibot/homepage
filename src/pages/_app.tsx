@@ -5,8 +5,13 @@ import HeaderBar from '@src/components/HeaderBar';
 import { GetStaticProps, NextPage } from 'next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import Footer from '@src/components/Footer';
+import { logHireInfo } from '@src/utils/hire';
+import { useEffect } from 'react';
 
 const JuziApp: NextPage<AppProps> = ({ Component, pageProps }) => {
+  useEffect(() => {
+    logHireInfo();
+  }, []);
   return (
     <>
       <HeaderBar />

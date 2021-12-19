@@ -8,7 +8,7 @@ import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 
-const Home: NextPage = ({  }) => {
+const Home: NextPage = () => {
   const [width, setWidth] = useState(0);
   const SHOW_MASK_WINDOW_WIDTH = 1280;
   useEffect(() => {
