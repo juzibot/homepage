@@ -6,7 +6,6 @@ import SolutionPage from '@src/components/index/SolutionPage';
 import type { GetStaticProps, NextPage } from 'next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { useEffect, useState } from 'react';
-import { useTranslation } from 'react-i18next';
 
 const Home: NextPage = () => {
   const [width, setWidth] = useState(0);
