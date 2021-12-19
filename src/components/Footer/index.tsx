@@ -116,7 +116,7 @@ const Footer: NextPage = () => {
           <span className="friendlink">{t('friendlink')}</span>
           {friendLinks.map(({ title, url }) => (
             <Link key={title} href={url}>
-              <a className="friendlink" target="_blank">
+              <a className="friendlink" target="_blank" rel="noreferrer">
                 {title}
               </a>
             </Link>
@@ -126,12 +126,12 @@ const Footer: NextPage = () => {
         <div className="registration">
           <span className="copyright">{t('copyright')}</span>
           <Link href="https://beian.miit.gov.cn/">
-            <a className="beian" target="_blank">
+            <a className="beian" target="_blank" rel="noreferrer">
               {t('registration')}
             </a>
           </Link>
           <Link href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=11010802033527">
-            <a className="beian-portal" target="_blank">
+            <a className="beian-portal" target="_blank" rel="noreferrer">
               <Image
                 src="/images/icons/beian.png"
                 alt="beian"
