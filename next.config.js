@@ -8,7 +8,7 @@ module.exports = {
     return [
       {
         source: '/join-us',
-        destination: 'https://k0auuqcihb.jobs.feishu.cn/611573',
+        destination: 'https://k0auuqcihb.jobs.feishu.cn/juzibot',
         permanent: true,
       }
     ]
