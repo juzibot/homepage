@@ -10,10 +10,7 @@ env:
 
 jobs:
   build:
-    runs-on: macos-11
-    # permissions:
-    #   id-token: write
-    #   contents: write
+    runs-on: integration
     steps:
       - name: Checkout Repositories
         uses: actions/checkout@v2
