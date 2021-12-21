@@ -10,7 +10,7 @@ env:
 
 jobs:
   build:
-    runs-on: integration
+    runs-on: juzi-official
     steps:
       - name: Checkout Repositories
         uses: actions/checkout@v2
