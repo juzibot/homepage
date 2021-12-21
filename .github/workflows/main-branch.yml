@@ -9,13 +9,13 @@ env:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: juzi-official
     steps:
       - name: Checkout Repositories
         uses: actions/checkout@v2
 
       - name: Configure AWS credentials
-        uses: aws-actions/configure-aws-credentials@v1
+        uses: aws-actions/configure-aws-credentials@v1 #v1.5.11 #20ce4e5ba1de2e753d034b5415075a8767d64d4d #b8c74de753fbcb4868bf2011fb2e15826ce973af
         with:
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
@@ -47,30 +47,25 @@ jobs:
 
   deploy:
     needs: build
-    runs-on: integration
+    runs-on: juzi-official
     steps:
       - name: deploy ${{env.REPO}}
-        uses: docker://evaneos/ssh-action:0.1.0
-        with:
-          hosts: ${{ secrets.DEPLOY_HOST }}
-          user: ${{ secrets.USER }}
-          private_key: ${{ secrets.PRIVATE_SSH_KEY_INTEGRATION_RUNNER }}
-          commands: |
-            echo $(pwd)
-            export CI_VERSION=${{ needs.build.outputs.version }}
-            echo $CI_VERSION
-            mkdir -p ${{ secrets.DEPLOY_DIR }}
-            cd ${{ secrets.DEPLOY_DIR }}
-            cat <<EOF > docker-compose.yml
-            version: "3"
-            services:
-              juzi-official-website:
-                container_name: ${{ env.REPO }}
-                image: ${{ env.ECR_URL }}/${{ env.REPO }}:$CI_VERSION
-                network_mode: host
-                restart: always
-            EOF
-            /usr/local/bin/aws ecr get-login-password | docker login --username AWS --password-stdin ${{ env.ECR_URL }} 2> /dev/null >&2
-            docker-compose up -d
-            docker ps
-            docker image prune -af
+        run: |
+          echo $(pwd)
+          export CI_VERSION=${{ needs.build.outputs.version }}
+          echo $CI_VERSION
+          mkdir -p ${{ secrets.DEPLOY_DIR }}
+          cd ${{ secrets.DEPLOY_DIR }}
+          cat <<EOF > docker-compose.yml
+          version: "3"
+          services:
+            juzi-official-website:
+              container_name: ${{ env.REPO }}
+              image: ${{ env.ECR_URL }}/${{ env.REPO }}:$CI_VERSION
+              network_mode: host
+              restart: always
+          EOF
+          /usr/local/bin/aws ecr get-login-password | docker login --username AWS --password-stdin ${{ env.ECR_URL }} 2> /dev/null >&2
+          docker-compose up -d
+          docker ps
+          docker image prune -af
