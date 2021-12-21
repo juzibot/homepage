@@ -67,6 +67,7 @@ const FeatureSwiper: NextPage = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [swiper, setSwiper] = useState<SwiperType | undefined>(undefined);
   const [autoPlayInterval, setAutoPlayInterval] = useState<NodeJS.Timer>();
+  const [documentVisible, setDocumentVisible] = useState(true);
   const items: IFeatureSwiperItemProps[] = Array(5)
     .fill(null)
     .map((_, index) => ({
@@ -82,7 +83,7 @@ const FeatureSwiper: NextPage = () => {
       clearInterval(autoPlayInterval);
     }
     const _autoPlayInterval = setInterval(() => {
-      if (!s) return;
+      if (!s || !documentVisible) return;
       if (s.isEnd) {
         s.slideTo(0);
       } else {
@@ -93,6 +94,15 @@ const FeatureSwiper: NextPage = () => {
   }
 
   const debounceAutoPlay = debounce(() => autoplay(swiper));
+
+  useEffect(() => {
+    if (process.browser) {
+      document.addEventListener('visibilitychange', () => {
+        const visible = document.visibilityState === 'visible';
+        setDocumentVisible(visible);
+      });
+    }
+  }, []);
 
   return (
     <>
