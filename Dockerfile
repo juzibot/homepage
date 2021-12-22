@@ -1,13 +1,4 @@
-FROM node:16.10.0-alpine3.11
-
-ENV TIME_ZONE=Asia/Shanghai
-
-RUN \
-  mkdir -p /usr/src/app \
-  && apk add --no-cache tzdata curl python3 musl make && ln -sf python3 /usr/bin/python \
-  && echo "${TIME_ZONE}" > /etc/timezone \
-  && ln -sf /usr/share/zoneinfo/${TIME_ZONE} /etc/localtime
-
+FROM 789252305933.dkr.ecr.cn-northwest-1.amazonaws.com.cn/jz-node-16.7.0-alpine-build:0.0.1
 WORKDIR /usr/src/app
 
 COPY . . 
