@@ -2,9 +2,11 @@ FROM node:16.10.0-alpine3.11
 
 ENV TIME_ZONE=Asia/Shanghai
 
-RUN sed -i 's/dl-cdn.alpinelinux.org/mirrors.aliyun.com/g' /etc/apk/repositories \
-  && echo "${TIME_ZONE}" > /etc/timezone \ 
-  && ln -sf /usr/share/zoneinfo/${TIME_ZONE} /etc/localtime 
+RUN \
+  mkdir -p /usr/src/app \
+  && apk add --no-cache tzdata curl python3 musl make && ln -sf python3 /usr/bin/python \
+  && echo "${TIME_ZONE}" > /etc/timezone \
+  && ln -sf /usr/share/zoneinfo/${TIME_ZONE} /etc/localtime
 
 WORKDIR /usr/src/app
 
