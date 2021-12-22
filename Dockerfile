@@ -3,8 +3,7 @@ WORKDIR /usr/src/app
 
 COPY . . 
 
-RUN npm install --registry=https://registry.npmmirror.com \
-     && npm run build
+RUN npm install && npm run build
 EXPOSE 3000/tcp
 
 CMD ["npm", "run", "start"]
