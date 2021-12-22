@@ -12,7 +12,7 @@ jobs:
     runs-on: juzi-official
     steps:
       - name: Checkout Repositories
-        uses: actions/checkout@v2
+        uses: actions/checkout@v2.3.4
 
       - name: Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@v1 #v1.5.11 #20ce4e5ba1de2e753d034b5415075a8767d64d4d #b8c74de753fbcb4868bf2011fb2e15826ce973af
