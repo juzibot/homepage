@@ -5,6 +5,7 @@ import { IMenuItemProps } from '@src/interfaces';
 import { useState, useEffect } from 'react';
 import { host } from '@src/config';
 import { useTranslation } from 'react-i18next';
+import { useRouter } from 'next/router';
 
 const MenuItem: NextPage<IMenuItemProps> = ({
   hasArrow,
@@ -41,12 +42,23 @@ const MenuItem: NextPage<IMenuItemProps> = ({
   );
 };
 
+const headerbarExtraClassMap: { [path: string]: string } = {
+  '/about-us': 'about-us',
+};
+
 const HeaderBar: NextPage = () => {
   const { t, i18n } = useTranslation(['common']);
   const { language } = i18n;
   const [borderBottomVisible, setBorderBottomVisible] = useState(false);
   const [isChrome, setIsChrome] = useState(true);
   const [isContactQrcodeVisible, setIsContactQrcodeVisible] = useState(false);
+  const [headerbarExtraClass, setHeaderbarExtraClass] = useState('');
+
+  const { pathname } = useRouter();
+
+  useEffect(() => {
+    setHeaderbarExtraClass(headerbarExtraClassMap[pathname] || '');
+  }, [pathname]);
 
   useEffect(() => {
     if (process.browser) {
@@ -60,16 +72,18 @@ const HeaderBar: NextPage = () => {
   return (
     <>
       <header
-        className={`wrapper header-bar ${!isChrome ? 'opacity' : ''}`}
+        className={`wrapper header-bar ${
+          !isChrome ? 'opacity' : ''
+        } ${headerbarExtraClass} ${borderBottomVisible ? 'has-bg' : ''}`}
         style={{
           borderBottom: borderBottomVisible
             ? '1px solid #eee'
-            : '1px solid #ffffffff',
+            : '1px solid #ffffff00',
         }}
       >
         <div className="container">
           <menu className="header-left">
-            <a className="logo" href="https://www.juzibot.com/">
+            <a className="logo" href={host}>
               <Image
                 alt="logo"
                 src="/images/logo.svg"
@@ -83,9 +97,7 @@ const HeaderBar: NextPage = () => {
             {/* <MenuItem href="/">{t('cases')}</MenuItem> */}
             <MenuItem href="https://blog.juzibot.com/">{t('course')}</MenuItem>
             <MenuItem href="https://wechaty.js.org/">{t('developer')}</MenuItem>
-            <MenuItem href="https://botorange.com/workabout.html">
-              {t('about')}
-            </MenuItem>
+            <MenuItem href="/about-us">{t('about')}</MenuItem>
           </menu>
 
           <menu className="header-right">

@@ -1,4 +1,3 @@
-import { TFunction } from 'next-i18next';
 import { CSSProperties } from 'react';
 
 export interface IMenuItemProps {
@@ -59,4 +58,19 @@ export interface IFooterMenu {
 export interface IFriendLink {
   title: string;
   url: string;
+}
+
+export interface IGreatTitleBar {
+  title: string;
+  subtitle: string;
+  notes: string;
+}
+
+export interface IFeatureItemProps {
+  iconUrl: string;
+  hoverIconUrl: string;
+  title: string;
+  subtitle: string;
+  redirectUrl: string;
+  mask: string;
 }
