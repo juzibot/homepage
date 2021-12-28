@@ -1,5 +1,6 @@
 @import '@styles/header-bar.module.scss';
 @import '@styles/index.module.scss';
+@import '@styles/about-us.module.scss';
 
 @import '@styles/footer.module.scss';
 
@@ -14,6 +15,7 @@
 
 body {
   overflow-x: auto;
+  scroll-behavior: smooth;
 
   .app {
     width: 100%;

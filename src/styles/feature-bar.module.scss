@@ -1,0 +1,91 @@
+.feature-bar {
+  .container {
+    .content {
+      width: 100%;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-column-gap: 24px;
+      padding: 48px 0;
+
+      .feature-item {
+        width: 280px;
+        height: 360px;
+        background: linear-gradient(
+            180deg,
+            rgba(5, 85, 255, 0.04) 0%,
+            rgba(5, 85, 255, 0.024) 84.37%,
+            rgba(5, 85, 255, 0) 100%
+          ),
+          #ffffff;
+
+        border-radius: 18px;
+        overflow: hidden;
+
+        &.hover {
+          background: linear-gradient(180deg, #0555ff 0%, #4380ff 100%), #fff;
+          background-repeat: no-repeat;
+          border: 1px solid #ffffff;
+        }
+      }
+
+      .feature-item > .item {
+        width: 100%;
+        height: 100%;
+        padding: 40px 24px;
+
+        border: 1px solid #eff;
+        box-shadow: 0px 20px 60px -20px rgba(5, 85, 255, 0.1);
+        border-radius: 16px;
+        user-select: none;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        cursor: pointer;
+
+        background-repeat: no-repeat !important;
+        background-position: right bottom !important;
+
+        .title {
+          font-family: PingFang SC;
+          font-style: normal;
+          font-weight: normal;
+          font-size: 24px;
+          line-height: 40px;
+          margin-top: 28px;
+          margin-bottom: 8px;
+        }
+
+        .subtitle {
+          font-family: PingFang SC;
+          font-style: normal;
+          font-weight: 300;
+          font-size: 14px;
+          line-height: 24px;
+          text-align: justify;
+          color: #54657e;
+          height: 80px;
+        }
+
+        .redirect-url {
+          color: #0555ff;
+          margin-top: 48px;
+          font-family: PingFang SC;
+          font-style: normal;
+          font-weight: 500;
+          font-size: 18px;
+          justify-self: flex-end;
+        }
+
+        &.hover {
+          .title,
+          .subtitle,
+          .redirect-url {
+            color: #ffffff;
+          }
+        }
+      }
+    }
+  }
+}
