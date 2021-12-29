@@ -37,10 +37,12 @@
           justify-content: center;
           align-items: center;
           filter: grayscale(100%);
+          opacity: 0.8;
           transition: all 0.3s;
 
           &:hover {
             filter: grayscale(0%);
+            opacity: 1;
           }
         }
       }
