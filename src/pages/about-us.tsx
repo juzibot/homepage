@@ -1,11 +1,17 @@
 import FeatureBar from '@src/components/features/FeatureBar';
 import AppealBar from '@src/components/index/AppealBar';
 import { GetStaticProps, NextPage } from 'next';
+import { useTranslation } from 'next-i18next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+import { NextSeo } from 'next-seo';
 
 const AboutUsHeroPage: NextPage = () => {
+  const { t } = useTranslation(['common', 'about-us']);
   return (
     <div className="first-page">
+      <NextSeo
+        title={`${t('about-us:title')} - ${t('title')}`}
+      />
       <div className="left-side">
         <p>
           用<strong>新的营销方式</strong>
@@ -59,9 +65,9 @@ const AboutUsPage: NextPage = () => {
 export const getStaticProps: GetStaticProps = async ({ locale }) => {
   return {
     props: {
-      ...(await serverSideTranslations(locale || 'zh', ['common', 'homepage'])),
-      locale: locale?.toLowerCase() ?? 'zh',
-    },
+      ...(await serverSideTranslations(locale || 'zh', ['common', 'about-us', 'homepage'])),
+      locale: locale?.toLowerCase() ?? 'zh'
+    }
   };
 };
 

@@ -2,14 +2,18 @@ import AppealBar from '@src/components/index/AppealBar';
 import CompanyDisplayBar from '@src/components/index/CompanyDisplayBar/index';
 import FeatureSwiper from '@src/components/index/FeatureSwiper';
 import HeroPage from '@src/components/index/HeroPage';
+import LogosWall from '@src/components/index/LogosWall';
 import SolutionPage from '@src/components/index/SolutionPage';
 import type { GetStaticProps, NextPage } from 'next';
+import { useTranslation } from 'next-i18next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+import { NextSeo } from 'next-seo';
 import { useEffect, useState } from 'react';
 
 const Home: NextPage = () => {
   const [width, setWidth] = useState(0);
   const SHOW_MASK_WINDOW_WIDTH = 1280;
+  const { t } = useTranslation(['common']);
   useEffect(() => {
     if (process.browser) {
       window.addEventListener('resize', () => setWidth(document.body.clientWidth));
@@ -18,6 +22,7 @@ const Home: NextPage = () => {
   }, []);
   return (
     <>
+    <NextSeo title={t('title')} />
       <div className="wrapper index-page">
         <div className="container">
           <HeroPage />
@@ -46,6 +51,12 @@ const Home: NextPage = () => {
       <div className="wrapper company-display">
         <div className="container">
           <CompanyDisplayBar />
+        </div>
+      </div>
+
+      <div className="wrapper logos-wall">
+        <div className="container">
+          <LogosWall />
         </div>
       </div>
 
