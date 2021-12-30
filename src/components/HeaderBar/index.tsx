@@ -101,7 +101,7 @@ const HeaderBar: NextPage = () => {
           </menu>
 
           <menu className="header-right">
-            <MenuItem
+            {/* <MenuItem
               hasArrow
               onClick={() =>
                 location.replace(`${host}/${language === 'zh' ? 'en' : 'zh'}`)
@@ -109,7 +109,7 @@ const HeaderBar: NextPage = () => {
               href="#"
             >
               {t('language')}
-            </MenuItem>
+            </MenuItem> */}
             <Link href="#">
               <a
                 className="menu-item primary-link"
