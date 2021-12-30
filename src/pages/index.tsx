@@ -1,3 +1,4 @@
+import Seo from '@src/components/common/Seo';
 import AppealBar from '@src/components/index/AppealBar';
 import CompanyDisplayBar from '@src/components/index/CompanyDisplayBar/index';
 import FeatureSwiper from '@src/components/index/FeatureSwiper';
@@ -5,24 +6,23 @@ import HeroPage from '@src/components/index/HeroPage';
 import LogosWall from '@src/components/index/LogosWall';
 import SolutionPage from '@src/components/index/SolutionPage';
 import type { GetStaticProps, NextPage } from 'next';
-import { useTranslation } from 'next-i18next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
-import { NextSeo } from 'next-seo';
 import { useEffect, useState } from 'react';
 
 const Home: NextPage = () => {
   const [width, setWidth] = useState(0);
   const SHOW_MASK_WINDOW_WIDTH = 1280;
-  const { t } = useTranslation(['common']);
   useEffect(() => {
     if (process.browser) {
-      window.addEventListener('resize', () => setWidth(document.body.clientWidth));
+      window.addEventListener('resize', () =>
+        setWidth(document.body.clientWidth)
+      );
       setWidth(document.body.clientWidth);
     }
   }, []);
   return (
     <>
-    <NextSeo title={t('title')} />
+      <Seo page="homepage" />
       <div className="wrapper index-page">
         <div className="container">
           <HeroPage />
@@ -33,7 +33,9 @@ const Home: NextPage = () => {
         <div className="container">
           <div
             className="mask-wrapper"
-            style={{ visibility: width > SHOW_MASK_WINDOW_WIDTH ? 'visible' : 'hidden' }}
+            style={{
+              visibility: width > SHOW_MASK_WINDOW_WIDTH ? 'visible' : 'hidden',
+            }}
           >
             <div className="mask" />
             <div className="mask-reverse" />
@@ -72,7 +74,7 @@ const Home: NextPage = () => {
 export const getStaticProps: GetStaticProps = async ({ locale }) => {
   return {
     props: {
-      ...(await serverSideTranslations(locale || 'zh', ['common', 'homepage'])),
+      ...(await serverSideTranslations(locale || 'zh', ['common', 'homepage', 'seos'])),
       locale: locale?.toLowerCase() ?? 'zh',
     },
   };
