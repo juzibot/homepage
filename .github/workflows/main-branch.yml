@@ -68,4 +68,4 @@ jobs:
           /usr/local/bin/aws ecr get-login-password | docker login --username AWS --password-stdin ${{ env.ECR_URL }} 2> /dev/null >&2
           docker-compose up -d
           docker ps
-          docker image prune -af
+          docker system prune -af
