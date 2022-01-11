@@ -22,12 +22,21 @@
     filter: blur(10px);
     backdrop-filter: blur(10px);
     z-index: -1;
+    transition: all 0.3s;
   }
 
   &.opacity::before {
     filter: unset !important;
     backdrop-filter: unset !important;
     background-color: rgba(255, 255, 255, 0.9);
+  }
+
+  &.about-us::before {
+    background-color: unset !important;
+  }
+
+  &.has-bg::before {
+    background-color: rgba(255, 255, 255, 0.9) !important;
   }
 
   .container {

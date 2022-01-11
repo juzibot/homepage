@@ -1,0 +1,52 @@
+@import '@styles/appeal-bar.module.scss';
+@import '@styles/feature-bar.module';
+
+.about-us-page {
+  .container {
+    min-height: 600px;
+
+    .first-page {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: flex-start;
+      padding-top: calc(64px + 120px);
+      min-height: 600px;
+
+      .left-side {
+        width: 500px;
+        font-family: PingFang SC;
+        font-style: normal;
+        font-weight: 600;
+        font-size: 54px;
+        color: #364256;
+        letter-spacing: 2px;
+        user-select: none;
+
+        strong {
+          color: #eb7f34;
+          margin-left: 4px;
+        }
+      }
+
+      .right-side {
+        margin-top: 8px;
+        width: calc(100% - 500px - 108px);
+        margin-left: 48px;
+        font-family: PingFang SC;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 18px;
+        color: #869bb9;
+        line-height: 36px;
+        vertical-align: baseline;
+        text-align: justify;
+        padding-right: 24px;
+
+        & > p:not(:first-child) {
+          margin-top: 24px;
+        }
+      }
+    }
+  }
+}

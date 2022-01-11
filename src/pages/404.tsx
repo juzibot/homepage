@@ -1,3 +1,4 @@
+import Seo from '@src/components/common/Seo';
 import { host } from '@src/config';
 import { GetStaticProps, NextPage } from 'next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
@@ -8,6 +9,7 @@ const Custom404: NextPage = () => {
   const { t } = useTranslation(['common']);
   return (
     <div className="wrapper not-found-page">
+      <Seo page="404" />
       <div className="container">
         <Image
           src="/images/404.svg"
@@ -35,7 +37,7 @@ const Custom404: NextPage = () => {
 export const getStaticProps: GetStaticProps = async ({ locale }) => {
   return {
     props: {
-      ...(await serverSideTranslations(locale || 'zh', ['common', 'homepage'])),
+      ...(await serverSideTranslations(locale || 'zh', ['common', 'homepage', 'seos'])),
       locale: locale?.toLowerCase() ?? 'zh',
     },
   };
