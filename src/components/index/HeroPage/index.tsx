@@ -4,6 +4,7 @@ import { NextPage } from 'next';
 import { useEffect } from 'react';
 import Image from 'next/image';
 import { useTranslation } from 'react-i18next';
+import LogosWall from '../LogosWall';
 
 export const FeatureCard: NextPage<IFeatureCardProps> = ({
   title,
@@ -57,6 +58,12 @@ const HeroPage: NextPage = () => {
           >
             {t('start-free')}
           </button>
+        </div>
+      </div>
+
+      <div className="logos-wall">
+        <div className="container">
+          <LogosWall />
         </div>
       </div>
 

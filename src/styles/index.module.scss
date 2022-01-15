@@ -22,11 +22,12 @@
 .index-page {
   width: 100%;
   padding-top: calc(64px + 12px);
-  height: 960px;
+  height: 1280px;
   background-image: url('/images/background.svg');
   background-repeat: no-repeat;
   background-size: contain;
-  background-position: bottom;
+  background-position-x: center;
+  background-position-y: 840px;
 
   .hero-page {
     width: 100%;
