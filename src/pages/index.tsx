@@ -56,12 +56,6 @@ const Home: NextPage = () => {
         </div>
       </div>
 
-      <div className="wrapper logos-wall">
-        <div className="container">
-          <LogosWall />
-        </div>
-      </div>
-
       <div className="wrapper appeal-bar">
         <div className="container">
           <AppealBar />
