@@ -2,11 +2,13 @@
 import { NextPage } from 'next';
 import { useTranslation } from 'react-i18next';
 import { useState } from 'react';
-const logoUrls = Array(44)
+const logos = Array(44)
   .fill(null)
   .map((_, index) => {
     return `/images/index-logos/${index + 1}.png`;
   });
+
+const logoUrls = [logos.slice(0, 22), logos.slice(22)];
 
 const LogosWall: NextPage = () => {
   const { t } = useTranslation(['homepage']);
@@ -20,11 +22,31 @@ const LogosWall: NextPage = () => {
           className="logos-scroll-bar"
           style={{ animationPlayState: isAnimatePaused ? 'paused' : 'running' }}
         >
-          {logoUrls.map((item, index) => {
+          {logoUrls[0].map((item, index) => {
             return (
               <div
                 className="logo"
                 key={`${index}`}
+                onMouseMove={() => toggleAnimatePaused(true)}
+                onMouseLeave={() => toggleAnimatePaused(false)}
+              >
+                <div className="logo-item">
+                  <img src={item} alt="logo" draggable="false" />
+                </div>
+              </div>
+            );
+          })}
+        </div>
+
+        <div
+          className="logos-scroll-bar"
+          style={{ animationPlayState: isAnimatePaused ? 'paused' : 'running' }}
+        >
+          {logoUrls[1].map((item, index) => {
+            return (
+              <div
+                className="logo"
+                key={`${index + 22}`}
                 onMouseMove={() => toggleAnimatePaused(true)}
                 onMouseLeave={() => toggleAnimatePaused(false)}
               >

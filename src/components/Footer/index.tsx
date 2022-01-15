@@ -79,68 +79,74 @@ const Footer: NextPage = () => {
     },
   ];
   return (
-    <footer className="wrapper footer-bar">
-      <div className="container">
-        <div className="menu-container">
-          <div className="logo">
-            <Image
-              src="/images/logo.svg"
-              width={120}
-              height={64}
-              draggable="false"
-              alt="logo"
-            ></Image>
-          </div>
-
-          {menus.map((menu) => (
-            <div key={menu.title} className="menu-group">
-              <div className="title">{menu.title}</div>
-              <div className="menus">
-                {menu.child.map((item, idx) =>
-                  item.tooltip ? (
-                    <div key={idx}>{item.title}</div>
-                  ) : (
-                    <a href={item.url} key={idx}>
-                      {item.title}
-                    </a>
-                  )
-                )}
-              </div>
+    <footer>
+      <div className="wrapper footer-bar">
+        <div className="container">
+          <div className="menu-container">
+            <div className="logo">
+              <Image
+                src="/images/logo.svg"
+                width={120}
+                height={64}
+                draggable="false"
+                alt="logo"
+              ></Image>
             </div>
-          ))}
+
+            {menus.map((menu) => (
+              <div key={menu.title} className="menu-group">
+                <div className="title">{menu.title}</div>
+                <div className="menus">
+                  {menu.child.map((item, idx) =>
+                    item.tooltip ? (
+                      <div key={idx}>{item.title}</div>
+                    ) : (
+                      <a href={item.url} key={idx}>
+                        {item.title}
+                      </a>
+                    )
+                  )}
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
 
-      <div className="registration-container">
-        <div className="friendship-links">
-          <span className="friendlink">{t('friendlink')}</span>
-          {friendLinks.map(({ title, url }) => (
-            <Link key={title} href={url}>
-              <a className="friendlink" target="_blank" rel="noreferrer">
-                {title}
+      <div className="wrapper registration">
+        <div className="container registration-container">
+          <div className="friendship-links">
+            <span className="friendlink">{t('friendlink')}</span>
+            {friendLinks.map(({ title, url }) => (
+              <Link key={title} href={url}>
+                <a className="friendlink" target="_blank" rel="noreferrer">
+                  {title}
+                </a>
+              </Link>
+            ))}
+          </div>
+
+          <div className="registration">
+            <span className="copyright">{t('copyright')}</span>
+            <Link href="https://beian.miit.gov.cn/">
+              <a className="beian" target="_blank" rel="noreferrer">
+                {t('registration')}
               </a>
             </Link>
-          ))}
-        </div>
-
-        <div className="registration">
-          <span className="copyright">{t('copyright')}</span>
-          <Link href="https://beian.miit.gov.cn/">
-            <a className="beian" target="_blank" rel="noreferrer">
-              {t('registration')}
-            </a>
-          </Link>
-          <Link href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=11010802033527">
-            <a className="beian-portal" target="_blank" rel="noreferrer">
-              <Image
-                src="/images/icons/beian.png"
-                alt="beian"
-                width="16"
-                height="16"
-              />
-              <span style={{ marginLeft: 4 }}>{t('registration-portal')}</span>
-            </a>
-          </Link>
+            <Link href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=11010802033527">
+              <a className="beian-portal" target="_blank" rel="noreferrer">
+                <Image
+                  src="/images/icons/beian.png"
+                  alt="beian"
+                  width="16"
+                  height="16"
+                />
+                <span style={{ marginLeft: 4 }}>
+                  {t('registration-portal')}
+                </span>
+              </a>
+            </Link>
+          </div>
         </div>
       </div>
     </footer>
