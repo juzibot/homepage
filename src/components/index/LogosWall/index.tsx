@@ -8,7 +8,7 @@ const logos = Array(44)
     return `/images/index-logos/${index + 1}.png`;
   });
 
-const logoUrls = [logos.slice(0, 22), logos.slice(22)];
+// const logoUrls = [logos.slice(0, 22), logos.slice(22)];
 
 const LogosWall: NextPage = () => {
   const { t } = useTranslation(['homepage']);
@@ -22,7 +22,7 @@ const LogosWall: NextPage = () => {
           className="logos-scroll-bar"
           style={{ animationPlayState: isAnimatePaused ? 'paused' : 'running' }}
         >
-          {logoUrls[0].map((item, index) => {
+          {logos.map((item, index) => {
             return (
               <div
                 className="logo"
@@ -38,7 +38,7 @@ const LogosWall: NextPage = () => {
           })}
         </div>
 
-        <div
+        {/* <div
           className="logos-scroll-bar"
           style={{ animationPlayState: isAnimatePaused ? 'paused' : 'running' }}
         >
@@ -56,7 +56,7 @@ const LogosWall: NextPage = () => {
               </div>
             );
           })}
-        </div>
+        </div> */}
       </div>
     </>
   );
