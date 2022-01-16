@@ -11,7 +11,7 @@ import { useEffect, useState } from 'react';
 
 const Home: NextPage = () => {
   const [width, setWidth] = useState(0);
-  const SHOW_MASK_WINDOW_WIDTH = 1280;
+  const SHOW_MASK_WINDOW_WIDTH = 1200;
   useEffect(() => {
     if (process.browser) {
       window.addEventListener('resize', () =>
