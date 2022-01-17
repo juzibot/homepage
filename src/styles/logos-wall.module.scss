@@ -11,11 +11,8 @@
       0% {
         transform: translate3d(0, 0, 0);
       }
-      50% {
-        transform: translate3d(-8600px, 0, 0);
-      }
       100% {
-        transform: translate3d(0, 0, 0);
+        transform: translate3d(-8600px, 0, 0);
       }
     }
 
@@ -73,7 +70,7 @@
       }
 
       .logos-scroll-bar {
-        animation: infinityScrollLeft 100s linear infinite normal;
+        animation: infinityScrollLeft 120s linear infinite normal;
 
         &:nth-child(2) {
           animation-name: infinityScrollLeft;
