@@ -10,6 +10,11 @@ module.exports = {
         source: '/join-us',
         destination: 'https://k0auuqcihb.jobs.feishu.cn/juzibot',
         permanent: true,
+      },
+      {
+        source: '/about.html',
+        destination: '/about-us',
+        permanent: true,
       }
     ]
   }
