@@ -38,26 +38,29 @@ const CompanyDisplayBar: NextPage = () => {
   const { t } = useTranslation(['homepage']);
   const items: ICompanyProps[] = [
     {
-      iconUrl: '/images/icons/contact.svg',
+      iconUrl:
+        'https://cdn-official-website.juzibot.com/images/icons/contact.svg',
       redirectUrl: '/',
     },
     {
-      iconUrl: '/images/icons/growing.svg',
+      iconUrl:
+        'https://cdn-official-website.juzibot.com/images/icons/growing.svg',
       redirectUrl: '/',
     },
     {
-      iconUrl: '/images/icons/rocket.svg',
+      iconUrl:
+        'https://cdn-official-website.juzibot.com/images/icons/rocket.svg',
       redirectUrl: '/',
     },
     {
-      iconUrl: '/images/icons/safe.svg',
+      iconUrl: 'https://cdn-official-website.juzibot.com/images/icons/safe.svg',
       redirectUrl: '/',
     },
   ].map((item, index) => ({
     ...item,
     title: t(`company-${index + 1}-title`),
     subTitle: t(`company-${index + 1}-subtitle`),
-    companyLogoUrl: `/images/icons/logo-${index}.svg`,
+    companyLogoUrl: `https://cdn-official-website.juzibot.com/images/icons/logo-${index}.svg`,
     companyName: t(`company-${index + 1}-name`),
     companyBrief: t(`company-${index + 1}-brief`),
     comment: t(`company-${index + 1}-comment`),
@@ -87,7 +90,7 @@ const CompanyDisplayBar: NextPage = () => {
       {/* <div className="comment-bar" data-aos="fade-in">
         <Image
           className="quote"
-          src="/images/icons/quote.svg"
+          src="https://cdn-official-website.juzibot.com/images/icons/quote.svg"
           draggable="false"
           alt="quote-icon"
           width="24"
@@ -97,7 +100,7 @@ const CompanyDisplayBar: NextPage = () => {
 
         <Image
           className="quote reverse"
-          src="/images/icons/quote.svg"
+          src="https://cdn-official-website.juzibot.com/images/icons/quote.svg"
           draggable="false"
           alt="quote-icon"
           width="24"

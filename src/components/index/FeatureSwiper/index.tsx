@@ -27,7 +27,7 @@ const FeatureSwiperItem: NextPage<IFeatureSwiperItemProps> = ({
         <div data-swiper-parallax="-300">
           <div className="num">
             <Image
-              src={`/images/icons/0${index}.svg`}
+              src={`https://cdn-official-website.juzibot.com/images/icons/0${index}.svg`}
               width="97"
               height="130"
               draggable="false"
@@ -74,7 +74,9 @@ const FeatureSwiper: NextPage = () => {
       title: t(`feature-${index + 1}-title`),
       subTitle: t(`feature-${index + 1}-subtitle`),
       brief: t(`feature-${index + 1}-content`),
-      iconUrl: `/images/feat-0${index + 1}.${index > 1 ? 'svg' : 'png'}`,
+      iconUrl: `https://cdn-official-website.juzibot.com/images/feat-0${
+        index + 1
+      }.${index > 1 ? 'svg' : 'png'}`,
     }));
 
   function autoplay(s?: SwiperType) {
