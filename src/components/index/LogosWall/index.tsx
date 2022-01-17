@@ -5,7 +5,7 @@ import { useState } from 'react';
 const logos = Array(44)
   .fill(null)
   .map((_, index) => {
-    return `/images/index-logos/${index + 1}.png`;
+    return `https://cdn-official-website.juzibot.com/images/index-logos/${index + 1}.png`;
   });
 
 // const logoUrls = [logos.slice(0, 22), logos.slice(22)];

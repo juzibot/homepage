@@ -86,7 +86,7 @@ const HeaderBar: NextPage = () => {
             <a className="logo" href={host}>
               <Image
                 alt="logo"
-                src="/images/logo.svg"
+                src="https://cdn-official-website.juzibot.com/images/logo.svg"
                 width={120}
                 height={64}
                 draggable="false"
@@ -138,7 +138,7 @@ const HeaderBar: NextPage = () => {
           >
             <div className="box">
               <Image
-                src="/images/contact-qrcode.png"
+                src="https://cdn-official-website.juzibot.com/images/contact-qrcode.png"
                 width="200"
                 height="200"
                 alt="qrcode"
