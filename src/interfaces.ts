@@ -4,6 +4,8 @@ export interface IMenuItemProps {
   hasArrow?: boolean;
   href: string;
   onClick?: () => void;
+  onMenuHover?: () => void;
+  onMenuHide?: () => void;
 }
 
 export interface IFeatureCardProps {
@@ -73,4 +75,17 @@ export interface IFeatureItemProps {
   subtitle: string;
   redirectUrl: string;
   mask: string;
+}
+
+export enum HeaderBarMenu {
+  FEATURES,
+  SOLUTIONS,
+  QRCODE
+}
+export interface IHeaderBarMenuProps {
+  left: number;
+  style?: CSSProperties;
+  name: HeaderBarMenu;
+  onMouseLeave: () => void;
+  onMouseMove: () => void;
 }
