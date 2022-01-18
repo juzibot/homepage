@@ -45,7 +45,7 @@ const FeatureSwiperItem: NextPage<IFeatureSwiperItemProps> = ({
         </div>
         <Link href="/">
           <a className="read-more" data-swiper-parallax="-300">
-            了解更多 →
+            了解更多
           </a>
         </Link>
       </div>
@@ -108,6 +108,11 @@ const FeatureSwiper: NextPage = () => {
 
   return (
     <>
+      <div className="magic-background">
+        {/* <div className="orange"></div> */}
+        <div className="blue"></div>
+        <div className="green"></div>
+      </div>
       <div className="feature-swiper">
         <Swiper
           spaceBetween={0}
