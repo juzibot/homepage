@@ -9,7 +9,7 @@ env:
 
 jobs:
   build:
-    runs-on: juzi-official
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout Repositories
         uses: actions/checkout@v2.3.4
