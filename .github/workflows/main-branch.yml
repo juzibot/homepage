@@ -51,7 +51,6 @@ jobs:
     steps:
       - name: deploy ${{env.REPO}}
         run: |
-          echo $(pwd)
           export CI_VERSION=${{ needs.build.outputs.version }}
           echo $CI_VERSION
           mkdir -p ${{ secrets.DEPLOY_DIR }}
