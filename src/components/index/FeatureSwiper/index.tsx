@@ -68,6 +68,7 @@ const FeatureSwiper: NextPage = () => {
   const [swiper, setSwiper] = useState<SwiperType | undefined>(undefined);
   const [autoPlayInterval, setAutoPlayInterval] = useState<NodeJS.Timer>();
   const [documentVisible, setDocumentVisible] = useState(true);
+  const [isChrome, toggleIsChrome] = useState(true);
   const items: IFeatureSwiperItemProps[] = Array(5)
     .fill(null)
     .map((_, index) => ({
@@ -103,15 +104,25 @@ const FeatureSwiper: NextPage = () => {
         const visible = document.visibilityState === 'visible';
         setDocumentVisible(visible);
       });
+      toggleIsChrome(/Chrome|Safari/.test(navigator.userAgent));
     }
   }, []);
 
   return (
     <>
-      <div className="magic-background">
+      <div
+        className="magic-background"
+        style={{ filter: `blur(${isChrome ? 100 : 800}px)` }}
+      >
         {/* <div className="orange"></div> */}
-        <div className="blue"></div>
-        <div className="green"></div>
+        <div
+          className="blue"
+          style={{ filter: `blur(${isChrome ? 0 : 800}px)` }}
+        ></div>
+        <div
+          className="green"
+          style={{ filter: `blur(${isChrome ? 0 : 800}px)` }}
+        ></div>
       </div>
       <div className="feature-swiper">
         <Swiper

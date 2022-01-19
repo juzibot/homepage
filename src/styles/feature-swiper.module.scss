@@ -60,13 +60,12 @@
     }
 
     .blue {
-      width: 120px;
-      height: 120px;
+      width: 180px;
+      height: 180px;
       background-color: #245bf3;
       border-radius: 50%;
       position: absolute;
-      transform: translate(60px, 60px) scale(1.2);
-      justify-self: center;
+      transform: translate(120px, 120px);
     }
 
     .green {
@@ -75,8 +74,6 @@
       background-color: #66dcc0;
       border-radius: 50%;
       position: absolute;
-      transform: translate(60px, 60px) scale(1.6);
-      align-self: flex-start;
     }
   }
 
@@ -194,6 +191,7 @@
           padding: 12px 32px;
           border: 1px solid #eee;
           border-radius: 8px;
+          transition: all 0.3s;
 
           &:hover {
             background-color: #fafafa;
