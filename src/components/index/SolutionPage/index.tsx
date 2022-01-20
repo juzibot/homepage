@@ -73,7 +73,7 @@ const SolutionPage: NextPage = () => {
           imagePosition="left"
           imageUrl="https://cdn-official-website.juzibot.com/images/solution-01.svg"
           dividerUrl="https://cdn-official-website.juzibot.com/images/solution-01-divider.svg"
-          style={{ transform: 'translateY(-10px)' }}
+          style={{ transform: 'translateY(-30px)' }}
         />
 
         <SolutionItem
@@ -82,7 +82,7 @@ const SolutionPage: NextPage = () => {
           imagePosition="right"
           imageUrl="https://cdn-official-website.juzibot.com/images/solution-02.svg"
           dividerUrl="https://cdn-official-website.juzibot.com/images/solution-02-divider.svg"
-          style={{ transform: 'translateY(-30px)' }}
+          style={{ transform: 'translateY(-51px)' }}
         />
 
         <SolutionItem
@@ -91,7 +91,7 @@ const SolutionPage: NextPage = () => {
           imagePosition="left"
           imageUrl="https://cdn-official-website.juzibot.com/images/solution-03.svg"
           dividerUrl="https://cdn-official-website.juzibot.com/images/solution-03-divider.svg"
-          style={{ transform: 'translateY(-24px)' }}
+          style={{ transform: 'translateY(-42px)' }}
         />
 
         <SolutionItem
@@ -100,7 +100,7 @@ const SolutionPage: NextPage = () => {
           imagePosition="right"
           imageUrl="https://cdn-official-website.juzibot.com/images/solution-04.svg"
           dividerUrl="https://cdn-official-website.juzibot.com/images/solution-04-divider.svg"
-          style={{ transform: 'translateY(-48px)' }}
+          style={{ transform: 'translateY(-62px)' }}
         />
       </div>
     </>
