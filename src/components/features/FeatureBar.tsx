@@ -16,7 +16,7 @@ const FeatureItem: NextPage<IFeatureItemProps> = ({
   return (
     <div className={`feature-item ${isHover ? 'hover' : ''}`}>
       <div
-        className={`item ${isHover ? 'hover' : ''}`}
+        className={`item ${isHover && 'hover'}`}
         onMouseMove={() => setIsHover(true)}
         onMouseLeave={() => setIsHover(false)}
         style={{ background: isHover ? `url(${mask})` : '' }}
@@ -49,7 +49,7 @@ const FeatureBar: NextPage = () => {
         title="规模获客"
         mask="https://cdn-official-website.juzibot.com/images/icons/features/01-mask.svg"
         subtitle="让沉默的客户线索变成可双向互动的活跃流量池，规模化自动执行，全程无需人工。获客成本低至 5 元。"
-        redirectUrl="/"
+        redirectUrl="/features/contact-platform"
       />
       <FeatureItem
         iconUrl="https://cdn-official-website.juzibot.com/images/icons/features/02.svg"

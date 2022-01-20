@@ -31,7 +31,8 @@
     background-color: rgba(255, 255, 255, 0.9);
   }
 
-  &.about-us::before {
+  &.about-us::before,
+  &.contact-platform-header::before {
     background-color: unset !important;
   }
 

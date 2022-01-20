@@ -3,7 +3,6 @@ import AppealBar from '@src/components/index/AppealBar';
 import CompanyDisplayBar from '@src/components/index/CompanyDisplayBar/index';
 import FeatureSwiper from '@src/components/index/FeatureSwiper';
 import HeroPage from '@src/components/index/HeroPage';
-import LogosWall from '@src/components/index/LogosWall';
 import SolutionPage from '@src/components/index/SolutionPage';
 import type { GetStaticProps, NextPage } from 'next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
