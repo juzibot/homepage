@@ -7,6 +7,7 @@ import { FeatureDescription } from '@src/components/features/FeatureDescription'
 import { FeatureAppealBar } from '@src/components/features/FeatureAppealBar';
 import AppealBar from '@src/components/index/AppealBar';
 import FeatureBar from '@src/components/features/FeatureBar';
+import Seo from '@src/components/common/Seo';
 
 const ContactPlatformPage: NextPage = () => {
   const [isChrome, toggleChrome] = useState(true);
@@ -15,6 +16,7 @@ const ContactPlatformPage: NextPage = () => {
   }, []);
   return (
     <>
+      <Seo page="feature-contact-platform" />
       <div className="wrapper contact-platform">
         <div className={`bg ${!isChrome && 'moz'}`}></div>
         <div className="container">

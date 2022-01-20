@@ -12,7 +12,7 @@
     background: linear-gradient(30deg, #fff, rgba(5, 85, 255, 0.25));
     position: absolute;
     transform: rotate(15deg);
-    top: -960px;
+    top: -1060px;
     filter: blur(200px);
 
     &.moz {
@@ -26,7 +26,7 @@
     width: 100%;
     z-index: 2;
 
-    background-image: url('https://cdn-official-website.juzibot.com/images/feat-03.svg');
+    background-image: url('https://cdn-official-website.juzibot.com/images/feat-03.png');
     background-repeat: no-repeat;
     background-position-x: right;
     background-position-y: 100px;
@@ -136,7 +136,7 @@
       line-height: 36px;
       text-align: center;
       color: #869bb9;
-      margin: 32px 0;
+      margin: 32px;
       font-weight: 300;
     }
 
@@ -154,6 +154,7 @@
       }
 
       .left {
+        padding-left: 16px;
         h3 {
           font-family: PingFang SC;
           font-style: normal;
