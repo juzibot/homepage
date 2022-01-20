@@ -11,11 +11,17 @@ const Footer: NextPage = () => {
     {
       title: t('footer-menu-1-title'),
       child: [
-        { title: t('footer-menu-1-1-title'), url: '/' },
-        { title: t('footer-menu-1-2-title'), url: '/' },
-        { title: t('footer-menu-1-3-title'), url: '/' },
-        { title: t('footer-menu-1-4-title'), url: '/' },
-        { title: t('footer-menu-1-5-title'), url: '/' },
+        {
+          title: t('footer-menu-1-1-title'),
+          url: '/features/customer-acquisition',
+        },
+        { title: t('footer-menu-1-2-title'), url: '/features/sop' },
+        {
+          title: t('footer-menu-1-3-title'),
+          url: '/features/contact-platform',
+        },
+        { title: t('footer-menu-1-4-title'), url: '/features/data-center' },
+        { title: t('footer-menu-1-5-title'), url: '/features/management' },
         { title: t('footer-menu-1-6-title'), url: '/' },
         { title: t('footer-menu-1-7-title'), url: '/' },
         { title: t('footer-menu-1-8-title'), url: '/' },

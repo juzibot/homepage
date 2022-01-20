@@ -75,12 +75,13 @@ export interface IFeatureItemProps {
   subtitle: string;
   redirectUrl: string;
   mask: string;
+  visibility: boolean;
 }
 
 export enum HeaderBarMenu {
   FEATURES,
   SOLUTIONS,
-  QRCODE
+  QRCODE,
 }
 export interface IHeaderBarMenuProps {
   left: number;
@@ -88,4 +89,30 @@ export interface IHeaderBarMenuProps {
   name: HeaderBarMenu;
   onMouseLeave: () => void;
   onMouseMove: () => void;
+}
+
+type FeatureHeroPageData = {
+  icon: string;
+  title: string;
+  subtitle: string;
+};
+export interface IFeatureHeroPageProps {
+  title: string;
+  brief: string;
+  docsUrl: string;
+  datas: [FeatureHeroPageData, FeatureHeroPageData, FeatureHeroPageData];
+}
+
+export interface IFeatureDescriptionProps {
+  firstTitle: string;
+  firstSubtitle: string;
+  secondTitle: string;
+  datas: [FeatureHeroPageData, FeatureHeroPageData, FeatureHeroPageData];
+  photo: string;
+  photoPosition: 'left' | 'right';
+}
+
+export interface IFeatureAppealBarProps {
+  title: string;
+  datas: [FeatureHeroPageData, FeatureHeroPageData, FeatureHeroPageData];
 }
