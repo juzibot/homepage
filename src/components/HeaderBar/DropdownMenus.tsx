@@ -14,7 +14,7 @@ const BaseMenu: NextPage<IHeaderBarMenuProps> = ({
 }) => {
   return (
     <div
-      style={{ paddingTop: 80 }}
+      style={{ paddingTop: 70 }}
       onMouseLeave={onMouseLeave}
       onMouseMove={onMouseMove}
     >
@@ -82,7 +82,7 @@ export const FeatureMenu: NextPage<{ visibility: boolean }> = ({
             });
           }, 300);
         }
-      }, 100);
+      }, 300);
     }
   }, [visibility]);
   return (

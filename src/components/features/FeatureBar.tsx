@@ -60,6 +60,14 @@ const FeatureBar: NextPage = () => {
         redirectUrl="/"
       />
       <FeatureItem
+        iconUrl="https://cdn-official-website.juzibot.com/images/icons/features/05.svg"
+        hoverIconUrl="https://cdn-official-website.juzibot.com/images/icons/features/05-hover.svg"
+        title="急速应答"
+        mask="https://cdn-official-website.juzibot.com/images/icons/features/05-mask.svg"
+        subtitle="句子互动提供聚合多种IM平台的能力，可以在一个后台处理多种会话消息，无需多后台、多账号之间来回切换。"
+        redirectUrl="/"
+      />
+      <FeatureItem
         iconUrl="https://cdn-official-website.juzibot.com/images/icons/features/03.svg"
         hoverIconUrl="https://cdn-official-website.juzibot.com/images/icons/features/03-hover.svg"
         title="高效管理"
