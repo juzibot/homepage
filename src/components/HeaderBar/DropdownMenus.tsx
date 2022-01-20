@@ -107,35 +107,35 @@ export const FeatureMenu: NextPage<{ visibility: boolean }> = ({
       <MenuItem
         iconUrl="https://cdn-official-website.juzibot.com/images/icons/header-bar/01.svg"
         hoverIconUrl="https://cdn-official-website.juzibot.com/images/icons/header-bar/01-o.svg"
-        href="/features/contact-platform"
+        href="/features/customer-acquisition"
       >
         规模获客
       </MenuItem>
       <MenuItem
         iconUrl="https://cdn-official-website.juzibot.com/images/icons/header-bar/02.svg"
         hoverIconUrl="https://cdn-official-website.juzibot.com/images/icons/header-bar/02-o.svg"
-        href="/"
+        href="/features/sop"
       >
         精准触达
       </MenuItem>
       <MenuItem
         iconUrl="https://cdn-official-website.juzibot.com/images/icons/header-bar/03.svg"
         hoverIconUrl="https://cdn-official-website.juzibot.com/images/icons/header-bar/03-o.svg"
-        href="/"
+        href="/features/contact-platform"
       >
         急速应答
       </MenuItem>
       <MenuItem
         iconUrl="https://cdn-official-website.juzibot.com/images/icons/header-bar/04.svg"
         hoverIconUrl="https://cdn-official-website.juzibot.com/images/icons/header-bar/04-o.svg"
-        href="/"
+        href="/features/management"
       >
         高效管理
       </MenuItem>
       <MenuItem
         iconUrl="https://cdn-official-website.juzibot.com/images/icons/header-bar/05.svg"
         hoverIconUrl="https://cdn-official-website.juzibot.com/images/icons/header-bar/05-o.svg"
-        href="/"
+        href="/features/data-center"
       >
         数据驱动
       </MenuItem>

@@ -70,7 +70,11 @@ const WeworkBar: NextPage = () => {
 
 const headerbarExtraClassMap: { [path: string]: string } = {
   '/about-us': 'about-us',
-  '/features/contact-platform': 'contact-platform-header',
+  '/features/contact-platform': 'feature-page-header',
+  '/features/customer-acquisition': 'feature-page-header',
+  '/features/sop': 'feature-page-header',
+  '/features/management': 'feature-page-header',
+  '/features/data-center': 'feature-page-header',
 };
 
 const HeaderBar: NextPage = () => {

@@ -1,12 +1,13 @@
 @import '@styles/feature-bar.module.scss';
 @import '@styles/appeal-bar.module.scss';
 
-.contact-platform {
+.feature {
   padding-left: 0 !important;
   padding-right: 0 !important;
   width: 100vw;
   overflow-x: hidden;
-  .bg {
+
+  &.contact-platform .bg {
     width: 100%;
     height: 1400px;
     background: linear-gradient(30deg, #fff, rgba(5, 85, 255, 0.25));
@@ -21,16 +22,81 @@
       left: 20%;
     }
   }
+
+  &.customer-acquisition .bg {
+    width: 100%;
+    height: 1400px;
+    background: linear-gradient(30deg, #fff, rgba(255, 98, 23, 0.25));
+    position: absolute;
+    top: -1060px;
+    filter: blur(200px);
+
+    &.moz {
+      filter: blur(800px);
+      transform: rotate(10deg);
+      left: 20%;
+    }
+  }
+
+  &.sop .bg {
+    width: 100%;
+    height: 1400px;
+    background: linear-gradient(-30deg, rgba(109, 80, 255, 0.25), #fff);
+    position: absolute;
+    top: -1060px;
+    filter: blur(200px);
+
+    &.moz {
+      filter: blur(800px);
+      transform: rotate(-10deg);
+      right: 10%;
+    }
+  }
+
+  &.management .bg {
+    width: 100%;
+    height: 1400px;
+    background: linear-gradient(-30deg, rgba(13, 229, 146, 0.25), #fff);
+    position: absolute;
+    top: -1060px;
+    filter: blur(200px);
+
+    &.moz {
+      filter: blur(800px);
+      transform: rotate(-10deg);
+      right: 10%;
+    }
+  }
+
+  &.data-center .bg {
+    width: 100%;
+    height: 1400px;
+    background: linear-gradient(-30deg, rgba(5, 85, 255, 0.25), #fff);
+    position: absolute;
+    top: -1060px;
+    filter: blur(200px);
+
+    &.moz {
+      filter: blur(800px);
+      transform: rotate(-10deg);
+      right: 10%;
+    }
+  }
+
   .container {
     padding: 160px 0 88px 0;
     width: 100%;
     z-index: 2;
 
-    background-image: url('https://cdn-official-website.juzibot.com/images/feat-03.png');
     background-repeat: no-repeat;
     background-position-x: right;
     background-position-y: 100px;
     background-size: 500px 450px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
 
     h1 {
       font-family: PingFang SC;
@@ -48,6 +114,7 @@
       font-size: 16px;
       line-height: 29px;
       margin: 32px 0 40px 0;
+      height: 100px;
 
       color: #869bb9;
       max-width: 600px;
@@ -110,7 +177,7 @@
   }
 }
 
-.contact-platform-description {
+.feature-description {
   .container {
     width: 100%;
     display: flex;
@@ -202,7 +269,7 @@
   }
 }
 
-.contact-platform-appeal {
+.feature-appeal {
   background: linear-gradient(0deg, #fbfbfd, #fbfbfd), #ffffff;
   .container {
     padding: 72px 0;
