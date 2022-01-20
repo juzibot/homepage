@@ -6,7 +6,8 @@ import { useState, useEffect } from 'react';
 import { host } from '@src/config';
 import { useTranslation } from 'react-i18next';
 import { useRouter } from 'next/router';
-import { FeatureMenu } from './DropdownMenus';
+import { FeatureMenu, QRCodeToast } from './DropdownMenus';
+import { isBrowserChrome } from '@src/utils/isBrowserChrome';
 
 const MenuItem: NextPage<IMenuItemProps> = ({
   hasArrow,
@@ -69,6 +70,7 @@ const WeworkBar: NextPage = () => {
 
 const headerbarExtraClassMap: { [path: string]: string } = {
   '/about-us': 'about-us',
+  '/features/contact-platform': 'contact-platform-header',
 };
 
 const HeaderBar: NextPage = () => {
@@ -89,7 +91,7 @@ const HeaderBar: NextPage = () => {
       window.addEventListener('scroll', () => {
         setBorderBottomVisible(window.scrollY > 0);
       });
-      setIsChrome(/Chrome|Safari/.test(navigator.userAgent));
+      setIsChrome(isBrowserChrome());
     }
   }, []);
 
@@ -154,23 +156,7 @@ const HeaderBar: NextPage = () => {
       <div className="wrapper menu-box" onMouseMove={() => setActiveMenu(null)}>
         <div className="container">
           <FeatureMenu visibility={activeMenu === HeaderBarMenu.FEATURES} />
-          <div
-            className={`contact-menu ${
-              activeMenu === HeaderBarMenu.QRCODE ? 'visible' : 'hidden'
-            }`}
-          >
-            <div className="box">
-              <Image
-                src="https://cdn-official-website.juzibot.com/images/contact-qrcode.png"
-                width="200"
-                height="200"
-                alt="qrcode"
-                draggable="false"
-              />
-
-              <span>{t('lets-talk-scan-qrcode')}</span>
-            </div>
-          </div>
+          <QRCodeToast visibility={activeMenu === HeaderBarMenu.QRCODE} />
         </div>
       </div>
     </>

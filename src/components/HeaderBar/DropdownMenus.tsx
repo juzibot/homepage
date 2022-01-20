@@ -3,6 +3,7 @@ import { NextPage } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
 import { CSSProperties, useMemo, useRef, useState } from 'react';
+import { useTranslation } from 'react-i18next';
 
 const BaseMenu: NextPage<IHeaderBarMenuProps> = ({
   left,
@@ -106,7 +107,7 @@ export const FeatureMenu: NextPage<{ visibility: boolean }> = ({
       <MenuItem
         iconUrl="https://cdn-official-website.juzibot.com/images/icons/header-bar/01.svg"
         hoverIconUrl="https://cdn-official-website.juzibot.com/images/icons/header-bar/01-o.svg"
-        href="/"
+        href="/features/contact-platform"
       >
         规模获客
       </MenuItem>
@@ -139,5 +140,26 @@ export const FeatureMenu: NextPage<{ visibility: boolean }> = ({
         数据驱动
       </MenuItem>
     </BaseMenu>
+  );
+};
+
+export const QRCodeToast: NextPage<{ visibility: boolean }> = ({
+  visibility,
+}) => {
+  const { t } = useTranslation(['common']);
+  return (
+    <div className={`contact-menu ${visibility ? 'visible' : 'hidden'}`}>
+      <div className="box">
+        <Image
+          src="https://cdn-official-website.juzibot.com/images/contact-qrcode.png"
+          width="200"
+          height="200"
+          alt="qrcode"
+          draggable="false"
+        />
+
+        <span>{t('lets-talk-scan-qrcode')}</span>
+      </div>
+    </div>
   );
 };
