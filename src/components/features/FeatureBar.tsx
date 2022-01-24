@@ -15,29 +15,29 @@ const FeatureItem: NextPage<IFeatureItemProps> = ({
 }) => {
   const [isHover, setIsHover] = useState(false);
   return visibility ? (
-    <div className={`feature-item ${isHover ? 'hover' : ''}`}>
-      <div
-        className={`item ${isHover && 'hover'}`}
-        onMouseMove={() => setIsHover(true)}
-        onMouseLeave={() => setIsHover(false)}
-        style={{ background: isHover ? `url(${mask})` : '' }}
-      >
-        <Image
-          src={isHover ? hoverIconUrl : iconUrl}
-          width="40"
-          height="40"
-          alt="icon"
-          draggable="false"
-        />
-        <div className="title">{title}</div>
-        <div className="subtitle">{subtitle}</div>
-        <Link href={redirectUrl}>
+    <Link href={redirectUrl}>
+      <a className={`feature-item ${isHover ? 'hover' : ''}`}>
+        <div
+          className={`item ${isHover && 'hover'}`}
+          onMouseMove={() => setIsHover(true)}
+          onMouseLeave={() => setIsHover(false)}
+          style={{ background: isHover ? `url(${mask})` : '' }}
+        >
+          <Image
+            src={isHover ? hoverIconUrl : iconUrl}
+            width="40"
+            height="40"
+            alt="icon"
+            draggable="false"
+          />
+          <div className="title">{title}</div>
+          <div className="subtitle">{subtitle}</div>
           <a className="redirect-url" href={redirectUrl}>
             了解更多 →
           </a>
-        </Link>
-      </div>
-    </div>
+        </div>
+      </a>
+    </Link>
   ) : null;
 };
 

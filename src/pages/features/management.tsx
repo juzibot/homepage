@@ -28,7 +28,7 @@ const ManagementPage: NextPage = () => {
           <FeatureHeroPage
             title="高效管理"
             brief="句子互动提供多维度、多分级的权限管理，无论是企业内部各级消息的传达、权限的赋予，还是运营过程中消息的高效分配回复，亦或是运营后对员工的绩效管理。"
-            docsUrl="/"
+            docsUrl="https://k0auuqcihb.feishu.cn/docs/doccnxETynv2nGGNMt8Qh47dQFf#Bdyxmd"
             datas={[
               {
                 icon: 'https://cdn-official-website.juzibot.com/images/icons/features/ma-01.png',

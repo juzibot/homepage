@@ -16,7 +16,15 @@ export const FeatureHeroPage: NextPage<IFeatureHeroPageProps> = ({
       <section className="brief">{brief}</section>
 
       <div className="buttons-bar">
-        <button className="primary-button start-button">立即使用</button>
+        <button
+          className="primary-button start-button"
+          onClick={() => {
+            if (process.browser)
+              window.open('https://qiwei.juzibot.com/user/login');
+          }}
+        >
+          立即使用
+        </button>
         <Link href={docsUrl}>
           <a className="read-docs" target="_blank">
             阅读手册

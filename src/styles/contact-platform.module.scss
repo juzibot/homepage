@@ -222,6 +222,7 @@
 
       .left {
         padding-left: 16px;
+        padding-bottom: 16px;
         h3 {
           font-family: PingFang SC;
           font-style: normal;
@@ -239,7 +240,7 @@
           align-items: flex-start;
 
           &:not(:first-child) {
-            margin-top: 24px;
+            margin-top: 36px;
           }
 
           .content {

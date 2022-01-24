@@ -27,8 +27,8 @@ const SopPage: NextPage = () => {
         >
           <FeatureHeroPage
             title="SOP 消息触达"
-            brief="依托 RPA 技术，句子互动将 IM 软件变成可自动执行计划任务的机器人，让营销实现真正意义上的 SOP 化。现在，你可以摆脱空间和时间的束缚，一次性完成客户全生命周期的运营规划，在任意时间、任意场景下执行触达转化。"
-            docsUrl="/"
+            brief="现在，你可以摆脱空间和时间的束缚，一次性完成客户全生命周期的运营规划，在任意时间、任意场景下执行触达转化。依托 RPA 技术，句子互动将 IM 软件变成可自动执行计划任务的机器人，让营销实现真正意义上的 SOP 化。"
+            docsUrl="https://k0auuqcihb.feishu.cn/docs/doccnJMlpBUC1NAHW7ujCXVxaUB#nvwxlQ"
             datas={[
               {
                 icon: 'https://cdn-official-website.juzibot.com/images/icons/features/sop-01.png',

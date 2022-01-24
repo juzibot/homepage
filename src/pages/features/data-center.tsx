@@ -28,7 +28,7 @@ const DataCenterPage: NextPage = () => {
           <FeatureHeroPage
             title="数据管理中心"
             brief="把全域数据汇总在数据管理中心，呈现从增长到留存、从活跃到转化的一切业务数据和人效数据统计，为管理者提供更科学的业务流程优化策略和团队管理决策依据。"
-            docsUrl="/"
+            docsUrl="https://k0auuqcihb.feishu.cn/docs/doccnJMlpBUC1NAHW7ujCXVxaUB#qb8Oa0"
             datas={[
               {
                 icon: 'https://cdn-official-website.juzibot.com/images/icons/features/da-01.png',
@@ -54,8 +54,7 @@ const DataCenterPage: NextPage = () => {
         <div className="container">
           <FeatureDescription
             firstTitle="汇总用户全域数据"
-            firstSubtitle="提供完善的开放 API 并预先打通市场上的电话短信系统、小程序商城、SCRM、ERP、CDP，把用户在全域的数据汇总在一起，打造更完善的客户画像。
-            汇总用户在全域的数据后，句子互动提供将多个标签组合形成动态分组的能力，分组会实时计算每个用户的情况。可直接针对分组进行用户运营，实现千人千面的消息触达。"
+            firstSubtitle="提供完善的 SDK 和开放的 API 接口，并预先打通市场上的电话短信系统、小程序商城、SCRM、ERP、CDP，把用户在全域的数据汇总在一起，打造更完善的客户画像。句子互动提供将多个标签组合形成动态分组的能力，可直接针对分组进行用户运营，实现千人千面的消息触达。"
             secondTitle="数据驱动科学决策"
             datas={[
               {

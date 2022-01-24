@@ -28,7 +28,7 @@ const CustomerAcquisitionPage: NextPage = () => {
           <FeatureHeroPage
             title="规模化获客"
             brief="增长，无需从零开始。句子提供完整的规模化获客解决方案，零人工成本把沉默的存量线索规模化迁移成可双向互动、多维触达的社交关系链。为用户打造行动成本最低的转化路径、为企业实现高转化率的私域构建，全程自动化完成，同时提供更安全的风控策略。"
-            docsUrl="/"
+            docsUrl="https://k0auuqcihb.feishu.cn/docs/doccnJMlpBUC1NAHW7ujCXVxaUB#tlJtFV"
             datas={[
               {
                 icon: 'https://cdn-official-website.juzibot.com/images/icons/features/ca-08.png',
