@@ -3,6 +3,7 @@ import { CSSProperties } from 'react';
 export interface IMenuItemProps {
   hasArrow?: boolean;
   href: string;
+  linkTarget?: string;
   onClick?: () => void;
   onMenuHover?: () => void;
   onMenuHide?: () => void;

@@ -27,7 +27,7 @@ const ContactPlatformPage: NextPage = () => {
         >
           <FeatureHeroPage
             title="客户会话中台"
-            brief="客户会话中台（SIS）提供聚合多种 IM
+            brief="客户会话中台（CCP）提供聚合多种 IM
         平台消息的能力，在一个后台应答来自多平台多个账号上的消息，亦可以同时主动触达这些客户，无论他们来自微信、抖音、5G
         短信、Whatsapp 还是邮件。"
             docsUrl="https://k0auuqcihb.feishu.cn/docs/doccnJMlpBUC1NAHW7ujCXVxaUB#ebpzcU"

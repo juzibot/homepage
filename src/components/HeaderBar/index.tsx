@@ -16,6 +16,7 @@ const MenuItem: NextPage<IMenuItemProps> = ({
   onClick,
   onMenuHide,
   onMenuHover,
+  linkTarget
 }) => {
   return (
     <>
@@ -23,7 +24,7 @@ const MenuItem: NextPage<IMenuItemProps> = ({
         <a
           className="menu-item"
           draggable="false"
-          target="_self"
+          target={linkTarget || "_self"}
           onClick={onClick}
           onMouseMove={onMenuHover}
           onMouseLeave={onMenuHide}
@@ -132,8 +133,8 @@ const HeaderBar: NextPage = () => {
               {t('products')}
             </MenuItem>
             <MenuItem href="https://botorange.com/">{t('solutions')}</MenuItem>
-            <MenuItem href="https://blog.juzibot.com/">{t('course')}</MenuItem>
-            <MenuItem href="https://wechaty.js.org/">{t('developer')}</MenuItem>
+            <MenuItem href="https://blog.juzibot.com/" linkTarget="_blank">{t('course')}</MenuItem>
+            <MenuItem href="https://wechaty.js.org/" linkTarget="_blank">{t('developer')}</MenuItem>
             <MenuItem href="/about-us">{t('about')}</MenuItem>
           </menu>
 
