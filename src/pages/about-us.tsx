@@ -26,7 +26,7 @@ const AboutUsHeroPage: NextPage = () => {
           团队累计融资数千万，投资机构包括 Plug and Play、PreAngel、 Y
           Combinator、TSVC、阿尔法公社、真成投资等。团队既是硅谷著名孵化器 Y
           Combinator 国内首批入围团队，也是百度 AI
-          加速器首期成员。目前团队已经接近百人规模。
+          加速器首期成员，目前团队已经过百人。
         </p>
       </div>
     </div>
