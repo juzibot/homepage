@@ -133,6 +133,7 @@ const HeaderBar: NextPage = () => {
               {t('products')}
             </MenuItem>
             <MenuItem href="https://botorange.com/">{t('solutions')}</MenuItem>
+            <MenuItem href="/cases">{t('cases')}</MenuItem>
             <MenuItem href="https://blog.juzibot.com/" linkTarget="_blank">{t('course')}</MenuItem>
             <MenuItem href="https://wechaty.js.org/" linkTarget="_blank">{t('developer')}</MenuItem>
             <MenuItem href="/about-us">{t('about')}</MenuItem>

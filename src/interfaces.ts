@@ -117,3 +117,33 @@ export interface IFeatureAppealBarProps {
   title: string;
   datas: [FeatureHeroPageData, FeatureHeroPageData, FeatureHeroPageData];
 }
+
+export interface ITabsProps {
+  tabs: { title: string; url?: string }[];
+  activeIndex: number;
+  onChange: (idx: number) => void;
+}
+
+export enum CompanyCategory {
+  TRADE = 1,
+  EDUCATION,
+  MEDICAL,
+  FINANCE,
+  GOV,
+  IT,
+}
+
+export interface ICompanyItemProps {
+  title: string;
+  brief: string;
+  imageUrl?: string;
+  category: CompanyCategory;
+  url: string;
+}
+
+export interface IPaginationProps {
+  pageSize: number;
+  totalCount: number;
+  currentPage: number;
+  onChange: (page: number) => void;
+}

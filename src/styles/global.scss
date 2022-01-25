@@ -45,6 +45,7 @@ body {
     flex-direction: row;
     justify-content: center;
     align-items: center;
+    background-color: rgba(255, 255, 255, 0.5);
 
     &:hover {
       background-color: #0555ff;
@@ -152,6 +153,94 @@ button.white-button {
       line-height: 32px;
       color: #364256;
       margin-bottom: 44px;
+    }
+  }
+}
+
+.pagination {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+
+  .item {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #c8d4e0;
+    width: 44px;
+    height: 44px;
+
+    font-family: PingFang SC;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    color: #333333;
+    user-select: none;
+    pointer-events: visible;
+    border-radius: 4px;
+    cursor: pointer;
+
+    &:not(:first-child) {
+      margin-left: 8px;
+    }
+
+    &.left {
+      transform: rotate(180deg);
+    }
+
+    &:hover {
+      background-color: #fafafa;
+    }
+
+    &.active {
+      border: 1px solid #0555ff;
+      background-color: #0555ff;
+      color: #fff;
+    }
+
+    &.disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+
+      &:hover {
+        background-color: unset !important;
+      }
+    }
+  }
+}
+
+.tabs {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+
+  .tab {
+    padding: 8px 16px;
+    color: #364256;
+    font-family: PingFang SC;
+    font-style: normal;
+    font-size: 16px;
+    user-select: none;
+    cursor: pointer;
+    font-weight: 400;
+    border-radius: 4px;
+
+    &:hover {
+      background: #fafafa;
+    }
+
+    &.active {
+      background: rgba(5, 85, 255, 0.1);
+      color: #0555ff;
+    }
+
+    &:not(:first-child) {
+      margin-left: 16px;
     }
   }
 }
