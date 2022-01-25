@@ -43,7 +43,7 @@ const companies: ICompanyItemProps[] = [
       '实现 1 人管理 10 个企业微信、10 万粉丝的消息应答，触达用户的消息总量提升 5 倍以上',
     category: CompanyCategory.TRADE,
     url: '/',
-    imageUrl: '/_images/cases/companies/0.png',
+    imageUrl: 'https://cdn-official-website.juzibot.com/images/cases/companies/0.png',
   },
   {
     title: '某乳类一线品牌',
@@ -51,14 +51,14 @@ const companies: ICompanyItemProps[] = [
       '实现 1 人管理 10 个企业微信、10 万粉丝的消息应答，触达用户的消息总量提升 5 倍以上',
     category: CompanyCategory.TRADE,
     url: '/',
-    imageUrl: '/_images/cases/companies/17.png',
+    imageUrl: 'https://cdn-official-website.juzibot.com/images/cases/companies/17.png',
   },
   {
     title: '某传统冲泡饮料头部品牌',
     brief: '触达用户的消息总量提升 2 倍以上',
     category: CompanyCategory.TRADE,
     url: '/',
-    imageUrl: '/_images/cases/companies/18.png',
+    imageUrl: 'https://cdn-official-website.juzibot.com/images/cases/companies/18.png',
   },
   {
     title: '一线明星自创食品品牌',
@@ -66,7 +66,7 @@ const companies: ICompanyItemProps[] = [
       '用户已回复聊天占比达 100%，日均聊天数达 2775 条，平均首次响应时长快至 2s',
     category: CompanyCategory.TRADE,
     url: '/',
-    imageUrl: '/_images/cases/companies/19.png',
+    imageUrl: 'https://cdn-official-website.juzibot.com/images/cases/companies/19.png',
   },
   {
     title: '某减肥代餐一线品牌',
@@ -74,7 +74,7 @@ const companies: ICompanyItemProps[] = [
       '用户已回复聊天占比达 100%，日均聊天数达 2775 条，平均首次响应时长可达 2s',
     category: CompanyCategory.TRADE,
     url: '/',
-    imageUrl: '/_images/cases/companies/20.png',
+    imageUrl: 'https://cdn-official-website.juzibot.com/images/cases/companies/20.png',
   },
   {
     title: '某国际一线美妆大品牌',
@@ -82,14 +82,14 @@ const companies: ICompanyItemProps[] = [
       '自动化激活会员用户，10 倍的信息触达效率，86w 小程序用户行为的自动标签化',
     category: CompanyCategory.TRADE,
     url: '/',
-    imageUrl: '/_images/cases/companies/21.png',
+    imageUrl: 'https://cdn-official-website.juzibot.com/images/cases/companies/21.png',
   },
   {
     title: '某国货头部化妆品品牌',
     brief: '2 人管理 12 个账号下 4000 个用户的消息，回复率达到 90%',
     category: CompanyCategory.TRADE,
     url: '/',
-    imageUrl: '/_images/cases/companies/22.png',
+    imageUrl: 'https://cdn-official-website.juzibot.com/images/cases/companies/22.png',
   },
   {
     title: '某国际高端护肤品牌',
@@ -97,14 +97,14 @@ const companies: ICompanyItemProps[] = [
       '触达用户的消息总量提升 2 倍以上，零人工成本前提下，入群率高达 38.71%',
     category: CompanyCategory.TRADE,
     url: '/',
-    imageUrl: '/_images/cases/companies/23.png',
+    imageUrl: 'https://cdn-official-website.juzibot.com/images/cases/companies/23.png',
   },
   {
     title: '某日本著名化妆品品牌',
     brief: '触达用户的消息总量提升 3 倍以上，大幅提升最终转化效果',
     category: CompanyCategory.TRADE,
     url: '/',
-    imageUrl: '/_images/cases/companies/24.png',
+    imageUrl: 'https://cdn-official-website.juzibot.com/images/cases/companies/24.png',
   },
   {
     title: '某头部潮流玩具品牌',
@@ -112,7 +112,7 @@ const companies: ICompanyItemProps[] = [
       '2 人管理 15 个账号下 3 万余用户的消息，触达用户的消息总量提升 6 倍以上',
     category: CompanyCategory.TRADE,
     url: '/',
-    imageUrl: '/_images/cases/companies/25.png',
+    imageUrl: 'https://cdn-official-website.juzibot.com/images/cases/companies/25.png',
   },
   {
     title: '某宠物护理一线品牌',
@@ -120,7 +120,7 @@ const companies: ICompanyItemProps[] = [
       '3 人管理 25 个账号下 5 万个用户的消息，平均 1.3 分钟内即可应答，触达用户的消息总量提升 7 倍以上',
     category: CompanyCategory.TRADE,
     url: '/',
-    imageUrl: '/_images/cases/companies/26.png',
+    imageUrl: 'https://cdn-official-website.juzibot.com/images/cases/companies/26.png',
   },
   {
     title: '某韩国时装零售头部品牌',
@@ -128,7 +128,7 @@ const companies: ICompanyItemProps[] = [
       '已回复聊天占比达 100%，日均聊天数达 1300+ 条，超过 250 个云导购账号的统一管理',
     category: CompanyCategory.TRADE,
     url: '/',
-    imageUrl: '/_images/cases/companies/27.png',
+    imageUrl: 'https://cdn-official-website.juzibot.com/images/cases/companies/27.png',
   },
   {
     title: '某连锁披萨品牌',
@@ -136,7 +136,7 @@ const companies: ICompanyItemProps[] = [
       '5 个企业微信上的 10万 用户、近 1000 个微信群消息，均有机器完成，触达用户的消息总量提升 2 倍以上',
     category: CompanyCategory.TRADE,
     url: '/',
-    imageUrl: '/_images/cases/companies/28.png',
+    imageUrl: 'https://cdn-official-website.juzibot.com/images/cases/companies/28.png',
   },
   {
     title: '某国内电子烟一线品牌',
@@ -144,7 +144,7 @@ const companies: ICompanyItemProps[] = [
       '4 个人管理 80 个企业微信账号上的 100 万用户，平均每人每天应答 8000 条消息，90% 以上客户被回复',
     category: CompanyCategory.TRADE,
     url: '/',
-    imageUrl: '/_images/cases/companies/29.png',
+    imageUrl: 'https://cdn-official-website.juzibot.com/images/cases/companies/29.png',
   },
   {
     title: '某国内头部家电品牌',
@@ -152,7 +152,7 @@ const companies: ICompanyItemProps[] = [
       '3 人管理 12 个账号上的 10万+ 客户消息应答和营销触达，触达用户的消息总量提升 4 倍以上',
     category: CompanyCategory.TRADE,
     url: '/',
-    imageUrl: '/_images/cases/companies/30.png',
+    imageUrl: 'https://cdn-official-website.juzibot.com/images/cases/companies/30.png',
   },
   {
     title: '某线上教育头部品牌',
@@ -160,7 +160,7 @@ const companies: ICompanyItemProps[] = [
       '1 人管理 116 个账号下近 80w 用户的消息，已回复聊天占比 46%，触达用户的消息总量提升 4 倍以上',
     category: CompanyCategory.EDUCATION,
     url: '/',
-    imageUrl: '/_images/cases/companies/1.png',
+    imageUrl: 'https://cdn-official-website.juzibot.com/images/cases/companies/1.png',
   },
   {
     title: '某头部线上教育公司旗下子品牌',
@@ -168,7 +168,7 @@ const companies: ICompanyItemProps[] = [
       '超过 500 个账号 250 万用户的增长和触达几乎自动化完成运营，员工只需要提供文案和海报',
     category: CompanyCategory.EDUCATION,
     url: '/',
-    imageUrl: '/_images/cases/companies/8.png',
+    imageUrl: 'https://cdn-official-website.juzibot.com/images/cases/companies/8.png',
   },
   {
     title: '某在线教育头部品牌',
@@ -176,14 +176,14 @@ const companies: ICompanyItemProps[] = [
       '0 人工自动完成 30 万用户的增长、触达和筛选，触达用户的消息总量提升 3 倍以上',
     category: CompanyCategory.EDUCATION,
     url: '/',
-    imageUrl: '/_images/cases/companies/9.png',
+    imageUrl: 'https://cdn-official-website.juzibot.com/images/cases/companies/9.png',
   },
   {
     title: '某成人理财教育品牌',
     brief: '10 倍的信息触达效率，通过高频次的营销触达，大幅提升续保率',
     category: CompanyCategory.EDUCATION,
     url: '/',
-    imageUrl: '/_images/cases/companies/10.png',
+    imageUrl: 'https://cdn-official-website.juzibot.com/images/cases/companies/10.png',
   },
   {
     title: '某连锁药店品牌',
@@ -191,14 +191,14 @@ const companies: ICompanyItemProps[] = [
       '1 人管理 10 余个企业微信上的 6 万余用户消息，触达用户的消息总量提升 3 倍以上',
     category: CompanyCategory.MEDICAL,
     url: '/',
-    imageUrl: '/_images/cases/companies/11.png',
+    imageUrl: 'https://cdn-official-website.juzibot.com/images/cases/companies/11.png',
   },
   {
     title: '某会员制高端医院品牌',
     brief: '零人工成本下粉丝入群率超过 75%，触达用户的消息总量提升 4 倍以上',
     category: CompanyCategory.MEDICAL,
     url: '/',
-    imageUrl: '/_images/cases/companies/12.png',
+    imageUrl: 'https://cdn-official-website.juzibot.com/images/cases/companies/12.png',
   },
   {
     title: '某医疗行业高级杂志机构',
@@ -206,7 +206,7 @@ const companies: ICompanyItemProps[] = [
       '私域运营实现链路自动化，粉丝入群率超过 70%，触达用户的消息总量提升 7 倍以上',
     category: CompanyCategory.MEDICAL,
     url: '/',
-    imageUrl: '/_images/cases/companies/13.png',
+    imageUrl: 'https://cdn-official-website.juzibot.com/images/cases/companies/13.png',
   },
   {
     title: '某知名地方银行',
@@ -214,7 +214,7 @@ const companies: ICompanyItemProps[] = [
       '2 人管理 15 个账号的消息应答，5倍以上提高人的服务半径，工具赋能精细化 SOP 运营，开卡率 46%',
     category: CompanyCategory.FINANCE,
     url: '/',
-    imageUrl: '/_images/cases/companies/14.png',
+    imageUrl: 'https://cdn-official-website.juzibot.com/images/cases/companies/14.png',
   },
   {
     title: '某知名保险公司',
@@ -222,7 +222,7 @@ const companies: ICompanyItemProps[] = [
       '0 人工成本，机器人自动完成 14000+ 用户的运营工作，触达用户的消息总量提升 4 倍以上',
     category: CompanyCategory.FINANCE,
     url: '/',
-    imageUrl: '/_images/cases/companies/15.png',
+    imageUrl: 'https://cdn-official-website.juzibot.com/images/cases/companies/15.png',
   },
   {
     title: '某市级民政机关',
@@ -230,7 +230,7 @@ const companies: ICompanyItemProps[] = [
       '自动化完成 900 万线索量的筛选，平均每人每日回复 1000+ 消息，触达用户的消息总量提升 3 倍以上',
     category: CompanyCategory.GOV,
     url: '/',
-    imageUrl: '/_images/cases/companies/2.png',
+    imageUrl: 'https://cdn-official-website.juzibot.com/images/cases/companies/2.png',
   },
   {
     title: '某头部约车服务品牌（司机端）',
@@ -238,7 +238,7 @@ const companies: ICompanyItemProps[] = [
       '触达用户的消息总量提升 3 倍以上，0人力成本，自动完成2000+意向客户线索的规模化迁移',
     category: CompanyCategory.IT,
     url: '/',
-    imageUrl: '/_images/cases/companies/3.png',
+    imageUrl: 'https://cdn-official-website.juzibot.com/images/cases/companies/3.png',
   },
   {
     title: '某头部约车服务品牌（用户端）',
@@ -246,7 +246,7 @@ const companies: ICompanyItemProps[] = [
       '1 人管理 10 个账号 5 万用户数，触达用户的消息总量提升 3 倍以上，零人工成本前提下，入群率 50% 以上',
     category: CompanyCategory.IT,
     url: '/',
-    imageUrl: '/_images/cases/companies/4.png',
+    imageUrl: 'https://cdn-official-website.juzibot.com/images/cases/companies/4.png',
   },
   {
     title: '某本地化社群平台',
@@ -254,7 +254,7 @@ const companies: ICompanyItemProps[] = [
       '全自动化运营 250w 私域用户，每日通过 API 接口将触达用户的消息总量提升 10 倍以上',
     category: CompanyCategory.IT,
     url: '/',
-    imageUrl: '/_images/cases/companies/5.png',
+    imageUrl: 'https://cdn-official-website.juzibot.com/images/cases/companies/5.png',
   },
   {
     title: '某头部互联网平台',
@@ -262,7 +262,7 @@ const companies: ICompanyItemProps[] = [
       '4 人管理8个账号下 3万余个用户、100+ 企业微信群的消息，平均首次响应 30s 应答率达 77.05%',
     category: CompanyCategory.IT,
     url: '/',
-    imageUrl: '/_images/cases/companies/6.png',
+    imageUrl: 'https://cdn-official-website.juzibot.com/images/cases/companies/6.png',
   },
   {
     title: '某头部互联网平台技术社区',
@@ -270,7 +270,7 @@ const companies: ICompanyItemProps[] = [
       '1 人管理 4 个账号下 2 万个用户消息，触达用户消息总量提升 3 倍以上，零人工成本前提下，入群率 64% 以上',
     category: CompanyCategory.IT,
     url: '/',
-    imageUrl: '/_images/cases/companies/7.png',
+    imageUrl: 'https://cdn-official-website.juzibot.com/images/cases/companies/7.png',
   },
   {
     title: '某家庭维修品牌',
@@ -278,7 +278,7 @@ const companies: ICompanyItemProps[] = [
       '8 人完成 180 个账号上 300 万用户的客诉应答，每天处理 6300 余客户的售后问题，平均应答时间2分钟以内',
     category: CompanyCategory.IT,
     url: '/',
-    imageUrl: '/_images/cases/companies/31.png',
+    imageUrl: 'https://cdn-official-website.juzibot.com/images/cases/companies/31.png',
   },
 ];
 
