@@ -24,7 +24,7 @@ export interface IFeatureSwiperItemProps {
   title: string;
   subTitle: string;
   brief: string;
-  redirectUrl?: string;
+  redirectUrl: string;
 }
 
 export interface ISolutionItemProp {
