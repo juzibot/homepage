@@ -157,7 +157,7 @@ button.white-button {
   }
 }
 
-.pagination {
+.juzi-pagination {
   width: 100%;
   display: flex;
   flex-direction: row;
@@ -243,4 +243,9 @@ button.white-button {
       margin-left: 16px;
     }
   }
+}
+
+.__react_component_tooltip {
+  color: #fff !important;
+  padding: 8px 12px !important;
 }

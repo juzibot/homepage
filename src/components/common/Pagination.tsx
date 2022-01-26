@@ -10,7 +10,7 @@ export const Pagination: NextPage<IPaginationProps> = ({
 }) => {
   const totalPage = Math.ceil(totalCount / pageSize);
   return (
-    <div className="pagination">
+    <div className="juzi-pagination">
       <div
         className={`item left${currentPage === 1 ? ' disabled' : ''}`}
         onClick={
