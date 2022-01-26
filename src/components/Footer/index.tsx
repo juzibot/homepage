@@ -112,7 +112,14 @@ const Footer: NextPage = () => {
                   {menu.child.map((item, idx) =>
                     item.tooltip ? (
                       <div className="tooltips" key={idx}>
-                        <a data-tip data-for="address" href={item.url}>
+                        <a
+                          data-tip
+                          data-for="address"
+                          href={item.url}
+                          {...(item.url?.includes('http')
+                            ? { target: '_blank', rel: 'noreferrer' }
+                            : { target: '_self' })}
+                        >
                           {item.title}
                         </a>
                         <ReactTooltip
@@ -125,7 +132,13 @@ const Footer: NextPage = () => {
                         </ReactTooltip>
                       </div>
                     ) : (
-                      <a href={item.url} key={idx}>
+                      <a
+                        href={item.url}
+                        key={idx}
+                        {...(item.url?.includes('http')
+                          ? { target: '_blank', rel: 'noreferrer' }
+                          : { target: '_self' })}
+                      >
                         {item.title}
                       </a>
                     )
