@@ -23,7 +23,6 @@ const Footer: NextPage = () => {
         { title: t('footer-menu-1-4-title'), url: '/features/data-center' },
         { title: t('footer-menu-1-5-title'), url: '/features/management' },
         { title: t('footer-menu-1-6-title'), url: '/' },
-        { title: t('footer-menu-1-7-title'), url: '/' },
         { title: t('footer-menu-1-8-title'), url: '/' },
         { title: t('footer-menu-1-9-title'), url: '/' },
       ],
@@ -50,14 +49,12 @@ const Footer: NextPage = () => {
         { title: t('footer-menu-3-4-title'), url: '/' },
         { title: t('footer-menu-3-5-title'), url: '/' },
         { title: t('footer-menu-3-6-title'), url: '/' },
-        { title: t('footer-menu-3-7-title'), url: '/' },
       ],
     },
     {
       title: t('footer-menu-4-title'),
       child: [
         { title: t('footer-menu-4-1-title'), url: '/' },
-        { title: t('footer-menu-4-2-title'), url: '/' },
         { title: t('footer-menu-4-3-title'), url: '/' },
         { title: t('footer-menu-4-4-title'), url: '/' },
         { title: t('footer-menu-4-5-title'), url: '/' },
