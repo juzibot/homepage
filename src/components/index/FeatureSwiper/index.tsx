@@ -15,6 +15,7 @@ const FeatureSwiperItem: NextPage<IFeatureSwiperItemProps> = ({
   brief,
   iconUrl,
   index,
+  redirectUrl,
 }) => {
   useEffect(() => {
     if (process.browser) {
@@ -43,7 +44,7 @@ const FeatureSwiperItem: NextPage<IFeatureSwiperItemProps> = ({
         <div className="brief" data-swiper-parallax="-200">
           {brief}
         </div>
-        <Link href="/">
+        <Link href={redirectUrl}>
           <a className="read-more" data-swiper-parallax="-300">
             了解更多
           </a>
@@ -78,6 +79,13 @@ const FeatureSwiper: NextPage = () => {
       iconUrl: `https://cdn-official-website.juzibot.com/images/feat-0${
         index + 1
       }.${index > 1 ? 'svg' : 'png'}`,
+      redirectUrl: [
+        '/features/customer-acquisition',
+        '/features/sop',
+        '/features/contact-platform',
+        '/features/management',
+        '/features/data-center',
+      ][index],
     }));
 
   function autoplay(s?: SwiperType) {
