@@ -3,7 +3,8 @@ import { NextPage } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useTranslation } from 'react-i18next';
-import ReactTooltip from 'react-tooltip';
+import dynamic from 'next/dynamic';
+const ReactTooltip = dynamic(() => import('react-tooltip'), { ssr: false });
 
 const Footer: NextPage = () => {
   const { t } = useTranslation(['common']);
@@ -64,7 +65,7 @@ const Footer: NextPage = () => {
         {
           title: t('footer-menu-4-5-title'),
           tooltip: '北京市海淀区中关村智造大街 F 座五层',
-          url: 'https://j.map.baidu.com/bb/gw1c'
+          url: 'https://j.map.baidu.com/bb/gw1c',
         },
         { title: t('footer-menu-4-6-title'), url: 'mailto: sales@juzi.bot' },
       ],
@@ -110,15 +111,15 @@ const Footer: NextPage = () => {
                 <div className="menus">
                   {menu.child.map((item, idx) =>
                     item.tooltip ? (
-                      <div key={idx}>
+                      <div className="tooltips" key={idx}>
                         <a data-tip data-for="address" href={item.url}>
                           {item.title}
                         </a>
                         <ReactTooltip
+                          id="address"
                           place="right"
                           effect="solid"
                           type="dark"
-                          id="address"
                         >
                           <span>{item.tooltip}</span>
                         </ReactTooltip>
