@@ -55,14 +55,14 @@
       .company-item {
         &:hover {
           .photo-bar img {
-            transform: scale(1.1);
+            transform: scale(1.05);
           }
         }
         .photo-bar {
           width: 100%;
           height: 200px;
-          background: #0555ff;
-          border-radius: 28px;
+          background: #fff;
+          border-radius: 32px;
           overflow: hidden;
 
           img {
