@@ -1,4 +1,5 @@
 import { CaseDetailPage } from '@src/components/cases/CaseDetailPage';
+import Seo from '@src/components/common/Seo';
 import { CompanyCategory } from '@src/interfaces';
 import { GetStaticProps, NextPage } from 'next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
@@ -6,6 +7,7 @@ import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 const CasePage: NextPage = () => {
   return (
     <>
+    <Seo title="某饮料新消费头部品牌 - 句子互动企微SCRM - 助力搭建安全稳定私域流量" />
       <CaseDetailPage
         category={CompanyCategory.TRADE}
         logoUrl="logo-1"

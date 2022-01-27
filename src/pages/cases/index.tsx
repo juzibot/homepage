@@ -13,10 +13,9 @@ export const CompanyItem: NextPage<ICompanyItemProps> = ({
   title,
   brief,
   imageUrl,
-  url,
 }) => {
   return (
-    <Link href={url}>
+    <Link href={'/cases/01'}>
       <a>
         <div className="company-item">
           <div className="photo-bar">

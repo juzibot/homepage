@@ -3,6 +3,7 @@ import { companies, CompanyItem } from '@src/pages/cases';
 import { shuffle } from 'lodash';
 import { NextPage } from 'next';
 import Image from 'next/image';
+import AppealBar from '../index/AppealBar';
 
 export const CaseDetailPage: NextPage<ICaseDetailPageProps> = ({
   themeColor,
@@ -116,6 +117,12 @@ export const CaseDetailPage: NextPage<ICaseDetailPageProps> = ({
                 <CompanyItem key={item.title} {...item} />
               ))}
           </div>
+        </div>
+      </div>
+
+      <div className="wrapper appeal-bar">
+        <div className="container">
+          <AppealBar />
         </div>
       </div>
     </>
