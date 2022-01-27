@@ -1,5 +1,7 @@
 import { CSSProperties } from 'react';
 
+type typeObject<type, K extends string | number | symbol> = { [k in K]: type };
+
 export interface IMenuItemProps {
   hasArrow?: boolean;
   href: string;
@@ -146,4 +148,18 @@ export interface IPaginationProps {
   totalCount: number;
   currentPage: number;
   onChange: (page: number) => void;
+}
+
+type CaseDataItem = { title: string; subtitle: string };
+
+export interface ICaseDetailPageProps {
+  category: CompanyCategory;
+  themeColor: string;
+  logoUrl: string;
+  title: string;
+  brief: string;
+  datas: [CaseDataItem, CaseDataItem, CaseDataItem];
+  steps: [string, ...string[]];
+  features: [typeObject<string, 'icon' | 'title' | 'subtitle'>, ...typeObject<string, 'icon' | 'title' | 'subtitle'>[]];
+  achievements: [typeObject<string, 'icon' | 'title'>, ...typeObject<string, 'icon' | 'title'>[]];
 }
