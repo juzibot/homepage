@@ -9,7 +9,7 @@ import { useEffect, useState } from 'react';
 import { chunk } from 'lodash';
 import Seo from '@src/components/common/Seo';
 
-const CompanyItem: NextPage<ICompanyItemProps> = ({
+export const CompanyItem: NextPage<ICompanyItemProps> = ({
   title,
   brief,
   imageUrl,
@@ -37,7 +37,7 @@ const CompanyItem: NextPage<ICompanyItemProps> = ({
   );
 };
 
-const companies: ICompanyItemProps[] = [
+export const companies: ICompanyItemProps[] = [
   {
     title: '某市级民政机关',
     brief:
@@ -45,7 +45,7 @@ const companies: ICompanyItemProps[] = [
     category: CompanyCategory.GOV,
     url: '/',
     imageUrl:
-      'https://cdn-official-website.juzibot.com/images/cases/companies/2.png',
+      'https://cdn-official-website.juzibot.com/images/cases/companies/16.png',
   },
   {
     title: '某饮料新消费头部品牌',
