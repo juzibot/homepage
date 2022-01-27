@@ -32,6 +32,8 @@
 
         &:hover {
           background-color: #fff;
+          box-shadow: 0px 20px 60px -20px rgba(5, 85, 255, 0.1);
+
           .read-more {
             color: #0555ff;
           }
@@ -103,6 +105,8 @@
       font-size: 18px;
       color: #869bb9;
       margin-top: 12px;
+      width: 800px;
+      line-height: 180%;
     }
 
     .datas-bar {
@@ -115,7 +119,7 @@
       border: 1px solid #f2f6ff;
       box-sizing: border-box;
       border-radius: 20px;
-      margin: 48px 0;
+      margin: 64px 0;
 
       .item {
         display: flex;
@@ -165,6 +169,7 @@
           justify-content: flex-start;
           align-items: flex-start;
           transform: translateX(-8px);
+          line-height: 1.8;
 
           .dot {
             flex-shrink: 0;
@@ -173,13 +178,13 @@
             margin-top: 4px;
 
             &:first-of-type {
-              padding-top: 4px;
+              padding-top: 0px;
               margin-top: 0px;
             }
           }
 
           &:not(:first-child) {
-            margin-top: 24px;
+            margin-top: 32px;
           }
 
           span {
@@ -358,6 +363,8 @@
 
         &:hover {
           background-color: #f9fafd;
+          box-shadow: 0px 20px 60px -20px rgba(5, 85, 255, 0.1);
+
           .read-more {
             color: #0555ff;
           }
