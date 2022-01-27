@@ -1,8 +1,9 @@
-import { ICaseDetailPageProps } from '@src/interfaces';
+import { ICaseDetailPageProps, ICompanyItemProps } from '@src/interfaces';
 import { companies, CompanyItem } from '@src/pages/cases';
 import { shuffle } from 'lodash';
 import { NextPage } from 'next';
 import Image from 'next/image';
+import { useEffect, useState } from 'react';
 import AppealBar from '../index/AppealBar';
 
 export const CaseDetailPage: NextPage<ICaseDetailPageProps> = ({
@@ -15,6 +16,11 @@ export const CaseDetailPage: NextPage<ICaseDetailPageProps> = ({
   achievements,
   logoUrl,
 }) => {
+  const [moreCompanies, setMoreCompanies] = useState<ICompanyItemProps[]>([]);
+  useEffect(() => {
+    setMoreCompanies(shuffle(companies));
+  }, []);
+
   return (
     <>
       <div className="wrapper case-detail-page">
@@ -111,11 +117,9 @@ export const CaseDetailPage: NextPage<ICaseDetailPageProps> = ({
         <div className="container">
           <h1>查看更多客户故事</h1>
           <div className="items-box">
-            {shuffle(companies)
-              .slice(0, 3)
-              .map((item) => (
-                <CompanyItem key={item.title} {...item} />
-              ))}
+            {moreCompanies.slice(0, 3).map((item) => (
+              <CompanyItem key={item.title} {...item} />
+            ))}
           </div>
         </div>
       </div>

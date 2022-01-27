@@ -176,6 +176,10 @@
             user-select: none;
             background-color: #fff;
             margin-top: 4px;
+            height: 24px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
 
             &:first-of-type {
               padding-top: 0px;
@@ -231,7 +235,7 @@
       .item {
         display: flex;
         flex-direction: column;
-        justify-content: center;
+        justify-content: flex-start;
         align-items: center;
         padding: 24px 0;
 
