@@ -13,7 +13,7 @@ const CasePage: NextPage = () => {
         logoUrl="logo-3"
         themeColor="#FC790D"
         title="某传统冲泡饮料头部品牌"
-        brief=""
+        brief="该传统冲泡饮料头部品牌的私域，主要做新品推荐做复购引导"
         datas={[
           {
             title: '3 倍',

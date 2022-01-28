@@ -1,0 +1,21 @@
+<svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+<circle opacity="0.15" cx="32" cy="32" r="32" fill="#6547FF"/>
+<g filter="url(#filter0_d_1531_10576)">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M17 45.0809V18.9191C17 17.8588 17.8588 17 18.9191 17H45.0809C46.1412 17 47 17.8588 47 18.9191V45.0809C47 46.1412 46.1412 47 45.0809 47H18.9191C17.8588 47 17 46.1412 17 45.0809ZM20.4505 44.5H43.5495C44.0741 44.5 44.5 44.0741 44.5 43.5481V20.4505C44.5 19.9259 44.0741 19.5 43.5495 19.5H20.4505C19.9259 19.5 19.5 19.9259 19.5 20.4505V43.5481C19.5 44.0741 19.9259 44.5 20.4505 44.5ZM24.0617 27H39.9369C41.0765 27 42 26.1059 42 25.0039V23.9975C42 22.8941 41.0765 22 39.9369 22H24.0617C22.9235 22 22 22.8941 22 23.9975V25.0039C22 26.1059 22.9235 27 24.0617 27ZM23.921 29.5H25.0776C26.1395 29.5 27 30.397 27 31.5027V39.9973C27 41.103 26.1395 42 25.0776 42H23.921C22.8605 42 22 41.103 22 39.9973V31.5027C22 30.397 22.8605 29.5 23.921 29.5ZM31.5935 42H39.9065C41.0629 42 42 41.103 42 39.9973V31.5027C42 30.397 41.0629 29.5 39.9065 29.5H31.5935C30.4371 29.5 29.5 30.397 29.5 31.5027V39.9973C29.5 41.103 30.4371 42 31.5935 42Z" fill="url(#paint0_radial_1531_10576)"/>
+</g>
+<defs>
+<filter id="filter0_d_1531_10576" x="11" y="17" width="42" height="42" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+<feOffset dy="6"/>
+<feGaussianBlur stdDeviation="3"/>
+<feColorMatrix type="matrix" values="0 0 0 0 0.364706 0 0 0 0 0.239216 0 0 0 0 1 0 0 0 0.2 0"/>
+<feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_1531_10576"/>
+<feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_1531_10576" result="shape"/>
+</filter>
+<radialGradient id="paint0_radial_1531_10576" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(19.58 6.99866) rotate(66.4378) scale(41.3722 37.0133)">
+<stop stop-color="#5432FF"/>
+<stop offset="1" stop-color="#7256FF"/>
+</radialGradient>
+</defs>
+</svg>

@@ -47,6 +47,15 @@ export const companies: ICompanyItemProps[] = [
       'https://cdn-official-website.juzibot.com/images/cases/companies/16.png',
   },
   {
+    title: '某淘系直播头部主播',
+    brief:
+      '人均服务 5 万客户、150+ 社群，平均首次响应时长缩短至 5min，日均私聊发送消息数达 400+ 条',
+    category: CompanyCategory.TRADE,
+    url: '/',
+    imageUrl:
+      'https://cdn-official-website.juzibot.com/images/cases/companies/2.png',
+  },
+  {
     title: '某饮料新消费头部品牌',
     brief:
       '实现 1 人管理 10 个企业微信、10 万粉丝的消息应答，触达用户的消息总量提升 5 倍以上',
