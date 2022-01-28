@@ -158,7 +158,7 @@ export interface ICaseDetailPageProps {
   logoUrl: string;
   title: string;
   brief: string;
-  datas: [CaseDataItem, CaseDataItem, CaseDataItem];
+  datas: CaseDataItem[];
   steps: [string, ...string[]];
   features: [typeObject<string, 'icon' | 'title' | 'subtitle'>, ...typeObject<string, 'icon' | 'title' | 'subtitle'>[]];
   achievements: [typeObject<string, 'icon' | 'title'>, ...typeObject<string, 'icon' | 'title'>[]];
