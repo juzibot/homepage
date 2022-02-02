@@ -40,12 +40,12 @@ const CompanyDisplayBar: NextPage = () => {
     {
       iconUrl:
         'https://cdn-official-website.juzibot.com/images/icons/contact.svg',
-      redirectUrl: '/',
+      redirectUrl: '/cases/26',
     },
     {
       iconUrl:
         'https://cdn-official-website.juzibot.com/images/icons/growing.svg',
-      redirectUrl: '/',
+      redirectUrl: '/cases/23',
     },
     {
       iconUrl:
@@ -54,7 +54,7 @@ const CompanyDisplayBar: NextPage = () => {
     },
     {
       iconUrl: 'https://cdn-official-website.juzibot.com/images/icons/safe.svg',
-      redirectUrl: '/',
+      redirectUrl: '/cases/32',
     },
   ].map((item, index) => ({
     ...item,
