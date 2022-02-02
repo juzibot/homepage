@@ -7,7 +7,7 @@ import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 const CasePage: NextPage = () => {
   return (
     <>
-      <Seo title="一线明星自创食品品牌 - 句子互动企微SCRM - 助力搭建安全稳定私域流量" />
+      <Seo title="某减肥代餐一线品牌 - 句子互动企微SCRM - 助力搭建安全稳定私域流量" />
       <CaseDetailPage
         category={CompanyCategory.TRADE}
         logoUrl="logo-5"
