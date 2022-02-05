@@ -14,7 +14,7 @@ const BaseMenu: NextPage<IHeaderBarMenuProps> = ({
 }) => {
   return (
     <div
-      style={{ paddingTop: 70 }}
+      style={{ paddingTop: 70, position: 'fixed' }}
       onMouseLeave={onMouseLeave}
       onMouseMove={onMouseMove}
     >
@@ -57,14 +57,21 @@ const MenuItem: NextPage<{
   );
 };
 
-export const FeatureMenu: NextPage<{ visibility: boolean }> = ({
-  visibility,
-}) => {
+export const SolutionMenu: NextPage<{
+  visibility: boolean;
+  current: HeaderBarMenu | null;
+}> = ({ current, visibility }) => {
   const [styles, setStyles] = useState<CSSProperties>();
   const timerRef = useRef<NodeJS.Timeout>();
   const move = useRef<boolean>(true);
   useMemo(() => {
     if (timerRef.current) clearTimeout(timerRef.current);
+    if (current !== null && current !== HeaderBarMenu.SOLUTIONS) {
+      setStyles({
+        display: 'none',
+      });
+      return;
+    }
     if (visibility) {
       setStyles({
         display: 'flex',
@@ -84,7 +91,93 @@ export const FeatureMenu: NextPage<{ visibility: boolean }> = ({
         }
       }, 300);
     }
-  }, [visibility]);
+  }, [visibility, current]);
+  return (
+    <BaseMenu
+      left={390}
+      name={HeaderBarMenu.SOLUTIONS}
+      style={{ height: 270, ...styles, width: 240 }}
+      key="solutions"
+      onMouseMove={() => (move.current = true)}
+      onMouseLeave={() => {
+        setStyles({
+          opacity: 0,
+        });
+        move.current = false;
+        timerRef.current = setTimeout(() => {
+          setStyles({
+            display: 'none',
+          });
+        }, 300);
+      }}
+    >
+      <MenuItem
+        iconUrl="https://cdn-official-website.juzibot.com/images/icons/header-bar/06.svg"
+        hoverIconUrl="https://cdn-official-website.juzibot.com/images/icons/header-bar/06-o.svg"
+        href="/solutions/general"
+      >
+        私域全链路解决方案
+      </MenuItem>
+      <MenuItem
+        iconUrl="https://cdn-official-website.juzibot.com/images/icons/header-bar/07.svg"
+        hoverIconUrl="https://cdn-official-website.juzibot.com/images/icons/header-bar/07-o.svg"
+        href="/solutions/customer-service"
+      >
+        客服场景解决方案
+      </MenuItem>
+      <MenuItem
+        iconUrl="https://cdn-official-website.juzibot.com/images/icons/header-bar/08.svg"
+        hoverIconUrl="https://cdn-official-website.juzibot.com/images/icons/header-bar/08-o.svg"
+        href="/solutions/increase"
+      >
+        增长场景解决方案
+      </MenuItem>
+      <MenuItem
+        iconUrl="https://cdn-official-website.juzibot.com/images/icons/header-bar/09.svg"
+        hoverIconUrl="https://cdn-official-website.juzibot.com/images/icons/header-bar/09-o.svg"
+        href="/solutions/operate"
+      >
+        规模化运营解决方案
+      </MenuItem>
+    </BaseMenu>
+  );
+};
+
+export const FeatureMenu: NextPage<{
+  visibility: boolean;
+  current: HeaderBarMenu | null;
+}> = ({ visibility, current }) => {
+  const [styles, setStyles] = useState<CSSProperties>();
+  const timerRef = useRef<NodeJS.Timeout>();
+  const move = useRef<boolean>(true);
+  useMemo(() => {
+    if (timerRef.current) clearTimeout(timerRef.current);
+    if (current !== null && current !== HeaderBarMenu.FEATURES) {
+      setStyles({
+        display: 'none',
+      });
+      return;
+    }
+    if (visibility) {
+      setStyles({
+        display: 'flex',
+        opacity: 1,
+      });
+    } else {
+      timerRef.current = setTimeout(() => {
+        if (!move.current) {
+          setStyles({
+            opacity: 0,
+          });
+          timerRef.current = setTimeout(() => {
+            setStyles({
+              display: 'none',
+            });
+          }, 300);
+        }
+      }, 300);
+    }
+  }, [visibility, current]);
   return (
     <BaseMenu
       left={320}
