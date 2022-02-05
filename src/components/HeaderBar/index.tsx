@@ -6,7 +6,7 @@ import { useState, useEffect } from 'react';
 import { host } from '@src/config';
 import { useTranslation } from 'react-i18next';
 import { useRouter } from 'next/router';
-import { FeatureMenu, QRCodeToast } from './DropdownMenus';
+import { FeatureMenu, QRCodeToast, SolutionMenu } from './DropdownMenus';
 import { isBrowserChrome } from '@src/utils/isBrowserChrome';
 
 const MenuItem: NextPage<IMenuItemProps> = ({
@@ -16,7 +16,7 @@ const MenuItem: NextPage<IMenuItemProps> = ({
   onClick,
   onMenuHide,
   onMenuHover,
-  linkTarget
+  linkTarget,
 }) => {
   return (
     <>
@@ -24,7 +24,7 @@ const MenuItem: NextPage<IMenuItemProps> = ({
         <a
           className="menu-item"
           draggable="false"
-          target={linkTarget || "_self"}
+          target={linkTarget || '_self'}
           onClick={onClick}
           onMouseMove={onMenuHover}
           onMouseLeave={onMenuHide}
@@ -76,6 +76,10 @@ const headerbarExtraClassMap: { [path: string]: string } = {
   '/features/sop': 'feature-page-header',
   '/features/management': 'feature-page-header',
   '/features/data-center': 'feature-page-header',
+  '/solutions/general': 'feature-page-header',
+  '/solutions/increase': 'feature-page-header',
+  '/solutions/customer-service': 'feature-page-header',
+  '/solutions/operate': 'feature-page-header',
 };
 
 const HeaderBar: NextPage = () => {
@@ -132,10 +136,20 @@ const HeaderBar: NextPage = () => {
             >
               {t('products')}
             </MenuItem>
-            <MenuItem href="https://botorange.com/">{t('solutions')}</MenuItem>
+            <MenuItem
+              href="https://botorange.com/"
+              onMenuHover={() => setActiveMenu(HeaderBarMenu.SOLUTIONS)}
+              onMenuHide={() => setActiveMenu(null)}
+            >
+              {t('solutions')}
+            </MenuItem>
             <MenuItem href="/cases">{t('cases')}</MenuItem>
-            <MenuItem href="https://blog.juzibot.com/" linkTarget="_blank">{t('course')}</MenuItem>
-            <MenuItem href="https://wechaty.js.org/" linkTarget="_blank">{t('developer')}</MenuItem>
+            <MenuItem href="https://blog.juzibot.com/" linkTarget="_blank">
+              {t('course')}
+            </MenuItem>
+            <MenuItem href="https://wechaty.js.org/" linkTarget="_blank">
+              {t('developer')}
+            </MenuItem>
             <MenuItem href="/about-us">{t('about')}</MenuItem>
           </menu>
 
@@ -161,7 +175,14 @@ const HeaderBar: NextPage = () => {
 
       <div className="wrapper menu-box" onMouseMove={() => setActiveMenu(null)}>
         <div className="container">
-          <FeatureMenu visibility={activeMenu === HeaderBarMenu.FEATURES} />
+          <FeatureMenu
+            visibility={activeMenu === HeaderBarMenu.FEATURES}
+            current={activeMenu}
+          />
+          <SolutionMenu
+            visibility={activeMenu === HeaderBarMenu.SOLUTIONS}
+            current={activeMenu}
+          />
           <QRCodeToast visibility={activeMenu === HeaderBarMenu.QRCODE} />
         </div>
       </div>

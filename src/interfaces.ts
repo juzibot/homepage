@@ -160,6 +160,24 @@ export interface ICaseDetailPageProps {
   brief: string;
   datas: CaseDataItem[];
   steps: [string, ...string[]];
-  features: [typeObject<string, 'icon' | 'title' | 'subtitle'>, ...typeObject<string, 'icon' | 'title' | 'subtitle'>[]];
-  achievements: [typeObject<string, 'icon' | 'title'>, ...typeObject<string, 'icon' | 'title'>[]];
+  features: [
+    typeObject<string, 'icon' | 'title' | 'subtitle'>,
+    ...typeObject<string, 'icon' | 'title' | 'subtitle'>[]
+  ];
+  achievements: [
+    typeObject<string, 'icon' | 'title'>,
+    ...typeObject<string, 'icon' | 'title'>[]
+  ];
+}
+
+export interface ISolutionPageProps {
+  heroTitle: string;
+  heroSubtitle: string;
+  backgroundUrl: string;
+  challenges: typeObject<string, 'title' | 'icon' | 'subtitle'>[];
+  solutions: (typeObject<string, 'photo' | 'title'> & {
+    items?: { title: string; subtitle: string }[];
+    subtitle?: string;
+    icon?: string;
+  })[];
 }
