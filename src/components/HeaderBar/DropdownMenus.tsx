@@ -117,7 +117,7 @@ export const SolutionMenu: NextPage<{
         <div style={{ marginLeft: 8 }}>
           <div className="flex-row title-bar">
             <Image
-              src="/_images/icons/header-bar/14.svg"
+              src="https://cdn-official-website.juzibot.com/images/icons/header-bar/14.svg"
               alt="menu-icon"
               width="24"
               height="24"
@@ -125,29 +125,29 @@ export const SolutionMenu: NextPage<{
             <span>场景</span>
           </div>
           <MenuItem
-            iconUrl="/_images/icons/header-bar/06.svg"
-            hoverIconUrl="/_images/icons/header-bar/06-o.svg"
+            iconUrl="https://cdn-official-website.juzibot.com/images/icons/header-bar/06.svg"
+            hoverIconUrl="https://cdn-official-website.juzibot.com/images/icons/header-bar/06-o.svg"
             href="/solutions/general"
           >
             私域全链路解决方案
           </MenuItem>
           <MenuItem
-            iconUrl="/_images/icons/header-bar/07.svg"
-            hoverIconUrl="/_images/icons/header-bar/07-o.svg"
+            iconUrl="https://cdn-official-website.juzibot.com/images/icons/header-bar/07.svg"
+            hoverIconUrl="https://cdn-official-website.juzibot.com/images/icons/header-bar/07-o.svg"
             href="/solutions/customer-service"
           >
             客服场景解决方案
           </MenuItem>
           <MenuItem
-            iconUrl="/_images/icons/header-bar/08.svg"
-            hoverIconUrl="/_images/icons/header-bar/08-o.svg"
+            iconUrl="https://cdn-official-website.juzibot.com/images/icons/header-bar/08.svg"
+            hoverIconUrl="https://cdn-official-website.juzibot.com/images/icons/header-bar/08-o.svg"
             href="/solutions/increase"
           >
             增长场景解决方案
           </MenuItem>
           <MenuItem
-            iconUrl="/_images/icons/header-bar/09.svg"
-            hoverIconUrl="/_images/icons/header-bar/09-o.svg"
+            iconUrl="https://cdn-official-website.juzibot.com/images/icons/header-bar/09.svg"
+            hoverIconUrl="https://cdn-official-website.juzibot.com/images/icons/header-bar/09-o.svg"
             href="/solutions/operate"
           >
             规模化运营解决方案
@@ -157,7 +157,7 @@ export const SolutionMenu: NextPage<{
         <div style={{ marginLeft: 16 }}>
           <div className="flex-row title-bar">
             <Image
-              src="/_images/icons/header-bar/14.svg"
+              src="https://cdn-official-website.juzibot.com/images/icons/header-bar/14.svg"
               alt="menu-icon"
               width="24"
               height="24"
@@ -165,29 +165,29 @@ export const SolutionMenu: NextPage<{
             <span>行业</span>
           </div>
           <MenuItem
-            iconUrl="/_images/icons/header-bar/10.svg"
-            hoverIconUrl="/_images/icons/header-bar/10-o.svg"
+            iconUrl="https://cdn-official-website.juzibot.com/images/icons/header-bar/10.svg"
+            hoverIconUrl="https://cdn-official-website.juzibot.com/images/icons/header-bar/10-o.svg"
             href="/solutions/consumer-goods"
           >
             消费品行业解决方案
           </MenuItem>
           <MenuItem
-            iconUrl="/_images/icons/header-bar/11.svg"
-            hoverIconUrl="/_images/icons/header-bar/11-o.svg"
+            iconUrl="https://cdn-official-website.juzibot.com/images/icons/header-bar/11.svg"
+            hoverIconUrl="https://cdn-official-website.juzibot.com/images/icons/header-bar/11-o.svg"
             href="/solutions/education"
           >
             教培行业解决方案
           </MenuItem>
           <MenuItem
-            iconUrl="/_images/icons/header-bar/12.svg"
-            hoverIconUrl="/_images/icons/header-bar/12-o.svg"
+            iconUrl="https://cdn-official-website.juzibot.com/images/icons/header-bar/12.svg"
+            hoverIconUrl="https://cdn-official-website.juzibot.com/images/icons/header-bar/12-o.svg"
             href="/solutions/health"
           >
             健康行业解决方案
           </MenuItem>
           <MenuItem
-            iconUrl="/_images/icons/header-bar/13.svg"
-            hoverIconUrl="/_images/icons/header-bar/13-o.svg"
+            iconUrl="https://cdn-official-website.juzibot.com/images/icons/header-bar/13.svg"
+            hoverIconUrl="https://cdn-official-website.juzibot.com/images/icons/header-bar/13-o.svg"
             href="/solutions/finance"
           >
             政务金融行业解决方案
@@ -255,36 +255,36 @@ export const FeatureMenu: NextPage<{
       }}
     >
       <MenuItem
-        iconUrl="/_images/icons/header-bar/01.svg"
-        hoverIconUrl="/_images/icons/header-bar/01-o.svg"
+        iconUrl="https://cdn-official-website.juzibot.com/images/icons/header-bar/01.svg"
+        hoverIconUrl="https://cdn-official-website.juzibot.com/images/icons/header-bar/01-o.svg"
         href="/features/customer-acquisition"
       >
         规模获客
       </MenuItem>
       <MenuItem
-        iconUrl="/_images/icons/header-bar/02.svg"
-        hoverIconUrl="/_images/icons/header-bar/02-o.svg"
+        iconUrl="https://cdn-official-website.juzibot.com/images/icons/header-bar/02.svg"
+        hoverIconUrl="https://cdn-official-website.juzibot.com/images/icons/header-bar/02-o.svg"
         href="/features/sop"
       >
         精准触达
       </MenuItem>
       <MenuItem
-        iconUrl="/_images/icons/header-bar/03.svg"
-        hoverIconUrl="/_images/icons/header-bar/03-o.svg"
+        iconUrl="https://cdn-official-website.juzibot.com/images/icons/header-bar/03.svg"
+        hoverIconUrl="https://cdn-official-website.juzibot.com/images/icons/header-bar/03-o.svg"
         href="/features/contact-platform"
       >
         急速应答
       </MenuItem>
       <MenuItem
-        iconUrl="/_images/icons/header-bar/04.svg"
-        hoverIconUrl="/_images/icons/header-bar/04-o.svg"
+        iconUrl="https://cdn-official-website.juzibot.com/images/icons/header-bar/04.svg"
+        hoverIconUrl="https://cdn-official-website.juzibot.com/images/icons/header-bar/04-o.svg"
         href="/features/management"
       >
         高效管理
       </MenuItem>
       <MenuItem
-        iconUrl="/_images/icons/header-bar/05.svg"
-        hoverIconUrl="/_images/icons/header-bar/05-o.svg"
+        iconUrl="https://cdn-official-website.juzibot.com/images/icons/header-bar/05.svg"
+        hoverIconUrl="https://cdn-official-website.juzibot.com/images/icons/header-bar/05-o.svg"
         href="/features/data-center"
       >
         数据驱动
@@ -301,7 +301,7 @@ export const QRCodeToast: NextPage<{ visibility: boolean }> = ({
     <div className={`contact-menu ${visibility ? 'visible' : 'hidden'}`}>
       <div className="box">
         <Image
-          src="/_images/contact-qrcode.png"
+          src="https://cdn-official-website.juzibot.com/images/contact-qrcode.png"
           width="200"
           height="200"
           alt="qrcode"

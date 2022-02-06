@@ -10,7 +10,7 @@ const SolutionContactPage: NextPage = () => {
       <SolutionDetailPage
         heroTitle="消费品行业解决方案"
         heroSubtitle="句子互动助力消费品行业快速搭建私域流量池，赋能更多 SKU 展现机会、打通结果数据构建增长到转化的私域业务闭环。"
-        backgroundUrl="/_images/solutions/bg-5.svg"
+        backgroundUrl="https://cdn-official-website.juzibot.com/images/solutions/bg-5.svg"
         challenges={[
           {
             icon: 'icon-19.svg',
@@ -31,26 +31,26 @@ const SolutionContactPage: NextPage = () => {
         solutions={[
           {
             title: '规模化唤醒存量沉默客户，零人工成本搭建私域冷启动流量池',
-            photo: '/_images/solutions/s-20.svg',
+            photo: 'https://cdn-official-website.juzibot.com/images/solutions/s-20.svg',
             subtitle:
               '无需人工参与，把海量的沉默客户线索交给机器人，同多种途径自动完成意向客户筛选、社交关系建立和特殊信息备注，低成本前提下获得更高转化率。',
-            icon: '/_images/solutions/no-16.svg',
+            icon: 'https://cdn-official-website.juzibot.com/images/solutions/no-16.svg',
           },
 
           {
             title: 'RPA 助力赋予更多的推送机会，让每一个 SKU 都被用户看到',
-            photo: '/_images/solutions/s-21.svg',
+            photo: 'https://cdn-official-website.juzibot.com/images/solutions/s-21.svg',
             subtitle:
               '基于 RPA 技术，句子互动提供更多次面向全部用户和群聊的消息推送的能力，真正有效率地将私聊群聊作为一个推送和变现入口，让更多 SKU 有机会被推荐。 SOP 化运营，让企业最佳运营实践被应用到每一个客户服务中。',
-            icon: '/_images/solutions/no-17.svg',
+            icon: 'https://cdn-official-website.juzibot.com/images/solutions/no-17.svg',
           },
 
           {
             title: '聚合用户全域数据，关联结果数据指导运营策略优化',
-            photo: '/_images/solutions/s-22.svg',
+            photo: 'https://cdn-official-website.juzibot.com/images/solutions/s-22.svg',
             subtitle:
               '句子互动提供完善的 SDK 和开放 API 并预先打通市场上的电话短信系统、小程序商城、SCRM、ERP、CDP，打通效果数据，关联会话、物料和时间等多维度互动数据，用结果指导运营的优化策略。',
-            icon: '/_images/solutions/no-18.svg',
+            icon: 'https://cdn-official-website.juzibot.com/images/solutions/no-18.svg',
           },
         ]}
       />
