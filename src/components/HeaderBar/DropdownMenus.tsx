@@ -60,7 +60,8 @@ const MenuItem: NextPage<{
 export const SolutionMenu: NextPage<{
   visibility: boolean;
   current: HeaderBarMenu | null;
-}> = ({ current, visibility }) => {
+  onHide: (current: HeaderBarMenu) => void;
+}> = ({ current, visibility, onHide }) => {
   const [styles, setStyles] = useState<CSSProperties>();
   const timerRef = useRef<NodeJS.Timeout>();
   const move = useRef<boolean>(true);
@@ -79,7 +80,7 @@ export const SolutionMenu: NextPage<{
       });
     } else {
       timerRef.current = setTimeout(() => {
-        if (!move.current) {
+        if (current === HeaderBarMenu.SOLUTIONS && !move.current) {
           setStyles({
             opacity: 0,
           });
@@ -87,16 +88,17 @@ export const SolutionMenu: NextPage<{
             setStyles({
               display: 'none',
             });
-          }, 300);
+            onHide(HeaderBarMenu.SOLUTIONS);
+          }, 600);
         }
-      }, 300);
+      }, 600);
     }
-  }, [visibility, current]);
+  }, [visibility, current, onHide]);
   return (
     <BaseMenu
-      left={375}
+      left={236}
       name={HeaderBarMenu.SOLUTIONS}
-      style={{ height: 270, ...styles, width: 240 }}
+      style={{ height: 320, ...styles, width: 520 }}
       key="solutions"
       onMouseMove={() => (move.current = true)}
       onMouseLeave={() => {
@@ -111,34 +113,87 @@ export const SolutionMenu: NextPage<{
         }, 300);
       }}
     >
-      <MenuItem
-        iconUrl="https://cdn-official-website.juzibot.com/images/icons/header-bar/06.svg"
-        hoverIconUrl="https://cdn-official-website.juzibot.com/images/icons/header-bar/06-o.svg"
-        href="/solutions/general"
-      >
-        私域全链路解决方案
-      </MenuItem>
-      <MenuItem
-        iconUrl="https://cdn-official-website.juzibot.com/images/icons/header-bar/07.svg"
-        hoverIconUrl="https://cdn-official-website.juzibot.com/images/icons/header-bar/07-o.svg"
-        href="/solutions/customer-service"
-      >
-        客服场景解决方案
-      </MenuItem>
-      <MenuItem
-        iconUrl="https://cdn-official-website.juzibot.com/images/icons/header-bar/08.svg"
-        hoverIconUrl="https://cdn-official-website.juzibot.com/images/icons/header-bar/08-o.svg"
-        href="/solutions/increase"
-      >
-        增长场景解决方案
-      </MenuItem>
-      <MenuItem
-        iconUrl="https://cdn-official-website.juzibot.com/images/icons/header-bar/09.svg"
-        hoverIconUrl="https://cdn-official-website.juzibot.com/images/icons/header-bar/09-o.svg"
-        href="/solutions/operate"
-      >
-        规模化运营解决方案
-      </MenuItem>
+      <div className="flex-row">
+        <div style={{ marginLeft: 8 }}>
+          <div className="flex-row title-bar">
+            <Image
+              src="https://cdn-official-website.juzibot.com/images/icons/header-bar/14.svg"
+              alt="menu-icon"
+              width="24"
+              height="24"
+            />
+            <span>场景</span>
+          </div>
+          <MenuItem
+            iconUrl="https://cdn-official-website.juzibot.com/images/icons/header-bar/06.svg"
+            hoverIconUrl="https://cdn-official-website.juzibot.com/images/icons/header-bar/06-o.svg"
+            href="/solutions/general"
+          >
+            私域全链路解决方案
+          </MenuItem>
+          <MenuItem
+            iconUrl="https://cdn-official-website.juzibot.com/images/icons/header-bar/07.svg"
+            hoverIconUrl="https://cdn-official-website.juzibot.com/images/icons/header-bar/07-o.svg"
+            href="/solutions/customer-service"
+          >
+            客服场景解决方案
+          </MenuItem>
+          <MenuItem
+            iconUrl="https://cdn-official-website.juzibot.com/images/icons/header-bar/08.svg"
+            hoverIconUrl="https://cdn-official-website.juzibot.com/images/icons/header-bar/08-o.svg"
+            href="/solutions/increase"
+          >
+            增长场景解决方案
+          </MenuItem>
+          <MenuItem
+            iconUrl="https://cdn-official-website.juzibot.com/images/icons/header-bar/09.svg"
+            hoverIconUrl="https://cdn-official-website.juzibot.com/images/icons/header-bar/09-o.svg"
+            href="/solutions/operate"
+          >
+            规模化运营解决方案
+          </MenuItem>
+        </div>
+
+        <div style={{ marginLeft: 16 }}>
+          <div className="flex-row title-bar">
+            <Image
+              src="https://cdn-official-website.juzibot.com/images/icons/header-bar/14.svg"
+              alt="menu-icon"
+              width="24"
+              height="24"
+            />
+            <span>行业</span>
+          </div>
+          <MenuItem
+            iconUrl="https://cdn-official-website.juzibot.com/images/icons/header-bar/10.svg"
+            hoverIconUrl="https://cdn-official-website.juzibot.com/images/icons/header-bar/10-o.svg"
+            href="/solutions/consumer-goods"
+          >
+            消费品行业解决方案
+          </MenuItem>
+          <MenuItem
+            iconUrl="https://cdn-official-website.juzibot.com/images/icons/header-bar/11.svg"
+            hoverIconUrl="https://cdn-official-website.juzibot.com/images/icons/header-bar/11-o.svg"
+            href="/solutions/education"
+          >
+            教培行业解决方案
+          </MenuItem>
+          <MenuItem
+            iconUrl="https://cdn-official-website.juzibot.com/images/icons/header-bar/12.svg"
+            hoverIconUrl="https://cdn-official-website.juzibot.com/images/icons/header-bar/12-o.svg"
+            href="/solutions/health"
+          >
+            健康行业解决方案
+          </MenuItem>
+          <MenuItem
+            iconUrl="https://cdn-official-website.juzibot.com/images/icons/header-bar/13.svg"
+            hoverIconUrl="https://cdn-official-website.juzibot.com/images/icons/header-bar/13-o.svg"
+            href="/solutions/finance"
+          >
+            政务金融行业解决方案
+          </MenuItem>
+        </div>
+      </div>
     </BaseMenu>
   );
 };
@@ -146,7 +201,8 @@ export const SolutionMenu: NextPage<{
 export const FeatureMenu: NextPage<{
   visibility: boolean;
   current: HeaderBarMenu | null;
-}> = ({ visibility, current }) => {
+  onHide: (current: HeaderBarMenu) => void;
+}> = ({ visibility, current, onHide }) => {
   const [styles, setStyles] = useState<CSSProperties>();
   const timerRef = useRef<NodeJS.Timeout>();
   const move = useRef<boolean>(true);
@@ -165,7 +221,7 @@ export const FeatureMenu: NextPage<{
       });
     } else {
       timerRef.current = setTimeout(() => {
-        if (!move.current) {
+        if (current === HeaderBarMenu.FEATURES && !move.current) {
           setStyles({
             opacity: 0,
           });
@@ -173,11 +229,12 @@ export const FeatureMenu: NextPage<{
             setStyles({
               display: 'none',
             });
-          }, 300);
+            onHide(HeaderBarMenu.FEATURES);
+          }, 600);
         }
-      }, 300);
+      }, 600);
     }
-  }, [visibility, current]);
+  }, [visibility, current, onHide]);
   return (
     <BaseMenu
       left={295}

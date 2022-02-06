@@ -60,7 +60,7 @@ const CompanyDisplayBar: NextPage = () => {
     ...item,
     title: t(`company-${index + 1}-title`),
     subTitle: t(`company-${index + 1}-subtitle`),
-    companyLogoUrl: `/_images/icons/logo-${index}.svg`,
+    companyLogoUrl: `https://cdn-official-website.juzibot.com/images/icons/logo-${index}.svg`,
     companyName: t(`company-${index + 1}-name`),
     companyBrief: t(`company-${index + 1}-brief`),
     comment: t(`company-${index + 1}-comment`),
