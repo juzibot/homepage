@@ -170,6 +170,28 @@
   height: 200px;
   opacity: 0;
 
+  .flex-row {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .title-bar {
+    align-items: center;
+    font-family: PingFang SC;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    color: #364256;
+    padding: 2px 0 16px 0;
+    margin-left: 12px;
+    margin-bottom: 8px;
+    border-bottom: 1px solid #eee;
+
+    span {
+      margin-left: 12px;
+    }
+  }
+
   .dropdown-menu-item {
     width: 100%;
     padding: 16px;
@@ -204,7 +226,6 @@
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start;
-
   }
 
   &::before {

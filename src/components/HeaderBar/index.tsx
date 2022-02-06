@@ -71,15 +71,8 @@ const WeworkBar: NextPage = () => {
 
 const headerbarExtraClassMap: { [path: string]: string } = {
   '/about-us': 'about-us',
-  '/features/contact-platform': 'feature-page-header',
-  '/features/customer-acquisition': 'feature-page-header',
-  '/features/sop': 'feature-page-header',
-  '/features/management': 'feature-page-header',
-  '/features/data-center': 'feature-page-header',
-  '/solutions/general': 'feature-page-header',
-  '/solutions/increase': 'feature-page-header',
-  '/solutions/customer-service': 'feature-page-header',
-  '/solutions/operate': 'feature-page-header',
+  '/features/': 'feature-page-header',
+  '/solutions/': 'feature-page-header',
 };
 
 const HeaderBar: NextPage = () => {
@@ -92,7 +85,11 @@ const HeaderBar: NextPage = () => {
   const { pathname } = useRouter();
 
   useEffect(() => {
-    setHeaderbarExtraClass(headerbarExtraClassMap[pathname] || '');
+    for (const path in headerbarExtraClassMap) {
+      if (pathname.includes(path)) {
+        setHeaderbarExtraClass(headerbarExtraClassMap[path]);
+      }
+    }
   }, [pathname]);
 
   useEffect(() => {
@@ -135,7 +132,7 @@ const HeaderBar: NextPage = () => {
             </a>
             <WeworkBar />
             <MenuItem
-              href="https://botorange.com/"
+              href="#"
               hasArrow
               onMenuHover={() => setActiveMenu(HeaderBarMenu.FEATURES)}
               onMenuHide={() => setActiveMenu(null)}
@@ -143,7 +140,7 @@ const HeaderBar: NextPage = () => {
               {t('products')}
             </MenuItem>
             <MenuItem
-              href="https://botorange.com/"
+              href="#"
               hasArrow
               onMenuHover={() => setActiveMenu(HeaderBarMenu.SOLUTIONS)}
               onMenuHide={() => setActiveMenu(null)}
@@ -185,10 +182,12 @@ const HeaderBar: NextPage = () => {
           <FeatureMenu
             visibility={activeMenu === HeaderBarMenu.FEATURES}
             current={activeMenu}
+            onHide={() => setActiveMenu(null)}
           />
           <SolutionMenu
             visibility={activeMenu === HeaderBarMenu.SOLUTIONS}
             current={activeMenu}
+            onHide={() => {}}
           />
           <QRCodeToast visibility={activeMenu === HeaderBarMenu.QRCODE} />
         </div>

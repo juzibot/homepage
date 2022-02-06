@@ -10,7 +10,7 @@ const SolutionContactPage: NextPage = () => {
       <SolutionDetailPage
         heroTitle="增长场景解决方案"
         heroSubtitle="新流量时代的增长引擎，句子互动提供多种方式零人工成本规模触达并添加用户进入私域，助力冷启动流量池搭建。"
-        backgroundUrl="https://cdn-official-website.juzibot.com/images/solutions/bg-2.svg"
+        backgroundUrl="https://cdn-official-website.juzibot.com/images/solutions/bg-3.svg"
         challenges={[
           {
             icon: 'icon-9.svg',
