@@ -1,0 +1,30 @@
+{
+  "short_name": "JuziBot",
+  "name": "句子互动企微SCRM - 助力搭建安全稳定私域流量",
+  "icons": [
+    {
+      "src": "favicon.ico",
+      "sizes": "64x64 32x32 24x24 16x16",
+      "type": "image/x-icon"
+    },
+    {
+      "src": "https://cdn-official-website.juzibot.com/images/logo@192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "https://cdn-official-website.juzibot.com/images/logo@256.png",
+      "type": "image/png",
+      "sizes": "256x256"
+    },
+    {
+      "src": "https://cdn-official-website.juzibot.com/images/logo@512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#000000",
+  "background_color": "#ffffff"
+}

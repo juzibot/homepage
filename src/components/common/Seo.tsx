@@ -11,6 +11,30 @@ const Seo: NextPage<NextSeoProps & { page?: string }> = (props) => {
         {...props}
         {...(page ? { title: t(`${page}-title`) } : null)}
         description={t('description')}
+        openGraph={{
+          title: t('homepage-title'),
+          type: 'website',
+          url: 'https://juzibot.com',
+          site_name: 'JuziBot',
+          description: t('description'),
+          images: [
+            {
+              url: 'https://cdn-official-website.juzibot.com/images/logo@192.png',
+              width: 192,
+              height: 192,
+            },
+            {
+              url: 'https://cdn-official-website.juzibot.com/images/logo@256.png',
+              width: 256,
+              height: 256,
+            },
+            {
+              url: 'https://cdn-official-website.juzibot.com/images/logo@512.png',
+              width: 512,
+              height: 512,
+            },
+          ],
+        }}
       />
     </>
   );
