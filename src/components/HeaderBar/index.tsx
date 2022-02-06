@@ -117,6 +117,12 @@ const HeaderBar: NextPage = () => {
         }}
       >
         <div className="container">
+          <div style={{ display: 'none' }}>
+            <img
+              src="https://cdn-official-website.juzibot.com/images/logo@512.png"
+              alt="logo for wechat sharing"
+            ></img>
+          </div>
           <menu className="header-left">
             <a className="logo" href={host}>
               <Image
