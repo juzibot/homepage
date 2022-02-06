@@ -39,7 +39,7 @@ const SolutionContactPage: NextPage = () => {
             photo: 'https://cdn-official-website.juzibot.com/images/solutions/s-16.svg',
             subtitle:
               '句子互动把每一个账号变成全年无休、自动执行运营计划的效率机器人，完成 90%以上的被抽象的标准化运营动作，把员工从机械重复的工作中解脱出来。',
-            icon: 'https://cdn-official-website.juzibot.com/images/solutions/no-11.svg',
+            icon: 'https://cdn-official-website.juzibot.com/images/solutions/no-15.svg',
           },
 
           {
