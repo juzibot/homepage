@@ -121,8 +121,8 @@ const HeaderBar: NextPage = () => {
             <a className="logo" href={host}>
               <Image
                 alt="logo"
-                src="https://cdn-official-website.juzibot.com/images/logo.svg"
-                width={120}
+                src="https://cdn-official-website.juzibot.com/images/logo.png"
+                width={106}
                 height={64}
                 draggable="false"
               ></Image>
@@ -138,6 +138,7 @@ const HeaderBar: NextPage = () => {
             </MenuItem>
             <MenuItem
               href="https://botorange.com/"
+              hasArrow
               onMenuHover={() => setActiveMenu(HeaderBarMenu.SOLUTIONS)}
               onMenuHide={() => setActiveMenu(null)}
             >

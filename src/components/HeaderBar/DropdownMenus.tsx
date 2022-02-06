@@ -94,7 +94,7 @@ export const SolutionMenu: NextPage<{
   }, [visibility, current]);
   return (
     <BaseMenu
-      left={390}
+      left={375}
       name={HeaderBarMenu.SOLUTIONS}
       style={{ height: 270, ...styles, width: 240 }}
       key="solutions"
@@ -180,7 +180,7 @@ export const FeatureMenu: NextPage<{
   }, [visibility, current]);
   return (
     <BaseMenu
-      left={320}
+      left={295}
       name={HeaderBarMenu.FEATURES}
       style={{ height: 314, ...styles }}
       key="features"
