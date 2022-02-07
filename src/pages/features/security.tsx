@@ -19,7 +19,7 @@ const ContactPlatformPage: NextPage = () => {
         <div
           className="container"
           style={{
-            backgroundImage: `url('/_images/icons/features/security.svg')`,
+            backgroundImage: `url('https://cdn-official-website.juzibot.com/images/icons/features/security.svg')`,
             height: 600,
           }}
         >
@@ -52,7 +52,7 @@ const ContactPlatformPage: NextPage = () => {
             <div className="item">
               <Image
                 draggable="false"
-                src="/_images/icons/security-1.svg"
+                src="https://cdn-official-website.juzibot.com/images/icons/security-1.svg"
                 alt="security-icon"
                 width="64"
                 height="64"
@@ -68,7 +68,7 @@ const ContactPlatformPage: NextPage = () => {
             <div className="item">
               <Image
                 draggable="false"
-                src="/_images/icons/security-2.svg"
+                src="https://cdn-official-website.juzibot.com/images/icons/security-2.svg"
                 alt="security-icon"
                 width="64"
                 height="64"
@@ -82,7 +82,7 @@ const ContactPlatformPage: NextPage = () => {
             <div className="item">
               <Image
                 draggable="false"
-                src="/_images/icons/security-3.svg"
+                src="https://cdn-official-website.juzibot.com/images/icons/security-3.svg"
                 alt="security-icon"
                 width="64"
                 height="64"
@@ -96,7 +96,7 @@ const ContactPlatformPage: NextPage = () => {
             <div className="item">
               <Image
                 draggable="false"
-                src="/_images/icons/security-4.svg"
+                src="https://cdn-official-website.juzibot.com/images/icons/security-4.svg"
                 alt="security-icon"
                 width="64"
                 height="64"
