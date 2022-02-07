@@ -24,9 +24,9 @@ const Footer: NextPage = () => {
         },
         { title: t('footer-menu-1-4-title'), url: '/features/data-center' },
         { title: t('footer-menu-1-5-title'), url: '/features/management' },
-        { title: t('footer-menu-1-6-title'), url: '/' },
-        { title: t('footer-menu-1-8-title'), url: '/' },
-        { title: t('footer-menu-1-9-title'), url: '/' },
+        { title: t('footer-menu-1-6-title'), url: '/features/security' },
+        // { title: t('footer-menu-1-8-title'), url: '/' },
+        // { title: t('footer-menu-1-9-title'), url: '/' },
       ],
     },
     {
@@ -56,15 +56,24 @@ const Footer: NextPage = () => {
         { title: t('footer-menu-3-3-title'), url: 'https://wechaty.js.org/' },
         { title: t('footer-menu-3-4-title'), url: '/cases' },
         { title: t('footer-menu-3-5-title'), url: 'https://blog.juzibot.com/' },
-        { title: t('footer-menu-3-6-title'), url: 'https://blog.juzibot.com/' },
+        {
+          title: t('footer-menu-3-6-title'),
+          url: 'https://work.weixin.qq.com/nl/learning',
+        },
       ],
     },
     {
       title: t('footer-menu-4-title'),
       child: [
         { title: t('footer-menu-4-1-title'), url: '/about-us' },
-        { title: t('footer-menu-4-3-title'), url: '/join-us' },
-        { title: t('footer-menu-4-4-title'), url: '/' },
+        {
+          title: t('footer-menu-4-3-title'),
+          url: 'https://juzibot.com/join-us',
+        },
+        {
+          title: t('footer-menu-4-4-title'),
+          url: 'https://qiwei.juzibot.com/agreement',
+        },
         {
           title: t('footer-menu-4-5-title'),
           tooltip: '北京市海淀区中关村智造大街 F 座五层',
