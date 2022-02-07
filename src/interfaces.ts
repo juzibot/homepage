@@ -180,4 +180,5 @@ export interface ISolutionPageProps {
     subtitle?: string;
     icon?: string;
   })[];
+  cases: ICompanyItemProps[]
 }

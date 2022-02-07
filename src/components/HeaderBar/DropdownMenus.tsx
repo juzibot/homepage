@@ -2,7 +2,7 @@ import { HeaderBarMenu, IHeaderBarMenuProps } from '@src/interfaces';
 import { NextPage } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
-import { CSSProperties, useMemo, useRef, useState } from 'react';
+import { CSSProperties, useEffect, useMemo, useRef, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 
 const BaseMenu: NextPage<IHeaderBarMenuProps> = ({
@@ -12,6 +12,15 @@ const BaseMenu: NextPage<IHeaderBarMenuProps> = ({
   onMouseLeave,
   onMouseMove,
 }) => {
+  useEffect(() => {
+    if (process.browser) {
+      document.querySelectorAll('.dropdown-menu a').forEach((item) => {
+        item.addEventListener('click', () => {
+          onMouseLeave();
+        });
+      });
+    }
+  }, []);
   return (
     <div
       style={{ paddingTop: 70, position: 'fixed' }}

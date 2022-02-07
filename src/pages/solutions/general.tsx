@@ -1,5 +1,6 @@
 import Seo from '@src/components/common/Seo';
 import { SolutionDetailPage } from '@src/components/solutions/SolutionPage';
+import { CompanyCategory } from '@src/interfaces';
 import { GetStaticProps, NextPage } from 'next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 
@@ -8,6 +9,35 @@ const SolutionContactPage: NextPage = () => {
     <>
       <Seo title="私域全链路解决方案 - 句子互动企微SCRM - 助力搭建安全稳定私域流量" />
       <SolutionDetailPage
+        cases={[
+          {
+            title: '某国际一线美妆大品牌',
+            brief:
+              '自动化激活会员用户，10 倍的信息触达效率，86w 小程序用户行为的自动标签化',
+            category: CompanyCategory.TRADE,
+            url: '/cases/06',
+            imageUrl:
+              'https://cdn-official-website.juzibot.com/images/cases/companies/21.png',
+          },
+          {
+            title: '某家庭维修品牌',
+            brief:
+              '8 人完成 180 个账号上 300 万用户的客诉应答，每天处理 6300 余客户的售后问题，平均应答时间2分钟以内',
+            category: CompanyCategory.IT,
+            url: '/cases/26',
+            imageUrl:
+              'https://cdn-official-website.juzibot.com/images/cases/companies/31.png',
+          },
+          {
+            title: '某饮料新消费头部品牌',
+            brief:
+              '实现 1 人管理 10 个企业微信、10 万粉丝的消息应答，触达用户的消息总量提升 5 倍以上',
+            category: CompanyCategory.TRADE,
+            url: '/cases/01',
+            imageUrl:
+              'https://cdn-official-website.juzibot.com/images/cases/companies/0.png',
+          },
+        ]}
         heroTitle="私域全链路解决方案"
         heroSubtitle="让私域业务成为可被标准化落地执行、真能为企业带来转化的数据资产，助力企业 10 倍提高私域流量的运营效率"
         backgroundUrl="https://cdn-official-website.juzibot.com/images/solutions/bg-1.svg"
@@ -36,7 +66,8 @@ const SolutionContactPage: NextPage = () => {
         solutions={[
           {
             title: '零人工规模化搭建私域流量池',
-            photo: 'https://cdn-official-website.juzibot.com/images/solutions/s-1.svg',
+            photo:
+              'https://cdn-official-website.juzibot.com/images/solutions/s-1.svg',
             items: [
               {
                 title: '规模迁移',
@@ -58,7 +89,8 @@ const SolutionContactPage: NextPage = () => {
 
           {
             title: 'RPA 助力降低 90%人力投入',
-            photo: 'https://cdn-official-website.juzibot.com/images/solutions/s-2.svg',
+            photo:
+              'https://cdn-official-website.juzibot.com/images/solutions/s-2.svg',
             items: [
               {
                 title: '消息聚合',
@@ -80,7 +112,8 @@ const SolutionContactPage: NextPage = () => {
 
           {
             title: '全流程 SOP 作业保质保量服务',
-            photo: 'https://cdn-official-website.juzibot.com/images/solutions/s-3.svg',
+            photo:
+              'https://cdn-official-website.juzibot.com/images/solutions/s-3.svg',
             items: [
               {
                 title: '自动触达',
@@ -102,7 +135,8 @@ const SolutionContactPage: NextPage = () => {
 
           {
             title: '汇总全域数据实现千人千面服务',
-            photo: 'https://cdn-official-website.juzibot.com/images/solutions/s-4.svg',
+            photo:
+              'https://cdn-official-website.juzibot.com/images/solutions/s-4.svg',
             items: [
               {
                 title: '全域打通',

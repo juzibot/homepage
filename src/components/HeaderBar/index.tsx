@@ -90,6 +90,7 @@ const HeaderBar: NextPage = () => {
         setHeaderbarExtraClass(headerbarExtraClassMap[path]);
       }
     }
+    setActiveMenu(null);
   }, [pathname]);
 
   useEffect(() => {
