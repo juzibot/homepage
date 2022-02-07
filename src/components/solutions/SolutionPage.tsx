@@ -1,6 +1,5 @@
 import { ISolutionPageProps } from '@src/interfaces';
-import { companies, CompanyItem } from '@src/pages/cases';
-import { shuffle } from 'lodash';
+import { CompanyItem } from '@src/pages/cases';
 import { NextPage } from 'next';
 import Image from 'next/image';
 import AppealBar from '../index/AppealBar';
@@ -11,8 +10,8 @@ export const SolutionDetailPage: NextPage<ISolutionPageProps> = ({
   solutions,
   challenges,
   backgroundUrl,
+  cases
 }) => {
-  const displayCompanies = shuffle(companies).slice(0, 3);
   return (
     <>
       <div
@@ -141,7 +140,7 @@ export const SolutionDetailPage: NextPage<ISolutionPageProps> = ({
         <div className="container">
           <h1>案例实践</h1>
           <div className="items-box">
-            {displayCompanies.map((item) => (
+            {cases.map((item) => (
               <CompanyItem key={item.title} {...item} />
             ))}
           </div>
