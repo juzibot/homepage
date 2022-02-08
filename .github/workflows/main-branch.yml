@@ -41,6 +41,7 @@ jobs:
         run: |
           export PACKAGE_VERSION=${{ github.sha }}
           export ECR_URL=${{ env.ECR_URL }}
+          echo ${{ secrets.ENV_PROD }} >> .env
           npm run docker-ci
     outputs:
       version: ${{ github.sha }}
