@@ -32,6 +32,16 @@ jobs:
           registry-url: https://npm.pkg.github.com/
           scope: '@juzibot'
 
+      - name: Create env file
+        id: create-env
+        run: |
+          touch .env
+          echo JUZI_API_TOKEN="${{ secrets.JUZI_API_TOKEN }}" >> .env
+          echo JUZI_HELLO_MSG="${{ secrets.JUZI_HELLO_MSG }}" >> .env
+          echo JUZI_API_URL="${{ secrets.JUZI_API_URL }}" >> .env
+          echo FEISHU_BOT_URL="${{ secrets.FEISHU_BOT_URL }}" >> .env
+          cat .env
+
       - name: Build, tag, and push image to Amazon ECR
         id: build-image
         env:
@@ -41,7 +51,6 @@ jobs:
         run: |
           export PACKAGE_VERSION=${{ github.sha }}
           export ECR_URL=${{ env.ECR_URL }}
-          echo ${{ secrets.ENV_PROD }} >> .env
           npm run docker-ci
     outputs:
       version: ${{ github.sha }}
