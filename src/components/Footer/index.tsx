@@ -4,6 +4,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { useTranslation } from 'react-i18next';
 import dynamic from 'next/dynamic';
+import ContactModal from '../common/ContactModal';
 const ReactTooltip = dynamic(() => import('react-tooltip'), { ssr: false });
 
 const Footer: NextPage = () => {
@@ -103,102 +104,105 @@ const Footer: NextPage = () => {
     },
   ];
   return (
-    <footer>
-      <div className="wrapper footer-bar">
-        <div className="container">
-          <div className="menu-container">
-            <div className="logo">
-              <Image
-                src="https://cdn-official-website.juzibot.com/images/logo.svg"
-                width={120}
-                height={64}
-                draggable="false"
-                alt="logo"
-              ></Image>
-            </div>
+    <>
+      <ContactModal />
+      <footer>
+        <div className="wrapper footer-bar">
+          <div className="container">
+            <div className="menu-container">
+              <div className="logo">
+                <Image
+                  src="https://cdn-official-website.juzibot.com/images/logo.svg"
+                  width={120}
+                  height={64}
+                  draggable="false"
+                  alt="logo"
+                ></Image>
+              </div>
 
-            {menus.map((menu) => (
-              <div key={menu.title} className="menu-group">
-                <div className="title">{menu.title}</div>
-                <div className="menus">
-                  {menu.child.map((item, idx) =>
-                    item.tooltip ? (
-                      <div className="tooltips" key={idx}>
+              {menus.map((menu) => (
+                <div key={menu.title} className="menu-group">
+                  <div className="title">{menu.title}</div>
+                  <div className="menus">
+                    {menu.child.map((item, idx) =>
+                      item.tooltip ? (
+                        <div className="tooltips" key={idx}>
+                          <a
+                            data-tip
+                            data-for="address"
+                            href={item.url}
+                            {...(item.url?.includes('http')
+                              ? { target: '_blank', rel: 'noreferrer' }
+                              : { target: '_self' })}
+                          >
+                            {item.title}
+                          </a>
+                          <ReactTooltip
+                            id="address"
+                            place="right"
+                            effect="solid"
+                            type="dark"
+                          >
+                            <span>{item.tooltip}</span>
+                          </ReactTooltip>
+                        </div>
+                      ) : (
                         <a
-                          data-tip
-                          data-for="address"
                           href={item.url}
+                          key={idx}
                           {...(item.url?.includes('http')
                             ? { target: '_blank', rel: 'noreferrer' }
                             : { target: '_self' })}
                         >
                           {item.title}
                         </a>
-                        <ReactTooltip
-                          id="address"
-                          place="right"
-                          effect="solid"
-                          type="dark"
-                        >
-                          <span>{item.tooltip}</span>
-                        </ReactTooltip>
-                      </div>
-                    ) : (
-                      <a
-                        href={item.url}
-                        key={idx}
-                        {...(item.url?.includes('http')
-                          ? { target: '_blank', rel: 'noreferrer' }
-                          : { target: '_self' })}
-                      >
-                        {item.title}
-                      </a>
-                    )
-                  )}
+                      )
+                    )}
+                  </div>
                 </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
         </div>
-      </div>
 
-      <div className="wrapper registration">
-        <div className="container registration-container">
-          <div className="friendship-links">
-            <span className="friendlink">{t('friendlink')}</span>
-            {friendLinks.map(({ title, url }) => (
-              <Link key={title} href={url}>
-                <a className="friendlink" target="_blank" rel="noreferrer">
-                  {title}
+        <div className="wrapper registration">
+          <div className="container registration-container">
+            <div className="friendship-links">
+              <span className="friendlink">{t('friendlink')}</span>
+              {friendLinks.map(({ title, url }) => (
+                <Link key={title} href={url}>
+                  <a className="friendlink" target="_blank" rel="noreferrer">
+                    {title}
+                  </a>
+                </Link>
+              ))}
+            </div>
+
+            <div className="registration">
+              <span className="copyright">{t('copyright')}</span>
+              <Link href="https://beian.miit.gov.cn/">
+                <a className="beian" target="_blank" rel="noreferrer">
+                  {t('registration')}
                 </a>
               </Link>
-            ))}
-          </div>
-
-          <div className="registration">
-            <span className="copyright">{t('copyright')}</span>
-            <Link href="https://beian.miit.gov.cn/">
-              <a className="beian" target="_blank" rel="noreferrer">
-                {t('registration')}
-              </a>
-            </Link>
-            <Link href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=11010802033527">
-              <a className="beian-portal" target="_blank" rel="noreferrer">
-                <Image
-                  src="https://cdn-official-website.juzibot.com/images/icons/beian.png"
-                  alt="beian"
-                  width="16"
-                  height="16"
-                />
-                <span style={{ marginLeft: 4 }}>
-                  {t('registration-portal')}
-                </span>
-              </a>
-            </Link>
+              <Link href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=11010802033527">
+                <a className="beian-portal" target="_blank" rel="noreferrer">
+                  <Image
+                    src="https://cdn-official-website.juzibot.com/images/icons/beian.png"
+                    alt="beian"
+                    width="16"
+                    height="16"
+                  />
+                  <span style={{ marginLeft: 4 }}>
+                    {t('registration-portal')}
+                  </span>
+                </a>
+              </Link>
+            </div>
           </div>
         </div>
-      </div>
-    </footer>
+      </footer>
+    </>
   );
 };
 

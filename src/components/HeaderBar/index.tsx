@@ -6,7 +6,7 @@ import { useState, useEffect } from 'react';
 import { host } from '@src/config';
 import { useTranslation } from 'react-i18next';
 import { useRouter } from 'next/router';
-import { FeatureMenu, QRCodeToast, SolutionMenu } from './DropdownMenus';
+import { FeatureMenu, SolutionMenu } from './DropdownMenus';
 import { isBrowserChrome } from '@src/utils/isBrowserChrome';
 
 const MenuItem: NextPage<IMenuItemProps> = ({
@@ -163,8 +163,11 @@ const HeaderBar: NextPage = () => {
               <a
                 className="menu-item primary-link"
                 draggable="false"
-                onMouseMove={() => setActiveMenu(HeaderBarMenu.QRCODE)}
-                onMouseOut={() => setActiveMenu(null)}
+                onClick={() => {
+                  document
+                    .getElementById('contact-modal')
+                    ?.setAttribute('style', 'display: flex');
+                }}
               >
                 {t('lets-talk')}
               </a>
@@ -190,7 +193,7 @@ const HeaderBar: NextPage = () => {
             current={activeMenu}
             onHide={() => {}}
           />
-          <QRCodeToast visibility={activeMenu === HeaderBarMenu.QRCODE} />
+          {/* <QRCodeToast visibility={activeMenu === HeaderBarMenu.QRCODE} /> */}
         </div>
       </div>
     </>

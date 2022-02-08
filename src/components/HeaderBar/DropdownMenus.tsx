@@ -105,9 +105,9 @@ export const SolutionMenu: NextPage<{
   }, [visibility, current, onHide]);
   return (
     <BaseMenu
-      left={236}
+      left={245}
       name={HeaderBarMenu.SOLUTIONS}
-      style={{ height: 320, ...styles, width: 520 }}
+      style={{ height: 320, ...styles, width: 502 }}
       key="solutions"
       onMouseMove={() => (move.current = true)}
       onMouseLeave={() => {
@@ -166,7 +166,7 @@ export const SolutionMenu: NextPage<{
         <div style={{ marginLeft: 16 }}>
           <div className="flex-row title-bar">
             <Image
-              src="https://cdn-official-website.juzibot.com/images/icons/header-bar/14.svg"
+              src="https://cdn-official-website.juzibot.com/images/icons/header-bar/15.svg"
               alt="menu-icon"
               width="24"
               height="24"
@@ -246,7 +246,7 @@ export const FeatureMenu: NextPage<{
   }, [visibility, current, onHide]);
   return (
     <BaseMenu
-      left={295}
+      left={292}
       name={HeaderBarMenu.FEATURES}
       style={{ height: 314, ...styles }}
       key="features"

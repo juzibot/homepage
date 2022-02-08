@@ -182,3 +182,4 @@ export interface ISolutionPageProps {
   })[];
   cases: ICompanyItemProps[]
 }
+

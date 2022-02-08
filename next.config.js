@@ -1,4 +1,6 @@
 const { i18n } = require('./next-i18next.config');
+const dotenv = require('dotenv');
+dotenv.config();
 
 /** @type {import('next').NextConfig} */
 module.exports = {
@@ -18,7 +20,7 @@ module.exports = {
         source: '/about.html',
         destination: '/about-us',
         permanent: true,
-      }
-    ]
-  }
-}
+      },
+    ];
+  },
+};
