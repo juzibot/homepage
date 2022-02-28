@@ -1,3 +1,13 @@
 {
-  "extends": "next/core-web-vitals"
+  "extends": ["next/core-web-vitals", "eslint:recommended"],
+  "plugins": ["@typescript-eslint"],
+  "parser": "@typescript-eslint/parser",
+  "rules": {
+    "@typescript-eslint/no-unused-vars": ["error"],
+    "@next/next/no-img-element": "off",
+    "react-hooks/exhaustive-deps": "off"
+  },
+  "globals": {
+    "NodeJS": "readonly"
+  }
 }

@@ -4,9 +4,12 @@
 
 .feature-page {
   width: 100%;
+  border-top: 1px solid #eee;
+  border-bottom: 1px solid #eee;
 
   .container {
     max-width: 1400px !important;
+    width: 1440px !important;
 
     .mask-wrapper {
       width: 100%;
@@ -20,14 +23,14 @@
       justify-content: space-between;
 
       .mask {
-        width: 60px;
+        width: 100px;
         height: 700px;
         background-image: linear-gradient(90deg, #fbfbfd, #fbfbfd00);
         margin-left: 20px;
       }
 
       .mask-reverse {
-        width: 60px;
+        width: 100px;
         height: 700px;
         background-image: linear-gradient(270deg, #fbfbfd, #fbfbfd00);
         margin-right: 20px;
@@ -35,26 +38,68 @@
     }
   }
 
+  .magic-background {
+    width: 100%;
+    height: 700px;
+    max-width: 1440px !important;
+    position: absolute;
+    z-index: 1;
+    display: none;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    filter: blur(200px);
+
+    .orange {
+      width: 180px;
+      height: 180px;
+      background-color: #eda676;
+      border-radius: 50%;
+      position: absolute;
+      transform: translate(-60px, -60px) scale(1.2);
+      justify-self: flex-end;
+    }
+
+    .blue {
+      width: 180px;
+      height: 180px;
+      background-color: #245bf3;
+      border-radius: 50%;
+      position: absolute;
+      transform: translate(120px, 120px);
+    }
+
+    .green {
+      width: 120px;
+      height: 120px;
+      background-color: #66dcc0;
+      border-radius: 50%;
+      position: absolute;
+    }
+  }
+
   .feature-swiper {
     width: 100%;
     height: 700px;
     max-width: 1440px !important;
+    // background here
 
     .pagination {
       display: flex;
       flex-direction: row;
       position: absolute;
-      transform: translate(60px, -160px);
+      transform: translate(100px, -120px);
       z-index: 90;
       & > div {
         width: 40px;
         height: 4px;
-        background-color: #eaf0f7;
+        background-color: #fff;
         cursor: pointer;
         border-radius: 2px;
         overflow: hidden;
         display: flex;
         flex-direction: row;
+        box-shadow: 1px 1px 1px rgba(147, 147, 147, 0.1);
 
         &:not(:first-child) {
           margin-left: 4px;
@@ -87,13 +132,14 @@
     .feature-swiper-item {
       width: 100%;
       height: 700px;
-      padding: 0 60px;
+      padding: 0 100px;
       background-color: #fbfbfd;
       display: flex;
       flex-direction: row;
       justify-content: space-between;
       align-items: center;
       user-select: none;
+      background-color: inherit !important;
 
       .image {
         flex-shrink: 0;
@@ -129,18 +175,28 @@
           font-size: 18px;
           line-height: 29px;
           text-align: justify;
-          color: #869bb9;
+          color: #364256;
           margin: 24px 0;
+          margin-bottom: 44px;
         }
 
         .read-more {
           font-family: PingFang SC;
           font-style: normal;
           font-weight: 500;
-          font-size: 18px;
+          font-size: 16px;
           line-height: 160%;
-          color: #869bb9;
+          color: #364256;
           cursor: pointer;
+          background-color: #fff;
+          padding: 12px 32px;
+          border: 1px solid #eee;
+          border-radius: 8px;
+          transition: all 0.3s;
+
+          &:hover {
+            background-color: #fafafa;
+          }
         }
 
         .num {

@@ -12,7 +12,7 @@ const Custom404: NextPage = () => {
       <Seo page="404" />
       <div className="container">
         <Image
-          src="/images/404.svg"
+          src="https://cdn-official-website.juzibot.com/images/404.svg"
           width="517"
           height="438"
           draggable="false"
@@ -37,7 +37,11 @@ const Custom404: NextPage = () => {
 export const getStaticProps: GetStaticProps = async ({ locale }) => {
   return {
     props: {
-      ...(await serverSideTranslations(locale || 'zh', ['common', 'homepage', 'seos'])),
+      ...(await serverSideTranslations(locale || 'zh', [
+        'common',
+        'homepage',
+        'seos',
+      ])),
       locale: locale?.toLowerCase() ?? 'zh',
     },
   };

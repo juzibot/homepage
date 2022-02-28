@@ -1,42 +1,69 @@
 import { NextPage } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
-import { IMenuItemProps } from '@src/interfaces';
+import { HeaderBarMenu, IMenuItemProps } from '@src/interfaces';
 import { useState, useEffect } from 'react';
 import { host } from '@src/config';
 import { useTranslation } from 'react-i18next';
 import { useRouter } from 'next/router';
+import { FeatureMenu, SolutionMenu } from './DropdownMenus';
+import { isBrowserChrome } from '@src/utils/isBrowserChrome';
 
 const MenuItem: NextPage<IMenuItemProps> = ({
   hasArrow,
   children,
   href,
   onClick,
+  onMenuHide,
+  onMenuHover,
+  linkTarget,
 }) => {
   return (
-    <Link href={href}>
-      <a
-        className="menu-item"
-        draggable="false"
-        target="_self"
-        onClick={onClick}
-      >
-        <span>{children}</span>
-        {hasArrow ? (
-          <svg
-            width="10"
-            height="6"
-            viewBox="0 0 10 6"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-            style={{ marginLeft: 4 }}
-          >
-            <path
-              d="M4.99999 3.78132L8.29999 0.481323L9.24266 1.42399L4.99999 5.66666L0.757324 1.42399L1.69999 0.481323L4.99999 3.78132Z"
-              fill="#54657E"
-            />
-          </svg>
-        ) : null}
+    <>
+      <Link href={href}>
+        <a
+          className="menu-item"
+          draggable="false"
+          target={linkTarget || '_self'}
+          onClick={onClick}
+          onMouseMove={onMenuHover}
+          onMouseLeave={onMenuHide}
+        >
+          <span>{children}</span>
+          {hasArrow ? (
+            <svg
+              width="10"
+              height="6"
+              viewBox="0 0 10 6"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              style={{ marginLeft: 4 }}
+            >
+              <path
+                d="M4.99999 3.78132L8.29999 0.481323L9.24266 1.42399L4.99999 5.66666L0.757324 1.42399L1.69999 0.481323L4.99999 3.78132Z"
+                fill="#54657E"
+              />
+            </svg>
+          ) : null}
+        </a>
+      </Link>
+    </>
+  );
+};
+
+const WeworkBar: NextPage = () => {
+  return (
+    <Link href="https://work.weixin.qq.com/">
+      <a target="_blank" rel="noreferrer">
+        <div className="wework-bar">
+          <Image
+            src="https://cdn-official-website.juzibot.com/images/icons/wework.svg"
+            width="20"
+            height="20"
+            alt="wework-icon"
+          />
+          <span>企业微信官方服务商</span>
+        </div>
       </a>
     </Link>
   );
@@ -44,20 +71,26 @@ const MenuItem: NextPage<IMenuItemProps> = ({
 
 const headerbarExtraClassMap: { [path: string]: string } = {
   '/about-us': 'about-us',
+  '/features/': 'feature-page-header',
+  '/solutions/': 'feature-page-header',
 };
 
 const HeaderBar: NextPage = () => {
-  const { t, i18n } = useTranslation(['common']);
-  const { language } = i18n;
+  const { t } = useTranslation(['common']);
   const [borderBottomVisible, setBorderBottomVisible] = useState(false);
   const [isChrome, setIsChrome] = useState(true);
-  const [isContactQrcodeVisible, setIsContactQrcodeVisible] = useState(false);
+  const [activeMenu, setActiveMenu] = useState<HeaderBarMenu | null>(null);
   const [headerbarExtraClass, setHeaderbarExtraClass] = useState('');
 
   const { pathname } = useRouter();
 
   useEffect(() => {
-    setHeaderbarExtraClass(headerbarExtraClassMap[pathname] || '');
+    for (const path in headerbarExtraClassMap) {
+      if (pathname.includes(path)) {
+        setHeaderbarExtraClass(headerbarExtraClassMap[path]);
+      }
+    }
+    setActiveMenu(null);
   }, [pathname]);
 
   useEffect(() => {
@@ -65,7 +98,7 @@ const HeaderBar: NextPage = () => {
       window.addEventListener('scroll', () => {
         setBorderBottomVisible(window.scrollY > 0);
       });
-      setIsChrome(/Chrome|Safari/.test(navigator.userAgent));
+      setIsChrome(isBrowserChrome());
     }
   }, []);
 
@@ -82,40 +115,59 @@ const HeaderBar: NextPage = () => {
         }}
       >
         <div className="container">
+          <div style={{ display: 'none' }}>
+            <img
+              src="https://cdn-official-website.juzibot.com/images/logo@512.png"
+              alt="logo for wechat sharing"
+            ></img>
+          </div>
           <menu className="header-left">
             <a className="logo" href={host}>
               <Image
                 alt="logo"
-                src="/images/logo.svg"
-                width={120}
+                src="https://cdn-official-website.juzibot.com/images/logo.png"
+                width={106}
                 height={64}
                 draggable="false"
               ></Image>
             </a>
-            <MenuItem href="https://botorange.com/">{t('products')}</MenuItem>
-            <MenuItem href="https://botorange.com/">{t('solutions')}</MenuItem>
-            {/* <MenuItem href="/">{t('cases')}</MenuItem> */}
-            <MenuItem href="https://blog.juzibot.com/">{t('course')}</MenuItem>
-            <MenuItem href="https://wechaty.js.org/">{t('developer')}</MenuItem>
+            <WeworkBar />
+            <MenuItem
+              href="#"
+              hasArrow
+              onMenuHover={() => setActiveMenu(HeaderBarMenu.FEATURES)}
+              onMenuHide={() => setActiveMenu(null)}
+            >
+              {t('products')}
+            </MenuItem>
+            <MenuItem
+              href="#"
+              hasArrow
+              onMenuHover={() => setActiveMenu(HeaderBarMenu.SOLUTIONS)}
+              onMenuHide={() => setActiveMenu(null)}
+            >
+              {t('solutions')}
+            </MenuItem>
+            <MenuItem href="/cases">{t('cases')}</MenuItem>
+            <MenuItem href="https://blog.juzibot.com/" linkTarget="_blank">
+              {t('course')}
+            </MenuItem>
+            <MenuItem href="https://wechaty.js.org/" linkTarget="_blank">
+              {t('developer')}
+            </MenuItem>
             <MenuItem href="/about-us">{t('about')}</MenuItem>
           </menu>
 
           <menu className="header-right">
-            {/* <MenuItem
-              hasArrow
-              onClick={() =>
-                location.replace(`${host}/${language === 'zh' ? 'en' : 'zh'}`)
-              }
-              href="#"
-            >
-              {t('language')}
-            </MenuItem> */}
             <Link href="#">
               <a
                 className="menu-item primary-link"
                 draggable="false"
-                onMouseMove={() => setIsContactQrcodeVisible(true)}
-                onMouseOut={() => setIsContactQrcodeVisible(false)}
+                onClick={() => {
+                  document
+                    .getElementById('contact-modal')
+                    ?.setAttribute('style', 'display: flex');
+                }}
               >
                 {t('lets-talk')}
               </a>
@@ -129,25 +181,19 @@ const HeaderBar: NextPage = () => {
         </div>
       </header>
 
-      <div className="wrapper menu-box">
+      <div className="wrapper menu-box" onMouseMove={() => setActiveMenu(null)}>
         <div className="container">
-          <div
-            className={`contact-menu ${
-              isContactQrcodeVisible ? 'visible' : 'hidden'
-            }`}
-          >
-            <div className="box">
-              <Image
-                src="/images/contact-qrcode.png"
-                width="200"
-                height="200"
-                alt="qrcode"
-                draggable="false"
-              />
-
-              <span>{t('lets-talk-scan-qrcode')}</span>
-            </div>
-          </div>
+          <FeatureMenu
+            visibility={activeMenu === HeaderBarMenu.FEATURES}
+            current={activeMenu}
+            onHide={() => setActiveMenu(null)}
+          />
+          <SolutionMenu
+            visibility={activeMenu === HeaderBarMenu.SOLUTIONS}
+            current={activeMenu}
+            onHide={() => {}}
+          />
+          {/* <QRCodeToast visibility={activeMenu === HeaderBarMenu.QRCODE} /> */}
         </div>
       </div>
     </>

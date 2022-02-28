@@ -3,6 +3,7 @@
 @import '@styles/company-display-bar.module.scss';
 @import '@styles/appeal-bar.module.scss';
 @import '@styles/logos-wall.module.scss';
+@import '@styles/cases.module.scss';
 @import '~aos/dist/aos.css';
 
 .menu-item {
@@ -12,28 +13,30 @@
   font-family: PingFang SC;
   font-style: normal;
   font-size: 16px;
+  height: 72px;
   color: #54657e;
 
   & {
-    margin: 0 24px;
+    margin: 0 18px;
   }
 }
 
 .index-page {
   width: 100%;
   padding-top: calc(64px + 12px);
-  height: 960px;
-  background-image: url('/images/background.svg');
+  height: 1300px;
+  background-image: url('https://cdn-official-website.juzibot.com/images/background.svg');
   background-repeat: no-repeat;
   background-size: contain;
-  background-position: bottom;
+  background-position-x: center;
+  background-position-y: 900px;
 
   .hero-page {
     width: 100%;
     height: 500px;
     display: flex;
     justify-content: space-between;
-    background-image: url('/images/index-picture.svg');
+    background-image: url('https://cdn-official-website.juzibot.com/images/index-picture.svg');
     background-repeat: no-repeat;
     background-position: right;
 

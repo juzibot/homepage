@@ -15,6 +15,7 @@ const FeatureSwiperItem: NextPage<IFeatureSwiperItemProps> = ({
   brief,
   iconUrl,
   index,
+  redirectUrl,
 }) => {
   useEffect(() => {
     if (process.browser) {
@@ -27,7 +28,7 @@ const FeatureSwiperItem: NextPage<IFeatureSwiperItemProps> = ({
         <div data-swiper-parallax="-300">
           <div className="num">
             <Image
-              src={`/images/icons/0${index}.svg`}
+              src={`https://cdn-official-website.juzibot.com/images/icons/0${index}.svg`}
               width="97"
               height="130"
               draggable="false"
@@ -43,9 +44,9 @@ const FeatureSwiperItem: NextPage<IFeatureSwiperItemProps> = ({
         <div className="brief" data-swiper-parallax="-200">
           {brief}
         </div>
-        <Link href="/">
+        <Link href={redirectUrl}>
           <a className="read-more" data-swiper-parallax="-300">
-            了解更多 →
+            了解更多
           </a>
         </Link>
       </div>
@@ -68,13 +69,23 @@ const FeatureSwiper: NextPage = () => {
   const [swiper, setSwiper] = useState<SwiperType | undefined>(undefined);
   const [autoPlayInterval, setAutoPlayInterval] = useState<NodeJS.Timer>();
   const [documentVisible, setDocumentVisible] = useState(true);
+  const [isChrome, toggleIsChrome] = useState(true);
   const items: IFeatureSwiperItemProps[] = Array(5)
     .fill(null)
     .map((_, index) => ({
       title: t(`feature-${index + 1}-title`),
       subTitle: t(`feature-${index + 1}-subtitle`),
       brief: t(`feature-${index + 1}-content`),
-      iconUrl: `/images/feat-0${index + 1}.${index > 1 ? 'svg' : 'png'}`,
+      iconUrl: `https://cdn-official-website.juzibot.com/images/feat-0${
+        index + 1
+      }.${index > 1 ? 'svg' : 'png'}`,
+      redirectUrl: [
+        '/features/customer-acquisition',
+        '/features/sop',
+        '/features/contact-platform',
+        '/features/management',
+        '/features/data-center',
+      ][index],
     }));
 
   function autoplay(s?: SwiperType) {
@@ -101,11 +112,26 @@ const FeatureSwiper: NextPage = () => {
         const visible = document.visibilityState === 'visible';
         setDocumentVisible(visible);
       });
+      toggleIsChrome(/Chrome|Safari/.test(navigator.userAgent));
     }
   }, []);
 
   return (
     <>
+      <div
+        className="magic-background"
+        style={{ filter: `blur(${isChrome ? 100 : 800}px)` }}
+      >
+        {/* <div className="orange"></div> */}
+        <div
+          className="blue"
+          style={{ filter: `blur(${isChrome ? 0 : 800}px)` }}
+        ></div>
+        <div
+          className="green"
+          style={{ filter: `blur(${isChrome ? 0 : 800}px)` }}
+        ></div>
+      </div>
       <div className="feature-swiper">
         <Swiper
           spaceBetween={0}

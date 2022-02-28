@@ -3,12 +3,11 @@
     .content {
       width: 100%;
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
+      grid-template-columns: repeat(5, 1fr);
       grid-column-gap: 24px;
       padding: 48px 0;
 
       .feature-item {
-        width: 280px;
         height: 360px;
         background: linear-gradient(
             180deg,
@@ -17,6 +16,9 @@
             rgba(5, 85, 255, 0) 100%
           ),
           #ffffff;
+        color: #333;
+
+        box-shadow: 0px 20px 60px -20px rgba(5, 85, 255, 0.1);
 
         border-radius: 18px;
         overflow: hidden;
@@ -34,7 +36,6 @@
         padding: 40px 24px;
 
         border: 1px solid #eff;
-        box-shadow: 0px 20px 60px -20px rgba(5, 85, 255, 0.1);
         border-radius: 16px;
         user-select: none;
 
@@ -51,7 +52,7 @@
           font-family: PingFang SC;
           font-style: normal;
           font-weight: normal;
-          font-size: 24px;
+          font-size: 22px;
           line-height: 40px;
           margin-top: 28px;
           margin-bottom: 8px;
@@ -70,7 +71,7 @@
 
         .redirect-url {
           color: #0555ff;
-          margin-top: 48px;
+          margin-top: 64px;
           font-family: PingFang SC;
           font-style: normal;
           font-weight: 500;

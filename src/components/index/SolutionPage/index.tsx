@@ -71,36 +71,36 @@ const SolutionPage: NextPage = () => {
           title={t('solution-1-title')}
           brief={t('solution-1-content')}
           imagePosition="left"
-          imageUrl="/images/solution-01.svg"
-          dividerUrl="/images/solution-01-divider.svg"
-          style={{ transform: 'translateY(-10px)' }}
+          imageUrl="https://cdn-official-website.juzibot.com/images/solution-01.svg"
+          dividerUrl="https://cdn-official-website.juzibot.com/images/solution-01-divider.svg"
+          style={{ transform: 'translateY(-30px)' }}
         />
 
         <SolutionItem
           title={t('solution-2-title')}
           brief={t('solution-2-content')}
           imagePosition="right"
-          imageUrl="/images/solution-02.svg"
-          dividerUrl="/images/solution-02-divider.svg"
-          style={{ transform: 'translateY(-30px)' }}
+          imageUrl="https://cdn-official-website.juzibot.com/images/solution-02.svg"
+          dividerUrl="https://cdn-official-website.juzibot.com/images/solution-02-divider.svg"
+          style={{ transform: 'translateY(-51px)' }}
         />
 
         <SolutionItem
           title={t('solution-3-title')}
           brief={t('solution-3-content')}
           imagePosition="left"
-          imageUrl="/images/solution-03.svg"
-          dividerUrl="/images/solution-03-divider.svg"
-          style={{ transform: 'translateY(-24px)' }}
+          imageUrl="https://cdn-official-website.juzibot.com/images/solution-03.svg"
+          dividerUrl="https://cdn-official-website.juzibot.com/images/solution-03-divider.svg"
+          style={{ transform: 'translateY(-42px)' }}
         />
 
         <SolutionItem
           title={t('solution-4-title')}
           brief={t('solution-4-content')}
           imagePosition="right"
-          imageUrl="/images/solution-04.svg"
-          dividerUrl="/images/solution-04-divider.svg"
-          style={{ transform: 'translateY(-48px)' }}
+          imageUrl="https://cdn-official-website.juzibot.com/images/solution-04.svg"
+          dividerUrl="https://cdn-official-website.juzibot.com/images/solution-04-divider.svg"
+          style={{ transform: 'translateY(-62px)' }}
         />
       </div>
     </>

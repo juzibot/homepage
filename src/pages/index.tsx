@@ -3,7 +3,6 @@ import AppealBar from '@src/components/index/AppealBar';
 import CompanyDisplayBar from '@src/components/index/CompanyDisplayBar/index';
 import FeatureSwiper from '@src/components/index/FeatureSwiper';
 import HeroPage from '@src/components/index/HeroPage';
-import LogosWall from '@src/components/index/LogosWall';
 import SolutionPage from '@src/components/index/SolutionPage';
 import type { GetStaticProps, NextPage } from 'next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
@@ -11,7 +10,7 @@ import { useEffect, useState } from 'react';
 
 const Home: NextPage = () => {
   const [width, setWidth] = useState(0);
-  const SHOW_MASK_WINDOW_WIDTH = 1280;
+  const SHOW_MASK_WINDOW_WIDTH = 1200;
   useEffect(() => {
     if (process.browser) {
       window.addEventListener('resize', () =>
@@ -53,12 +52,6 @@ const Home: NextPage = () => {
       <div className="wrapper company-display">
         <div className="container">
           <CompanyDisplayBar />
-        </div>
-      </div>
-
-      <div className="wrapper logos-wall">
-        <div className="container">
-          <LogosWall />
         </div>
       </div>
 
