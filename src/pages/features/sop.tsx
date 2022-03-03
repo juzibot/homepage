@@ -8,12 +8,16 @@ import { FeatureAppealBar } from '@src/components/features/FeatureAppealBar';
 import AppealBar from '@src/components/index/AppealBar';
 import FeatureBar from '@src/components/features/FeatureBar';
 import Seo from '@src/components/common/Seo';
+import { useTranslation } from 'react-i18next';
 
 const SopPage: NextPage = () => {
   const [isChrome, toggleChrome] = useState(true);
   useEffect(() => {
     toggleChrome(isBrowserChrome());
   }, []);
+  const { t } = useTranslation('features', {
+    keyPrefix: 'sop',
+  });
   return (
     <>
       <Seo page="feature-sop" />
@@ -26,24 +30,24 @@ const SopPage: NextPage = () => {
           }}
         >
           <FeatureHeroPage
-            title="SOP 消息触达"
-            brief="现在，你可以摆脱空间和时间的束缚，一次性完成客户全生命周期的运营规划，在任意时间、任意场景下执行触达转化。依托 RPA 技术，句子互动将 IM 软件变成可自动执行计划任务的机器人，让营销实现真正意义上的 SOP 化。"
+            title={t('title')}
+            brief={t('subtitle')}
             docsUrl="https://k0auuqcihb.feishu.cn/docs/doccnJMlpBUC1NAHW7ujCXVxaUB#nvwxlQ"
             datas={[
               {
-                icon: 'https://cdn-official-website.juzibot.com/images/icons/features/sop-01.png',
+                icon: 'https://cdn-official-website.juzibot.com/images/icons/features/ca-08.png',
                 title: '1000%',
-                subtitle: '提高服务半径',
+                subtitle: t('table-title-1'),
               },
               {
-                icon: 'https://cdn-official-website.juzibot.com/images/icons/features/sop-02.png',
+                icon: 'https://cdn-official-website.juzibot.com/images/icons/features/ca-09.png',
                 title: '80%',
-                subtitle: '减少人力投入',
+                subtitle: t('table-title-2'),
               },
               {
-                icon: 'https://cdn-official-website.juzibot.com/images/icons/features/sop-03.png',
+                icon: 'https://cdn-official-website.juzibot.com/images/icons/features/ca-10.png',
                 title: '500%',
-                subtitle: '增加 LTV',
+                subtitle: t('table-title-3'),
               },
             ]}
           />
@@ -53,27 +57,24 @@ const SopPage: NextPage = () => {
       <div className="wrapper feature-description">
         <div className="container">
           <FeatureDescription
-            firstTitle="让每个账号变成自驱的效率单元"
-            firstSubtitle="句子互动赋予每个账号按预设规则自动执行任务的能力，使它们可以基于客户的会话关键词做出响应，给出预设话术的应答、邀请进群亦或是标记画像。基于 SOP 消息触达，你可以制定更长周期的运营计划了，在用户生命周期任意时段预设一条符合那个时段场景的消息规则。"
-            secondTitle="提效，从解放重复作业开始"
+            firstTitle={t('description-title')}
+            firstSubtitle={t('discription-subtitle')}
+            secondTitle={t('discription-second-title')}
             datas={[
               {
                 icon: 'https://cdn-official-website.juzibot.com/images/icons/features/sop-04.svg',
-                title: '所有人做的事情，机器都能完成',
-                subtitle:
-                  '添加好友、自动应答、邀请入群、社群巡检，机械性的工作被机器人更规范的执行',
+                title: t('data-title-1'),
+                subtitle: t('data-subtitle-1'),
               },
               {
                 icon: 'https://cdn-official-website.juzibot.com/images/icons/features/sop-05.svg',
-                title: '把员工从重复的作业中解放出来',
-                subtitle:
-                  '日常问候、定时消息、违规提醒，重复性工作由机器代劳，让员工创造更大的价值',
+                title: t('data-title-2'),
+                subtitle: t('data-subtitle-2'),
               },
               {
                 icon: 'https://cdn-official-website.juzibot.com/images/icons/features/sop-06.svg',
-                title: '更高频次的消息触达为转化提速',
-                subtitle:
-                  '依托 RPA 技术，更高频次的消息推送成为可能，量变带来质变转化得到有效保障',
+                title: t('data-title-3'),
+                subtitle: t('data-subtitle-3'),
               },
             ]}
             photo="https://cdn-official-website.juzibot.com/images/icons/features/sop-07.png"
@@ -89,18 +90,18 @@ const SopPage: NextPage = () => {
             datas={[
               {
                 icon: 'https://cdn-official-website.juzibot.com/images/icons/features/sop-08.png',
-                title: '预设用户',
-                subtitle: '不同生命周期阶段的触达消息',
+                title: t('appeal-title-1'),
+                subtitle: t('appeal-subtitle-1'),
               },
               {
                 icon: 'https://cdn-official-website.juzibot.com/images/icons/features/sop-09.png',
-                title: '真正实现基于用户',
-                subtitle: '不同互动反馈的剧本营销',
+                title: t('appeal-title-2'),
+                subtitle: t('appeal-subtitle-2'),
               },
               {
                 icon: 'https://cdn-official-website.juzibot.com/images/icons/features/sop-10.png',
-                title: '流失预判自动招回',
-                subtitle: '让 LTV 无限增长',
+                title: t('appeal-title-3'),
+                subtitle: t('appeal-subtitle-3'),
               },
             ]}
           />
@@ -130,6 +131,7 @@ export const getStaticProps: GetStaticProps = async ({ locale }) => {
         'common',
         'homepage',
         'seos',
+        'features',
       ])),
       locale: locale?.toLowerCase() ?? 'zh',
     },
