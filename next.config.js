@@ -13,7 +13,7 @@ module.exports = {
     return [
       {
         source: '/join-us',
-        destination: 'https://k0auuqcihb.jobs.feishu.cn/juzibot',
+        destination: 'https://juzihudong.jobs.feishu.cn/juzibot',
         permanent: true,
       },
       {
