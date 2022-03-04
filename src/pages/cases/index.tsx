@@ -254,7 +254,7 @@ export const companies: ICompanyItemProps[] = [
     brief:
       '2 人管理 15 个账号的消息应答，5倍以上提高人的服务半径，工具赋能精细化 SOP 运营，开卡率 46%',
     category: CompanyCategory.FINANCE,
-    url: '/cases/29',
+    url: '/cases/30',
     imageUrl:
       'https://cdn-official-website.juzibot.com/images/cases/companies/14.png',
   },
