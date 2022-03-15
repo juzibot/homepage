@@ -246,9 +246,9 @@ export const FeatureMenu: NextPage<{
   }, [visibility, current, onHide]);
   return (
     <BaseMenu
-      left={292}
+      left={278}
       name={HeaderBarMenu.FEATURES}
-      style={{ height: 314, ...styles }}
+      style={{ height: 314, ...styles, width: 196 }}
       key="features"
       onMouseMove={() => (move.current = true)}
       onMouseLeave={() => {
@@ -268,21 +268,21 @@ export const FeatureMenu: NextPage<{
         hoverIconUrl="https://cdn-official-website.juzibot.com/images/icons/header-bar/01-o.svg"
         href="/features/customer-acquisition"
       >
-        规模获客
+        规模化获客
       </MenuItem>
       <MenuItem
         iconUrl="https://cdn-official-website.juzibot.com/images/icons/header-bar/02.svg"
         hoverIconUrl="https://cdn-official-website.juzibot.com/images/icons/header-bar/02-o.svg"
         href="/features/sop"
       >
-        精准触达
+        SOP 消息触达
       </MenuItem>
       <MenuItem
         iconUrl="https://cdn-official-website.juzibot.com/images/icons/header-bar/03.svg"
         hoverIconUrl="https://cdn-official-website.juzibot.com/images/icons/header-bar/03-o.svg"
         href="/features/contact-platform"
       >
-        急速应答
+        客户会话中台
       </MenuItem>
       <MenuItem
         iconUrl="https://cdn-official-website.juzibot.com/images/icons/header-bar/04.svg"
@@ -296,7 +296,7 @@ export const FeatureMenu: NextPage<{
         hoverIconUrl="https://cdn-official-website.juzibot.com/images/icons/header-bar/05-o.svg"
         href="/features/data-center"
       >
-        数据驱动
+        数据管理中心
       </MenuItem>
     </BaseMenu>
   );
