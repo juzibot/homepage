@@ -26,7 +26,7 @@ export const CaseDetailPage: NextPage<ICaseDetailPageProps> = ({
       <div className="wrapper case-detail-page">
         <div className="container">
           <img
-            src={`https://cdn-official-website.juzibot.com/images/cases/icons/${logoUrl}.svg`}
+            src={`/_images/cases/icons/${logoUrl}.svg`}
             width="120"
             height="120"
             alt="logo"
@@ -54,7 +54,7 @@ export const CaseDetailPage: NextPage<ICaseDetailPageProps> = ({
                 <div className="item" key={item}>
                   <div className="dot">
                     <Image
-                      src="https://cdn-official-website.juzibot.com/images/cases/icons/dot.svg"
+                      src="/_images/cases/icons/dot.svg"
                       alt="dot"
                       draggable="false"
                       width="16"
@@ -78,7 +78,7 @@ export const CaseDetailPage: NextPage<ICaseDetailPageProps> = ({
             {features.map((item) => (
               <div className="item" key={item.title}>
                 <Image
-                  src={`https://cdn-official-website.juzibot.com/images/cases/round/${item.icon}`}
+                  src={`/_images/cases/round/${item.icon}`}
                   width="64"
                   height="64"
                   alt="icon"
@@ -100,7 +100,7 @@ export const CaseDetailPage: NextPage<ICaseDetailPageProps> = ({
             {achievements.map((item) => (
               <div className="item" key={item.title}>
                 <Image
-                  src={`https://cdn-official-website.juzibot.com/images/cases/icons/${item.icon}.svg`}
+                  src={`/_images/cases/icons/${item.icon}.svg`}
                   alt="icon"
                   width="18"
                   height="18"

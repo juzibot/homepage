@@ -7,7 +7,7 @@
     justify-content: flex-start;
     align-items: center;
 
-    background-image: url('https://cdn-official-website.juzibot.com/images/index-line.svg');
+    background-image: url('/_images/index-line.svg');
     background-position-x: center;
     background-position-y: 140px;
     background-repeat: no-repeat;
@@ -176,7 +176,7 @@
 
 .solution-items-page {
   .container {
-    padding: 72px 0;
+    padding: 72px 0 40px 0;
     h1 {
       font-family: PingFang SC;
       font-style: normal;
@@ -295,7 +295,7 @@
 
       .company-item {
         padding: 24px;
-        border-radius: 32px;
+        border-radius: 16px;
         transition: background-color 0.3s;
 
         &:hover {

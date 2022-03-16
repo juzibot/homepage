@@ -57,7 +57,7 @@ const WeworkBar: NextPage = () => {
       <a target="_blank" rel="noreferrer">
         <div className="wework-bar">
           <Image
-            src="https://cdn-official-website.juzibot.com/images/icons/wework.svg"
+            src="/_images/icons/wework.svg"
             width="20"
             height="20"
             alt="wework-icon"
@@ -117,7 +117,7 @@ const HeaderBar: NextPage = () => {
         <div className="container">
           <div style={{ display: 'none' }}>
             <img
-              src="https://cdn-official-website.juzibot.com/images/logo@512.png"
+              src="/_images/logo@512.png"
               alt="logo for wechat sharing"
             ></img>
           </div>
@@ -125,7 +125,7 @@ const HeaderBar: NextPage = () => {
             <a className="logo" href={host}>
               <Image
                 alt="logo"
-                src="https://cdn-official-website.juzibot.com/images/logo.png"
+                src="/_images/logo.png"
                 width={106}
                 height={64}
                 draggable="false"

@@ -26,7 +26,7 @@ const DataCenterPage: NextPage = () => {
         <div
           className="container"
           style={{
-            backgroundImage: `url('https://cdn-official-website.juzibot.com/images/feat-05.svg')`,
+            backgroundImage: `url('/_images/feat-05.png')`,
           }}
         >
           <FeatureHeroPage
@@ -35,17 +35,17 @@ const DataCenterPage: NextPage = () => {
             docsUrl="https://k0auuqcihb.feishu.cn/docs/doccnJMlpBUC1NAHW7ujCXVxaUB#qb8Oa0"
             datas={[
               {
-                icon: 'https://cdn-official-website.juzibot.com/images/icons/features/da-01.png',
+                icon: '/_images/icons/features/da-01.png',
                 title: '100%',
                 subtitle: t('table-title-1'),
               },
               {
-                icon: 'https://cdn-official-website.juzibot.com/images/icons/features/da-02.png',
+                icon: '/_images/icons/features/da-02.png',
                 title: '90+',
                 subtitle: t('table-title-2'),
               },
               {
-                icon: 'https://cdn-official-website.juzibot.com/images/icons/features/da-03.png',
+                icon: '/_images/icons/features/da-03.png',
                 title: '100%',
                 subtitle: t('table-title-3'),
               },
@@ -62,22 +62,22 @@ const DataCenterPage: NextPage = () => {
             secondTitle={t('discription-second-title')}
             datas={[
               {
-                icon: 'https://cdn-official-website.juzibot.com/images/icons/features/da-04.svg',
+                icon: '/_images/icons/features/da-04.svg',
                 title: t('data-title-1'),
                 subtitle: t('data-subtitle-1'),
               },
               {
-                icon: 'https://cdn-official-website.juzibot.com/images/icons/features/da-05.svg',
+                icon: '/_images/icons/features/da-05.svg',
                 title: t('data-title-2'),
                 subtitle: t('data-subtitle-2'),
               },
               {
-                icon: 'https://cdn-official-website.juzibot.com/images/icons/features/da-06.svg',
+                icon: '/_images/icons/features/da-06.svg',
                 title: t('data-title-3'),
                 subtitle: t('data-subtitle-3'),
               },
             ]}
-            photo="https://cdn-official-website.juzibot.com/images/icons/features/da-07.png"
+            photo="/_images/icons/features/da-07.png"
             photoPosition="left"
           />
         </div>
@@ -89,17 +89,17 @@ const DataCenterPage: NextPage = () => {
             title={t('appeal-title')}
             datas={[
               {
-                icon: 'https://cdn-official-website.juzibot.com/images/icons/features/da-08.png',
+                icon: '/_images/icons/features/da-08.png',
                 title: t('appeal-title-1'),
                 subtitle: t('appeal-subtitle-1'),
               },
               {
-                icon: 'https://cdn-official-website.juzibot.com/images/icons/features/da-09.png',
+                icon: '/_images/icons/features/da-09.png',
                 title: t('appeal-title-2'),
                 subtitle: t('appeal-subtitle-2'),
               },
               {
-                icon: 'https://cdn-official-website.juzibot.com/images/icons/features/da-10.png',
+                icon: '/_images/icons/features/da-10.png',
                 title: t('appeal-title-3'),
                 subtitle: t('appeal-subtitle-3'),
               },

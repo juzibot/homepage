@@ -112,7 +112,7 @@ const Footer: NextPage = () => {
             <div className="menu-container">
               <div className="logo">
                 <Image
-                  src="https://cdn-official-website.juzibot.com/images/logo.svg"
+                  src="/_images/logo.svg"
                   width={120}
                   height={64}
                   draggable="false"
@@ -188,7 +188,7 @@ const Footer: NextPage = () => {
               <Link href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=11010802033527">
                 <a className="beian-portal" target="_blank" rel="noreferrer">
                   <Image
-                    src="https://cdn-official-website.juzibot.com/images/icons/beian.png"
+                    src="/_images/icons/beian.png"
                     alt="beian"
                     width="16"
                     height="16"
