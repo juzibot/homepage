@@ -18,7 +18,7 @@ export const Pagination: NextPage<IPaginationProps> = ({
         }
       >
         <Image
-          src="https://cdn-official-website.juzibot.com/images/icons/arrow-right.svg"
+          src="/_images/icons/arrow-right.svg"
           alt="arrow-left"
           width="16"
           height="16"
@@ -49,7 +49,7 @@ export const Pagination: NextPage<IPaginationProps> = ({
         }
       >
         <Image
-          src="https://cdn-official-website.juzibot.com/images/icons/arrow-right.svg"
+          src="/_images/icons/arrow-right.svg"
           alt="arrow-right"
           width="16"
           height="16"

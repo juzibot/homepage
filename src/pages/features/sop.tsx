@@ -26,7 +26,7 @@ const SopPage: NextPage = () => {
         <div
           className="container"
           style={{
-            backgroundImage: `url('https://cdn-official-website.juzibot.com/images/feat-06.png')`,
+            backgroundImage: `url('/_images/feat-06.png')`,
           }}
         >
           <FeatureHeroPage
@@ -35,17 +35,17 @@ const SopPage: NextPage = () => {
             docsUrl="https://k0auuqcihb.feishu.cn/docs/doccnJMlpBUC1NAHW7ujCXVxaUB#nvwxlQ"
             datas={[
               {
-                icon: 'https://cdn-official-website.juzibot.com/images/icons/features/ca-08.png',
+                icon: '/_images/icons/features/ca-08.png',
                 title: '1000%',
                 subtitle: t('table-title-1'),
               },
               {
-                icon: 'https://cdn-official-website.juzibot.com/images/icons/features/ca-09.png',
+                icon: '/_images/icons/features/ca-09.png',
                 title: '80%',
                 subtitle: t('table-title-2'),
               },
               {
-                icon: 'https://cdn-official-website.juzibot.com/images/icons/features/ca-10.png',
+                icon: '/_images/icons/features/ca-10.png',
                 title: '500%',
                 subtitle: t('table-title-3'),
               },
@@ -62,22 +62,22 @@ const SopPage: NextPage = () => {
             secondTitle={t('discription-second-title')}
             datas={[
               {
-                icon: 'https://cdn-official-website.juzibot.com/images/icons/features/sop-04.svg',
+                icon: '/_images/icons/features/sop-04.svg',
                 title: t('data-title-1'),
                 subtitle: t('data-subtitle-1'),
               },
               {
-                icon: 'https://cdn-official-website.juzibot.com/images/icons/features/sop-05.svg',
+                icon: '/_images/icons/features/sop-05.svg',
                 title: t('data-title-2'),
                 subtitle: t('data-subtitle-2'),
               },
               {
-                icon: 'https://cdn-official-website.juzibot.com/images/icons/features/sop-06.svg',
+                icon: '/_images/icons/features/sop-06.svg',
                 title: t('data-title-3'),
                 subtitle: t('data-subtitle-3'),
               },
             ]}
-            photo="https://cdn-official-website.juzibot.com/images/icons/features/sop-07.png"
+            photo="/_images/icons/features/sop-07.png"
             photoPosition="left"
           />
         </div>
@@ -89,17 +89,17 @@ const SopPage: NextPage = () => {
             title="最强的操盘手都在操盘时间"
             datas={[
               {
-                icon: 'https://cdn-official-website.juzibot.com/images/icons/features/sop-08.png',
+                icon: '/_images/icons/features/sop-08.png',
                 title: t('appeal-title-1'),
                 subtitle: t('appeal-subtitle-1'),
               },
               {
-                icon: 'https://cdn-official-website.juzibot.com/images/icons/features/sop-09.png',
+                icon: '/_images/icons/features/sop-09.png',
                 title: t('appeal-title-2'),
                 subtitle: t('appeal-subtitle-2'),
               },
               {
-                icon: 'https://cdn-official-website.juzibot.com/images/icons/features/sop-10.png',
+                icon: '/_images/icons/features/sop-10.png',
                 title: t('appeal-title-3'),
                 subtitle: t('appeal-subtitle-3'),
               },

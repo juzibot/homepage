@@ -21,7 +21,7 @@ const SolutionContactPage: NextPage = () => {
             category: CompanyCategory.TRADE,
             url: '/cases/06',
             imageUrl:
-              'https://cdn-official-website.juzibot.com/images/cases/companies/21.png',
+              '/_images/cases/companies/21.png',
           },
           {
             title: '某家庭维修品牌',
@@ -30,7 +30,7 @@ const SolutionContactPage: NextPage = () => {
             category: CompanyCategory.IT,
             url: '/cases/26',
             imageUrl:
-              'https://cdn-official-website.juzibot.com/images/cases/companies/31.png',
+              '/_images/cases/companies/31.png',
           },
           {
             title: '某饮料新消费头部品牌',
@@ -39,12 +39,12 @@ const SolutionContactPage: NextPage = () => {
             category: CompanyCategory.TRADE,
             url: '/cases/01',
             imageUrl:
-              'https://cdn-official-website.juzibot.com/images/cases/companies/0.png',
+              '/_images/cases/companies/0.png',
           },
         ]}
         heroTitle={t('hero-title')}
         heroSubtitle={t('hero-subtitle')}
-        backgroundUrl="https://cdn-official-website.juzibot.com/images/solutions/bg-1.svg"
+        backgroundUrl="/_images/solutions/bg-1.svg"
         challenges={[
           {
             icon: 'icon-1.svg',
@@ -71,7 +71,7 @@ const SolutionContactPage: NextPage = () => {
           {
             title: t('solutions.solution-title-1'),
             photo:
-              'https://cdn-official-website.juzibot.com/images/solutions/s-1.svg',
+              '/_images/solutions/s-1.svg',
             items: [
               {
                 title: t('solutions.title-1'),
@@ -91,7 +91,7 @@ const SolutionContactPage: NextPage = () => {
           {
             title: t('solutions.solution-title-2'),
             photo:
-              'https://cdn-official-website.juzibot.com/images/solutions/s-2.svg',
+              '/_images/solutions/s-2.svg',
             items: [
               {
                 title: t('solutions.title-4'),
@@ -111,7 +111,7 @@ const SolutionContactPage: NextPage = () => {
           {
             title: t('solutions.solution-title-3'),
             photo:
-              'https://cdn-official-website.juzibot.com/images/solutions/s-3.svg',
+              '/_images/solutions/s-3.svg',
             items: [
               {
                 title: t('solutions.title-7'),
@@ -131,7 +131,7 @@ const SolutionContactPage: NextPage = () => {
           {
             title: t('solutions.solution-title-4'),
             photo:
-              'https://cdn-official-website.juzibot.com/images/solutions/s-4.svg',
+              '/_images/solutions/s-4.svg',
             items: [
               {
                 title: t('solutions.title-10'),

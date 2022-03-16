@@ -4,8 +4,6 @@
 
 .feature-page {
   width: 100%;
-  border-top: 1px solid #eee;
-  border-bottom: 1px solid #eee;
 
   .container {
     max-width: 1400px !important;
@@ -93,13 +91,12 @@
       & > div {
         width: 40px;
         height: 4px;
-        background-color: #fff;
+        background-color: #eaf0f7;
         cursor: pointer;
         border-radius: 2px;
         overflow: hidden;
         display: flex;
         flex-direction: row;
-        box-shadow: 1px 1px 1px rgba(147, 147, 147, 0.1);
 
         &:not(:first-child) {
           margin-left: 4px;
