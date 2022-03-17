@@ -71,8 +71,8 @@ const SolutionPage: NextPage = () => {
           title={t('solution-1-title')}
           brief={t('solution-1-content')}
           imagePosition="left"
-          imageUrl="/_images/solution-01.svg"
-          dividerUrl="/_images/solution-01-divider.svg"
+          imageUrl="https://cdn-official-website.juzibot.com/images/solution-01.svg"
+          dividerUrl="https://cdn-official-website.juzibot.com/images/solution-01-divider.svg"
           style={{ transform: 'translateY(-30px)' }}
         />
 
@@ -80,8 +80,8 @@ const SolutionPage: NextPage = () => {
           title={t('solution-2-title')}
           brief={t('solution-2-content')}
           imagePosition="right"
-          imageUrl="/_images/solution-02.svg"
-          dividerUrl="/_images/solution-02-divider.svg"
+          imageUrl="https://cdn-official-website.juzibot.com/images/solution-02.svg"
+          dividerUrl="https://cdn-official-website.juzibot.com/images/solution-02-divider.svg"
           style={{ transform: 'translateY(-51px)' }}
         />
 
@@ -89,8 +89,8 @@ const SolutionPage: NextPage = () => {
           title={t('solution-3-title')}
           brief={t('solution-3-content')}
           imagePosition="left"
-          imageUrl="/_images/solution-03.svg"
-          dividerUrl="/_images/solution-03-divider.svg"
+          imageUrl="https://cdn-official-website.juzibot.com/images/solution-03.svg"
+          dividerUrl="https://cdn-official-website.juzibot.com/images/solution-03-divider.svg"
           style={{ transform: 'translateY(-42px)' }}
         />
 
@@ -98,8 +98,8 @@ const SolutionPage: NextPage = () => {
           title={t('solution-4-title')}
           brief={t('solution-4-content')}
           imagePosition="right"
-          imageUrl="/_images/solution-04.svg"
-          dividerUrl="/_images/solution-04-divider.svg"
+          imageUrl="https://cdn-official-website.juzibot.com/images/solution-04.svg"
+          dividerUrl="https://cdn-official-website.juzibot.com/images/solution-04-divider.svg"
           style={{ transform: 'translateY(-62px)' }}
         />
       </div>

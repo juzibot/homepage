@@ -69,21 +69,21 @@ const HeroPage: NextPage = () => {
 
       <div className="card-bannar">
         <FeatureCard
-          iconUrl="/_images/icons/cloud.png"
+          iconUrl="https://cdn-official-website.juzibot.com/images/icons/cloud.png"
           title={t('card-1-title')}
           subTitle={t('card-1-subtitle')}
           iconWidth="93"
           iconHeight="77"
         />
         <FeatureCard
-          iconUrl="/_images/icons/solution.png"
+          iconUrl="https://cdn-official-website.juzibot.com/images/icons/solution.png"
           title={t('card-2-title')}
           subTitle={t('card-2-subtitle')}
           iconWidth="92"
           iconHeight="85"
         />
         <FeatureCard
-          iconUrl="/_images/icons/crown.png"
+          iconUrl="https://cdn-official-website.juzibot.com/images/icons/crown.png"
           title={t('card-3-title')}
           subTitle={t('card-3-subtitle')}
           iconWidth="92"

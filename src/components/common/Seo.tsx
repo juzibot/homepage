@@ -19,17 +19,17 @@ const Seo: NextPage<NextSeoProps & { page?: string }> = (props) => {
           description: t('description'),
           images: [
             {
-              url: '/_images/logo@192.png',
+              url: 'https://cdn-official-website.juzibot.com/images/logo@192.png',
               width: 192,
               height: 192,
             },
             {
-              url: '/_images/logo@256.png',
+              url: 'https://cdn-official-website.juzibot.com/images/logo@256.png',
               width: 256,
               height: 256,
             },
             {
-              url: '/_images/logo@512.png',
+              url: 'https://cdn-official-website.juzibot.com/images/logo@512.png',
               width: 512,
               height: 512,
             },
