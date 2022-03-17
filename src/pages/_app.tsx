@@ -7,6 +7,7 @@ import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import Footer from '@src/components/Footer';
 import { logHireInfo } from '@src/utils/hire';
 import { useEffect } from 'react';
+import Script from 'next/script';
 
 const JuziApp: NextPage<AppProps> = ({ Component, pageProps }) => {
   useEffect(() => {
@@ -19,6 +20,18 @@ const JuziApp: NextPage<AppProps> = ({ Component, pageProps }) => {
         <Component {...pageProps} />
       </div>
       <Footer />
+      <Script
+        src="https://www.googletagmanager.com/gtag/js?id=G-855RJWL7LP"
+        strategy="afterInteractive"
+      />
+      <Script id="google-analytics" strategy="afterInteractive">
+        {`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){window.dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-855RJWL7LP');
+        `}
+      </Script>
     </>
   );
 };

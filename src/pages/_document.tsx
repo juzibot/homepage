@@ -1,4 +1,11 @@
-import Document, { Html, Head, Main, NextScript, DocumentContext } from 'next/document';
+/* eslint-disable react/no-unescaped-entities */
+import Document, {
+  Html,
+  Head,
+  Main,
+  NextScript,
+  DocumentContext,
+} from 'next/document';
 
 class JuziSiteDocument extends Document {
   static async getInitialProps(ctx: DocumentContext) {
