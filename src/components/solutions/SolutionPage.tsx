@@ -42,7 +42,7 @@ export const SolutionDetailPage: NextPage<ISolutionPageProps> = ({
             {challenges.map((item) => (
               <div className="item" key={item.title}>
                 <Image
-                  src={`/_images/solutions/${item.icon}`}
+                  src={`https://cdn-official-website.juzibot.com/images/solutions/${item.icon}`}
                   width="64"
                   height="64"
                   alt="icon"

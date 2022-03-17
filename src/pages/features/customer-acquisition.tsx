@@ -26,7 +26,7 @@ const CustomerAcquisitionPage: NextPage = () => {
         <div
           className="container"
           style={{
-            backgroundImage: `url('/_images/feat-01.png')`,
+            backgroundImage: `url('https://cdn-official-website.juzibot.com/images/feat-01.png')`,
           }}
         >
           <FeatureHeroPage
@@ -35,17 +35,17 @@ const CustomerAcquisitionPage: NextPage = () => {
             docsUrl="https://k0auuqcihb.feishu.cn/docs/doccnJMlpBUC1NAHW7ujCXVxaUB#tlJtFV"
             datas={[
               {
-                icon: '/_images/icons/features/ca-08.png',
+                icon: 'https://cdn-official-website.juzibot.com/images/icons/features/ca-08.png',
                 title: '￥5',
                 subtitle: t('table-title-1'),
               },
               {
-                icon: '/_images/icons/features/ca-09.png',
+                icon: 'https://cdn-official-website.juzibot.com/images/icons/features/ca-09.png',
                 title: '99%',
                 subtitle: t('table-title-2'),
               },
               {
-                icon: '/_images/icons/features/ca-10.png',
+                icon: 'https://cdn-official-website.juzibot.com/images/icons/features/ca-10.png',
                 title: '40%',
                 subtitle: t('table-title-3'),
               },
@@ -62,22 +62,22 @@ const CustomerAcquisitionPage: NextPage = () => {
             secondTitle={t('discription-second-title')}
             datas={[
               {
-                icon: '/_images/icons/features/ca-04.svg',
+                icon: 'https://cdn-official-website.juzibot.com/images/icons/features/ca-04.svg',
                 title: t('data-title-1'),
                 subtitle: t('data-subtitle-1'),
               },
               {
-                icon: '/_images/icons/features/ca-05.svg',
+                icon: 'https://cdn-official-website.juzibot.com/images/icons/features/ca-05.svg',
                 title: t('data-title-2'),
                 subtitle: t('data-subtitle-2'),
               },
               {
-                icon: '/_images/icons/features/ca-06.svg',
+                icon: 'https://cdn-official-website.juzibot.com/images/icons/features/ca-06.svg',
                 title: t('data-title-3'),
                 subtitle: t('data-subtitle-3'),
               },
             ]}
-            photo="/_images/icons/features/ca-07.png"
+            photo="https://cdn-official-website.juzibot.com/images/icons/features/ca-07.png"
             photoPosition="right"
           />
         </div>
@@ -89,17 +89,17 @@ const CustomerAcquisitionPage: NextPage = () => {
             title={t('appeal-title')}
             datas={[
               {
-                icon: '/_images/icons/features/ca-01.png',
+                icon: 'https://cdn-official-website.juzibot.com/images/icons/features/ca-01.png',
                 title: t('appeal-title-1'),
                 subtitle: t('appeal-subtitle-1'),
               },
               {
-                icon: '/_images/icons/features/ca-02.png',
+                icon: 'https://cdn-official-website.juzibot.com/images/icons/features/ca-02.png',
                 title: t('appeal-title-2'),
                 subtitle: t('appeal-subtitle-2'),
               },
               {
-                icon: '/_images/icons/features/ca-03.png',
+                icon: 'https://cdn-official-website.juzibot.com/images/icons/features/ca-03.png',
                 title: t('appeal-title-3'),
                 subtitle: t('appeal-subtitle-3'),
               },

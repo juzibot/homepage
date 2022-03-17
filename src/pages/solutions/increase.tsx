@@ -21,7 +21,7 @@ const SolutionContactPage: NextPage = () => {
             category: CompanyCategory.TRADE,
             url: '/cases/06',
             imageUrl:
-              '/_images/cases/companies/21.png',
+              'https://cdn-official-website.juzibot.com/images/cases/companies/21.png',
           },
           {
             title: '某市级民政机关',
@@ -30,7 +30,7 @@ const SolutionContactPage: NextPage = () => {
             category: CompanyCategory.GOV,
             url: '/cases/32',
             imageUrl:
-              '/_images/cases/companies/16.png',
+              'https://cdn-official-website.juzibot.com/images/cases/companies/16.png',
           },
           {
             title: '某饮料新消费头部品牌',
@@ -39,12 +39,12 @@ const SolutionContactPage: NextPage = () => {
             category: CompanyCategory.TRADE,
             url: '/cases/01',
             imageUrl:
-              '/_images/cases/companies/0.png',
+              'https://cdn-official-website.juzibot.com/images/cases/companies/0.png',
           },
         ]}
         heroTitle={t('hero-title')}
         heroSubtitle={t('hero-subtitle')}
-        backgroundUrl="/_images/solutions/bg-3.svg"
+        backgroundUrl="https://cdn-official-website.juzibot.com/images/solutions/bg-3.svg"
         challenges={[
           {
             icon: 'icon-9.svg',
@@ -66,49 +66,49 @@ const SolutionContactPage: NextPage = () => {
           {
             title: t('solutions.title-1'),
             photo:
-              '/_images/solutions/s-9.svg',
+              'https://cdn-official-website.juzibot.com/images/solutions/s-9.svg',
             subtitle: t('solutions.subtitle-1'),
-            icon: '/_images/solutions/no-5.svg',
+            icon: 'https://cdn-official-website.juzibot.com/images/solutions/no-5.svg',
           },
 
           {
             title: t('solutions.title-2'),
             photo:
-              '/_images/solutions/s-10.svg',
+              'https://cdn-official-website.juzibot.com/images/solutions/s-10.svg',
             subtitle: t('solutions.subtitle-2'),
-            icon: '/_images/solutions/no-6.svg',
+            icon: 'https://cdn-official-website.juzibot.com/images/solutions/no-6.svg',
           },
 
           {
             title: t('solutions.title-3'),
             photo:
-              '/_images/solutions/s-11.svg',
+              'https://cdn-official-website.juzibot.com/images/solutions/s-11.svg',
             subtitle: t('solutions.subtitle-3'),
-            icon: '/_images/solutions/no-7.svg',
+            icon: 'https://cdn-official-website.juzibot.com/images/solutions/no-7.svg',
           },
 
           {
             title: t('solutions.title-4'),
             photo:
-              '/_images/solutions/s-12.svg',
+              'https://cdn-official-website.juzibot.com/images/solutions/s-12.svg',
             subtitle: t('solutions.subtitle-4'),
-            icon: '/_images/solutions/no-8.svg',
+            icon: 'https://cdn-official-website.juzibot.com/images/solutions/no-8.svg',
           },
 
           {
             title: t('solutions.title-5'),
             photo:
-              '/_images/solutions/s-13.svg',
+              'https://cdn-official-website.juzibot.com/images/solutions/s-13.svg',
             subtitle: t('solutions.subtitle-5'),
-            icon: '/_images/solutions/no-9.svg',
+            icon: 'https://cdn-official-website.juzibot.com/images/solutions/no-9.svg',
           },
 
           {
             title: t('solutions.title-6'),
             photo:
-              '/_images/solutions/s-14.svg',
+              'https://cdn-official-website.juzibot.com/images/solutions/s-14.svg',
             subtitle: t('solutions.subtitle-6'),
-            icon: '/_images/solutions/no-10.svg',
+            icon: 'https://cdn-official-website.juzibot.com/images/solutions/no-10.svg',
           },
         ]}
       />

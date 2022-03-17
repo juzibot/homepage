@@ -72,7 +72,7 @@ const ContactModal: NextPage = () => {
         }}
       >
         <div className="left">
-          <img src="/_images/contact-qrcode.png" alt="qrcode" />
+          <img src="https://cdn-official-website.juzibot.com/images/contact-qrcode.png" alt="qrcode" />
           <div style={{ width: 180 }}>
             <div style={{ marginTop: 24 }}>微信扫一扫</div>
             <div>与私域解决方案专家联系</div>

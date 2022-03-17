@@ -45,7 +45,7 @@ export const companies: ICompanyItemProps[] = [
     category: CompanyCategory.GOV,
     url: '/cases/32',
     imageUrl:
-      '/_images/cases/companies/16.png',
+      'https://cdn-official-website.juzibot.com/images/cases/companies/16.png',
   },
   {
     title: '某淘系直播头部主播',
@@ -54,7 +54,7 @@ export const companies: ICompanyItemProps[] = [
     category: CompanyCategory.TRADE,
     url: '/cases/20',
     imageUrl:
-      '/_images/cases/companies/2.png',
+      'https://cdn-official-website.juzibot.com/images/cases/companies/2.png',
   },
   {
     title: '某饮料新消费头部品牌',
@@ -63,7 +63,7 @@ export const companies: ICompanyItemProps[] = [
     category: CompanyCategory.TRADE,
     url: '/cases/01',
     imageUrl:
-      '/_images/cases/companies/0.png',
+      'https://cdn-official-website.juzibot.com/images/cases/companies/0.png',
   },
   {
     title: '某乳类一线品牌',
@@ -72,7 +72,7 @@ export const companies: ICompanyItemProps[] = [
     category: CompanyCategory.TRADE,
     url: '/cases/02',
     imageUrl:
-      '/_images/cases/companies/17.png',
+      'https://cdn-official-website.juzibot.com/images/cases/companies/17.png',
   },
   {
     title: '某传统冲泡饮料头部品牌',
@@ -80,7 +80,7 @@ export const companies: ICompanyItemProps[] = [
     category: CompanyCategory.TRADE,
     url: '/cases/03',
     imageUrl:
-      '/_images/cases/companies/18.png',
+      'https://cdn-official-website.juzibot.com/images/cases/companies/18.png',
   },
   {
     title: '一线明星自创食品品牌',
@@ -89,7 +89,7 @@ export const companies: ICompanyItemProps[] = [
     category: CompanyCategory.TRADE,
     url: '/cases/04',
     imageUrl:
-      '/_images/cases/companies/19.png',
+      'https://cdn-official-website.juzibot.com/images/cases/companies/19.png',
   },
   {
     title: '某减肥代餐一线品牌',
@@ -98,7 +98,7 @@ export const companies: ICompanyItemProps[] = [
     category: CompanyCategory.TRADE,
     url: '/cases/05',
     imageUrl:
-      '/_images/cases/companies/20.png',
+      'https://cdn-official-website.juzibot.com/images/cases/companies/20.png',
   },
   {
     title: '某国际一线美妆大品牌',
@@ -107,7 +107,7 @@ export const companies: ICompanyItemProps[] = [
     category: CompanyCategory.TRADE,
     url: '/cases/06',
     imageUrl:
-      '/_images/cases/companies/21.png',
+      'https://cdn-official-website.juzibot.com/images/cases/companies/21.png',
   },
   {
     title: '某国货头部化妆品品牌',
@@ -115,7 +115,7 @@ export const companies: ICompanyItemProps[] = [
     category: CompanyCategory.TRADE,
     url: '/cases/07',
     imageUrl:
-      '/_images/cases/companies/22.png',
+      'https://cdn-official-website.juzibot.com/images/cases/companies/22.png',
   },
   {
     title: '某国际高端护肤品牌',
@@ -124,7 +124,7 @@ export const companies: ICompanyItemProps[] = [
     category: CompanyCategory.TRADE,
     url: '/cases/08',
     imageUrl:
-      '/_images/cases/companies/23.png',
+      'https://cdn-official-website.juzibot.com/images/cases/companies/23.png',
   },
   {
     title: '某日本著名化妆品品牌',
@@ -132,7 +132,7 @@ export const companies: ICompanyItemProps[] = [
     category: CompanyCategory.TRADE,
     url: '/cases/09',
     imageUrl:
-      '/_images/cases/companies/24.png',
+      'https://cdn-official-website.juzibot.com/images/cases/companies/24.png',
   },
   {
     title: '某头部潮流玩具品牌',
@@ -141,7 +141,7 @@ export const companies: ICompanyItemProps[] = [
     category: CompanyCategory.TRADE,
     url: '/cases/10',
     imageUrl:
-      '/_images/cases/companies/25.png',
+      'https://cdn-official-website.juzibot.com/images/cases/companies/25.png',
   },
   {
     title: '某宠物护理一线品牌',
@@ -150,7 +150,7 @@ export const companies: ICompanyItemProps[] = [
     category: CompanyCategory.TRADE,
     url: '/cases/11',
     imageUrl:
-      '/_images/cases/companies/26.png',
+      'https://cdn-official-website.juzibot.com/images/cases/companies/26.png',
   },
   {
     title: '某韩国时装零售头部品牌',
@@ -159,7 +159,7 @@ export const companies: ICompanyItemProps[] = [
     category: CompanyCategory.TRADE,
     url: '/cases/12',
     imageUrl:
-      '/_images/cases/companies/27.png',
+      'https://cdn-official-website.juzibot.com/images/cases/companies/27.png',
   },
   {
     title: '某连锁披萨品牌',
@@ -168,7 +168,7 @@ export const companies: ICompanyItemProps[] = [
     category: CompanyCategory.TRADE,
     url: '/cases/13',
     imageUrl:
-      '/_images/cases/companies/28.png',
+      'https://cdn-official-website.juzibot.com/images/cases/companies/28.png',
   },
   {
     title: '某国内电子烟一线品牌',
@@ -177,7 +177,7 @@ export const companies: ICompanyItemProps[] = [
     category: CompanyCategory.TRADE,
     url: '/cases/14',
     imageUrl:
-      '/_images/cases/companies/29.png',
+      'https://cdn-official-website.juzibot.com/images/cases/companies/29.png',
   },
   {
     title: '某国内头部家电品牌',
@@ -186,7 +186,7 @@ export const companies: ICompanyItemProps[] = [
     category: CompanyCategory.TRADE,
     url: '/cases/15',
     imageUrl:
-      '/_images/cases/companies/30.png',
+      'https://cdn-official-website.juzibot.com/images/cases/companies/30.png',
   },
   {
     title: '某线上教育头部品牌',
@@ -195,7 +195,7 @@ export const companies: ICompanyItemProps[] = [
     category: CompanyCategory.EDUCATION,
     url: '/cases/16',
     imageUrl:
-      '/_images/cases/companies/1.png',
+      'https://cdn-official-website.juzibot.com/images/cases/companies/1.png',
   },
   {
     title: '某头部线上教育公司旗下子品牌',
@@ -204,7 +204,7 @@ export const companies: ICompanyItemProps[] = [
     category: CompanyCategory.EDUCATION,
     url: '/cases/17',
     imageUrl:
-      '/_images/cases/companies/8.png',
+      'https://cdn-official-website.juzibot.com/images/cases/companies/8.png',
   },
   {
     title: '某在线教育头部品牌',
@@ -213,7 +213,7 @@ export const companies: ICompanyItemProps[] = [
     category: CompanyCategory.EDUCATION,
     url: '/cases/18',
     imageUrl:
-      '/_images/cases/companies/9.png',
+      'https://cdn-official-website.juzibot.com/images/cases/companies/9.png',
   },
   {
     title: '某成人理财教育品牌',
@@ -221,7 +221,7 @@ export const companies: ICompanyItemProps[] = [
     category: CompanyCategory.EDUCATION,
     url: '/cases/19',
     imageUrl:
-      '/_images/cases/companies/10.png',
+      'https://cdn-official-website.juzibot.com/images/cases/companies/10.png',
   },
   {
     title: '某连锁药店品牌',
@@ -230,7 +230,7 @@ export const companies: ICompanyItemProps[] = [
     category: CompanyCategory.MEDICAL,
     url: '/cases/27',
     imageUrl:
-      '/_images/cases/companies/11.png',
+      'https://cdn-official-website.juzibot.com/images/cases/companies/11.png',
   },
   {
     title: '某会员制高端医院品牌',
@@ -238,7 +238,7 @@ export const companies: ICompanyItemProps[] = [
     category: CompanyCategory.MEDICAL,
     url: '/cases/28',
     imageUrl:
-      '/_images/cases/companies/12.png',
+      'https://cdn-official-website.juzibot.com/images/cases/companies/12.png',
   },
   {
     title: '某医疗行业高级杂志机构',
@@ -247,7 +247,7 @@ export const companies: ICompanyItemProps[] = [
     category: CompanyCategory.MEDICAL,
     url: '/cases/29',
     imageUrl:
-      '/_images/cases/companies/13.png',
+      'https://cdn-official-website.juzibot.com/images/cases/companies/13.png',
   },
   {
     title: '某知名地方银行',
@@ -256,7 +256,7 @@ export const companies: ICompanyItemProps[] = [
     category: CompanyCategory.FINANCE,
     url: '/cases/30',
     imageUrl:
-      '/_images/cases/companies/14.png',
+      'https://cdn-official-website.juzibot.com/images/cases/companies/14.png',
   },
   {
     title: '某知名保险公司',
@@ -265,7 +265,7 @@ export const companies: ICompanyItemProps[] = [
     category: CompanyCategory.FINANCE,
     url: '/cases/31',
     imageUrl:
-      '/_images/cases/companies/15.png',
+      'https://cdn-official-website.juzibot.com/images/cases/companies/15.png',
   },
   {
     title: '某头部约车服务品牌（司机端）',
@@ -274,7 +274,7 @@ export const companies: ICompanyItemProps[] = [
     category: CompanyCategory.IT,
     url: '/cases/21',
     imageUrl:
-      '/_images/cases/companies/3.png',
+      'https://cdn-official-website.juzibot.com/images/cases/companies/3.png',
   },
   {
     title: '某头部约车服务品牌（用户端）',
@@ -283,7 +283,7 @@ export const companies: ICompanyItemProps[] = [
     category: CompanyCategory.IT,
     url: '/cases/22',
     imageUrl:
-      '/_images/cases/companies/4.png',
+      'https://cdn-official-website.juzibot.com/images/cases/companies/4.png',
   },
   {
     title: '某本地化社群平台',
@@ -292,7 +292,7 @@ export const companies: ICompanyItemProps[] = [
     category: CompanyCategory.IT,
     url: '/cases/23',
     imageUrl:
-      '/_images/cases/companies/5.png',
+      'https://cdn-official-website.juzibot.com/images/cases/companies/5.png',
   },
   {
     title: '某头部互联网平台',
@@ -301,7 +301,7 @@ export const companies: ICompanyItemProps[] = [
     category: CompanyCategory.IT,
     url: '/cases/24',
     imageUrl:
-      '/_images/cases/companies/6.png',
+      'https://cdn-official-website.juzibot.com/images/cases/companies/6.png',
   },
   {
     title: '某头部互联网平台技术社区',
@@ -310,7 +310,7 @@ export const companies: ICompanyItemProps[] = [
     category: CompanyCategory.IT,
     url: '/cases/25',
     imageUrl:
-      '/_images/cases/companies/7.png',
+      'https://cdn-official-website.juzibot.com/images/cases/companies/7.png',
   },
   {
     title: '某家庭维修品牌',
@@ -319,7 +319,7 @@ export const companies: ICompanyItemProps[] = [
     category: CompanyCategory.IT,
     url: '/cases/26',
     imageUrl:
-      '/_images/cases/companies/31.png',
+      'https://cdn-official-website.juzibot.com/images/cases/companies/31.png',
   },
 ];
 

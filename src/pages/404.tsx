@@ -12,7 +12,7 @@ const Custom404: NextPage = () => {
       <Seo page="404" />
       <div className="container">
         <Image
-          src="/_images/404.svg"
+          src="https://cdn-official-website.juzibot.com/images/404.svg"
           width="517"
           height="438"
           draggable="false"

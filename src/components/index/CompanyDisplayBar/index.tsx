@@ -39,28 +39,28 @@ const CompanyDisplayBar: NextPage = () => {
   const items: ICompanyProps[] = [
     {
       iconUrl:
-        '/_images/icons/contact.svg',
+        'https://cdn-official-website.juzibot.com/images/icons/contact.svg',
       redirectUrl: '/cases/26',
     },
     {
       iconUrl:
-        '/_images/icons/growing.svg',
+        'https://cdn-official-website.juzibot.com/images/icons/growing.svg',
       redirectUrl: '/cases/23',
     },
     {
       iconUrl:
-        '/_images/icons/rocket.svg',
+        'https://cdn-official-website.juzibot.com/images/icons/rocket.svg',
       redirectUrl: '/cases/06',
     },
     {
-      iconUrl: '/_images/icons/safe.svg',
+      iconUrl: 'https://cdn-official-website.juzibot.com/images/icons/safe.svg',
       redirectUrl: '/cases/32',
     },
   ].map((item, index) => ({
     ...item,
     title: t(`company-${index + 1}-title`),
     subTitle: t(`company-${index + 1}-subtitle`),
-    companyLogoUrl: `/_images/icons/logo-${index}.svg`,
+    companyLogoUrl: `https://cdn-official-website.juzibot.com/images/icons/logo-${index}.svg`,
     companyName: t(`company-${index + 1}-name`),
     companyBrief: t(`company-${index + 1}-brief`),
     comment: t(`company-${index + 1}-comment`),
@@ -90,7 +90,7 @@ const CompanyDisplayBar: NextPage = () => {
       {/* <div className="comment-bar" data-aos="fade-in">
         <Image
           className="quote"
-          src="/_images/icons/quote.svg"
+          src="https://cdn-official-website.juzibot.com/images/icons/quote.svg"
           draggable="false"
           alt="quote-icon"
           width="24"
@@ -100,7 +100,7 @@ const CompanyDisplayBar: NextPage = () => {
 
         <Image
           className="quote reverse"
-          src="/_images/icons/quote.svg"
+          src="https://cdn-official-website.juzibot.com/images/icons/quote.svg"
           draggable="false"
           alt="quote-icon"
           width="24"
