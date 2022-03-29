@@ -148,14 +148,26 @@ const HeaderBar: NextPage = () => {
             >
               {t('solutions')}
             </MenuItem>
-            <MenuItem href="/cases">{t('cases')}</MenuItem>
-            <MenuItem href="https://blog.juzibot.com/" linkTarget="_blank">
+            <MenuItem href="/cases" onMenuHide={() => setActiveMenu(null)}>
+              {t('cases')}
+            </MenuItem>
+            <MenuItem
+              href="https://blog.juzibot.com/"
+              linkTarget="_blank"
+              onMenuHide={() => setActiveMenu(null)}
+            >
               {t('course')}
             </MenuItem>
-            <MenuItem href="https://wechaty.js.org/" linkTarget="_blank">
+            <MenuItem
+              href="https://wechaty.js.org/"
+              linkTarget="_blank"
+              onMenuHide={() => setActiveMenu(null)}
+            >
               {t('developer')}
             </MenuItem>
-            <MenuItem href="/about-us">{t('about')}</MenuItem>
+            <MenuItem href="/about-us" onMenuHide={() => setActiveMenu(null)}>
+              {t('about')}
+            </MenuItem>
           </menu>
 
           <menu className="header-right">

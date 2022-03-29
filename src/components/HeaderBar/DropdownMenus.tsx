@@ -89,7 +89,11 @@ export const SolutionMenu: NextPage<{
       });
     } else {
       timerRef.current = setTimeout(() => {
-        if (current === HeaderBarMenu.SOLUTIONS && !move.current) {
+        if (
+          // (current === HeaderBarMenu.SOLUTIONS || current === null) &&
+          current !== HeaderBarMenu.SOLUTIONS &&
+          !move.current
+        ) {
           setStyles({
             opacity: 0,
           });
@@ -230,7 +234,11 @@ export const FeatureMenu: NextPage<{
       });
     } else {
       timerRef.current = setTimeout(() => {
-        if (current === HeaderBarMenu.FEATURES && !move.current) {
+        if (
+          // (current === HeaderBarMenu.FEATURES || current === null) &&
+          current !== HeaderBarMenu.FEATURES &&
+          !move.current
+        ) {
           setStyles({
             opacity: 0,
           });
