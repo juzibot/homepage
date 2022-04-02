@@ -71,7 +71,9 @@ export const SolutionMenu: NextPage<{
   current: HeaderBarMenu | null;
   onHide: (current: HeaderBarMenu) => void;
 }> = ({ current, visibility, onHide }) => {
-  const [styles, setStyles] = useState<CSSProperties>();
+  const [styles, setStyles] = useState<CSSProperties>({
+    display: 'none',
+  });
   const timerRef = useRef<NodeJS.Timeout>();
   const move = useRef<boolean>(true);
   useMemo(() => {
@@ -89,7 +91,11 @@ export const SolutionMenu: NextPage<{
       });
     } else {
       timerRef.current = setTimeout(() => {
-        if (current === HeaderBarMenu.SOLUTIONS && !move.current) {
+        if (
+          // (current === HeaderBarMenu.SOLUTIONS || current === null) &&
+          current !== HeaderBarMenu.SOLUTIONS &&
+          !move.current
+        ) {
           setStyles({
             opacity: 0,
           });
@@ -207,12 +213,90 @@ export const SolutionMenu: NextPage<{
   );
 };
 
+export const AboutUsMenu: NextPage<{
+  visibility: boolean;
+  current: HeaderBarMenu | null;
+  onHide: (current: HeaderBarMenu) => void;
+}> = ({ visibility, current, onHide }) => {
+  const [styles, setStyles] = useState<CSSProperties>({
+    display: 'none',
+  });
+  const timerRef = useRef<NodeJS.Timeout>();
+  const move = useRef<boolean>(true);
+  useMemo(() => {
+    if (timerRef.current) clearTimeout(timerRef.current);
+    if (current !== null && current !== HeaderBarMenu.ABOUT_US) {
+      setStyles({
+        display: 'none',
+      });
+      return;
+    }
+    if (visibility) {
+      setStyles({
+        display: 'flex',
+        opacity: 1,
+      });
+    } else {
+      timerRef.current = setTimeout(() => {
+        if (current !== HeaderBarMenu.ABOUT_US && !move.current) {
+          setStyles({
+            opacity: 0,
+          });
+          timerRef.current = setTimeout(() => {
+            setStyles({
+              display: 'none',
+            });
+            onHide(HeaderBarMenu.FEATURES);
+          }, 600);
+        }
+      }, 600);
+    }
+  }, [visibility, current, onHide]);
+  return (
+    <BaseMenu
+      left={810}
+      name={HeaderBarMenu.ABOUT_US}
+      style={{ height: 160, ...styles, width: 160 }}
+      key="features"
+      onMouseMove={() => (move.current = true)}
+      onMouseLeave={() => {
+        setStyles({
+          opacity: 0,
+        });
+        move.current = false;
+        timerRef.current = setTimeout(() => {
+          setStyles({
+            display: 'none',
+          });
+        }, 300);
+      }}
+    >
+      <MenuItem
+        iconUrl="https://cdn-official-website.juzibot.com/images/icons/header-bar/16.svg"
+        hoverIconUrl="https://cdn-official-website.juzibot.com/images/icons/header-bar/16-o.svg"
+        href="/about-us"
+      >
+        关于我们
+      </MenuItem>
+      <MenuItem
+        iconUrl="https://cdn-official-website.juzibot.com/images/icons/header-bar/17.svg"
+        hoverIconUrl="https://cdn-official-website.juzibot.com/images/icons/header-bar/17-o.svg"
+        href="/culture"
+      >
+        公司文化
+      </MenuItem>
+    </BaseMenu>
+  );
+};
+
 export const FeatureMenu: NextPage<{
   visibility: boolean;
   current: HeaderBarMenu | null;
   onHide: (current: HeaderBarMenu) => void;
 }> = ({ visibility, current, onHide }) => {
-  const [styles, setStyles] = useState<CSSProperties>();
+  const [styles, setStyles] = useState<CSSProperties>({
+    display: 'none',
+  });
   const timerRef = useRef<NodeJS.Timeout>();
   const move = useRef<boolean>(true);
   useMemo(() => {
@@ -230,7 +314,7 @@ export const FeatureMenu: NextPage<{
       });
     } else {
       timerRef.current = setTimeout(() => {
-        if (current === HeaderBarMenu.FEATURES && !move.current) {
+        if (current !== HeaderBarMenu.FEATURES && !move.current) {
           setStyles({
             opacity: 0,
           });

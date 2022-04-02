@@ -6,7 +6,7 @@ import { useState, useEffect } from 'react';
 import { host } from '@src/config';
 import { useTranslation } from 'react-i18next';
 import { useRouter } from 'next/router';
-import { FeatureMenu, SolutionMenu } from './DropdownMenus';
+import { AboutUsMenu, FeatureMenu, SolutionMenu } from './DropdownMenus';
 import { isBrowserChrome } from '@src/utils/isBrowserChrome';
 
 const MenuItem: NextPage<IMenuItemProps> = ({
@@ -73,6 +73,7 @@ const headerbarExtraClassMap: { [path: string]: string } = {
   '/about-us': 'about-us',
   '/features/': 'feature-page-header',
   '/solutions/': 'feature-page-header',
+  '/culture': 'about-us',
 };
 
 const HeaderBar: NextPage = () => {
@@ -148,14 +149,31 @@ const HeaderBar: NextPage = () => {
             >
               {t('solutions')}
             </MenuItem>
-            <MenuItem href="/cases">{t('cases')}</MenuItem>
-            <MenuItem href="https://blog.juzibot.com/" linkTarget="_blank">
+            <MenuItem href="/cases" onMenuHide={() => setActiveMenu(null)}>
+              {t('cases')}
+            </MenuItem>
+            <MenuItem
+              href="https://blog.juzibot.com/"
+              linkTarget="_blank"
+              onMenuHide={() => setActiveMenu(null)}
+            >
               {t('course')}
             </MenuItem>
-            <MenuItem href="https://wechaty.js.org/" linkTarget="_blank">
+            <MenuItem
+              href="https://wechaty.js.org/"
+              linkTarget="_blank"
+              onMenuHide={() => setActiveMenu(null)}
+            >
               {t('developer')}
             </MenuItem>
-            <MenuItem href="/about-us">{t('about')}</MenuItem>
+            <MenuItem
+              href="#"
+              hasArrow
+              onMenuHover={() => setActiveMenu(HeaderBarMenu.ABOUT_US)}
+              onMenuHide={() => setActiveMenu(null)}
+            >
+              {t('about')}
+            </MenuItem>
           </menu>
 
           <menu className="header-right">
@@ -190,6 +208,11 @@ const HeaderBar: NextPage = () => {
           />
           <SolutionMenu
             visibility={activeMenu === HeaderBarMenu.SOLUTIONS}
+            current={activeMenu}
+            onHide={() => {}}
+          />
+          <AboutUsMenu
+            visibility={activeMenu === HeaderBarMenu.ABOUT_US}
             current={activeMenu}
             onHide={() => {}}
           />

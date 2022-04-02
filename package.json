@@ -16,6 +16,7 @@
     "autoprefixer": "^10.3.7",
     "axios": "^0.25.0",
     "dotenv": "^16.0.0",
+    "dplayer": "^1.26.0",
     "fs": "^0.0.1-security",
     "lodash": "^4.17.21",
     "next": "^11.1.3",
@@ -30,6 +31,7 @@
   },
   "devDependencies": {
     "@types/aos": "^3.0.4",
+    "@types/dplayer": "^1.25.2",
     "@types/lodash": "^4.14.178",
     "@types/react": "17.0.31",
     "@typescript-eslint/eslint-plugin": "^5.10.1",
