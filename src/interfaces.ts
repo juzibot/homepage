@@ -85,6 +85,7 @@ export enum HeaderBarMenu {
   FEATURES,
   SOLUTIONS,
   QRCODE,
+  ABOUT_US,
 }
 export interface IHeaderBarMenuProps {
   left: number;

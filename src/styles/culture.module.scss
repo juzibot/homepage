@@ -1,0 +1,386 @@
+.star-staff {
+  background-image: linear-gradient(
+    180deg,
+    #f7f7fb 0%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  padding: 0 !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+
+  .info {
+    width: 520px;
+    height: 180px;
+    position: absolute !important;
+    display: flex !important;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 220px;
+    margin-left: calc(50% - 260px);
+    z-index: 0;
+
+    h2 {
+      font-family: 'PingFang SC';
+      font-style: normal;
+      font-weight: 600;
+      font-size: 32px;
+      line-height: 45px;
+      color: #364256;
+    }
+
+    .read-more {
+      font-size: 18px;
+      line-height: 160%;
+      margin-top: 24px;
+      color: #54657e;
+      font-weight: 300;
+    }
+  }
+
+  .brief-box {
+    width: 380px;
+    min-height: 190px;
+    background: #ffffff;
+    border: 1px solid #f2f6ff;
+    box-sizing: border-box;
+    box-shadow: 0px 10px 30px rgba(5, 85, 255, 0.1);
+    border-radius: 16px;
+    padding: 24px;
+    position: absolute;
+    z-index: 99;
+
+    .top {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+    }
+
+    .name {
+      font-style: normal;
+      font-weight: 600;
+      font-size: 26px;
+      line-height: 40px;
+      color: #364256;
+    }
+
+    .title {
+      font-style: normal;
+      font-weight: 600;
+      font-size: 18px;
+      line-height: 25px;
+      color: #364256;
+      margin-left: 8px;
+      margin-top: 6px;
+    }
+
+    .bottom {
+      width: 100%;
+      font-style: normal;
+      font-weight: 400;
+      font-size: 18px;
+      line-height: 160%;
+      color: #54657e;
+      margin-top: 12px;
+    }
+  }
+
+  .container {
+    width: 1440px !important;
+    height: 600px;
+    background: url('https://cdn-official-website.juzibot.com/images/about-us/culture/staff-bg.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    pointer-events: all !important;
+
+    .item {
+      width: 88px;
+      height: 88px;
+      border-radius: 50%;
+      overflow: hidden;
+      position: absolute !important;
+      cursor: pointer !important;
+
+      &:hover {
+        filter: saturate(1.2);
+      }
+
+      &:nth-child(1) {
+        margin-left: 150px !important;
+        margin-top: 126px !important;
+      }
+
+      &:nth-child(2) {
+        margin-left: 260px !important;
+        margin-top: 333px !important;
+      }
+
+      &:nth-child(3) {
+        margin-left: 444px !important;
+        margin-top: 80px !important;
+      }
+
+      &:nth-child(4) {
+        margin-left: 819px !important;
+        margin-top: 442px !important;
+      }
+
+      &:nth-child(5) {
+        margin-left: 943px !important;
+        margin-top: 116px !important;
+      }
+
+      &:nth-child(6) {
+        margin-left: 1099px !important;
+        margin-top: 280px !important;
+      }
+
+      &:nth-child(7) {
+        margin-left: 1189px !important;
+        margin-top: 80px !important;
+      }
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+  }
+}
+
+.video-page {
+  background-image: url('https://cdn-official-website.juzibot.com/images/about-us/culture/bg.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position-y: -200px;
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding-top: 108px;
+    padding-bottom: 44px;
+
+    .video {
+      width: 1045px;
+      border-radius: 20px;
+    }
+
+    .quote {
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      height: 420px;
+      padding: 78px;
+
+      .left,
+      .right {
+        user-select: none;
+        align-self: flex-start;
+        flex-shrink: 0;
+
+        img {
+          width: 52px;
+          height: 46px;
+        }
+      }
+
+      .right {
+        align-self: flex-end;
+        transform: rotate(180deg);
+      }
+
+      .center {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 0 44px;
+
+        h2 {
+          font-style: normal;
+          font-weight: 600;
+          font-size: 32px;
+          line-height: 45px;
+          text-align: center;
+          color: #364256;
+          margin-bottom: 24px;
+        }
+
+        .extra {
+          width: 100%;
+          display: flex;
+          flex-direction: column;
+          justify-content: flex-start;
+          align-items: flex-end;
+
+          .name {
+            font-family: 'PingFang SC';
+            font-style: normal;
+            font-weight: 600;
+            font-size: 18px;
+            line-height: 160%;
+            color: #364256;
+          }
+
+          .link {
+            font-weight: 300;
+            font-size: 18px;
+            line-height: 160%;
+            text-align: right;
+            color: #54657e;
+          }
+        }
+      }
+    }
+  }
+}
+
+.value-page {
+  .container {
+    .content {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-column-gap: 48px;
+      grid-row-gap: 48px;
+      padding-bottom: 120px;
+    }
+
+    h2 {
+      font-style: normal;
+      font-weight: 600;
+      font-size: 32px;
+      line-height: 45px;
+      color: #364256;
+      margin-bottom: 48px;
+    }
+
+    .item {
+      width: 100%;
+      user-select: none;
+
+      img {
+        width: 64px;
+        height: 64px;
+        margin-bottom: 18px;
+      }
+
+      .title {
+        font-style: normal;
+        font-weight: 600;
+        font-size: 18px;
+        line-height: 25px;
+        color: #364256;
+        margin-bottom: 8px;
+      }
+
+      .subtitle {
+        font-weight: 300;
+        font-size: 16px;
+        line-height: 180%;
+        color: #54657e;
+      }
+    }
+  }
+}
+
+.culture-hero-page {
+  z-index: 100;
+  .bg {
+    width: 100%;
+    height: 1400px;
+    background: linear-gradient(30deg, #fff, rgba(255, 98, 23, 0.25));
+    position: absolute;
+    top: -1060px;
+    filter: blur(200px);
+
+    &.moz {
+      filter: blur(800px);
+      transform: rotate(10deg);
+      left: 20%;
+    }
+  }
+
+  .container {
+    width: 100%;
+    height: 880px;
+    padding-top: 128px;
+    z-index: 8;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    user-select: none;
+
+    .photo-swiper {
+      width: 100%;
+      border-radius: 16px;
+
+      img {
+        width: 100%;
+      }
+    }
+
+    h1 {
+      font-family: 'PingFang SC';
+      font-style: normal;
+      font-weight: 600;
+      font-size: 40px;
+      line-height: 56px;
+      text-align: center;
+      color: #364256;
+    }
+
+    .pagination {
+      display: flex;
+      flex-direction: row;
+      z-index: 90;
+      margin-top: 44px;
+
+      & > div {
+        width: 40px;
+        height: 4px;
+        background-color: #eaf0f7;
+        cursor: pointer;
+        border-radius: 2px;
+        overflow: hidden;
+        display: flex;
+        flex-direction: row;
+
+        &:not(:first-child) {
+          margin-left: 4px;
+        }
+
+        & > div {
+          transition: all 0.3s;
+          width: 100%;
+          height: 100%;
+          background-color: #eaf0f7;
+          border-radius: 2px;
+        }
+
+        @keyframes progress {
+          from {
+            width: 0;
+          }
+          to {
+            width: 100%;
+          }
+        }
+
+        &.active > div {
+          background-color: #fc790d;
+          animation: progress 6s linear;
+        }
+      }
+    }
+  }
+}

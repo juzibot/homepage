@@ -6,7 +6,7 @@ import { useState, useEffect } from 'react';
 import { host } from '@src/config';
 import { useTranslation } from 'react-i18next';
 import { useRouter } from 'next/router';
-import { FeatureMenu, SolutionMenu } from './DropdownMenus';
+import { AboutUsMenu, FeatureMenu, SolutionMenu } from './DropdownMenus';
 import { isBrowserChrome } from '@src/utils/isBrowserChrome';
 
 const MenuItem: NextPage<IMenuItemProps> = ({
@@ -73,6 +73,7 @@ const headerbarExtraClassMap: { [path: string]: string } = {
   '/about-us': 'about-us',
   '/features/': 'feature-page-header',
   '/solutions/': 'feature-page-header',
+  '/culture': 'about-us',
 };
 
 const HeaderBar: NextPage = () => {
@@ -165,7 +166,12 @@ const HeaderBar: NextPage = () => {
             >
               {t('developer')}
             </MenuItem>
-            <MenuItem href="/about-us" onMenuHide={() => setActiveMenu(null)}>
+            <MenuItem
+              href="#"
+              hasArrow
+              onMenuHover={() => setActiveMenu(HeaderBarMenu.ABOUT_US)}
+              onMenuHide={() => setActiveMenu(null)}
+            >
               {t('about')}
             </MenuItem>
           </menu>
@@ -202,6 +208,11 @@ const HeaderBar: NextPage = () => {
           />
           <SolutionMenu
             visibility={activeMenu === HeaderBarMenu.SOLUTIONS}
+            current={activeMenu}
+            onHide={() => {}}
+          />
+          <AboutUsMenu
+            visibility={activeMenu === HeaderBarMenu.ABOUT_US}
             current={activeMenu}
             onHide={() => {}}
           />

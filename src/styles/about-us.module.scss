@@ -1,5 +1,288 @@
 @import '@styles/appeal-bar.module.scss';
 @import '@styles/feature-bar.module';
+@import '~swiper/scss';
+@import '~swiper/scss/parallax';
+
+.about-appeal {
+  .container {
+    width: 100%;
+    height: 270px;
+    background-image: url('https://cdn-official-website.juzibot.com/images/about-us/appeal-bg.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    border-radius: 20px;
+    padding: 72px 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 48px;
+
+    h2 {
+      font-family: 'PingFang SC';
+      font-weight: 600;
+      font-size: 28px;
+      line-height: 40px;
+      text-align: center;
+      color: #364256;
+    }
+  }
+}
+
+.news {
+  background: linear-gradient(180deg, #f7f7fb 0%, rgba(255, 255, 255, 0) 100%);
+  .container {
+    padding: 72px 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+
+    h1 {
+      font-family: 'PingFang SC';
+      font-style: normal;
+      font-weight: 600;
+      font-size: 32px;
+      line-height: 45px;
+      color: #364256;
+      margin-bottom: 32px;
+      align-self: flex-start;
+    }
+
+    .pagination {
+      display: flex;
+      flex-direction: row;
+      z-index: 90;
+      margin-top: 44px;
+
+      & > div {
+        width: 40px;
+        height: 4px;
+        background-color: #eaf0f7;
+        cursor: pointer;
+        border-radius: 2px;
+        overflow: hidden;
+        display: flex;
+        flex-direction: row;
+
+        &:not(:first-child) {
+          margin-left: 4px;
+        }
+
+        & > div {
+          transition: all 0.3s;
+          width: 100%;
+          height: 100%;
+          background-color: #eaf0f7;
+          border-radius: 2px;
+        }
+
+        @keyframes progress {
+          from {
+            width: 0;
+          }
+          to {
+            width: 100%;
+          }
+        }
+
+        &.active > div {
+          background-color: #fc790d;
+          animation: progress 6s linear;
+        }
+      }
+    }
+
+    .news-swiper {
+      .news-item-container {
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-column-gap: 36px;
+      }
+    }
+
+    .news {
+      width: 100%;
+      img {
+        width: 100%;
+        margin-bottom: 16px;
+      }
+
+      .title {
+        font-style: normal;
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 25px;
+        color: #364256;
+        margin-bottom: 8px;
+      }
+
+      .subtitle {
+        font-weight: 300;
+        font-size: 15px;
+        line-height: 160%;
+        color: #54657e;
+        margin-bottom: 32px;
+      }
+
+      .read-more {
+        font-family: 'PingFang SC';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 15px;
+        line-height: 160%;
+        color: #869bb9;
+      }
+    }
+  }
+}
+
+.certificates {
+  background-color: #fbfbfd;
+  .container {
+    padding: 72px 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    h1 {
+      font-family: 'PingFang SC';
+      font-style: normal;
+      font-weight: 600;
+      font-size: 32px;
+      line-height: 45px;
+      text-align: center;
+      color: #364256;
+      margin-bottom: 40px;
+    }
+
+    img {
+      height: 250px !important;
+    }
+
+    .slide-item {
+      width: unset;
+      height: 250px !important;
+      user-select: none;
+    }
+
+    .slider {
+      display: flex;
+      flex-direction: row;
+      margin-top: 36px;
+
+      .left,
+      .right {
+        width: 64px;
+        height: 64px;
+        background-color: #fafafa;
+        border: 1px solid #eee;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 50%;
+        cursor: pointer;
+        user-select: none;
+
+        img {
+          width: 20px !important;
+          height: 20px !important;
+          transition: all 0.3s;
+        }
+
+        &.disable {
+          opacity: 0.8;
+          cursor: not-allowed;
+          img {
+            opacity: 0.8;
+          }
+        }
+
+        &:not(.disable):hover {
+          background-color: #f3f3f3;
+          img {
+            transform: scale(1.2);
+          }
+        }
+      }
+
+      .left {
+        transform: rotate(180deg);
+        margin-right: 24px;
+      }
+    }
+  }
+}
+
+.customer-display {
+  .container {
+    padding: 72px 0;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+
+    h1 {
+      font-family: 'PingFang SC';
+      font-style: normal;
+      font-weight: 600;
+      font-size: 32px;
+      color: #364256;
+    }
+
+    .subtitle {
+      font-family: 'PingFang SC';
+      font-style: normal;
+      font-weight: 400;
+      font-size: 15px;
+      line-height: 160%;
+      text-align: justify;
+      color: #54657e;
+      margin-top: 16px;
+    }
+
+    .category {
+      font-family: 'PingFang SC';
+      font-style: normal;
+      font-weight: 400;
+      font-size: 24px;
+      line-height: 34px;
+      text-align: center;
+      color: #869bb9;
+      margin-top: 40px;
+    }
+
+    img {
+      width: 100%;
+    }
+  }
+}
+
+.video-box {
+  background: #fbfbfd;
+  .container {
+    padding: 80px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .video-container {
+      width: 1040px;
+      height: 646px;
+      background: #3d3d3d;
+      border-radius: 30px;
+      padding: 24px;
+
+      .video {
+        width: 100%;
+        height: 100%;
+        border-radius: 16px;
+      }
+    }
+  }
+}
 
 .growth-wall {
   .container {
@@ -8,6 +291,129 @@
     justify-content: flex-start;
     align-items: center;
     padding: 72px 0;
+
+    .cover-dialog {
+      width: 220px;
+      padding: 16px;
+      box-shadow: 0px 10px 40px #fff;
+      background-color: #f3f5f8;
+      border-radius: 10px;
+      z-index: 99;
+      transition: opacity 0.3s;
+      margin-top: 70px;
+      position: absolute;
+      transform: translateX(0);
+      font-weight: 300;
+      font-size: 16px;
+      line-height: 22px;
+      color: #54657e;
+      padding: 24px 16px;
+
+      strong {
+        display: block;
+        &:not(:first-of-type) {
+          margin-top: 12px;
+        }
+      }
+
+      &.hover {
+        box-shadow: 0px 10px 40px rgba(5, 85, 255, 0.1);
+        background-color: #fff;
+        &::after,
+        &::before {
+          background-color: #fff;
+          box-shadow: 0px 10px 40px rgba(5, 85, 255, 0.1);
+        }
+      }
+
+      &::after {
+        display: inline-block;
+        content: '';
+        width: 16px;
+        height: 16px;
+        background: #f3f5f8;
+        position: absolute;
+        bottom: -8px;
+        left: 50%;
+        transform: translateX(-50%) rotate(45deg);
+        z-index: -1;
+        box-shadow: 0px 10px 40px rgba(5, 85, 255, 0);
+      }
+
+      &.reverse {
+        &::after {
+          display: none;
+        }
+
+        &::before {
+          display: inline-block;
+          content: '';
+          width: 16px;
+          height: 16px;
+          background: #fff;
+          position: absolute;
+          top: -8px;
+          left: 50%;
+          transform: translateX(-50%) rotate(45deg);
+          z-index: -1;
+          box-shadow: 0px 10px 40px rgba(5, 85, 255, 0);
+        }
+      }
+
+      &.c-2015 {
+        width: 480px;
+        height: 220px;
+        transform: translate(0, 24px);
+
+        &::after {
+          left: 32px;
+        }
+      }
+
+      &.c-2017 {
+        width: 480px;
+        height: 258px;
+        transform: translate(170px, 336px);
+
+        &::before {
+          left: 32px;
+        }
+      }
+
+      &.c-2018 {
+        width: 480px;
+        height: 440px;
+        transform: translate(130px, -206px);
+
+        &::before {
+          left: 32px;
+        }
+      }
+
+      &.c-2019 {
+        width: 480px;
+        height: 360px;
+        transform: translate(300px, 310px);
+      }
+
+      &.c-2020 {
+        width: 480px;
+        height: 460px;
+        transform: translate(470px, -270px);
+      }
+
+      &.c-2021 {
+        width: 480px;
+        height: 560px;
+        transform: translate(640px, 236px);
+      }
+
+      &.c-2022 {
+        width: 300px;
+        height: 150px;
+        transform: translate(900px, -80px);
+      }
+    }
 
     h3 {
       font-family: 'PingFang SC';
@@ -22,7 +428,7 @@
     .growth-data {
       background-size: 100%;
       width: 100%;
-      background-image: url('/_images/about-us/line2.png');
+      background-image: url('https://cdn-official-website.juzibot.com/images/about-us/line2.png');
       background-repeat: no-repeat;
       height: 500px;
       background-position: center;
@@ -194,7 +600,7 @@
 }
 
 .about-us-page {
-  background-image: url('/_images/about-us/bg.png');
+  background-image: url('https://cdn-official-website.juzibot.com/images/about-us/bg.png');
   min-height: 880px;
   background-position: center;
   background-repeat: no-repeat;
