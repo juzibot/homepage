@@ -256,7 +256,7 @@ export const AboutUsMenu: NextPage<{
     <BaseMenu
       left={810}
       name={HeaderBarMenu.ABOUT_US}
-      style={{ height: 160, ...styles, width: 160 }}
+      style={{ height: 150, ...styles, width: 160 }}
       key="features"
       onMouseMove={() => (move.current = true)}
       onMouseLeave={() => {
