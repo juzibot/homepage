@@ -32,6 +32,17 @@ const JuziApp: NextPage<AppProps> = ({ Component, pageProps }) => {
           gtag('config', 'G-855RJWL7LP');
         `}
       </Script>
+      <Script id="baidu-analytics">
+        {`
+          var _hmt = _hmt || [];
+          (function() {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?45faeee2378d9d538a057946597526ca";
+            var s = document.getElementsByTagName("script")[0]; 
+            s.parentNode.insertBefore(hm, s);
+          })();
+        `}
+      </Script>
     </>
   );
 };
