@@ -1,33 +1,219 @@
 import { NextPage } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
-import { HeaderBarMenu, IMenuItemProps } from '@src/interfaces';
+import { IMenuItemProps } from '@src/interfaces';
 import { useState, useEffect } from 'react';
 import { host } from '@src/config';
 import { useTranslation } from 'react-i18next';
 import { useRouter } from 'next/router';
-import { AboutUsMenu, FeatureMenu, SolutionMenu } from './DropdownMenus';
 import { isBrowserChrome } from '@src/utils/isBrowserChrome';
 
-const MenuItem: NextPage<IMenuItemProps> = ({
+const MenuItem: NextPage<{
+  iconUrl: string;
+  hoverIconUrl: string;
+  href: string;
+}> = ({ iconUrl, hoverIconUrl, href, children }) => {
+  const [isHover, toggleHover] = useState(false);
+  return (
+    <Link href={href}>
+      <a>
+        <div
+          className="dropdown-menu-item"
+          onMouseLeave={() => toggleHover(false)}
+          onMouseMove={() => toggleHover(true)}
+        >
+          <Image
+            src={isHover ? hoverIconUrl : iconUrl}
+            alt="header-icon"
+            width="16"
+            height="16"
+            draggable="false"
+          />
+
+          <div style={{ marginLeft: 12 }}>{children}</div>
+        </div>
+      </a>
+    </Link>
+  );
+};
+
+const SolutionsMenu: NextPage = () => {
+  return (
+    <div className="dropdown-menu cases">
+      <div className="box">
+        <div className="flex-row">
+          <div style={{ marginLeft: 8 }}>
+            <div className="flex-row title-bar">
+              <Image
+                src="https://cdn-official-website.juzibot.com/images/icons/header-bar/14.svg"
+                alt="menu-icon"
+                width="24"
+                height="24"
+              />
+              <span>场景</span>
+            </div>
+            <MenuItem
+              iconUrl="https://cdn-official-website.juzibot.com/images/icons/header-bar/06.svg"
+              hoverIconUrl="https://cdn-official-website.juzibot.com/images/icons/header-bar/06-o.svg"
+              href="/solutions/general"
+            >
+              私域全链路解决方案
+            </MenuItem>
+            <MenuItem
+              iconUrl="https://cdn-official-website.juzibot.com/images/icons/header-bar/07.svg"
+              hoverIconUrl="https://cdn-official-website.juzibot.com/images/icons/header-bar/07-o.svg"
+              href="/solutions/customer-service"
+            >
+              客服场景解决方案
+            </MenuItem>
+            <MenuItem
+              iconUrl="https://cdn-official-website.juzibot.com/images/icons/header-bar/08.svg"
+              hoverIconUrl="https://cdn-official-website.juzibot.com/images/icons/header-bar/08-o.svg"
+              href="/solutions/increase"
+            >
+              增长场景解决方案
+            </MenuItem>
+            <MenuItem
+              iconUrl="https://cdn-official-website.juzibot.com/images/icons/header-bar/09.svg"
+              hoverIconUrl="https://cdn-official-website.juzibot.com/images/icons/header-bar/09-o.svg"
+              href="/solutions/operate"
+            >
+              规模化运营解决方案
+            </MenuItem>
+          </div>
+
+          <div style={{ marginLeft: 16 }}>
+            <div className="flex-row title-bar">
+              <Image
+                src="https://cdn-official-website.juzibot.com/images/icons/header-bar/15.svg"
+                alt="menu-icon"
+                width="24"
+                height="24"
+              />
+              <span>行业</span>
+            </div>
+            <MenuItem
+              iconUrl="https://cdn-official-website.juzibot.com/images/icons/header-bar/10.svg"
+              hoverIconUrl="https://cdn-official-website.juzibot.com/images/icons/header-bar/10-o.svg"
+              href="/solutions/consumer-goods"
+            >
+              消费品行业解决方案
+            </MenuItem>
+            <MenuItem
+              iconUrl="https://cdn-official-website.juzibot.com/images/icons/header-bar/11.svg"
+              hoverIconUrl="https://cdn-official-website.juzibot.com/images/icons/header-bar/11-o.svg"
+              href="/solutions/education"
+            >
+              教培行业解决方案
+            </MenuItem>
+            <MenuItem
+              iconUrl="https://cdn-official-website.juzibot.com/images/icons/header-bar/12.svg"
+              hoverIconUrl="https://cdn-official-website.juzibot.com/images/icons/header-bar/12-o.svg"
+              href="/solutions/health"
+            >
+              健康行业解决方案
+            </MenuItem>
+            <MenuItem
+              iconUrl="https://cdn-official-website.juzibot.com/images/icons/header-bar/13.svg"
+              hoverIconUrl="https://cdn-official-website.juzibot.com/images/icons/header-bar/13-o.svg"
+              href="/solutions/finance"
+            >
+              政务金融行业解决方案
+            </MenuItem>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+const ProductMenu: NextPage = () => {
+  return (
+    <div className="dropdown-menu product">
+      <div className="box">
+        <MenuItem
+          iconUrl="https://cdn-official-website.juzibot.com/images/icons/header-bar/01.svg"
+          hoverIconUrl="https://cdn-official-website.juzibot.com/images/icons/header-bar/01-o.svg"
+          href="/features/customer-acquisition"
+        >
+          规模化获客
+        </MenuItem>
+        <MenuItem
+          iconUrl="https://cdn-official-website.juzibot.com/images/icons/header-bar/02.svg"
+          hoverIconUrl="https://cdn-official-website.juzibot.com/images/icons/header-bar/02-o.svg"
+          href="/features/sop"
+        >
+          SOP 消息触达
+        </MenuItem>
+        <MenuItem
+          iconUrl="https://cdn-official-website.juzibot.com/images/icons/header-bar/03.svg"
+          hoverIconUrl="https://cdn-official-website.juzibot.com/images/icons/header-bar/03-o.svg"
+          href="/features/contact-platform"
+        >
+          客户会话中台
+        </MenuItem>
+        <MenuItem
+          iconUrl="https://cdn-official-website.juzibot.com/images/icons/header-bar/04.svg"
+          hoverIconUrl="https://cdn-official-website.juzibot.com/images/icons/header-bar/04-o.svg"
+          href="/features/management"
+        >
+          高效管理
+        </MenuItem>
+        <MenuItem
+          iconUrl="https://cdn-official-website.juzibot.com/images/icons/header-bar/05.svg"
+          hoverIconUrl="https://cdn-official-website.juzibot.com/images/icons/header-bar/05-o.svg"
+          href="/features/data-center"
+        >
+          数据管理中心
+        </MenuItem>
+      </div>
+    </div>
+  );
+};
+
+const AboutUsMenu: NextPage = () => {
+  return (
+    <div className="dropdown-menu about-us">
+      <div className="box">
+        <MenuItem
+          iconUrl="https://cdn-official-website.juzibot.com/images/icons/header-bar/16.svg"
+          hoverIconUrl="https://cdn-official-website.juzibot.com/images/icons/header-bar/16-o.svg"
+          href="/about-us"
+        >
+          公司介绍
+        </MenuItem>
+        <MenuItem
+          iconUrl="https://cdn-official-website.juzibot.com/images/icons/header-bar/17.svg"
+          hoverIconUrl="https://cdn-official-website.juzibot.com/images/icons/header-bar/17-o.svg"
+          href="/culture"
+        >
+          公司文化
+        </MenuItem>
+      </div>
+    </div>
+  );
+};
+
+const HeaderMenu: NextPage<IMenuItemProps> = ({
   hasArrow,
   children,
   href,
   onClick,
-  onMenuHide,
-  onMenuHover,
   linkTarget,
+  menu,
 }) => {
+  const [menuVisible, toggleMenuVisible] = useState(false);
   return (
-    <>
+    <div
+      onMouseLeave={() => toggleMenuVisible(false)}
+      onMouseMove={() => toggleMenuVisible(true)}
+    >
       <Link href={href}>
         <a
           className="menu-item"
           draggable="false"
           target={linkTarget || '_self'}
           onClick={onClick}
-          onMouseMove={onMenuHover}
-          onMouseLeave={onMenuHide}
         >
           <span>{children}</span>
           {hasArrow ? (
@@ -47,7 +233,8 @@ const MenuItem: NextPage<IMenuItemProps> = ({
           ) : null}
         </a>
       </Link>
-    </>
+      {menu && menuVisible ? menu : null}
+    </div>
   );
 };
 
@@ -80,7 +267,6 @@ const HeaderBar: NextPage = () => {
   const { t } = useTranslation(['common']);
   const [borderBottomVisible, setBorderBottomVisible] = useState(false);
   const [isChrome, setIsChrome] = useState(true);
-  const [activeMenu, setActiveMenu] = useState<HeaderBarMenu | null>(null);
   const [headerbarExtraClass, setHeaderbarExtraClass] = useState('');
 
   const { pathname } = useRouter();
@@ -91,7 +277,6 @@ const HeaderBar: NextPage = () => {
         setHeaderbarExtraClass(headerbarExtraClassMap[path]);
       }
     }
-    setActiveMenu(null);
   }, [pathname]);
 
   useEffect(() => {
@@ -133,47 +318,22 @@ const HeaderBar: NextPage = () => {
               ></Image>
             </a>
             <WeworkBar />
-            <MenuItem
-              href="#"
-              hasArrow
-              onMenuHover={() => setActiveMenu(HeaderBarMenu.FEATURES)}
-              onMenuHide={() => setActiveMenu(null)}
-            >
+            <HeaderMenu href="#" hasArrow menu={<ProductMenu />}>
               {t('products')}
-            </MenuItem>
-            <MenuItem
-              href="#"
-              hasArrow
-              onMenuHover={() => setActiveMenu(HeaderBarMenu.SOLUTIONS)}
-              onMenuHide={() => setActiveMenu(null)}
-            >
+            </HeaderMenu>
+            <HeaderMenu href="#" hasArrow menu={<SolutionsMenu />}>
               {t('solutions')}
-            </MenuItem>
-            <MenuItem href="/cases" onMenuHide={() => setActiveMenu(null)}>
-              {t('cases')}
-            </MenuItem>
-            <MenuItem
-              href="https://blog.juzibot.com/"
-              linkTarget="_blank"
-              onMenuHide={() => setActiveMenu(null)}
-            >
+            </HeaderMenu>
+            <HeaderMenu href="/cases">{t('cases')}</HeaderMenu>
+            <HeaderMenu href="https://blog.juzibot.com/" linkTarget="_blank">
               {t('course')}
-            </MenuItem>
-            <MenuItem
-              href="https://wechaty.js.org/"
-              linkTarget="_blank"
-              onMenuHide={() => setActiveMenu(null)}
-            >
+            </HeaderMenu>
+            <HeaderMenu href="https://wechaty.js.org/" linkTarget="_blank">
               {t('developer')}
-            </MenuItem>
-            <MenuItem
-              href="#"
-              hasArrow
-              onMenuHover={() => setActiveMenu(HeaderBarMenu.ABOUT_US)}
-              onMenuHide={() => setActiveMenu(null)}
-            >
+            </HeaderMenu>
+            <HeaderMenu href="#" hasArrow menu={<AboutUsMenu />}>
               {t('about')}
-            </MenuItem>
+            </HeaderMenu>
           </menu>
 
           <menu className="header-right">
@@ -198,27 +358,6 @@ const HeaderBar: NextPage = () => {
           </menu>
         </div>
       </header>
-
-      <div className="wrapper menu-box" onMouseMove={() => setActiveMenu(null)}>
-        <div className="container">
-          <FeatureMenu
-            visibility={activeMenu === HeaderBarMenu.FEATURES}
-            current={activeMenu}
-            onHide={() => setActiveMenu(null)}
-          />
-          <SolutionMenu
-            visibility={activeMenu === HeaderBarMenu.SOLUTIONS}
-            current={activeMenu}
-            onHide={() => {}}
-          />
-          <AboutUsMenu
-            visibility={activeMenu === HeaderBarMenu.ABOUT_US}
-            current={activeMenu}
-            onHide={() => {}}
-          />
-          {/* <QRCodeToast visibility={activeMenu === HeaderBarMenu.QRCODE} /> */}
-        </div>
-      </div>
     </>
   );
 };

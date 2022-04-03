@@ -7,8 +7,7 @@ export interface IMenuItemProps {
   href: string;
   linkTarget?: string;
   onClick?: () => void;
-  onMenuHover?: () => void;
-  onMenuHide?: () => void;
+  menu?: any;
 }
 
 export interface IFeatureCardProps {
