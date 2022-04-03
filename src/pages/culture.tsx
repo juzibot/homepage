@@ -20,7 +20,7 @@ const StarStaffPage: NextPage<{
     title: string;
     brief: string;
   }[];
-}> = ({ onCurrentChange, options }) => {
+}> = ({ onCurrentChange, options, currentIndex }) => {
   function initParallax() {
     const s = document.createElement('script');
     s.innerHTML = `
@@ -37,7 +37,11 @@ const StarStaffPage: NextPage<{
 
   return (
     <>
-      <Script src="https://cdn-official-website.juzibot.com/images/parallax.js" onLoad={initParallax} async></Script>
+      <Script
+        src="https://cdn-official-website.juzibot.com/images/parallax.js"
+        onLoad={initParallax}
+        async
+      ></Script>
       {Array(7)
         .fill(null)
         .map((_, i) => {
@@ -50,10 +54,15 @@ const StarStaffPage: NextPage<{
               onMouseLeave={() => onCurrentChange(undefined)}
             >
               <img
-                src={`https://cdn-official-website.juzibot.com/images/about-us/culture/图-0${i + 1}.png`}
+                src={`https://cdn-official-website.juzibot.com/images/about-us/culture/图-0${
+                  i + 1
+                }.png`}
                 alt="staff"
                 draggable="false"
-                style={{ transform: `scale(${options[i].scale})` }}
+                style={{
+                  transform: `scale(${options[i].scale})`,
+                  borderColor: currentIndex === i ? '#d0d8f8' : undefined,
+                }}
               ></img>
             </div>
           );
@@ -70,6 +79,7 @@ const VideoPage: NextPage = () => {
           container: document.getElementById('video'),
             video: {
               url: 'https://cdn-official-website.juzibot.com/images/about-us/culture/thanksgiving.mp4',
+              pic: 'https://cdn-official-website.juzibot.com/images/about-us/cover-01.jpg'
             },
         });
       }`;
@@ -99,8 +109,10 @@ const VideoPage: NextPage = () => {
           <h2>在不确定的日子，拥有确定的未来</h2>
           <div className="extra">
             <div className="name">李佳芮 CEO</div>
-            <Link href="#">
-              <a className="link">写在句子互动的 2022 年 →</a>
+            <Link href="https://blog.juzibot.com/1944/">
+              <a className="link" target="_blank">
+                写在句子互动的 2022 年 →
+              </a>
             </Link>
           </div>
         </div>
@@ -158,7 +170,9 @@ const ValuePage: NextPage = () => {
             return (
               <div className="item" key={i} id={`staff-${i}`}>
                 <img
-                  src={`https://cdn-official-website.juzibot.com/images/about-us/culture/图标-${i + 1}.png`}
+                  src={`https://cdn-official-website.juzibot.com/images/about-us/culture/图标-${
+                    i + 1
+                  }.png`}
                   alt="icon"
                   draggable="false"
                 ></img>
@@ -226,7 +240,9 @@ const CautureHeroPage: NextPage = () => {
             return (
               <SwiperSlide key={i} className="photo-swiper">
                 <img
-                  src={`https://cdn-official-website.juzibot.com/images/about-us/culture/photo-${i + 1}.png`}
+                  src={`https://cdn-official-website.juzibot.com/images/about-us/culture/photo-${
+                    i + 1
+                  }.png`}
                   alt="photo"
                   draggable="false"
                 />
@@ -321,7 +337,7 @@ const CulturePage: NextPage = () => {
       y: 280,
     },
     {
-      scale: 1.1,
+      scale: 1,
       depth: 0.2,
       name: '曹啸',
       title: '客户成功',
@@ -364,8 +380,10 @@ const CulturePage: NextPage = () => {
           />
           <div className="info">
             <h2>与优秀的人一起，挑战更多不可能</h2>
-            <Link href="#">
-              <a className="read-more">认识他们 →</a>
+            <Link href="https://juzihudong.feishu.cn/docs/doccnxnzqL1sk2MvW7JHDpA1lRh">
+              <a className="read-more" target="_blank">
+                认识他们 →
+              </a>
             </Link>
           </div>
           {currentIndex !== undefined ? (

@@ -140,6 +140,11 @@
 
 .certificates {
   background-color: #fbfbfd;
+
+  .certificate-swiper {
+    pointer-events: none !important;
+  }
+
   .container {
     padding: 72px 0;
     display: flex;

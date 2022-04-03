@@ -35,7 +35,7 @@ const NewsPage: NextPage = () => {
       title: '桔子互动顺利于百度AI加速器一期毕业！',
       subtitle:
         '桔子互动已经接入百度AI的理解与交互技术平台UNIT，利用百度业界领先的需求理解、对话控制及…',
-      src: '#',
+      src: 'https://www.sohu.com/a/226292674_100084020',
     },
     {
       imgUrl:
@@ -43,7 +43,7 @@ const NewsPage: NextPage = () => {
       title: '桔子互动和北邮人工智能实验室签署合作协议',
       subtitle:
         '致力于为人工智能(AI)智能会话服务的创业公司桔子互动近日于北京邮电大学人工智能实验室签署合作协…',
-      src: '#',
+      src: 'https://mp.weixin.qq.com/s?__biz=MzU3OTk2MzA1Nw==&mid=2247485050&idx=1&sn=d795e06e36384549d29a07691a34e2d7&source=41#wechat_redirect',
     },
     {
       imgUrl:
@@ -52,15 +52,15 @@ const NewsPage: NextPage = () => {
         '句子互动 CEO 李佳芮参加 2019 Microsoft Ignite The Tour 并做主题分享',
       subtitle:
         '微软 2019 Ignite The Tour 是面向开发者和合作伙伴的技术盛宴！句子互动 CEO 作为微软 MVP，代表…',
-      src: '#',
+      src: 'https://mp.weixin.qq.com/s/uqD3cVF6RxkKBcTgGd7eew',
     },
     {
       imgUrl:
         'https://cdn-official-website.juzibot.com/images/about-us/news/图-4.png',
       title: '句子互动与微软共同举办 Microsoft Online Tech Forum',
       subtitle:
-        '首届 Microsoft Online Tech Forum微软在线技术峰会在线上正式拉开帷幕！句子互动与 Wechaty 社区作…',
-      src: '#',
+        '首届 Microsoft Online Tech Forum 微软在线技术峰会在线上正式拉开帷幕！句子互动与 Wechaty 社区作…',
+      src: 'https://mp.weixin.qq.com/s/fZOZoTHSogUb8ZKh-KOpmA',
     },
     {
       imgUrl:
@@ -68,7 +68,7 @@ const NewsPage: NextPage = () => {
       title: '句子互动入选Facebook中国大陆首期加速器，校友总估值近20亿',
       subtitle:
         '句子互动以一家专注于微信生态的智能营销服务商的身份，在报名的数千家企业中通过甄选，成为入选…',
-      src: '#',
+      src: 'https://mp.weixin.qq.com/s/mrKFr5BY-9wZGbemXeaZBQ',
     },
     {
       imgUrl:
@@ -76,7 +76,7 @@ const NewsPage: NextPage = () => {
       title: '句子互动 CEO 李佳芮入选福布斯中国2021年度30 Under 30',
       subtitle:
         '福布斯发布了“2021年度30Under30榜单”。榜单聚焦中国30岁以下，在广告营销、教育、零售与电商、…',
-      src: '#',
+      src: 'http://www.forbeschina.com/billionaires/57511',
     },
     {
       imgUrl:
@@ -84,7 +84,23 @@ const NewsPage: NextPage = () => {
       title: '句子互动 CEO 李佳芮入选中关村 2021 年度 U30 榜单',
       subtitle:
         '在2021中关村论坛平行论坛、开源创新发展论坛上，创青春-中关村U30发布2021年度优胜者榜单，句子…',
-      src: '#',
+      src: 'https://mp.weixin.qq.com/s?__biz=MzU3OTk2MzA1Nw==&mid=2247488046&idx=1&sn=0ea3d124434e0e7dffee1458936bfd59&chksm=fd5f43f0ca28cae6df1c093602819a535ed4e31615dbe60684a22aa2721342a458507f8f467b&token=625789963&lang=zh_CN#rd',
+    },
+    {
+      imgUrl:
+        'https://cdn-official-website.juzibot.com/images/about-us/news/图-8.png',
+      title: '句子互动入选 2020 中关村金种子企业',
+      subtitle:
+        '经过路演选拔，句子互动与 206 家高成长型创业企业共同入选 2020 中关村金种子企业，助力中关村…',
+      src: 'http://zgcgw.beijing.gov.cn/zgc/zwgk/tzgg/10870021/',
+    },
+    {
+      imgUrl:
+        'https://cdn-official-website.juzibot.com/images/about-us/news/图-9.png',
+      title: '句子互动 CEO 入选 2021 科创中国·青年创业榜',
+      subtitle:
+        '“青年创业榜”面向全国科技创新高地，联合北京、上海、深圳等三地政府以及大型双创平台组织，遴选…',
+      src: 'https://mp.weixin.qq.com/s/BhuyDxDfbfawpaYG1hdcnQ',
     },
   ];
   const data = chunk(items, 3);
@@ -122,7 +138,7 @@ const NewsPage: NextPage = () => {
 
   return (
     <>
-      <h1>新闻报导</h1>
+      <h1>新闻报道</h1>
       <Swiper
         className="news-swiper"
         spaceBetween={30}
@@ -143,7 +159,7 @@ const NewsPage: NextPage = () => {
                 {d.map((item, idx) => {
                   return (
                     <Link href={item.src} key={`${i}-${idx}`}>
-                      <a className="news">
+                      <a className="news" target="_blank">
                         <img src={item.imgUrl} alt="news-cover"></img>
                         <div style={{ height: 116 }}>
                           <div className="title">{item.title}</div>
@@ -182,27 +198,33 @@ const NewsPage: NextPage = () => {
 };
 
 const Certificates: NextPage = () => {
-  const swiperRef = useRef<SwiperType>();
+  const [swiper, setSwiper] = useState<SwiperType | undefined>(undefined);
   const [current, setCurrent] = useState(1);
+  const [imageLoadedCount, setImageLoadedCount] = useState(0);
   const TOTAL_COUNT = 18;
+  useEffect(() => {
+    if (swiper) {
+      setTimeout(() => {
+        swiper.slideTo(1);
+      }, 1000);
+    }
+  }, [imageLoadedCount]);
   return (
     <>
       <h1>企业荣誉</h1>
       <Swiper
+        className="certificate-swiper"
         slidesPerView="auto"
         centeredSlides
         spaceBetween={30}
         autoplay
         style={{ width: '100%' }}
         onSwiper={(s) => {
-          swiperRef.current = s;
-          s.slideTo(1);
+          setSwiper(s);
+          s.slideNext();
         }}
-        onLoad={() => {
-          if (swiperRef.current) {
-            swiperRef.current.slideTo(1);
-          }
-        }}
+        observer
+        // controller={{ control: swiper }}
       >
         {Array(TOTAL_COUNT)
           .fill(null)
@@ -215,6 +237,9 @@ const Certificates: NextPage = () => {
                   }.png`}
                   alt="certificate"
                   draggable="false"
+                  onLoad={() => {
+                    setImageLoadedCount(imageLoadedCount + 1);
+                  }}
                 ></img>
               </SwiperSlide>
             );
@@ -225,7 +250,7 @@ const Certificates: NextPage = () => {
           className={`left ${current === 1 ? 'disable' : ''}`}
           onClick={() => {
             if (current - 1 > 0) {
-              swiperRef.current?.slideTo(current - 1);
+              swiper?.slideTo(current - 1);
               setCurrent(current - 1);
             }
           }}
@@ -237,10 +262,10 @@ const Certificates: NextPage = () => {
         </div>
 
         <div
-          className={`right ${current === TOTAL_COUNT - 1 ? 'disable' : ''}`}
+          className={`right ${current === TOTAL_COUNT - 3 ? 'disable' : ''}`}
           onClick={() => {
-            if (current + 1 < TOTAL_COUNT) {
-              swiperRef.current?.slideTo(current + 1);
+            if (current < TOTAL_COUNT - 3) {
+              swiper?.slideTo(current + 1);
               setCurrent(current + 1);
             }
           }}
@@ -845,6 +870,7 @@ const AboutUsPage: NextPage = () => {
           container: document.getElementById('video'),
             video: {
               url: 'https://cdn-official-website.juzibot.com/images/about-us/about-juzi.mp4',
+              pic: 'https://cdn-official-website.juzibot.com/images/about-us/cover-02.jpg'
             },
         });
       }`;
