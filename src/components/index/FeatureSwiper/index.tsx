@@ -22,6 +22,7 @@ const FeatureSwiperItem: NextPage<IFeatureSwiperItemProps> = ({
       Aos.init();
     }
   }, []);
+  const { t } = useTranslation('homepage');
   return (
     <div className="feature-swiper-item" data-aos="fade-in">
       <div className="content">
@@ -46,7 +47,7 @@ const FeatureSwiperItem: NextPage<IFeatureSwiperItemProps> = ({
         </div>
         <Link href={redirectUrl}>
           <a className="read-more" data-swiper-parallax="-300">
-            了解更多
+            {t('read-more')}
           </a>
         </Link>
       </div>
@@ -64,13 +65,13 @@ const FeatureSwiperItem: NextPage<IFeatureSwiperItemProps> = ({
 };
 
 const FeatureSwiper: NextPage = () => {
-  const { t } = useTranslation(['homepage']);
+  const { t, i18n } = useTranslation(['homepage']);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [swiper, setSwiper] = useState<SwiperType | undefined>(undefined);
   const [autoPlayInterval, setAutoPlayInterval] = useState<NodeJS.Timer>();
   const [documentVisible, setDocumentVisible] = useState(true);
   const [isChrome, toggleIsChrome] = useState(true);
-  const items: IFeatureSwiperItemProps[] = Array(5)
+  let items: IFeatureSwiperItemProps[] = Array(5)
     .fill(null)
     .map((_, index) => ({
       title: t(`feature-${index + 1}-title`),
@@ -87,6 +88,10 @@ const FeatureSwiper: NextPage = () => {
         '/features/data-center',
       ][index],
     }));
+
+  if (i18n.language === 'en') {
+    items = items.filter((_, idx) => idx !== 3);
+  }
 
   function autoplay(s?: SwiperType) {
     s = s || swiper;

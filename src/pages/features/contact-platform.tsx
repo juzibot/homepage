@@ -86,7 +86,7 @@ const ContactPlatformPage: NextPage = () => {
       <div className="wrapper feature-appeal">
         <div className="container">
           <FeatureAppealBar
-            title="为企业沉淀基于对话的数据资产"
+            title={t('appeal-title')}
             datas={[
               {
                 icon: 'https://cdn-official-website.juzibot.com/images/icons/features/cp-08.png',
@@ -110,7 +110,7 @@ const ContactPlatformPage: NextPage = () => {
 
       <div className="wrapper feature-bar">
         <div className="container">
-          <h1>更多提效能力</h1>
+          <h1>{t('more-features')}</h1>
           <FeatureBar hideTitle="急速应答" />
         </div>
       </div>

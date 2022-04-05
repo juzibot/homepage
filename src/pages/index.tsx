@@ -7,6 +7,7 @@ import SolutionPage from '@src/components/index/SolutionPage';
 import type { GetStaticProps, NextPage } from 'next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { useEffect, useState } from 'react';
+import { useTranslation } from 'react-i18next';
 
 const Home: NextPage = () => {
   const [width, setWidth] = useState(0);
@@ -19,8 +20,9 @@ const Home: NextPage = () => {
       setWidth(document.body.clientWidth);
     }
   }, []);
+  const { i18n } = useTranslation('common');
   return (
-    <>
+    <div className={i18n.language}>
       <Seo page="homepage" />
       <div className="wrapper index-page">
         <div className="container">
@@ -60,14 +62,18 @@ const Home: NextPage = () => {
           <AppealBar />
         </div>
       </div>
-    </>
+    </div>
   );
 };
 
 export const getStaticProps: GetStaticProps = async ({ locale }) => {
   return {
     props: {
-      ...(await serverSideTranslations(locale || 'zh', ['common', 'homepage', 'seos'])),
+      ...(await serverSideTranslations(locale || 'zh', [
+        'common',
+        'homepage',
+        'seos',
+      ])),
       locale: locale?.toLowerCase() ?? 'zh',
     },
   };

@@ -8,9 +8,9 @@ import ContactModal from '../common/ContactModal';
 const ReactTooltip = dynamic(() => import('react-tooltip'), { ssr: false });
 
 const Footer: NextPage = () => {
-  const { t } = useTranslation(['common']);
+  const { t, i18n } = useTranslation(['common']);
 
-  const menus: IFooterMenu[] = [
+  const menus: (IFooterMenu | undefined)[] = [
     {
       title: t('footer-menu-1-title'),
       child: [
@@ -24,28 +24,39 @@ const Footer: NextPage = () => {
           url: '/features/contact-platform',
         },
         { title: t('footer-menu-1-4-title'), url: '/features/data-center' },
-        { title: t('footer-menu-1-5-title'), url: '/features/management' },
-        { title: t('footer-menu-1-6-title'), url: '/features/security' },
-        // { title: t('footer-menu-1-8-title'), url: '/' },
-        // { title: t('footer-menu-1-9-title'), url: '/' },
-      ],
+      ].concat(
+        i18n.language === 'zh'
+          ? [
+              {
+                title: t('footer-menu-1-5-title'),
+                url: '/features/management',
+              },
+              { title: t('footer-menu-1-6-title'), url: '/features/security' },
+            ]
+          : []
+      ),
     },
-    {
-      title: t('footer-menu-2-title'),
-      child: [
-        { title: t('footer-menu-2-1-title'), url: '/solutions/general' },
-        { title: t('footer-menu-2-2-title'), url: '/solutions/increase' },
-        { title: t('footer-menu-2-3-title'), url: '/solutions/operate' },
-        {
-          title: t('footer-menu-2-4-title'),
-          url: '/solutions/customer-service',
-        },
-        { title: t('footer-menu-2-5-title'), url: '/solutions/consumer-goods' },
-        { title: t('footer-menu-2-6-title'), url: '/solutions/education' },
-        { title: t('footer-menu-2-7-title'), url: '/solutions/finance' },
-        { title: t('footer-menu-2-8-title'), url: '/solutions/health' },
-      ],
-    },
+    i18n.language === 'zh'
+      ? {
+          title: t('footer-menu-2-title'),
+          child: [
+            { title: t('footer-menu-2-1-title'), url: '/solutions/general' },
+            { title: t('footer-menu-2-2-title'), url: '/solutions/increase' },
+            { title: t('footer-menu-2-3-title'), url: '/solutions/operate' },
+            {
+              title: t('footer-menu-2-4-title'),
+              url: '/solutions/customer-service',
+            },
+            {
+              title: t('footer-menu-2-5-title'),
+              url: '/solutions/consumer-goods',
+            },
+            { title: t('footer-menu-2-6-title'), url: '/solutions/education' },
+            { title: t('footer-menu-2-7-title'), url: '/solutions/finance' },
+            { title: t('footer-menu-2-8-title'), url: '/solutions/health' },
+          ],
+        }
+      : undefined,
     {
       title: t('footer-menu-3-title'),
       child: [
@@ -77,7 +88,10 @@ const Footer: NextPage = () => {
         },
         {
           title: t('footer-menu-4-5-title'),
-          tooltip: '北京市海淀区中关村智造大街 F 座五层',
+          tooltip:
+            i18n.language === 'zh'
+              ? '北京市海淀区中关村智造大街 F 座五层'
+              : 'Click to View',
           url: 'https://j.map.baidu.com/bb/gw1c',
         },
         { title: t('footer-menu-4-6-title'), url: 'mailto: sales@juzi.bot' },
@@ -106,7 +120,7 @@ const Footer: NextPage = () => {
   return (
     <>
       <ContactModal />
-      <footer>
+      <footer className={i18n.language}>
         <div className="wrapper footer-bar">
           <div className="container">
             <div className="menu-container">
@@ -120,47 +134,49 @@ const Footer: NextPage = () => {
                 ></Image>
               </div>
 
-              {menus.map((menu) => (
-                <div key={menu.title} className="menu-group">
-                  <div className="title">{menu.title}</div>
-                  <div className="menus">
-                    {menu.child.map((item, idx) =>
-                      item.tooltip ? (
-                        <div className="tooltips" key={idx}>
+              {menus.map((menu) =>
+                menu ? (
+                  <div key={menu.title} className="menu-group">
+                    <div className="title">{menu.title}</div>
+                    <div className="menus">
+                      {menu.child.map((item, idx) =>
+                        item.tooltip ? (
+                          <div className="tooltips" key={idx}>
+                            <a
+                              data-tip
+                              data-for="address"
+                              href={item.url}
+                              {...(item.url?.includes('http')
+                                ? { target: '_blank', rel: 'noreferrer' }
+                                : { target: '_self' })}
+                            >
+                              {item.title}
+                            </a>
+                            <ReactTooltip
+                              id="address"
+                              place="right"
+                              effect="solid"
+                              type="dark"
+                            >
+                              <span>{item.tooltip}</span>
+                            </ReactTooltip>
+                          </div>
+                        ) : (
                           <a
-                            data-tip
-                            data-for="address"
                             href={item.url}
+                            key={idx}
                             {...(item.url?.includes('http')
                               ? { target: '_blank', rel: 'noreferrer' }
                               : { target: '_self' })}
                           >
                             {item.title}
                           </a>
-                          <ReactTooltip
-                            id="address"
-                            place="right"
-                            effect="solid"
-                            type="dark"
-                          >
-                            <span>{item.tooltip}</span>
-                          </ReactTooltip>
-                        </div>
-                      ) : (
-                        <a
-                          href={item.url}
-                          key={idx}
-                          {...(item.url?.includes('http')
-                            ? { target: '_blank', rel: 'noreferrer' }
-                            : { target: '_self' })}
-                        >
-                          {item.title}
-                        </a>
-                      )
-                    )}
+                        )
+                      )}
+                    </div>
                   </div>
-                </div>
-              ))}
+                ) : undefined
+              )}
             </div>
           </div>
         </div>

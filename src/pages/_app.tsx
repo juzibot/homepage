@@ -1,5 +1,5 @@
 import type { AppProps } from 'next/app';
-import { appWithTranslation } from 'next-i18next';
+import { appWithTranslation, useTranslation } from 'next-i18next';
 import '@styles/global.scss';
 import HeaderBar from '@src/components/HeaderBar';
 import { GetStaticProps, NextPage } from 'next';
@@ -13,10 +13,13 @@ const JuziApp: NextPage<AppProps> = ({ Component, pageProps }) => {
   useEffect(() => {
     logHireInfo();
   }, []);
+
+  const { i18n } = useTranslation('common');
+
   return (
     <>
       <HeaderBar />
-      <div className="app">
+      <div className={`app ${i18n.language}`}>
         <Component {...pageProps} />
       </div>
       <Footer />
