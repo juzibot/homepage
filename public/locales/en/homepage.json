@@ -3,6 +3,7 @@
   "description": "JuziBot opens up the mainstream IM and social media, helping enterprises and organizations establish a marketing system based on social relationships, efficiently reaching and deeply connecting tens of millions of customers.",
   "start-free": "Free Trial",
   "card-1-title": "Conversational Marketing Cloud",
+  "logos-wall-title": "10× improved operational efficiency",
   "card-1-subtitle": "impress customers in conversation. JuziBot helps you aggregate and manage customer conversation messages on multiple platforms to create a more efficient marketing cloud platform.",
   "card-2-title": "Large scale operation solution provider",
   "card-2-subtitle": "You can increase efficiency by 10 times, serve 200000 customers per capita, and provide your customers with a private domain experience of thousands of people and thousands of faces without any additional development.",
@@ -35,7 +36,7 @@
   "company-display-title": "Now, you can be one of them",
   "company-read-more": "More →",
   "company-1-title": "3 Million",
-  "company-1-subtitle": "Number of customers contacted by 15 agents",
+  "company-1-subtitle": "Customers with a 15-agent team",
   "company-1-name": "A household mending company",
   "company-1-brief": "Provide services to 3 million customers with a 15-agent team, with each agent chatting 500 times, with Jozi Bot.",
   "company-1-comment": "",
@@ -55,5 +56,6 @@
   "company-4-brief": "5 million users have been migrated to Jozi Bot, with over 70000 messages back and forth day by day.",
   "company-4-comment": "",
   "appeal-title": "Building saling relationships based on social relations starting today",
-  "appeal-start-free": "Free Trial"
+  "appeal-start-free": "Free Trial",
+  "read-more": "More"
 }

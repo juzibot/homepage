@@ -110,7 +110,7 @@ const CustomerAcquisitionPage: NextPage = () => {
 
       <div className="wrapper feature-bar">
         <div className="container">
-          <h1>更多提效能力</h1>
+          <h1>{t('more-features')}</h1>
           <FeatureBar hideTitle="规模获客" />
         </div>
       </div>

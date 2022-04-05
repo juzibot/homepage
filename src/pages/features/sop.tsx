@@ -86,7 +86,7 @@ const SopPage: NextPage = () => {
       <div className="wrapper feature-appeal">
         <div className="container">
           <FeatureAppealBar
-            title="最强的操盘手都在操盘时间"
+            title={t('appeal-title')}
             datas={[
               {
                 icon: 'https://cdn-official-website.juzibot.com/images/icons/features/sop-08.png',
@@ -110,7 +110,7 @@ const SopPage: NextPage = () => {
 
       <div className="wrapper feature-bar">
         <div className="container">
-          <h1>更多提效能力</h1>
+          <h1>{t('more-features')}</h1>
           <FeatureBar hideTitle="精准触达" />
         </div>
       </div>

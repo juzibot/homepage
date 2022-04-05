@@ -64,9 +64,12 @@
           font-weight: 300;
           font-size: 14px;
           line-height: 24px;
-          text-align: justify;
           color: #54657e;
           height: 80px;
+          display: -webkit-box;
+          -webkit-box-orient: vertical;
+          -webkit-line-clamp: 3;
+          overflow: hidden;
         }
 
         .redirect-url {
@@ -88,6 +91,29 @@
           }
         }
       }
+    }
+  }
+}
+
+.en {
+  .feature .container {
+    padding-top: 130px !important;
+
+    .brief {
+      height: unset !important;
+      min-height: 100px !important;
+    }
+  }
+}
+
+.en .feature-item {
+  .item {
+    .title {
+      line-height: unset !important;
+    }
+
+    .subtitle {
+      height: 140px !important;
     }
   }
 }

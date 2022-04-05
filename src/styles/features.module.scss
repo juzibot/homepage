@@ -249,7 +249,6 @@
             font-weight: normal;
             font-size: 16px;
             line-height: 150%;
-            text-align: justify;
             color: #869bb9;
             margin-left: 8px;
             font-weight: 300;
@@ -293,7 +292,7 @@
       .item {
         display: flex;
         flex-direction: column;
-        justify-content: center;
+        justify-content: flex-start;
         align-items: center;
 
         font-family: PingFang SC;
@@ -469,3 +468,19 @@
     }
   }
 }
+
+.en {
+  .left {
+    h3 {
+      font-size: 24px !important;
+      line-height: unset !important;
+    }
+  }
+
+  .contact-platform {
+    h1 {
+      font-size: 40px !important;
+    }
+  }
+}
+

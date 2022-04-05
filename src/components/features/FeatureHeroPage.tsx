@@ -2,6 +2,7 @@ import { NextPage } from 'next';
 import Link from 'next/link';
 import Image from 'next/image';
 import { IFeatureHeroPageProps } from '@src/interfaces';
+import { useTranslation } from 'react-i18next';
 
 export const FeatureHeroPage: NextPage<IFeatureHeroPageProps> = ({
   title,
@@ -9,6 +10,7 @@ export const FeatureHeroPage: NextPage<IFeatureHeroPageProps> = ({
   docsUrl,
   datas,
 }) => {
+  const { t } = useTranslation('features');
   return (
     <>
       <h1>{title}</h1>
@@ -23,11 +25,11 @@ export const FeatureHeroPage: NextPage<IFeatureHeroPageProps> = ({
               window.open('https://qiwei.juzibot.com/user/login');
           }}
         >
-          立即使用
+          {t('usage')}
         </button>
         <Link href={docsUrl}>
           <a className="read-docs" target="_blank">
-            阅读手册
+            {t('document')}
           </a>
         </Link>
       </div>

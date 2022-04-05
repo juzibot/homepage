@@ -51,7 +51,7 @@ export const SolutionItem: NextPage<ISolutionItemProp> = ({
 };
 
 const SolutionPage: NextPage = () => {
-  const { t } = useTranslation(['homepage']);
+  const { t, i18n } = useTranslation(['homepage']);
   useEffect(() => {
     if (process.browser) {
       Aos.init({
@@ -100,7 +100,7 @@ const SolutionPage: NextPage = () => {
           imagePosition="right"
           imageUrl="https://cdn-official-website.juzibot.com/images/solution-04.svg"
           dividerUrl="https://cdn-official-website.juzibot.com/images/solution-04-divider.svg"
-          style={{ transform: 'translateY(-62px)' }}
+          style={{ transform: i18n.language === 'en' ? 'translateY(-40px)' : 'translateY(-62px)' }}
         />
       </div>
     </>

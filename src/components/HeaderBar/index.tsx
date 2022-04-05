@@ -22,13 +22,15 @@ const MenuItem: NextPage<{
           onMouseLeave={() => toggleHover(false)}
           onMouseMove={() => toggleHover(true)}
         >
-          <Image
-            src={isHover ? hoverIconUrl : iconUrl}
-            alt="header-icon"
-            width="16"
-            height="16"
-            draggable="false"
-          />
+          <div style={{ flexShrink: 0 }}>
+            <Image
+              src={isHover ? hoverIconUrl : iconUrl}
+              alt="header-icon"
+              width="16"
+              height="16"
+              draggable="false"
+            />
+          </div>
 
           <div style={{ marginLeft: 12 }}>{children}</div>
         </div>
@@ -128,43 +130,47 @@ const SolutionsMenu: NextPage = () => {
 };
 
 const ProductMenu: NextPage = () => {
+  const { t, i18n } = useTranslation('common');
   return (
-    <div className="dropdown-menu product">
+    <div
+      className="dropdown-menu product"
+      style={
+        i18n.language === 'en'
+          ? {
+              width: 360,
+              transform: 'translate(-130px, -6px)',
+            }
+          : {}
+      }
+    >
       <div className="box">
         <MenuItem
           iconUrl="https://cdn-official-website.juzibot.com/images/icons/header-bar/01.svg"
           hoverIconUrl="https://cdn-official-website.juzibot.com/images/icons/header-bar/01-o.svg"
           href="/features/customer-acquisition"
         >
-          规模化获客
+          {t('footer-menu-1-1-title')}
         </MenuItem>
         <MenuItem
           iconUrl="https://cdn-official-website.juzibot.com/images/icons/header-bar/02.svg"
           hoverIconUrl="https://cdn-official-website.juzibot.com/images/icons/header-bar/02-o.svg"
           href="/features/sop"
         >
-          SOP 消息触达
+          {t('footer-menu-1-2-title')}
         </MenuItem>
         <MenuItem
           iconUrl="https://cdn-official-website.juzibot.com/images/icons/header-bar/03.svg"
           hoverIconUrl="https://cdn-official-website.juzibot.com/images/icons/header-bar/03-o.svg"
           href="/features/contact-platform"
         >
-          客户会话中台
-        </MenuItem>
-        <MenuItem
-          iconUrl="https://cdn-official-website.juzibot.com/images/icons/header-bar/04.svg"
-          hoverIconUrl="https://cdn-official-website.juzibot.com/images/icons/header-bar/04-o.svg"
-          href="/features/management"
-        >
-          高效管理
+          {t('footer-menu-1-3-title')}
         </MenuItem>
         <MenuItem
           iconUrl="https://cdn-official-website.juzibot.com/images/icons/header-bar/05.svg"
           hoverIconUrl="https://cdn-official-website.juzibot.com/images/icons/header-bar/05-o.svg"
           href="/features/data-center"
         >
-          数据管理中心
+          {t('footer-menu-1-4-title')}
         </MenuItem>
       </div>
     </div>
@@ -203,10 +209,15 @@ const HeaderMenu: NextPage<IMenuItemProps> = ({
   menu,
 }) => {
   const [menuVisible, toggleMenuVisible] = useState(false);
+  const router = useRouter();
+  useEffect(() => {
+    toggleMenuVisible(false);
+  }, [router.asPath]);
   return (
     <div
       onMouseLeave={() => toggleMenuVisible(false)}
       onMouseMove={() => toggleMenuVisible(true)}
+      className="menu-button"
     >
       <Link href={href}>
         <a
@@ -264,11 +275,11 @@ const headerbarExtraClassMap: { [path: string]: string } = {
 };
 
 const HeaderBar: NextPage = () => {
-  const { t } = useTranslation(['common']);
+  const { t, i18n } = useTranslation(['common']);
   const [borderBottomVisible, setBorderBottomVisible] = useState(false);
   const [isChrome, setIsChrome] = useState(true);
   const [headerbarExtraClass, setHeaderbarExtraClass] = useState('');
-
+  const isZh = i18n.language === 'zh';
   const { pathname } = useRouter();
 
   useEffect(() => {
@@ -317,39 +328,53 @@ const HeaderBar: NextPage = () => {
                 draggable="false"
               ></Image>
             </a>
-            <WeworkBar />
+            {isZh && <WeworkBar />}
             <HeaderMenu href="#" hasArrow menu={<ProductMenu />}>
               {t('products')}
             </HeaderMenu>
-            <HeaderMenu href="#" hasArrow menu={<SolutionsMenu />}>
-              {t('solutions')}
-            </HeaderMenu>
-            <HeaderMenu href="/cases">{t('cases')}</HeaderMenu>
+            {isZh && (
+              <HeaderMenu href="#" hasArrow menu={<SolutionsMenu />}>
+                {t('solutions')}
+              </HeaderMenu>
+            )}
+            {isZh && <HeaderMenu href="/cases">{t('cases')}</HeaderMenu>}
             <HeaderMenu href="https://blog.juzibot.com/" linkTarget="_blank">
               {t('course')}
             </HeaderMenu>
             <HeaderMenu href="https://wechaty.js.org/" linkTarget="_blank">
               {t('developer')}
             </HeaderMenu>
-            <HeaderMenu href="#" hasArrow menu={<AboutUsMenu />}>
-              {t('about')}
-            </HeaderMenu>
+            {isZh ? (
+              <HeaderMenu href="#" hasArrow menu={<AboutUsMenu />}>
+                {t('about')}
+              </HeaderMenu>
+            ) : (
+              <HeaderMenu href="/about-us">{t('about')}</HeaderMenu>
+            )}
           </menu>
 
           <menu className="header-right">
-            <Link href="#">
-              <a
-                className="menu-item primary-link"
-                draggable="false"
-                onClick={() => {
-                  document
-                    .getElementById('contact-modal')
-                    ?.setAttribute('style', 'display: flex');
-                }}
-              >
-                {t('lets-talk')}
-              </a>
-            </Link>
+            {isZh ? (
+              <Link href="#">
+                <a
+                  className="menu-item primary-link"
+                  draggable="false"
+                  onClick={() => {
+                    document
+                      .getElementById('contact-modal')
+                      ?.setAttribute('style', 'display: flex');
+                  }}
+                >
+                  {t('lets-talk')}
+                </a>
+              </Link>
+            ) : (
+              <Link href="https://qiwei.juzibot.com/user/login">
+                <a className="menu-item primary-link" draggable="false">
+                  {t('lets-talk')}
+                </a>
+              </Link>
+            )}
             <Link href="https://qiwei.juzibot.com/user/login">
               <a className="menu-item primary-link round" draggable="false">
                 {t('login')}

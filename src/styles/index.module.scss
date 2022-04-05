@@ -124,3 +124,43 @@
     align-items: center;
   }
 }
+
+.en {
+  .index-page {
+    height: 1360px;
+  }
+
+  .feature-page .content {
+    line-height: 1.5 !important;
+
+    .subtitle {
+      font-size: 22px !important;
+      line-height: unset !important;
+    }
+
+    .title {
+      font-size: 32px !important;
+    }
+  }
+
+  .solution-content {
+    .title {
+      font-size: 22px !important;
+      line-height: unset !important;
+      background-position-y: 70px !important;
+      height: 84px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding-bottom: 22px !important;
+      margin-top: -24px;
+    }
+  }
+  
+  .company {
+    .subtitle {
+      text-align: center;
+      font-size: 13px !important;
+    }
+  }
+}

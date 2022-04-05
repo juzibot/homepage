@@ -32,13 +32,15 @@ export const FeatureDescription: NextPage<IFeatureDescriptionProps> = ({
 
           {datas.map(({ title, subtitle, icon }) => (
             <div className="item" key={title}>
-              <Image
-                src={icon}
-                width="24"
-                height="24"
-                alt="small-icon"
-                draggable="false"
-              />
+              <div style={{ flexShrink: 0 }}>
+                <Image
+                  src={icon}
+                  width="24"
+                  height="24"
+                  alt="small-icon"
+                  draggable="false"
+                />
+              </div>
               <div className="content">
                 <div className="title">{title}</div>
                 <p>{subtitle}</p>
