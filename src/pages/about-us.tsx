@@ -8,6 +8,7 @@ import { SwiperSlide, Swiper } from 'swiper/react';
 import { Swiper as SwiperType } from 'swiper';
 import { chunk, debounce } from 'lodash';
 import Link from 'next/link';
+import { useTranslation } from 'react-i18next';
 
 export const AboutUsAppealBar: NextPage = () => {
   return (
@@ -819,10 +820,11 @@ const GrowthWall: NextPage = () => {
 };
 
 const AboutUsHeroPage: NextPage = () => {
+  const { t } = useTranslation('about-us');
   return (
     <div className="first-page">
       <Seo page="about-us" />
-      <h1>用新的营销方式打动你的万千客户</h1>
+      <h1>{t('hero-title')}</h1>
 
       <div className="info-box">
         <div className="left">
@@ -843,19 +845,11 @@ const AboutUsHeroPage: NextPage = () => {
         </div>
 
         <div className="right">
-          <div>
-            句子互动成立于 2017
-            年，是国内的领先的对话式营销云技术服务商。我们集成国内外主流 IM
-            平台，为企业与开发者提供基于即时通信软件的规模化营销服务。句子互动团队在
-            RPA、智能对话与私域运营服务领域不断创新，每日提升 1000
-            万人次的会话服务体验。
-          </div>
-          <div style={{ marginTop: 24 }}>
-            团队累计融资数千万，投资机构包括 Plug and Play、PreAngel、 Y
-            Combinator、TSVC、阿尔法公社、真成投资等。团队既是硅谷著名孵化器 Y
-            Combinator 国内首批入围团队，也是百度 AI
-            加速器首期成员，目前团队已经过百人。
-          </div>
+          <div>{t('content-1')}</div>
+          <div
+            style={{ marginTop: 24 }}
+            dangerouslySetInnerHTML={{ __html: t('content-2') }}
+          ></div>
         </div>
       </div>
     </div>
@@ -879,57 +873,64 @@ const AboutUsPage: NextPage = () => {
   useEffect(() => {
     initPlayer();
   }, []);
+  const { i18n } = useTranslation('about-us');
+  const isZh = i18n.language === 'zh';
   return (
-    <>
+    <div className={i18n.language}>
+      <Seo page="about-us" />
       <div className="wrapper about-us-page">
         <div className="container">
           <AboutUsHeroPage />
         </div>
       </div>
 
-      <div className="wrapper growth-wall">
-        <div className="container">
-          <GrowthWall />
-        </div>
-      </div>
-
-      <div className="wrapper video-box">
-        <div className="container">
-          <div className="video-container">
-            <div className="video" id="video"></div>
+      {isZh ? (
+        <>
+          <div className="wrapper growth-wall">
+            <div className="container">
+              <GrowthWall />
+            </div>
           </div>
-        </div>
-        <Script
-          src="https://cdn.jsdelivr.net/npm/dplayer/dist/DPlayer.min.js"
-          onLoad={initPlayer}
-          async
-        ></Script>
-      </div>
 
-      <div className="wrapper customer-display">
-        <div className="container">
-          <CustomerDisplay />
-        </div>
-      </div>
+          <div className="wrapper video-box">
+            <div className="container">
+              <div className="video-container">
+                <div className="video" id="video"></div>
+              </div>
+            </div>
+            <Script
+              src="https://cdn.jsdelivr.net/npm/dplayer/dist/DPlayer.min.js"
+              onLoad={initPlayer}
+              async
+            ></Script>
+          </div>
 
-      <div className="wrapper certificates">
-        <div className="container">
-          <Certificates />
-        </div>
-      </div>
+          <div className="wrapper customer-display">
+            <div className="container">
+              <CustomerDisplay />
+            </div>
+          </div>
 
-      <div className="wrapper news">
-        <div className="container">
-          <NewsPage />
-        </div>
-      </div>
+          <div className="wrapper certificates">
+            <div className="container">
+              <Certificates />
+            </div>
+          </div>
 
-      <div className="wrapper about-appeal">
-        <div className="container">
-          <AboutUsAppealBar />
-        </div>
-      </div>
-    </>
+          <div className="wrapper news">
+            <div className="container">
+              <NewsPage />
+            </div>
+          </div>
+
+          <div className="wrapper about-appeal">
+            <div className="container">
+              <AboutUsAppealBar />
+            </div>
+          </div>
+        </>
+      ) : null}
+    </div>
   );
 };
 
@@ -940,6 +941,7 @@ export const getStaticProps: GetStaticProps = async ({ locale }) => {
         'common',
         'homepage',
         'seos',
+        'about-us',
       ])),
       locale: locale?.toLowerCase() ?? 'zh',
     },
