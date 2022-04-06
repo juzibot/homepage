@@ -31,61 +31,11 @@ const NewsPage: NextPage = () => {
     src: string;
   }[] = [
     {
-      imgUrl:
-        'https://cdn-official-website.juzibot.com/images/about-us/news/图-1.png',
-      title: '桔子互动顺利于百度AI加速器一期毕业！',
+      imgUrl: 'https://cdn-official-website.juzibot.com/images/about-us/news/图-10.png',
+      title: '句子互动获得高新技术企业认定',
       subtitle:
-        '桔子互动已经接入百度AI的理解与交互技术平台UNIT，利用百度业界领先的需求理解、对话控制及…',
-      src: 'https://www.sohu.com/a/226292674_100084020',
-    },
-    {
-      imgUrl:
-        'https://cdn-official-website.juzibot.com/images/about-us/news/图-2.png',
-      title: '桔子互动和北邮人工智能实验室签署合作协议',
-      subtitle:
-        '致力于为人工智能(AI)智能会话服务的创业公司桔子互动近日于北京邮电大学人工智能实验室签署合作协…',
-      src: 'https://mp.weixin.qq.com/s?__biz=MzU3OTk2MzA1Nw==&mid=2247485050&idx=1&sn=d795e06e36384549d29a07691a34e2d7&source=41#wechat_redirect',
-    },
-    {
-      imgUrl:
-        'https://cdn-official-website.juzibot.com/images/about-us/news/图-3.png',
-      title:
-        '句子互动 CEO 李佳芮参加 2019 Microsoft Ignite The Tour 并做主题分享',
-      subtitle:
-        '微软 2019 Ignite The Tour 是面向开发者和合作伙伴的技术盛宴！句子互动 CEO 作为微软 MVP，代表…',
-      src: 'https://mp.weixin.qq.com/s/uqD3cVF6RxkKBcTgGd7eew',
-    },
-    {
-      imgUrl:
-        'https://cdn-official-website.juzibot.com/images/about-us/news/图-4.png',
-      title: '句子互动与微软共同举办 Microsoft Online Tech Forum',
-      subtitle:
-        '首届 Microsoft Online Tech Forum 微软在线技术峰会在线上正式拉开帷幕！句子互动与 Wechaty 社区作…',
-      src: 'https://mp.weixin.qq.com/s/fZOZoTHSogUb8ZKh-KOpmA',
-    },
-    {
-      imgUrl:
-        'https://cdn-official-website.juzibot.com/images/about-us/news/图-5.png',
-      title: '句子互动入选Facebook中国大陆首期加速器，校友总估值近20亿',
-      subtitle:
-        '句子互动以一家专注于微信生态的智能营销服务商的身份，在报名的数千家企业中通过甄选，成为入选…',
-      src: 'https://mp.weixin.qq.com/s/mrKFr5BY-9wZGbemXeaZBQ',
-    },
-    {
-      imgUrl:
-        'https://cdn-official-website.juzibot.com/images/about-us/news/图-6.png',
-      title: '句子互动 CEO 李佳芮入选福布斯中国2021年度30 Under 30',
-      subtitle:
-        '福布斯发布了“2021年度30Under30榜单”。榜单聚焦中国30岁以下，在广告营销、教育、零售与电商、…',
-      src: 'http://www.forbeschina.com/billionaires/57511',
-    },
-    {
-      imgUrl:
-        'https://cdn-official-website.juzibot.com/images/about-us/news/图-7.png',
-      title: '句子互动 CEO 李佳芮入选中关村 2021 年度 U30 榜单',
-      subtitle:
-        '在2021中关村论坛平行论坛、开源创新发展论坛上，创青春-中关村U30发布2021年度优胜者榜单，句子…',
-      src: 'https://mp.weixin.qq.com/s?__biz=MzU3OTk2MzA1Nw==&mid=2247488046&idx=1&sn=0ea3d124434e0e7dffee1458936bfd59&chksm=fd5f43f0ca28cae6df1c093602819a535ed4e31615dbe60684a22aa2721342a458507f8f467b&token=625789963&lang=zh_CN#rd',
+        '句子互动通过北京市认定管理机构 2021 年认定的高新技术企业，于 2021 年 12 月公示。',
+      src: 'http://www.innocom.gov.cn/gqrdw/c101407/202112/dfb1d5c2a6eb47ddb3f00bfe5f02413b.shtml',
     },
     {
       imgUrl:
@@ -102,6 +52,55 @@ const NewsPage: NextPage = () => {
       subtitle:
         '“青年创业榜”面向全国科技创新高地，联合北京、上海、深圳等三地政府以及大型双创平台组织，遴选…',
       src: 'https://mp.weixin.qq.com/s/BhuyDxDfbfawpaYG1hdcnQ',
+    },
+    {
+      imgUrl:
+        'https://cdn-official-website.juzibot.com/images/about-us/news/图-6.png',
+      title: '句子互动 CEO 李佳芮入选福布斯中国 2021 年度 30 Under 30',
+      subtitle:
+        '福布斯发布了“2021年度30Under30榜单”。榜单聚焦中国30岁以下，在广告营销、教育、零售与电商、…',
+      src: 'http://www.forbeschina.com/billionaires/57511',
+    },
+    {
+      imgUrl:
+        'https://cdn-official-website.juzibot.com/images/about-us/news/图-7.png',
+      title: '句子互动 CEO 李佳芮入选中关村 2021 年度 U30 榜单',
+      subtitle:
+        '在2021中关村论坛平行论坛、开源创新发展论坛上，创青春-中关村 U30 发布 2021 年度优胜者榜单，句子…',
+      src: 'https://mp.weixin.qq.com/s?__biz=MzU3OTk2MzA1Nw==&mid=2247488046&idx=1&sn=0ea3d124434e0e7dffee1458936bfd59&chksm=fd5f43f0ca28cae6df1c093602819a535ed4e31615dbe60684a22aa2721342a458507f8f467b&token=625789963&lang=zh_CN#rd',
+    },
+    {
+      imgUrl:
+        'https://cdn-official-website.juzibot.com/images/about-us/news/图-5.png',
+      title: '句子互动入选 Facebook 中国大陆首期加速器，校友总估值近 20 亿',
+      subtitle:
+        '句子互动以一家专注于微信生态的智能营销服务商的身份，在报名的数千家企业中通过甄选，成为入选…',
+      src: 'https://mp.weixin.qq.com/s/mrKFr5BY-9wZGbemXeaZBQ',
+    },
+    {
+      imgUrl:
+        'https://cdn-official-website.juzibot.com/images/about-us/news/图-4.png',
+      title: '句子互动与微软共同举办 Microsoft Online Tech Forum',
+      subtitle:
+        '首届 Microsoft Online Tech Forum 微软在线技术峰会在线上正式拉开帷幕！句子互动与 Wechaty 社区作…',
+      src: 'https://mp.weixin.qq.com/s/fZOZoTHSogUb8ZKh-KOpmA',
+    },
+    {
+      imgUrl:
+        'https://cdn-official-website.juzibot.com/images/about-us/news/图-3.png',
+      title:
+        '句子互动 CEO 李佳芮参加 2019 Microsoft Ignite The Tour 并做主题分享',
+      subtitle:
+        '微软 2019 Ignite The Tour 是面向开发者和合作伙伴的技术盛宴！句子互动 CEO 作为微软 MVP，代表…',
+      src: 'https://mp.weixin.qq.com/s/uqD3cVF6RxkKBcTgGd7eew',
+    },
+    {
+      imgUrl:
+        'https://cdn-official-website.juzibot.com/images/about-us/news/图-2.png',
+      title: '桔子互动和北邮人工智能实验室签署合作协议',
+      subtitle:
+        '致力于为人工智能(AI)智能会话服务的创业公司桔子互动近日于北京邮电大学人工智能实验室签署合作协…',
+      src: 'https://mp.weixin.qq.com/s?__biz=MzU3OTk2MzA1Nw==&mid=2247485050&idx=1&sn=d795e06e36384549d29a07691a34e2d7&source=41#wechat_redirect',
     },
   ];
   const data = chunk(items, 3);
