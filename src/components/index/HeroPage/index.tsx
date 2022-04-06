@@ -5,6 +5,8 @@ import { useEffect } from 'react';
 import Image from 'next/image';
 import { useTranslation } from 'react-i18next';
 import LogosWall from '../LogosWall';
+import { useRouter } from 'next/router';
+import { host } from '@src/config';
 
 export const FeatureCard: NextPage<IFeatureCardProps> = ({
   title,
@@ -33,6 +35,7 @@ export const FeatureCard: NextPage<IFeatureCardProps> = ({
 const HeroPage: NextPage = () => {
   const { t, i18n } = useTranslation(['homepage']);
   const { language } = i18n;
+  const { pathname } = useRouter();
   useEffect(() => {
     if (process.browser) {
       Aos.init();
@@ -53,7 +56,11 @@ const HeroPage: NextPage = () => {
             className="primary-button start-button"
             onClick={() => {
               if (process.browser)
-                window.open('https://qiwei.juzibot.com/user/login');
+                window.open(
+                  `https://qiwei.juzibot.com/user/login?from=headeruse&rediect=${
+                    host + pathname
+                  }`
+                );
             }}
           >
             {t('start-free')}
