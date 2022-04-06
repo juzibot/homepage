@@ -77,7 +77,10 @@ const Footer: NextPage = () => {
     {
       title: t('footer-menu-4-title'),
       child: [
-        { title: t('footer-menu-4-1-title'), url: '/about-us' },
+        {
+          title: t('footer-menu-4-1-title'),
+          url: `/${i18n.language}/about-us`,
+        },
         {
           title: t('footer-menu-4-3-title'),
           url: 'https://juzibot.com/join-us',

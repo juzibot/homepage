@@ -213,7 +213,8 @@ const HeaderMenu: NextPage<IMenuItemProps> = ({
   useEffect(() => {
     toggleMenuVisible(false);
   }, [router.asPath]);
-  return (
+
+  return href ? (
     <div
       onMouseLeave={() => toggleMenuVisible(false)}
       onMouseMove={() => toggleMenuVisible(true)}
@@ -244,6 +245,32 @@ const HeaderMenu: NextPage<IMenuItemProps> = ({
           ) : null}
         </a>
       </Link>
+      {menu && menuVisible ? menu : null}
+    </div>
+  ) : (
+    <div
+      onMouseLeave={() => toggleMenuVisible(false)}
+      onMouseMove={() => toggleMenuVisible(true)}
+      className="menu-button"
+    >
+      <span className="menu-item" draggable="false" onClick={onClick}>
+        <span>{children}</span>
+        {hasArrow ? (
+          <svg
+            width="10"
+            height="6"
+            viewBox="0 0 10 6"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            style={{ marginLeft: 4 }}
+          >
+            <path
+              d="M4.99999 3.78132L8.29999 0.481323L9.24266 1.42399L4.99999 5.66666L0.757324 1.42399L1.69999 0.481323L4.99999 3.78132Z"
+              fill="#54657E"
+            />
+          </svg>
+        ) : null}
+      </span>
       {menu && menuVisible ? menu : null}
     </div>
   );
@@ -300,7 +327,7 @@ const HeaderBar: NextPage = () => {
   }, []);
 
   return (
-    <>
+    <div className={i18n.language}>
       <header
         className={`wrapper header-bar ${
           !isChrome ? 'opacity' : ''
@@ -354,6 +381,15 @@ const HeaderBar: NextPage = () => {
           </menu>
 
           <menu className="header-right">
+            <HeaderMenu
+              linkTarget="_blank"
+              onClick={() => {
+                i18n.changeLanguage(isZh ? 'en' : 'zh');
+              }}
+              hasArrow
+            >
+              {isZh ? 'EN' : '中文'}
+            </HeaderMenu>
             {isZh ? (
               <Link href="#">
                 <a
@@ -383,7 +419,7 @@ const HeaderBar: NextPage = () => {
           </menu>
         </div>
       </header>
-    </>
+    </div>
   );
 };
 

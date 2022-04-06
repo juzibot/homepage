@@ -20,6 +20,20 @@
   & {
     margin: 0 18px;
   }
+
+  span {
+    cursor: pointer;
+  }
+}
+
+.zh {
+  .menu-item {
+    font-size: 15px !important;
+
+    &.menu-item {
+      margin: 0 14px !important;
+    }
+  }
 }
 
 .index-page {
@@ -156,7 +170,7 @@
       margin-top: -24px;
     }
   }
-  
+
   .company {
     .subtitle {
       text-align: center;
