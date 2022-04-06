@@ -4,7 +4,7 @@ type typeObject<type, K extends string | number | symbol> = { [k in K]: type };
 
 export interface IMenuItemProps {
   hasArrow?: boolean;
-  href: string;
+  href?: string;
   linkTarget?: string;
   onClick?: () => void;
   menu?: any;
