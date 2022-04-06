@@ -1,7 +1,9 @@
+import { host } from '@src/config';
 import { ISolutionPageProps } from '@src/interfaces';
 import { CompanyItem } from '@src/pages/cases';
 import { NextPage } from 'next';
 import Image from 'next/image';
+import { useRouter } from 'next/router';
 import AppealBar from '../index/AppealBar';
 
 export const SolutionDetailPage: NextPage<ISolutionPageProps> = ({
@@ -10,8 +12,9 @@ export const SolutionDetailPage: NextPage<ISolutionPageProps> = ({
   solutions,
   challenges,
   backgroundUrl,
-  cases
+  cases,
 }) => {
+  const { pathname } = useRouter();
   return (
     <>
       <div
@@ -26,7 +29,12 @@ export const SolutionDetailPage: NextPage<ISolutionPageProps> = ({
             className="primary-button start-button"
             onClick={() => {
               if (process.browser) {
-                window.open('https://qiwei.juzibot.com/user/login', '_blank');
+                window.open(
+                  `https://qiwei.juzibot.com/user/login?from=footeruse&rediect=${
+                    host + pathname
+                  }`,
+                  '_blank'
+                );
               }
             }}
           >

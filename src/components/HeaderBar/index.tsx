@@ -415,7 +415,11 @@ const HeaderBar: NextPage = () => {
                 </a>
               </Link>
             )}
-            <Link href="https://qiwei.juzibot.com/user/login">
+            <Link
+              href={`https://qiwei.juzibot.com/user/login?from=login&rediect=${
+                host + pathname
+              }`}
+            >
               <a className="menu-item primary-link round" draggable="false">
                 {t('login')}
               </a>
