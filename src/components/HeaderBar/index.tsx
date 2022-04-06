@@ -326,6 +326,10 @@ const HeaderBar: NextPage = () => {
     }
   }, []);
 
+  function changeLanguage() {
+    location.href = host + (isZh ? '/en' : '/zh');
+  }
+
   return (
     <div className={i18n.language}>
       <header
@@ -384,7 +388,7 @@ const HeaderBar: NextPage = () => {
             <HeaderMenu
               linkTarget="_blank"
               onClick={() => {
-                i18n.changeLanguage(isZh ? 'en' : 'zh');
+                changeLanguage();
               }}
               hasArrow
             >
