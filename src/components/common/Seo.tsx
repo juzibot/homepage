@@ -1,22 +1,26 @@
+import { getPageDescription } from '@src/utils/seo';
 import { NextPage } from 'next';
 import { NextSeo, NextSeoProps } from 'next-seo';
+import { useRouter } from 'next/router';
 import { useTranslation } from 'react-i18next';
 
-const Seo: NextPage<NextSeoProps & { page?: string }> = (props) => {
+const Seo: NextPage<NextSeoProps & { page?: string; keywords?: string }> = (
+  props
+) => {
   const { t } = useTranslation(['seos']);
   const { page } = props;
+  const router = useRouter();
   return (
     <>
       <NextSeo
         {...props}
         {...(page ? { title: t(`${page}-title`) } : null)}
-        description={t('description')}
+        description={getPageDescription(router.asPath) || t('description')}
         openGraph={{
-          title: t('homepage-title'),
+          title: page ? t(`${page}-title`) : t('homepage-title'),
           type: 'website',
           url: 'https://juzibot.com',
-          site_name: 'JuziBot',
-          description: t('description'),
+          site_name: '句子互动 JuziBot',
           images: [
             {
               url: 'https://cdn-official-website.juzibot.com/images/logo@192.png',

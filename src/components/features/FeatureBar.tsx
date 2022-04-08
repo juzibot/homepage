@@ -36,9 +36,7 @@ const FeatureItem: NextPage<IFeatureItemProps> = ({
           </div>
           <div className="title">{title}</div>
           <div className="subtitle">{subtitle}</div>
-          <a className="redirect-url" href={redirectUrl}>
-            {t('read-more')} →
-          </a>
+          <div className="redirect-url">{t('read-more')} →</div>
         </div>
       </a>
     </Link>
