@@ -176,9 +176,9 @@ const ProductMenu: NextPage = () => {
         </MenuItem>
         {i18n.language === 'zh' ? (
           <MenuItem
-            iconUrl="https://cdn-official-website.juzibot.com/images/icons/header-bar/05.svg"
-            hoverIconUrl="https://cdn-official-website.juzibot.com/images/icons/header-bar/05-o.svg"
-            href="/features/data-center"
+            iconUrl="https://cdn-official-website.juzibot.com/images/icons/header-bar/04.svg"
+            hoverIconUrl="https://cdn-official-website.juzibot.com/images/icons/header-bar/04-o.svg"
+            href="/features/management"
           >
             {t('footer-menu-1-5-title')}
           </MenuItem>
