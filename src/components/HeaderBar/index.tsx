@@ -140,7 +140,9 @@ const ProductMenu: NextPage = () => {
               width: 360,
               transform: 'translate(-130px, -6px)',
             }
-          : {}
+          : {
+              height: 320,
+            }
       }
     >
       <div className="box">
@@ -172,6 +174,15 @@ const ProductMenu: NextPage = () => {
         >
           {t('footer-menu-1-4-title')}
         </MenuItem>
+        {i18n.language === 'zh' ? (
+          <MenuItem
+            iconUrl="https://cdn-official-website.juzibot.com/images/icons/header-bar/05.svg"
+            hoverIconUrl="https://cdn-official-website.juzibot.com/images/icons/header-bar/05-o.svg"
+            href="/features/data-center"
+          >
+            {t('footer-menu-1-5-title')}
+          </MenuItem>
+        ) : null}
       </div>
     </div>
   );
@@ -360,11 +371,11 @@ const HeaderBar: NextPage = () => {
               ></Image>
             </a>
             {isZh && <WeworkBar />}
-            <HeaderMenu href="#" hasArrow menu={<ProductMenu />}>
+            <HeaderMenu hasArrow menu={<ProductMenu />}>
               {t('products')}
             </HeaderMenu>
             {isZh && (
-              <HeaderMenu href="#" hasArrow menu={<SolutionsMenu />}>
+              <HeaderMenu hasArrow menu={<SolutionsMenu />}>
                 {t('solutions')}
               </HeaderMenu>
             )}
@@ -376,7 +387,7 @@ const HeaderBar: NextPage = () => {
               {t('developer')}
             </HeaderMenu>
             {isZh ? (
-              <HeaderMenu href="#" hasArrow menu={<AboutUsMenu />}>
+              <HeaderMenu hasArrow menu={<AboutUsMenu />}>
                 {t('about')}
               </HeaderMenu>
             ) : (

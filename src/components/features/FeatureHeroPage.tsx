@@ -3,6 +3,8 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { IFeatureHeroPageProps } from '@src/interfaces';
 import { useTranslation } from 'react-i18next';
+import { host } from '@src/config';
+import { useRouter } from 'next/router';
 
 export const FeatureHeroPage: NextPage<IFeatureHeroPageProps> = ({
   title,
@@ -11,18 +13,21 @@ export const FeatureHeroPage: NextPage<IFeatureHeroPageProps> = ({
   datas,
 }) => {
   const { t } = useTranslation('features');
+  const router = useRouter();
   return (
     <>
       <h1>{title}</h1>
-
       <section className="brief">{brief}</section>
-
       <div className="buttons-bar">
         <button
           className="primary-button start-button"
           onClick={() => {
             if (process.browser)
-              window.open('https://qiwei.juzibot.com/user/login');
+              window.open(
+                `https://qiwei.juzibot.com/user/login?from=login&rediect=${
+                  host + router.asPath
+                }`
+              );
           }}
         >
           {t('usage')}
