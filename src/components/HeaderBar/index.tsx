@@ -7,6 +7,7 @@ import { host } from '@src/config';
 import { useTranslation } from 'react-i18next';
 import { useRouter } from 'next/router';
 import { isBrowserChrome } from '@src/utils/isBrowserChrome';
+import { showModal } from '@src/utils/showModal';
 
 const MenuItem: NextPage<{
   iconUrl: string;
@@ -410,11 +411,7 @@ const HeaderBar: NextPage = () => {
                 <a
                   className="menu-item primary-link"
                   draggable="false"
-                  onClick={() => {
-                    document
-                      .getElementById('contact-modal')
-                      ?.setAttribute('style', 'display: flex');
-                  }}
+                  onClick={showModal}
                 >
                   {t('lets-talk')}
                 </a>
