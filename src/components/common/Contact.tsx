@@ -11,7 +11,7 @@ export const ContactButton: NextPage = () => {
       {popupVisible ? (
         <div className="contact-popup">
           遇到问题了么？
-          <div>点击这里跟我聊聊，我们一起解决你的问题~</div>
+          <div>点击这里跟我聊聊，我们一起解决你的问题</div>
         </div>
       ) : null}
       <div
