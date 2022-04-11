@@ -57,27 +57,33 @@ jobs:
 
   deploy:
     needs: build
-    runs-on: juzi-official
+    runs-on: ubuntu-latest
     steps:
-      - name: deploy ${{env.REPO}}
-        run: |
-          export CI_VERSION=${{ needs.build.outputs.version }}
-          echo $CI_VERSION
-          mkdir -p ${{ secrets.DEPLOY_DIR }}
-          cd ${{ secrets.DEPLOY_DIR }}
-          cat <<EOF > docker-compose.yml
-          version: "3"
-          services:
-            juzi-official-website:
-              container_name: ${{ env.REPO }}
-              image: ${{ env.ECR_URL }}/${{ env.REPO }}:$CI_VERSION
-              network_mode: host
-              restart: always
-          EOF
-          /usr/local/bin/aws ecr get-login-password | docker login --username AWS --password-stdin ${{ env.ECR_URL }} 2> /dev/null >&2
-          docker-compose up -d
-          docker ps
-          docker system prune -af
-          # TODO(hehai): hard code, has better.
-          # sync to slave EC2 instances.
-          [ -f /opt/juzi/website-syncer/sycner-to-homepage-2.sh ] && bash /opt/juzi/website-syncer/sycner-to-homepage-2.sh
+      - name: deploy homepage
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USERNAME }}
+          key: ${{ secrets.KEY }}
+          port: ${{ secrets.PORT }}
+          script: |
+            export CI_VERSION=${{ needs.build.outputs.version }}
+            echo $CI_VERSION
+            mkdir -p ${{ secrets.DEPLOY_DIR }}
+            cd ${{ secrets.DEPLOY_DIR }}
+            cat <<EOF > docker-compose.yml
+            version: "3"
+            services:
+              juzi-official-website:
+                container_name: ${{ env.REPO }}
+                image: ${{ env.ECR_URL }}/${{ env.REPO }}:$CI_VERSION
+                network_mode: host
+                restart: always
+            EOF
+            /usr/local/bin/aws ecr get-login-password | docker login --username AWS --password-stdin ${{ env.ECR_URL }} 2> /dev/null >&2
+            docker-compose up -d
+            docker ps
+            docker system prune -af
+            # TODO(hehai): hard code, has better.
+            # sync to slave EC2 instances.
+            [ -f /opt/juzi/website-syncer/sycner-to-homepage-2.sh ] && bash /opt/juzi/website-syncer/sycner-to-homepage-2.sh
