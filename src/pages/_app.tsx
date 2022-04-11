@@ -8,6 +8,7 @@ import Footer from '@src/components/Footer';
 import { logHireInfo } from '@src/utils/hire';
 import { useEffect } from 'react';
 import Script from 'next/script';
+import { ContactButton } from '@src/components/common/Contact';
 
 const JuziApp: NextPage<AppProps> = ({ Component, pageProps }) => {
   useEffect(() => {
@@ -46,6 +47,7 @@ const JuziApp: NextPage<AppProps> = ({ Component, pageProps }) => {
           })();
         `}
       </Script>
+      <ContactButton />
     </>
   );
 };

@@ -8,6 +8,7 @@ import Link from 'next/link';
 import { useEffect, useState } from 'react';
 import { chunk } from 'lodash';
 import Seo from '@src/components/common/Seo';
+import { showModal } from '@src/utils/showModal';
 
 export const CompanyItem: NextPage<ICompanyItemProps> = ({
   title,
@@ -386,14 +387,7 @@ const CasesPage: NextPage = () => {
             各个行业、各种规模的团队都在使用句子互动。我们助力企业和组织建立以社交关系为核心的营销体系，高效触达与深度连接数以千万计的客户，让营销事半功倍。
           </section>
 
-          <button
-            className="primary-button start-button"
-            onClick={() => {
-              document
-                .getElementById('contact-modal')
-                ?.setAttribute('style', 'display: flex');
-            }}
-          >
+          <button className="primary-button start-button" onClick={showModal}>
             预约咨询
           </button>
         </div>
