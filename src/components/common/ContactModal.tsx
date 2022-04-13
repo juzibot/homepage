@@ -9,7 +9,8 @@ import { shuffle } from 'lodash';
 const DetentionModal: NextPage<{
   onConfirm: () => void;
   onCancel: () => void;
-}> = ({ onCancel, onConfirm }) => {
+  text: string;
+}> = ({ onCancel, onConfirm, text }) => {
   const contents: string[] = [
     '你将失去与<strong>5000+ 操盘手实时交流的机会</strong>',
     '<strong>80+ 行业头部企业的案例拆解添加顾问即可自动领取</strong>',
@@ -28,7 +29,7 @@ const DetentionModal: NextPage<{
 
       <div className="buttons">
         <div className="btn primary" onClick={onConfirm}>
-          去添加
+          {text}
         </div>
         <div className="btn" onClick={onCancel}>
           暂不需要
@@ -386,6 +387,7 @@ const ContactModal: NextPage = () => {
 
       {isDetentionModalVisible ? (
         <DetentionModal
+          text={isScanQrcode ? '去扫码' : '去填写'}
           onCancel={() => {
             toggleDetentionModalVisible(false);
             hideModal();
