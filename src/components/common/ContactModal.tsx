@@ -166,7 +166,7 @@ const ContactModal: NextPage = () => {
     <>
       <div
         id="contact-modal"
-        style={isDetentionModalVisible ? { filter: 'blur(4px)' } : {}}
+        style={isDetentionModalVisible ? { filter: 'blur(4px)', pointerEvents: 'none' } : {}}
       >
         <div
           className="modal"
