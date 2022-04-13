@@ -21,7 +21,7 @@
   width: 100%;
   height: 100%;
   position: fixed;
-  z-index: 9999;
+  z-index: 99;
   background-color: rgba(0, 0, 0, 0.5);
   top: 0;
   left: 0;
@@ -495,22 +495,33 @@ button.white-button {
 }
 
 .contact-popup {
-  width: 320px;
+  width: 360px;
   height: 90px;
   background-color: #fff;
   box-shadow: 2px 2px 20px rgba(5, 85, 255, 0.15);
   border-radius: 16px;
-  z-index: 99;
+  z-index: 98;
   position: fixed;
   border: 1px solid #eee;
   position: fixed;
-  z-index: 99;
-  right: 190px;
-  bottom: 100px;
+  right: 180px;
+  bottom: 230px;
   padding: 24px;
   color: #666;
   line-height: 1.5;
   font-size: 14px;
+
+  strong {
+    margin-bottom: 8px;
+  }
+
+  .close-btn {
+    position: absolute;
+    right: 14px;
+    top: 13px;
+    opacity: 0.5;
+    cursor: pointer;
+  }
 
   &::before {
     display: inline-block;
@@ -528,14 +539,14 @@ button.white-button {
 
 .contact-button-container {
   position: fixed;
-  bottom: 96px;
+  bottom: 220px;
   right: 64px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   overflow: hidden;
-  z-index: 99;
+  z-index: 98;
   width: 100px;
   height: 100px;
   transform: scale(1.2);
@@ -584,5 +595,78 @@ button.white-button {
     z-index: 9;
     cursor: pointer;
     box-shadow: 0px 8px 16px rgba(54, 66, 86, 0.1);
+  }
+}
+
+.detention-modal {
+  width: 350px;
+  height: 220px;
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  left: calc(50% - 175px);
+  top: calc(50% - 100px - 40px);
+  box-shadow: 0px 8px 16px rgba(54, 66, 86, 0.1);
+  background-color: #fff;
+  z-index: 999;
+  color: #333;
+  padding: 16px 32px;
+
+  .title {
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 16px;
+  }
+
+  .content {
+    margin-top: 16px;
+    font-size: 15px;
+    text-align: center;
+    font-weight: 400;
+    margin-bottom: 36px;
+
+    strong {
+      color: #ff5e1e;
+    }
+  }
+
+  .buttons {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 11px;
+
+    .btn {
+      width: calc(50% - 6px);
+      padding: 12px 24px;
+      border: 1px solid #eee;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 4px;
+      transition: all 0.3s;
+      cursor: pointer;
+      user-select: none;
+      font-size: 14px;
+
+      &:hover {
+        opacity: 0.8;
+      }
+
+      &:active {
+        transform: translateY(2px);
+      }
+
+      &.primary {
+        background-color: #0555ff;
+        color: #fff;
+        border-color: #0555ff;
+      }
+    }
   }
 }
