@@ -24,24 +24,12 @@ const JuziApp: NextPage<AppProps> = ({ Component, pageProps }) => {
         <Component {...pageProps} />
       </div>
       <Footer />
-      <Script
-        src="https://www.googletagmanager.com/gtag/js?id=G-855RJWL7LP"
-        strategy="afterInteractive"
-      />
-      <Script id="google-analytics" strategy="afterInteractive">
-        {`
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){window.dataLayer.push(arguments);}
-          gtag('js', new Date());
-          gtag('config', 'G-855RJWL7LP');
-        `}
-      </Script>
       <Script id="baidu-analytics">
         {`
           var _hmt = _hmt || [];
           (function() {
             var hm = document.createElement("script");
-            hm.src = "https://hm.baidu.com/hm.js?45faeee2378d9d538a057946597526ca";
+            hm.src = "https://hm.baidu.com/hm.js?40dc953f36853e5ee70e7aecd6dee2e5";
             var s = document.getElementsByTagName("script")[0]; 
             s.parentNode.insertBefore(hm, s);
           })();
