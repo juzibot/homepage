@@ -91,4 +91,4 @@ jobs:
             docker system prune -af
             # TODO(hehai): hard code, has better.
             # sync to slave EC2 instances.
-            [ -f /opt/juzi/website-syncer/sycner-to-homepage-2.sh ] && bash /opt/juzi/website-syncer/sycner-to-homepage-2.sh
+            # [ -f /opt/juzi/website-syncer/sycner-to-homepage-2.sh ] && bash /opt/juzi/website-syncer/sycner-to-homepage-2.sh
