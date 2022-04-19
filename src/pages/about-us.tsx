@@ -481,7 +481,7 @@ const ExtraDialog: NextPage<{ flag: string }> = ({ flag }) => {
       <div className="cover-dialog hover c-2020">
         <strong>2020.03</strong>
         <div>
-          句客宝产品上线，并获得首个客户京东金融；《Chatbot 从 0 到
+          句子互动企业微信产品上线，并获得首个客户京东金融；《Chatbot 从 0 到
           1：对话式交互设计实践指南》出版；句子互动和 Wechaty
           作为特邀合作社区与微软共同举办 Microsoft Online Tech Forum
         </div>
