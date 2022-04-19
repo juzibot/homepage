@@ -80,7 +80,12 @@ jobs:
                 network_mode: host
                 restart: always
             EOF
-            aws ecr get-login-password | docker login --username AWS --password-stdin ${{ env.ECR_URL }} 2> /dev/null >&2
+            AWS_CLI_MAJOR_VERSION=$(aws --version 2>&1 | cut -d " " -f1 | cut -d "/" -f2 | cut -d "." -f1)
+            if [ "$AWS_CLI_MAJOR_VERSION" = "1" ]; then
+                $(aws ecr get-login --no-include-email --region cn-northwest-1)
+            else
+                aws ecr get-login-password | docker login --username AWS --password-stdin ${{ env.ECR_URL }} 2> /dev/null >&2
+            fi
             docker-compose up -d
             docker ps
             docker system prune -af
