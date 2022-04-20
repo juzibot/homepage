@@ -9,3 +9,4 @@ We are building the **Next Generation IM based Marketing Cloud**. Juzi helps com
 ## We are HIRING
 
 We are using leading technology to solve various challenges. We need backend engineer using Node.js or Golang, full stack engineer using Node.js and React. For detailed information, please contact hr@juzi.bot.
+
