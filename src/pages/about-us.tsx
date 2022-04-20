@@ -668,7 +668,7 @@ const GrowthWall: NextPage = () => {
           flagSetter={setFlag}
           currentFlag={flag}
         >
-          <div>句客宝产品上线，并获得首个客户京东金融</div>
+          <div>句子互动企业微信产品上线，并获得首个客户京东金融</div>
           <div style={{ marginTop: 8 }}>
             <strong>2020.11</strong>
           </div>
