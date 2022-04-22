@@ -1,32 +1,12 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
 import axios from 'axios';
 import { feishuBotUrl, juziHelloMsg, juziToken } from '@src/config';
+import requestIp from 'request-ip';
 
 type Data = {
   code: number;
-  message: string;
+  message: any;
 };
-
-`{
-  "config": {
-    "wide_screen_mode": true
-  },
-  "i18n_elements": {
-    "zh_cn": [
-      {
-        "tag": "markdown",
-        "content": "**🥳 有新客户咨询信息！ 🥳**\n手机号：15688286110\n姓名：\n公司：\n备注："
-      },
-      {
-        "tag": "hr"
-      },
-      {
-        "tag": "markdown",
-        "content": "IP：\nIP 归属地：\n浏览页面：[https://baidu.com](https://baidu.com)\nUser-Agent："
-      }
-    ]
-  }
-}`;
 
 export default async function handler(
   req: NextApiRequest,
@@ -38,6 +18,10 @@ export default async function handler(
       message: 'not allowed',
     });
   } else {
+    const detectedIp = requestIp.getClientIp(req);
+    console.log(detectedIp);
+    console.log();
+
     const userAgent = req.headers['user-agent'] || 'null';
     const origin = req.headers['referer'] || 'null';
     const name = req.body['name'] || 'null';
@@ -87,7 +71,10 @@ export default async function handler(
     } finally {
       res.status(200).json({
         code: 200,
-        message: 'hi',
+        message: {
+          headers: req.headers,
+          detectedIp,
+        },
       });
     }
   }

@@ -9,10 +9,14 @@ import { logHireInfo } from '@src/utils/hire';
 import { useEffect } from 'react';
 import Script from 'next/script';
 import { ContactButton } from '@src/components/common/Contact';
+// import { juziAnalysis } from '@src/utils/analysis';
 
 const JuziApp: NextPage<AppProps> = ({ Component, pageProps }) => {
   useEffect(() => {
     logHireInfo();
+    // if (process.browser) {
+    //   juziAnalysis();
+    // }
   }, []);
 
   const { i18n } = useTranslation('common');
