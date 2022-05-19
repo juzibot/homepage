@@ -1,6 +1,6 @@
 import { ISolutionPageProps } from '@src/interfaces';
 import { CompanyItem } from '@src/pages/cases';
-import { showModal } from '@src/utils/showModal';
+import { useShowModal } from '@src/utils/showModal';
 import { NextPage } from 'next';
 import Image from 'next/image';
 import AppealBar from '../index/AppealBar';
@@ -13,6 +13,7 @@ export const SolutionDetailPage: NextPage<ISolutionPageProps> = ({
   backgroundUrl,
   cases,
 }) => {
+  const showModal = useShowModal();
   return (
     <>
       <div

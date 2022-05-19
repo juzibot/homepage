@@ -3,7 +3,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { IFeatureHeroPageProps } from '@src/interfaces';
 import { useTranslation } from 'react-i18next';
-import { showModal } from '@src/utils/showModal';
+import { useShowModal } from '@src/utils/showModal';
 
 export const FeatureHeroPage: NextPage<IFeatureHeroPageProps> = ({
   title,
@@ -12,6 +12,7 @@ export const FeatureHeroPage: NextPage<IFeatureHeroPageProps> = ({
   datas,
 }) => {
   const { t } = useTranslation('features');
+  const showModal = useShowModal();
   return (
     <>
       <h1>{title}</h1>

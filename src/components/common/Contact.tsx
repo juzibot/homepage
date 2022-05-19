@@ -1,4 +1,4 @@
-import { showModal } from '@src/utils/showModal';
+import { useShowModal } from '@src/utils/showModal';
 import { NextPage } from 'next';
 import { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
@@ -9,6 +9,7 @@ export const ContactButton: NextPage = () => {
   const [popupVisible, togglePopupVisible] = useState(false);
   const [autoVisible, toggleAutoVisible] = useState(false);
   const { i18n } = useTranslation();
+  const showModal = useShowModal();
 
   useEffect(() => {
     setTimeout(() => {

@@ -8,7 +8,7 @@ import Link from 'next/link';
 import { useEffect, useState } from 'react';
 import { chunk } from 'lodash';
 import Seo from '@src/components/common/Seo';
-import { showModal } from '@src/utils/showModal';
+import { useShowModal } from '@src/utils/showModal';
 
 export const CompanyItem: NextPage<ICompanyItemProps> = ({
   title,
@@ -331,6 +331,7 @@ const CasesPage: NextPage = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const [companiesList, setCompaniesList] = useState<ICompanyItemProps[][]>([]);
   const [companiesCount, setCompaniesCount] = useState(0);
+  const showModal = useShowModal();
 
   function getCompanies(idx: number) {
     setCurrentPage(1);

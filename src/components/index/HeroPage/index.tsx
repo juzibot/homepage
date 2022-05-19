@@ -5,7 +5,7 @@ import { useEffect } from 'react';
 import Image from 'next/image';
 import { useTranslation } from 'react-i18next';
 import LogosWall from '../LogosWall';
-import { showModal } from '@src/utils/showModal';
+import { useShowModal } from '@src/utils/showModal';
 
 export const FeatureCard: NextPage<IFeatureCardProps> = ({
   title,
@@ -39,6 +39,7 @@ const HeroPage: NextPage = () => {
       Aos.init();
     }
   }, []);
+  const showModal = useShowModal();
   return (
     <>
       <div className="hero-page" data-aos="fade-in">

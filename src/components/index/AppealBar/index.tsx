@@ -1,9 +1,10 @@
-import { showModal } from '@src/utils/showModal';
+import { useShowModal } from '@src/utils/showModal';
 import { NextPage } from 'next';
 import { useTranslation } from 'react-i18next';
 
 const AppealBar: NextPage = () => {
   const { t } = useTranslation(['homepage']);
+  const showModal = useShowModal();
   return (
     <div className="content">
       <div className="title">{t('appeal-title')}</div>
