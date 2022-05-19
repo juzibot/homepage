@@ -248,7 +248,7 @@ const ContactModal: NextPage = () => {
               <div className="login" style={{ marginTop: 42 }}>
                 已有账号，
                 <a
-                  href={`https://qiwei.juzibot.com/user/login?from=login&rediect=${
+                  href={`https://miaohui.juzibot.com/auth/login?from=login&rediect=${
                     host + router.pathname
                   }`}
                   target="_blank"
@@ -298,7 +298,7 @@ const ContactModal: NextPage = () => {
               <div className="login" style={{ marginTop: 12 }}>
                 已有账号，
                 <a
-                  href={`https://qiwei.juzibot.com/user/login?from=login&rediect=${
+                  href={`https://miaohui.juzibot.com/auth/login?from=login&rediect=${
                     host + router.pathname
                   }`}
                   target="_blank"
