@@ -313,15 +313,15 @@ export const companies: ICompanyItemProps[] = [
     imageUrl:
       'https://cdn-official-website.juzibot.com/images/cases/companies/7.png',
   },
-  {
-    title: '某家庭维修品牌',
-    brief:
-      '8 人完成 180 个账号上 300 万用户的客诉应答，每天处理 6300 余客户的售后问题，平均应答时间2分钟以内',
-    category: CompanyCategory.IT,
-    url: '/cases/26',
-    imageUrl:
-      'https://cdn-official-website.juzibot.com/images/cases/companies/31.png',
-  },
+  // {
+  //   title: '某家庭维修品牌',
+  //   brief:
+  //     '8 人完成 180 个账号上 300 万用户的客诉应答，每天处理 6300 余客户的售后问题，平均应答时间2分钟以内',
+  //   category: CompanyCategory.IT,
+  //   url: '/cases/26',
+  //   imageUrl:
+  //     'https://cdn-official-website.juzibot.com/images/cases/companies/31.png',
+  // },
 ];
 
 const PAGE_SIZE = 12;

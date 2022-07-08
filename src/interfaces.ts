@@ -46,7 +46,7 @@ export interface ICompanyProps {
   companyLogoUrl: string;
   companyName: string;
   companyBrief: string;
-  redirectUrl: string;
+  redirectUrl?: string;
   onHover?: () => void;
 }
 

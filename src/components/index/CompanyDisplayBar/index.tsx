@@ -40,7 +40,7 @@ const CompanyDisplayBar: NextPage = () => {
     {
       iconUrl:
         'https://cdn-official-website.juzibot.com/images/icons/contact.svg',
-      redirectUrl: '/cases/26',
+      // redirectUrl: '/cases/26',
     },
     {
       iconUrl:
@@ -128,7 +128,7 @@ const CompanyDisplayBar: NextPage = () => {
         </div>
       </div>
 
-      <a className="read-more" href={items[selectedCompanyIdx]['redirectUrl']}>
+      <a className="read-more" href={items[selectedCompanyIdx]['redirectUrl'] || '#'} style={!items[selectedCompanyIdx]['redirectUrl'] ? { visibility: 'hidden' } : {}}>
         {t('company-read-more')}
       </a>
     </>

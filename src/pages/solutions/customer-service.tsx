@@ -15,13 +15,13 @@ const SolutionContactPage: NextPage = () => {
       <SolutionDetailPage
         cases={[
           {
-            title: '某家庭维修品牌',
+            title: '某市级民政机关',
             brief:
-              '8 人完成 180 个账号上 300 万用户的客诉应答，每天处理 6300 余客户的售后问题，平均应答时间2分钟以内',
-            category: CompanyCategory.IT,
-            url: '/cases/26',
+              '自动化完成 900 万线索量的筛选，平均每人每日回复 1000+ 消息，触达用户的消息总量提升 3 倍以上',
+            category: CompanyCategory.GOV,
+            url: '/cases/32',
             imageUrl:
-              'https://cdn-official-website.juzibot.com/images/cases/companies/31.png',
+              'https://cdn-official-website.juzibot.com/images/cases/companies/16.png',
           },
           {
             title: '某国内电子烟一线品牌',
