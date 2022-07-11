@@ -60,11 +60,11 @@ const Footer: NextPage = () => {
     {
       title: t('footer-menu-3-title'),
       child: [
-        {
-          title: t('footer-menu-3-1-title'),
-          url: 'https://k0auuqcihb.feishu.cn/docs/doccnJMlpBUC1NAHW7ujCXVxaUB',
-        },
-        { title: t('footer-menu-3-2-title'), url: 'https://docs.juzibot.com/' },
+        // {
+        //   title: t('footer-menu-3-1-title'),
+        //   url: 'https://k0auuqcihb.feishu.cn/docs/doccnJMlpBUC1NAHW7ujCXVxaUB',
+        // },
+        // { title: t('footer-menu-3-2-title'), url: 'https://docs.juzibot.com/' },
         { title: t('footer-menu-3-3-title'), url: 'https://wechaty.js.org/' },
         { title: t('footer-menu-3-4-title'), url: '/cases' },
         { title: t('footer-menu-3-5-title'), url: 'https://blog.juzibot.com/' },
