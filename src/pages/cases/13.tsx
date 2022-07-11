@@ -43,9 +43,9 @@ const CasePage: NextPage = () => {
           },
           {
             icon: '13-2.svg',
-            title: '无限制消息群发',
+            title: '高频应答',
             subtitle:
-              '突破企业微信每天只能群发 1 次的限制，更高频次的为用户推送活动信息',
+              'RPA 助力应答效率，更高频次的为用户推送活动信息',
           },
           {
             icon: '13-3.svg',

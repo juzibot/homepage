@@ -36,9 +36,9 @@ const CasePage: NextPage = () => {
         features={[
           {
             icon: 'green-3.svg',
-            title: '无限次群发',
+            title: '高频触达',
             subtitle:
-              '突破企微原有每天 1 次的群发限制，每天进行 2 次以上社群群发和私信群发，保证营销信息的高频触达',
+              'RPA 助力提升应答效率，每天进行 2 次以上社群群发和私信群发，保证营销信息的高频触达',
           },
           {
             icon: 'orange-3.svg',
@@ -62,7 +62,7 @@ const CasePage: NextPage = () => {
             icon: 'green-4.svg',
             title: '定时群发',
             subtitle:
-              '突破企业微信每天只能群发 1 次消息的限制，每天一次配置后自动在多个时间群发内容',
+              'RPA 助力应答效率，每天一次配置后自动在多个时间群发内容',
           },
         ]}
         achievements={[

@@ -37,9 +37,9 @@ const CasePage: NextPage = () => {
         features={[
           {
             icon: '27-1.svg',
-            title: '无限条数欢迎语',
+            title: '高频应答',
             subtitle:
-              '突破企业微信 2 条欢迎语限制，自动发送多条内容',
+              'RPA 助力应答效率，自动发送多条内容',
           },
           {
             icon: '27-2.svg',
@@ -49,9 +49,9 @@ const CasePage: NextPage = () => {
           },
           {
             icon: '27-3.svg',
-            title: '无限次群发',
+            title: '高频触达',
             subtitle:
-              '突破企微原有每天 1 次的群发限制，每天进行 3 次以上社群群发和私信群发，保证营销信息的高频触达',
+              'RPA 助力提升应答效率，每天进行 3 次以上社群群发和私信群发，保证营销信息的高频触达',
           },
         ]}
         achievements={[

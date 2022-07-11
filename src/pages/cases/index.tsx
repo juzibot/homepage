@@ -174,7 +174,7 @@ export const companies: ICompanyItemProps[] = [
   {
     title: '某国内电子烟一线品牌',
     brief:
-      '4 个人管理 80 个企业微信账号上的 100 万用户，平均每人每天应答 8000 条消息，90% 以上客户被回复',
+      '4 个人管理 80 个企业微信账号上的百万用户，平均每人每天应答 8000 条消息，90% 以上客户被回复',
     category: CompanyCategory.TRADE,
     url: '/cases/14',
     imageUrl:
@@ -383,7 +383,7 @@ const CasesPage: NextPage = () => {
       <Seo page="cases" />
       <div className="wrapper cases-hero-page">
         <div className="container">
-          <h1 className="slogan">5000+ 品牌的选择</h1>
+          <h1 className="slogan">头部品牌的选择</h1>
           <section className="brief">
             各个行业、各种规模的团队都在使用句子互动。我们助力企业和组织建立以社交关系为核心的营销体系，高效触达与深度连接数以千万计的客户，让营销事半功倍。
           </section>

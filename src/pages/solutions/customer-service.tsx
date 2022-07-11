@@ -26,7 +26,7 @@ const SolutionContactPage: NextPage = () => {
           {
             title: '某国内电子烟一线品牌',
             brief:
-              '4 个人管理 80 个企业微信账号上的 100 万用户，平均每人每天应答 8000 条消息，90% 以上客户被回复',
+              '4 个人管理 80 个企业微信账号上的百万用户，平均每人每天应答数千条消息，90% 以上客户被回复',
             category: CompanyCategory.TRADE,
             url: '/cases/14',
             imageUrl:

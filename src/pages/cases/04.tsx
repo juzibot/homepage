@@ -45,9 +45,9 @@ const CasePage: NextPage = () => {
           },
           {
             icon: '4-2.svg',
-            title: '无限条数欢迎语',
+            title: '高频应答',
             subtitle:
-              '突破企业微信 2 条欢迎语限制，可自动发送多条欢迎语和入群链接',
+              'RPA 助力应答效率，可自动发送多条欢迎语和入群链接',
           },
           {
             icon: '4-3.svg',
@@ -65,7 +65,7 @@ const CasePage: NextPage = () => {
             icon: '4-5.svg',
             title: '定时群发',
             subtitle:
-              '突破企业微信每天只能群发 1 次消息的限制，每天一次配置后自动在多个时间群发内容',
+              'RPA 助力应答效率，每天一次配置后自动在多个时间群发内容',
           },
           {
             icon: '4-6.svg',
