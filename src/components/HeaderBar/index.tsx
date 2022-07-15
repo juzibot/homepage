@@ -7,7 +7,7 @@ import { host } from '@src/config';
 import { useTranslation } from 'react-i18next';
 import { useRouter } from 'next/router';
 import { isBrowserChrome } from '@src/utils/isBrowserChrome';
-import { useShowModal } from '@src/utils/showModal';
+import { useModal } from '@src/utils/showModal';
 
 const MenuItem: NextPage<{
   iconUrl: string;
@@ -320,7 +320,7 @@ const HeaderBar: NextPage = () => {
   const [headerbarExtraClass, setHeaderbarExtraClass] = useState('');
   const isZh = i18n.language === 'zh';
   const { pathname } = useRouter();
-  const showModal = useShowModal();
+  const showModal = useModal();
 
   useEffect(() => {
     for (const path in headerbarExtraClassMap) {
@@ -428,7 +428,7 @@ const HeaderBar: NextPage = () => {
             <div
               className="menu-item primary-link round"
               draggable="false"
-              onClick={() => window.open('https://miaohui.juzibot.com', '_blank')}
+              onClick={showModal}
               style={{
                 userSelect: 'none',
                 cursor: 'pointer',
