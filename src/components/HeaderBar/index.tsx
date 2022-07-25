@@ -428,7 +428,7 @@ const HeaderBar: NextPage = () => {
             <div
               className="menu-item primary-link round"
               draggable="false"
-              onClick={() => window.open('https://miaohui.juzibot.com', '_blank')}
+              onClick={showModal}
               style={{
                 userSelect: 'none',
                 cursor: 'pointer',
