@@ -7,7 +7,7 @@ import { host } from '@src/config';
 import { useTranslation } from 'react-i18next';
 import { useRouter } from 'next/router';
 import { isBrowserChrome } from '@src/utils/isBrowserChrome';
-import { useModal } from '@src/utils/showModal';
+import { useShowModal } from '@src/utils/showModal';
 
 const MenuItem: NextPage<{
   iconUrl: string;
@@ -320,7 +320,7 @@ const HeaderBar: NextPage = () => {
   const [headerbarExtraClass, setHeaderbarExtraClass] = useState('');
   const isZh = i18n.language === 'zh';
   const { pathname } = useRouter();
-  const showModal = useModal();
+  const showModal = useShowModal();
 
   useEffect(() => {
     for (const path in headerbarExtraClassMap) {
