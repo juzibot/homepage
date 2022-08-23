@@ -51,11 +51,11 @@ const CasePage: NextPage = () => {
             icon: 'green-1.svg',
             title: '定时群发',
             subtitle:
-              'RPA 助力应答效率，每天一次配置后自动在多个时间群发内容',
+              'RPA 助力高效触达，每天一次配置后自动在多个时间群发内容',
           },
           {
             icon: 'purple-1.svg',
-            title: '以 unionid 为核心的 API 柔性群发',
+            title: '以唯一 ID 为核心的 API 柔性触达',
             subtitle:
               '打通企业微信和小程序数据，实现用户能够依据其小程序访问行为收到其感兴趣的消息',
           },

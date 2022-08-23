@@ -38,7 +38,7 @@ const CasePage: NextPage = () => {
             icon: 'green-3.svg',
             title: '高频触达',
             subtitle:
-              'RPA 助力提升应答效率，每天进行 2 次以上社群群发和私信群发，保证营销信息的高频触达',
+              'RPA 助力高效触达，每天进行 2 次以上社群群发和私信群发，保证营销信息的高频触达',
           },
           {
             icon: 'orange-3.svg',
@@ -50,11 +50,11 @@ const CasePage: NextPage = () => {
             icon: 'blue-3.svg',
             title: '消息聚合',
             subtitle:
-              '将多个账号的消息聚合在一个聊天页面，使得一人可管理两万余粉丝的消息应答',
+              '将多个账号的消息聚合在一个聊天页面，使得一人可管理数万粉丝的消息应答',
           },
           {
             icon: 'orange-4.svg',
-            title: '自动发送入群欢迎语',
+            title: '柔性发送入群欢迎语',
             subtitle:
               '入群后每满 10 人会收到一条统一的欢迎语，告知群规 / 领取福利的方式，减少对用户的打扰',
           },
@@ -62,7 +62,7 @@ const CasePage: NextPage = () => {
             icon: 'green-4.svg',
             title: '定时群发',
             subtitle:
-              'RPA 助力应答效率，每天一次配置后自动在多个时间群发内容',
+              'RPA 助力高效触达，每天一次配置后自动在多个时间群发内容',
           },
         ]}
         achievements={[

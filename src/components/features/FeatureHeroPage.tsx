@@ -8,7 +8,6 @@ import { useShowModal } from '@src/utils/showModal';
 export const FeatureHeroPage: NextPage<IFeatureHeroPageProps> = ({
   title,
   brief,
-  docsUrl,
   datas,
 }) => {
   const { t } = useTranslation('features');
@@ -21,11 +20,6 @@ export const FeatureHeroPage: NextPage<IFeatureHeroPageProps> = ({
         <button className="primary-button start-button" onClick={showModal}>
           {t('usage')}
         </button>
-        <Link href={docsUrl}>
-          <a className="read-docs" target="_blank">
-            {t('document')}
-          </a>
-        </Link>
       </div>
 
       <div className="data-bar">
