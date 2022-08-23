@@ -1,5 +1,4 @@
 import { NextPage } from 'next';
-import Link from 'next/link';
 import Image from 'next/image';
 import { IFeatureHeroPageProps } from '@src/interfaces';
 import { useTranslation } from 'react-i18next';
