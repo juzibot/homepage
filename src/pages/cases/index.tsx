@@ -42,7 +42,7 @@ export const companies: ICompanyItemProps[] = [
   {
     title: '某市级民政机关',
     brief:
-      '自动化完成 900 万线索量的筛选，平均每人每日回复 1000+ 消息，触达用户的消息总量提升 3 倍以上',
+      '自动化完成数百万线索量的筛选，平均每人每日回复 1000+ 消息，触达用户的消息总量提升 3 倍以上',
     category: CompanyCategory.GOV,
     url: '/cases/32',
     imageUrl:
@@ -51,7 +51,7 @@ export const companies: ICompanyItemProps[] = [
   {
     title: '某淘系直播头部主播',
     brief:
-      '人均服务 5 万客户、150+ 社群，平均首次响应时长缩短至 5min，日均私聊发送消息数达 400+ 条',
+      '人均服务近 10 万客户、数百社群，平均首次响应时长缩短至 5min，日均私聊发送消息数百条',
     category: CompanyCategory.TRADE,
     url: '/cases/20',
     imageUrl:
@@ -104,7 +104,7 @@ export const companies: ICompanyItemProps[] = [
   {
     title: '某国际一线美妆大品牌',
     brief:
-      '自动化激活会员用户，10 倍的信息触达效率，86w 小程序用户行为的自动标签化',
+      '自动化激活会员用户，10 倍的信息触达效率，数十万小程序用户行为的自动标签化',
     category: CompanyCategory.TRADE,
     url: '/cases/06',
     imageUrl:
@@ -112,7 +112,7 @@ export const companies: ICompanyItemProps[] = [
   },
   {
     title: '某国货头部化妆品品牌',
-    brief: '2 人管理 12 个账号下 4000 个用户的消息，回复率达到 90%',
+    brief: '2 人管理十余个账号下数万个用户的消息，回复率达到 90%',
     category: CompanyCategory.TRADE,
     url: '/cases/07',
     imageUrl:
@@ -138,7 +138,7 @@ export const companies: ICompanyItemProps[] = [
   {
     title: '某头部潮流玩具品牌',
     brief:
-      '2 人管理 15 个账号下 3 万余用户的消息，触达用户的消息总量提升 6 倍以上',
+      '2 人管理私域内数万用户的消息，触达用户的消息总量提升 6 倍以上',
     category: CompanyCategory.TRADE,
     url: '/cases/10',
     imageUrl:
@@ -147,7 +147,7 @@ export const companies: ICompanyItemProps[] = [
   {
     title: '某宠物护理一线品牌',
     brief:
-      '3 人管理 25 个账号下 5 万个用户的消息，平均 1.3 分钟内即可应答，触达用户的消息总量提升 7 倍以上',
+      '3 人管理数十个账号的客户消息，平均 1.3 分钟内即可应答，触达用户的消息总量提升 7 倍以上',
     category: CompanyCategory.TRADE,
     url: '/cases/11',
     imageUrl:
@@ -156,7 +156,7 @@ export const companies: ICompanyItemProps[] = [
   {
     title: '某韩国时装零售头部品牌',
     brief:
-      '已回复聊天占比达 100%，日均聊天数达 1300+ 条，超过 250 个云导购账号的统一管理',
+      '已回复聊天占比达100%，日均聊天数达1300+条，平均首次响应时长仅为2s......',
     category: CompanyCategory.TRADE,
     url: '/cases/12',
     imageUrl:
@@ -165,7 +165,7 @@ export const companies: ICompanyItemProps[] = [
   {
     title: '某连锁披萨品牌',
     brief:
-      '5 个企业微信上的 10万 用户、近 1000 个微信群消息，均有机器完成，触达用户的消息总量提升 2 倍以上',
+      '私域内十余万用户、近 1000 个微信群消息自动化管理，均由机器完成，零人工投入',
     category: CompanyCategory.TRADE,
     url: '/cases/13',
     imageUrl:
@@ -174,7 +174,7 @@ export const companies: ICompanyItemProps[] = [
   {
     title: '某国内电子烟一线品牌',
     brief:
-      '4 个人管理 80 个企业微信账号上的百万用户，平均每人每天应答 8000 条消息，90% 以上客户被回复',
+      '4 个人管理近百个企业微信账号上的百万用户，平均每人每天应答 8000 条消息，90% 以上客户被回复',
     category: CompanyCategory.TRADE,
     url: '/cases/14',
     imageUrl:
@@ -183,7 +183,7 @@ export const companies: ICompanyItemProps[] = [
   {
     title: '某国内头部家电品牌',
     brief:
-      '3 人管理 12 个账号上的 10万+ 客户消息应答和营销触达，触达用户的消息总量提升 4 倍以上',
+      '3 人管理十余个账号上数万客户的消息应答和营销触达，触达用户的消息总量提升 4 倍以上',
     category: CompanyCategory.TRADE,
     url: '/cases/15',
     imageUrl:
@@ -192,7 +192,7 @@ export const companies: ICompanyItemProps[] = [
   {
     title: '某线上教育头部品牌',
     brief:
-      '1 人管理 116 个账号下近 80w 用户的消息，已回复聊天占比 46%，触达用户的消息总量提升 4 倍以上',
+      '1 人管理百余个账号下近百万用户的消息，已回复聊天占比 46%，触达用户的消息总量提升 4 倍以上',
     category: CompanyCategory.EDUCATION,
     url: '/cases/16',
     imageUrl:
@@ -201,7 +201,7 @@ export const companies: ICompanyItemProps[] = [
   {
     title: '某头部线上教育公司旗下子品牌',
     brief:
-      '超过 500 个账号 250 万用户的增长和触达几乎自动化完成运营，员工只需要提供文案和海报',
+      '超过 500 个账号数百万用户的增长和触达几乎自动化完成运营，员工只需要提供文案和海报',
     category: CompanyCategory.EDUCATION,
     url: '/cases/17',
     imageUrl:
@@ -210,7 +210,7 @@ export const companies: ICompanyItemProps[] = [
   {
     title: '某在线教育头部品牌',
     brief:
-      '0 人工自动完成 30 万用户的增长、触达和筛选，触达用户的消息总量提升 3 倍以上',
+      '0 人工自动完成数十万用户的增长、触达和筛选，触达用户的消息总量提升 3 倍以上',
     category: CompanyCategory.EDUCATION,
     url: '/cases/18',
     imageUrl:
@@ -227,7 +227,7 @@ export const companies: ICompanyItemProps[] = [
   {
     title: '某连锁药店品牌',
     brief:
-      '1 人管理 10 余个企业微信上的 6 万余用户消息，触达用户的消息总量提升 3 倍以上',
+      '1 人管理数十个企业微信上数万用户的消息，触达用户的消息总量提升 3 倍以上',
     category: CompanyCategory.MEDICAL,
     url: '/cases/27',
     imageUrl:
@@ -262,7 +262,7 @@ export const companies: ICompanyItemProps[] = [
   {
     title: '某知名保险公司',
     brief:
-      '0 人工成本，机器人自动完成 14000+ 用户的运营工作，触达用户的消息总量提升 4 倍以上',
+      '0 人工成本，机器人自动完成数万用户，触达用户的消息总量提升 4 倍以上',
     category: CompanyCategory.FINANCE,
     url: '/cases/31',
     imageUrl:
@@ -280,7 +280,7 @@ export const companies: ICompanyItemProps[] = [
   {
     title: '某头部约车服务品牌（用户端）',
     brief:
-      '1 人管理 10 个账号 5 万用户数，触达用户的消息总量提升 3 倍以上，零人工成本前提下，入群率 50% 以上',
+      '1 人管理十余个账号的数万用户，触达用户的消息总量提升 3 倍以上，零人工成本前提下，入群率 50% 以上',
     category: CompanyCategory.IT,
     url: '/cases/22',
     imageUrl:
@@ -289,7 +289,7 @@ export const companies: ICompanyItemProps[] = [
   {
     title: '某本地化社群平台',
     brief:
-      '全自动化运营 250w 私域用户，每日通过 API 接口将触达用户的消息总量提升 10 倍以上',
+      '全自动化运营数百万私域用户，每日通过 API 接口将触达用户的消息总量提升 10 倍以上',
     category: CompanyCategory.IT,
     url: '/cases/23',
     imageUrl:
@@ -298,7 +298,7 @@ export const companies: ICompanyItemProps[] = [
   {
     title: '某头部互联网平台',
     brief:
-      '4 人管理8个账号下 3万余个用户、100+ 企业微信群的消息，平均首次响应 30s 应答率达 77.05%',
+      '1 人管理十余个账号下数万用户、数百个社群的消息，平均首次响应 30s 应答率达 77.05%，回复率达到 83%',
     category: CompanyCategory.IT,
     url: '/cases/24',
     imageUrl:
@@ -307,7 +307,7 @@ export const companies: ICompanyItemProps[] = [
   {
     title: '某头部互联网平台技术社区',
     brief:
-      '1 人管理 4 个账号下 2 万个用户消息，触达用户消息总量提升 3 倍以上，零人工成本前提下，入群率 64% 以上',
+      '1 人管理 4 个账号下数万用户的消息，触达用户消息总量提升 3 倍以上，零人工成本前提下，入群率 64% 以上',
     category: CompanyCategory.IT,
     url: '/cases/25',
     imageUrl:

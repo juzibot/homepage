@@ -16,7 +16,7 @@ const CasePage: NextPage = () => {
         brief="该养老服务平台由某市民政机关开办，是养老相关政策落实情况线上受理、投诉、咨询及建议的窗口；主要是通过用户添加服务企业微信，提供专属线上客服服务"
         datas={[
           {
-            title: '900W',
+            title: '数百万',
             subtitle: '用户自动迁移',
           },
           {
@@ -58,7 +58,7 @@ const CasePage: NextPage = () => {
             icon: '32-4.svg',
             title: '高频触达',
             subtitle:
-              'RPA 助力提升应答效率，每天进行3次以上私信群发，保证营销信息的高频触达',
+              'RPA 助力提升触达频次，每天进行3次以上私信群发，保证营销信息的高频触达',
           },
           {
             icon: '32-5.svg',
@@ -69,7 +69,7 @@ const CasePage: NextPage = () => {
         achievements={[
           {
             icon: '06',
-            title: '自动化完成900万线索量的筛选，并添加意向用户，0人力成本',
+            title: '规模化完成数百万线索的筛选，并添加意向用户，0人力成本',
           },
           {
             icon: '05',

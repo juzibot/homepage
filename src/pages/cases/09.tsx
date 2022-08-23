@@ -58,7 +58,7 @@ const CasePage: NextPage = () => {
             icon: '8-3.svg',
             title: '高频触达',
             subtitle:
-              'RPA 助力提升应答效率，每天进行至少 2 次以上社群群发和私信群发，保证营销信息的高频触达',
+              'RPA 助力高效触达，每天进行至少 2 次以上社群群发和私信群发，保证营销信息的高频触达',
           },
         ]}
         achievements={[

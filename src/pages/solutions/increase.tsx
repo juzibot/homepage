@@ -26,7 +26,7 @@ const SolutionContactPage: NextPage = () => {
           {
             title: '某市级民政机关',
             brief:
-              '自动化完成 900 万线索量的筛选，平均每人每日回复 1000+ 消息，触达用户的消息总量提升 3 倍以上',
+              '自动化完成数百万线索量的筛选，平均每人每日回复 1000+ 消息，触达用户的消息总量提升 3 倍以上',
             category: CompanyCategory.GOV,
             url: '/cases/32',
             imageUrl:
