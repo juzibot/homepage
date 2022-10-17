@@ -7,8 +7,9 @@ import { host } from '@src/config';
 import { useTranslation } from 'react-i18next';
 import { useRouter } from 'next/router';
 import { isBrowserChrome } from '@src/utils/isBrowserChrome';
-import { useShowModal } from '@src/utils/showModal';
+import { useShowModalMobile } from '@src/utils/showModalMobile';
 import cx from '@src/utils/cx';
+import ContactUsModal from '../ContactUsModal';
 
 
 const headerbarExtraClassMap: { [path: string]: string } = {
@@ -25,7 +26,7 @@ const HeaderBarMobile: NextPage = () => {
   const [headerbarExtraClass, setHeaderbarExtraClass] = useState('');
   const isZh = i18n.language === 'zh';
   const { pathname } = useRouter();
-  const showModal = useShowModal();
+  const [showContactUsModal, setShowContactUsModal] = useState(false);
 
   useEffect(() => {
     for (const path in headerbarExtraClassMap) {
@@ -62,10 +63,15 @@ const HeaderBarMobile: NextPage = () => {
           {isZh ? 'EN' : '中文'}
           <img src="/static/icons/arrow.svg" alt="" />
         </span>
-        <img className="ml-4" src="/static/icons/contact-us.svg" alt="" />
-        <img className="ml-4" src="/static/icons/user.svg" alt="" />
-        <img className="ml-4" src="/static/icons/menu-more.svg" alt="" />
+        <img className="ml-4" src="/static/icons/contact-us.svg" alt="" onClick={() => setShowContactUsModal(true)}/>
+        <img className="ml-4" src="/static/icons/user.svg" alt="" onClick={() => setShowContactUsModal(true)}/>
+        <img className="ml-4 hidden" src="/static/icons/menu-more.svg" alt="" />
       </div>
+      <ContactUsModal
+        visible={showContactUsModal}
+        onCancel={() => setShowContactUsModal(false)}
+        onOk={() => setShowContactUsModal(false)}
+      />
     </div>
   )
 };

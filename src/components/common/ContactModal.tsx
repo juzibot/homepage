@@ -6,6 +6,41 @@ import { host } from '@src/config';
 import { useRouter } from 'next/router';
 import { shuffle } from 'lodash';
 
+export function getQrcode(routerPathname: string) {
+  const arr = [
+    '/',
+    '/features/customer-acquisition',
+    '/features/sop',
+    '/features/contact-platform',
+    '/features/data-center',
+    '/features/management',
+    '/features/security',
+    '/solutions/general',
+    '/solutions/customer-service',
+    '/solutions/increase',
+    '/solutions/operate',
+    '/solutions/consumer-goods',
+    '/solutions/education',
+    '/solutions/health',
+    '/solutions/finance',
+    '/about-us',
+    '/culture',
+    '/cases',
+  ];
+  const map: { [url: string]: number } = {};
+  arr.forEach((s, i) => {
+    map[s] = i + 1;
+  });
+  const _arr = arr.sort((b, a) => b.length - a.length);
+  let res = 1;
+  _arr.forEach((s) => {
+    if (routerPathname.includes(s)) {
+      res = map[s];
+    }
+  });
+  return `/_images/qrcodes/官网弹窗${res}.png`;
+}
+
 const DetentionModal: NextPage<{
   onConfirm: () => void;
   onCancel: () => void;
@@ -39,7 +74,7 @@ const DetentionModal: NextPage<{
   );
 };
 
-const RightIcon = () => {
+export const RightIcon = () => {
   return (
     <svg
       width="10"
@@ -85,42 +120,6 @@ const ContactModal: NextPage = () => {
 
   function handleCloseModal() {
     toggleDetentionModalVisible(true);
-  }
-
-  function getQrcode() {
-    const arr = [
-      '/',
-      '/features/customer-acquisition',
-      '/features/sop',
-      '/features/contact-platform',
-      '/features/data-center',
-      '/features/management',
-      '/features/security',
-      '/solutions/general',
-      '/solutions/customer-service',
-      '/solutions/increase',
-      '/solutions/operate',
-      '/solutions/consumer-goods',
-      '/solutions/education',
-      '/solutions/health',
-      '/solutions/finance',
-      '/about-us',
-      '/culture',
-      '/cases',
-    ];
-    const map: { [url: string]: number } = {};
-    arr.forEach((s, i) => {
-      map[s] = i + 1;
-    });
-    const pathname = router.pathname;
-    const _arr = arr.sort((b, a) => b.length - a.length);
-    let res = 1;
-    _arr.forEach((s) => {
-      if (pathname.includes(s)) {
-        res = map[s];
-      }
-    });
-    return `/_images/qrcodes/官网弹窗${res}.png`;
   }
 
   useEffect(() => {
@@ -240,7 +239,7 @@ const ContactModal: NextPage = () => {
                 display: isScanQrcode ? 'flex' : 'none',
               }}
             >
-              <img src={getQrcode()} alt="qrcode" className="qrcode" />
+              <img src={getQrcode(router.pathname)} alt="qrcode" className="qrcode" />
               <div className="tips">
                 微信扫一扫，与陪跑数百家头部企业的顾问聊聊
               </div>

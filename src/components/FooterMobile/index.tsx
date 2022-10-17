@@ -3,12 +3,9 @@ import { NextPage } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useTranslation } from 'react-i18next';
-import dynamic from 'next/dynamic';
-import ContactModal from '../common/ContactModal';
 import cx from '@src/utils/cx';
 import { Collapse } from 'antd';
 import styles from './index.module.scss';
-const ReactTooltip = dynamic(() => import('react-tooltip'), { ssr: false });
 const { Panel } = Collapse; 
 
 const FooterMobile: NextPage = () => {
@@ -126,7 +123,6 @@ const FooterMobile: NextPage = () => {
   ];
   return (
     <>
-      {/* <ContactModal /> */}
       <footer className={cx(i18n.language, styles.footer, 'py-10 bg-[#F9F9F9]')}>
         <div className="pl-">
           <Image
