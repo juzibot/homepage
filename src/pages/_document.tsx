@@ -30,6 +30,7 @@ class JuziSiteDocument extends Document<{
       <Html>
         <Head>
           <meta name="viewport" content="width=1440, initial-scale=1.0" />
+          {/* <meta name="viewport" content="width=device-width, initial-scale=1.0" /> */}
           <meta name="baidu-site-verification" content="code-a7uFgEHa8D" />
           <meta name="baidu-site-verification" content="code-napTkvGp7b" />
           <meta name="keywords" content={keywords} />

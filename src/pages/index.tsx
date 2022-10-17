@@ -1,3 +1,4 @@
+import { useMediaQuery } from '@react-hookz/web';
 import Seo from '@src/components/common/Seo';
 import AppealBar from '@src/components/index/AppealBar';
 import CompanyDisplayBar from '@src/components/index/CompanyDisplayBar/index';
@@ -8,8 +9,10 @@ import type { GetStaticProps, NextPage } from 'next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
+import MobileIndexPage from './index-mobile';
 
 const Home: NextPage = () => {
+  const isSmallDevice = useMediaQuery('only screen and (max-width : 768px)');
   const [width, setWidth] = useState(0);
   const SHOW_MASK_WINDOW_WIDTH = 1200;
   useEffect(() => {
@@ -21,6 +24,10 @@ const Home: NextPage = () => {
     }
   }, []);
   const { i18n } = useTranslation('common');
+
+  if (isSmallDevice) {
+    return <MobileIndexPage />
+  }
   return (
     <div className={i18n.language}>
       <Seo page="homepage" />

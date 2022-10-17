@@ -9,7 +9,12 @@ import { logHireInfo } from '@src/utils/hire';
 import { useEffect } from 'react';
 import Script from 'next/script';
 import { ContactButton } from '@src/components/common/Contact';
+import { useMediaQuery } from '@react-hookz/web';
+import HeaderBarMobile from '@src/components/HeaderBarMobile';
+import FooterMobile from '@src/components/FooterMobile';
 // import { juziAnalysis } from '@src/utils/analysis';
+import 'antd/dist/antd.css';
+
 
 const JuziApp: NextPage<AppProps> = ({ Component, pageProps }) => {
   useEffect(() => {
@@ -20,6 +25,30 @@ const JuziApp: NextPage<AppProps> = ({ Component, pageProps }) => {
   }, []);
 
   const { i18n } = useTranslation('common');
+  const isSmallDevice = useMediaQuery('only screen and (max-width : 768px)');
+  const isMediumDevice = useMediaQuery('only screen and (min-width : 769px) and (max-width : 992px)');
+  const isLargeDevice = useMediaQuery('only screen and (min-width : 993px) and (max-width : 1200px)');
+  const isExtraLargeDevice = useMediaQuery('only screen and (min-width : 1201px)');
+
+  console.log('=isSmallDevice', isSmallDevice, isMediumDevice, isLargeDevice, isExtraLargeDevice);
+
+  console.log('[_app] render isSmallDevice', isSmallDevice);
+  if (isSmallDevice) {
+    return (
+      <>
+        <HeaderBarMobile />
+        <div className={`app ${i18n.language}`}>
+          <Component {...pageProps} />
+        </div>
+        <FooterMobile />
+        <style global jsx>{`
+          #__next {
+            min-width: auto;
+          }
+        `}</style>
+      </>
+    )
+  }
 
   return (
     <>
