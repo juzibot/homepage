@@ -21,6 +21,7 @@ module.exports = {
         'jz-ash-4': '#D3DBE6',
         'jz-ash-5': '#E5E9F0',
         'jz-ash-6': '#F6F8FA',
+        'jz-blue': '#0555FF',
       },
     },
   },

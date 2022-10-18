@@ -4,13 +4,16 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { useTranslation } from 'react-i18next';
 import cx from '@src/utils/cx';
-import { Collapse } from 'antd';
+import { Button, Collapse } from 'antd';
 import styles from './index.module.scss';
 import AppealBarMobile from '../index/AppealBarMobile';
+import { getQrcode } from '../common/ContactModal';
+import { useRouter } from 'next/router';
 const { Panel } = Collapse; 
 
 const FooterMobile: NextPage = () => {
   const { t, i18n } = useTranslation(['common']);
+  const router = useRouter();
 
   const menus: (IFooterMenu | undefined)[] = [
     {
@@ -199,6 +202,21 @@ const FooterMobile: NextPage = () => {
                 </a>
               </Link>
             </div>
+          </div>
+        </div>
+
+        <div className='fixed bottom-0 bg-white w-full z-50'>
+        <div className="px-4 mx-4 py-5 bg-white rounded-lg flex mt-5 mb-7">
+          <img src={getQrcode(router.pathname)} height={124} width={124} alt="" className="flex-shrink-0 mr-[10px]" />
+          <div>
+            <p className="text-[#FF5E1E] text-2xl font-semibold mb-2">10倍</p>
+            <p className="text-[#FF5E1E] text-base  font-medium mb-2">提高你的私域运营效率</p>
+            <p className="text-[#666666]">微信扫一扫，与陪跑数百家头部企业的顾问聊聊</p>
+          </div>
+        </div>
+          <div className="px-4 flex h-[64px] items-center">
+            <Button block size="large" className="mx-2 h-[44px] !rounded-3xl !border-jz-blue !text-jz-blue ">领取干货</Button>
+            <Button block size="large" type="primary" className="mx-2 h-[44px] !rounded-3xl !bg-jz-blue">微信咨询</Button>
           </div>
         </div>
       </footer>
