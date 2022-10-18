@@ -1,0 +1,29 @@
+.logos{
+  @keyframes infinityScrollLeft {
+    0% {
+      transform: translate3d(0, 0, 0);
+    }
+    100% {
+      transform: translate3d(-8600px, 0, 0);
+    }
+  }
+
+  @keyframes infinityScroll {
+    0% {
+      transform: translate3d(-8600px, 0, 0);
+    }
+    50% {
+      transform: translate3d(0, 0, 0);
+    }
+    100% {
+      transform: translate3d(-3500px, 0, 0);
+    }
+  }
+
+  display: flex;
+  // margin: 0 16px;
+  max-width: calc(100vh - 32px);
+  margin: auto;
+  animation-name: infinityScrollLeft;
+  animation: infinityScrollLeft 150s linear infinite normal;
+}

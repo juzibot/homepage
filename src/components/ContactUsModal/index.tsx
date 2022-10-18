@@ -1,11 +1,12 @@
 import cx from "@src/utils/cx";
 import { Button, Form, Input, Modal } from "antd";
 import { useRouter } from "next/router";
-import { FC, useEffect, useState } from "react";
+import { FC, ReactElement, useEffect, useState } from "react";
 import { CloseOutlined } from '@ant-design/icons';
 import { getQrcode, RightIcon } from "../common/ContactModal";
 import styles from './index.module.scss';
 import axios from "axios";
+import React from "react";
 
 type Props = {
   visible?: boolean,
@@ -128,6 +129,7 @@ const ContactUsModal: FC<Props> = props => {
                     centered: true,
                     content: '提交成功，我们将在 24 小时内联系您！',
                     okText: '继续浏览',
+                    okButtonProps: { className: '!bg-[#0555FF] !border-[#0555FF]' },
                   });
                   props.onOk?.();
                 })
@@ -183,4 +185,22 @@ const ContactUsModal: FC<Props> = props => {
   );
 }
 
+const ContactUsModalWithButton: FC<{ children: ReactElement }> = ({
+  children
+}) => {
+  const [visible, setVisible] = useState(false);
+  const handleClick = () => setVisible(true);
+  return (
+    <>
+      {React.cloneElement(children, { onClick: handleClick })}
+      <ContactUsModal
+        visible={visible}
+        onCancel={() => setVisible(false)}
+        onOk={() => setVisible(false)}
+      />
+    </>
+  );
+};
+
+export { ContactUsModalWithButton };
 export default ContactUsModal;

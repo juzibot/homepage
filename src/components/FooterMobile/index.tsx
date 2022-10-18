@@ -6,6 +6,7 @@ import { useTranslation } from 'react-i18next';
 import cx from '@src/utils/cx';
 import { Collapse } from 'antd';
 import styles from './index.module.scss';
+import AppealBarMobile from '../index/AppealBarMobile';
 const { Panel } = Collapse; 
 
 const FooterMobile: NextPage = () => {
@@ -123,8 +124,9 @@ const FooterMobile: NextPage = () => {
   ];
   return (
     <>
-      <footer className={cx(i18n.language, styles.footer, 'py-10 bg-[#F9F9F9]')}>
-        <div className="pl-">
+      <footer className={cx(i18n.language, styles.footer, 'pb-10 bg-[#F9F9F9]')}>
+        <AppealBarMobile />
+        <div className="pl-2 pt-5">
           <Image
             src="https://cdn-official-website.juzibot.com/images/logo.svg"
             width={120}

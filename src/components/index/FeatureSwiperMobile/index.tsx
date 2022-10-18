@@ -55,7 +55,7 @@ const FeatureSwiperItem: NextPage<IFeatureSwiperItemProps> = ({
           </Link>
         </div>
       </div>
-      <div className="image mt-6">
+      <div className="flex justify-center mt-6">
         <Image
           src={iconUrl}
           draggable="false"

@@ -2,7 +2,6 @@ import { ISolutionItemProp } from '@src/interfaces';
 import { NextPage } from 'next';
 import { useEffect } from 'react';
 import Aos from 'aos';
-import Image from 'next/image';
 import { useTranslation } from 'react-i18next';
 import { LineWithDot } from '@src/components/LineWithDot';
 import cx from '@src/utils/cx';
@@ -34,14 +33,14 @@ export const SolutionItem: NextPage<ISolutionItemProp> = ({
         <LineWithDot fromColor={fromColor!} toColor={toColor!} className="mt-4 mb-2" />
         <p className="brief text-[#869BB9] text-sm">{brief}</p>
       </div>
-      <Image
-        className="solution-image"
-        src={imageUrl}
-        alt={title}
-        draggable="false"
-        width="560"
-        height="448"
-      />
+      <div className="flex justify-center">
+        <img
+          className="solution-image max-h-[300px] max-w-full"
+          src={imageUrl}
+          alt={title}
+          draggable="false"
+        />
+      </div>
     </div>
   );
 };

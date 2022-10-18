@@ -19,14 +19,15 @@
 }
 .content{
   overflow: auto;
-  max-height: 90vh;
+  max-height: 80vh;
   background: linear-gradient(163.68deg, rgba(102, 71, 255, 0.088) 0%, rgba(5, 85, 255, 0.088) 100%), #FFFFFF;
 }
 
 .input{
-  background: #FAFAFA;
-  border-radius: 4px;
-  border: 1px solid #EEEEEE;
+  background-color: #FAFAFA !important;
+  border-radius: 4px !important;
+  border: 1px solid #EEEEEE !important;
+  color: red;
 }
 
 .submit{
