@@ -25,20 +25,14 @@ const JuziApp: NextPage<AppProps> = ({ Component, pageProps }) => {
   }, []);
 
   const { i18n } = useTranslation('common');
-  const isSmallDevice = useMediaQuery('only screen and (max-width : 768px)');
-  const isMediumDevice = useMediaQuery('only screen and (min-width : 769px) and (max-width : 992px)');
-  const isLargeDevice = useMediaQuery('only screen and (min-width : 993px) and (max-width : 1200px)');
-  const isExtraLargeDevice = useMediaQuery('only screen and (min-width : 1201px)');
+  const isSmallDevice = useMediaQuery('only screen and (max-width : 600px)');
 
-  console.log('=isSmallDevice', isSmallDevice, isMediumDevice, isLargeDevice, isExtraLargeDevice);
-
-  console.log('[_app] render isSmallDevice', isSmallDevice);
   if (isSmallDevice) {
     return (
       <>
         <HeaderBarMobile />
         <div className={`app ${i18n.language}`}>
-          <Component {...pageProps} />
+          <Component {...pageProps} key='mobile' />
         </div>
         <FooterMobile />
         <style global jsx>{`
@@ -54,7 +48,7 @@ const JuziApp: NextPage<AppProps> = ({ Component, pageProps }) => {
     <>
       <HeaderBar />
       <div className={`app ${i18n.language}`}>
-        <Component {...pageProps} />
+        <Component {...pageProps} key='pc' />
       </div>
       <Footer />
       <Script

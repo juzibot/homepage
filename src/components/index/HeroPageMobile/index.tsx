@@ -17,9 +17,9 @@ const FeatureCard: NextPage<IFeatureCardProps> = (props) => {
           className="flex-shrink-0 w-[66px] h-[54px]"
           src={props.iconUrl}
         />
-        <h4 className="flex-1 text-jz-text-1 mb-3">{props.title}</h4>
+        <h4 className="flex-1 text-jz-text-1 text-[17px] mb-3">{props.title}</h4>
       </div>
-      <p className="subtitle">{props.subTitle}</p>
+      <p className="text-[15px]">{props.subTitle}</p>
     </div>
   );
 }
@@ -64,8 +64,8 @@ const HeroPage: NextPage = () => {
   return (
     <>
       <div className="px-4">
-        <h1 className="text-4xl text-center text-jz-text-1 mb-4">{t('slogan')}</h1>
-        <p>{t('description')}</p>
+        <h1 className="text-4xl text-center font-bold text-jz-text-1 mb-4">{t('slogan')}</h1>
+        <p className="text-[15px]">{t('description')}</p>
         <div className="bg-[#F9F9F9] rounded-3xl h-12 pl-4 pr-1 flex justify-between items-center max-w-[400px] mx-auto border border-solid border-[#EEEEEE]">
           <Input
             className="!bg-[#F9F9F9] !border-none hover:!border-0 focus:!border-0 focus:!shadow-none !placeholder-[#AAB9CA]"
@@ -92,7 +92,7 @@ const HeroPage: NextPage = () => {
         <div className="px-4 overflow-x-hidden">
           <div className={styles.logos}>
             {logos.map((item) => {
-              return <img className="mx-[10px] h-[72px]" key={item} src={item} alt="logo" draggable="false" />;
+              return <img className="mx-[10px] h-[72px]" key={item} src={item} alt="customer-logo" draggable="false" />;
             })}
           </div>
         </div>

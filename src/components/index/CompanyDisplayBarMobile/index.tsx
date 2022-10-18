@@ -7,6 +7,7 @@ import Aos from 'aos';
 import { debounce } from 'lodash';
 import { useTranslation } from 'react-i18next';
 import styles from './index.module.scss';
+import cx from '@src/utils/cx';
 
 console.log('styles', styles);
 
@@ -18,21 +19,21 @@ const SwiperItem: NextPage<ICompanyProps> = (props) => {
     }
   }, []);
   return (
-    <div className="feature-swiper-item bg-[#F9F9F9]" data-aos="fade-in">
+    <div className={cx('feature-swiper-item bg-[#F9F9F9]')} data-aos="fade-in">
       <div className="flex flex-col items-center">
-        <div className="w-[295px] h-[184px] flex flex-col justify-center items-center bg-white text-[#0555FF] rounded-3xl">
-          <div>
+        <div className={cx('w-[320px] h-[184px]  pt-[20px] flex flex-col justify-center items-center bg-white text-[#0555FF] rounded-3xl', styles.cardShadow)}>
+          <div className="flex items-end">
             <img src={props.iconUrl} className="mr-4" alt="" />
-            <span className="text-4xl font-bold">{props.title}</span>
+            <span className="text-4xl text-[44px] font-bold">{props.title}</span>
           </div>
-          <p className="mt-5 text-center text-lg ">{props.subTitle}</p>
+          <p className="mt-5 text-center text-lg text-[18px] font-semibold">{props.subTitle}</p>
         </div>
 
-        <div className="mt-8 flex flex-col items-center">
+        <div className="mt-10 flex flex-col items-center">
           <img src={props.companyLogoUrl} alt="" />
-          <div className="text-jz-text-1 text-2xl mb-4">{props.companyName}</div>
-          <p className="text-[#364256] text-center px-4 mb-8">{props.companyBrief}</p>
-          <span className="text-[#869BB9]">{t('company-read-more')}</span>
+          <div className="text-jz-text-1 text-2xl text-[21px] font-semibold mb-4">{props.companyName}</div>
+          <p className="text-[#364256] text-center text-[16px] px-4 mb-0">{props.companyBrief}</p>
+          <span className="text-[#869BB9] hidden">{t('company-read-more')}</span>
         </div>
       </div>
     </div>
@@ -75,8 +76,6 @@ const FeatureSwiperMobile: NextPage = () => {
     comment: t(`company-${index + 1}-comment`),
   }));
 
-  console.log('=======items', items)
-
   function autoplay(s?: SwiperType) {
     s = s || swiper;
     if (autoPlayInterval) {
@@ -89,7 +88,7 @@ const FeatureSwiperMobile: NextPage = () => {
       } else {
         s.slideNext(300);
       }
-    }, 6000);
+    }, 6000000);
     setAutoPlayInterval(_autoPlayInterval);
   }
 
@@ -107,7 +106,7 @@ const FeatureSwiperMobile: NextPage = () => {
 
   return (
     <div className="px-4 py-[72px] bg-[#F9F9F9]">
-      <h1 className="text-center mb-12 px-8"></h1>
+      <h1 className="text-center text-[30px] mb-12 px-8 font-bold">{t('company-display-title')}</h1>
       <div className="feature-swiper">
         <Swiper
           spaceBetween={0}

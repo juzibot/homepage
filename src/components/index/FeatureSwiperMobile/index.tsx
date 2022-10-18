@@ -39,11 +39,11 @@ const FeatureSwiperItem: NextPage<IFeatureSwiperItemProps> = ({
               alt="num"
             />
           </div>
-          <h2 className="text-jz-text-1 text-2xl text-center mb-4">{title}</h2>
+          <h2 className="text-jz-text-1 text-2xl text-[28px] text-center font-bold mb-4">{title}</h2>
         </div>
 
-        <h4 className="text-jz-text-1 text-center mb-4" data-swiper-parallax="-300">{subTitle}</h4>
-        <p className="text-[#869BB9] text-center text-sm" data-swiper-parallax="-200">
+        <h4 className="text-jz-text-1 text-center mb-4 text-[19px]" data-swiper-parallax="-300">{subTitle}</h4>
+        <p className="text-[#869BB9] text-center text-sm text-[15px]" data-swiper-parallax="-200">
           {brief}
         </p>
 

@@ -126,7 +126,7 @@ const FooterMobile: NextPage = () => {
     <>
       <footer className={cx(i18n.language, styles.footer, 'pb-10 bg-[#F9F9F9]')}>
         <AppealBarMobile />
-        <div className="pl-2 pt-5">
+        <div className="pl-2 pt-5 hidden">
           <Image
             src="https://cdn-official-website.juzibot.com/images/logo.svg"
             width={120}
@@ -136,7 +136,7 @@ const FooterMobile: NextPage = () => {
           />
         </div>
 
-        <div>
+        <div className="hidden">
           <Collapse
             ghost
             expandIconPosition="end"

@@ -12,7 +12,7 @@ import { useTranslation } from 'react-i18next';
 import MobileIndexPage from './index-mobile';
 
 const Home: NextPage = () => {
-  const isSmallDevice = useMediaQuery('only screen and (max-width : 768px)');
+  const isSmallDevice = useMediaQuery('only screen and (max-width : 600px)');
   const [width, setWidth] = useState(0);
   const SHOW_MASK_WINDOW_WIDTH = 1200;
   useEffect(() => {
