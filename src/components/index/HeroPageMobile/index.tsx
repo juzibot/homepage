@@ -7,14 +7,15 @@ import { Button, Input, message, Modal } from 'antd';
 import axios from 'axios';
 import { phoneErrMsg, phoneRegex } from '@src/components/ContactUsModal';
 import styles from './index.module.scss';
+import cx from '@src/utils/cx';
 
 const FeatureCard: NextPage<IFeatureCardProps> = (props) => {
   return (
-    <div className="border border-[#F2F6FF] border-solid rounded-2xl p-6 mt-6 shadow-sm">
+    <div className="border border-[#F2F6FF] border-solid rounded-2xl bg-white p-6 mt-6 shadow-sm">
       <div className="flex items-center">
         <img
           alt="icon"
-          className="flex-shrink-0 w-[66px] h-[54px]"
+          className="flex-shrink-0 w-[66px] h-[54px] -ml-2"
           src={props.iconUrl}
         />
         <h4 className="flex-1 text-jz-text-1 text-[17px] mb-3">{props.title}</h4>
@@ -63,10 +64,10 @@ const HeroPage: NextPage = () => {
 
   return (
     <>
-      <div className="px-4">
-        <h1 className="text-4xl text-center font-bold text-jz-text-1 mb-4">{t('slogan')}</h1>
-        <p className="text-[15px]">{t('description')}</p>
-        <div className="bg-[#F9F9F9] rounded-3xl h-12 pl-4 pr-1 flex justify-between items-center max-w-[400px] mx-auto border border-solid border-[#EEEEEE]">
+      <div className="">
+        <h1 className="px-4 text-4xl text-center font-bold text-jz-text-1 mb-4">{t('slogan')}</h1>
+        <p className="px-4 text-[15px]">{t('description')}</p>
+        <div className="px-4 bg-[#F9F9F9] rounded-3xl h-12 pl-4 pr-1 flex justify-between items-center max-w-[400px] mx-auto border border-solid border-[#EEEEEE]">
           <Input
             className="!bg-[#F9F9F9] !border-none hover:!border-0 focus:!border-0 focus:!shadow-none !placeholder-[#AAB9CA]"
             placeholder="输入手机号立刻开始"
@@ -82,41 +83,43 @@ const HeroPage: NextPage = () => {
             onClick={handleSubmit}
           >免费使用</Button>
         </div>
-        <div className="flex justify-center">
+        <div className="px-4 flex justify-center">
           <img className="mt-6 max-w-full" src="/static/index-picture-mobile.svg" alt="" />
         </div>
       </div>
 
-      <div className="px-4">
-        <h2 className="text-xl text-center text-jz-text-1 mt-6 mb-4">{t('logos-wall-title')}</h2>
+      <div className="">
+        <h2 className="px-4 text-xl text-center text-jz-text-1 mt-6 mb-4">{t('logos-wall-title')}</h2>
+
         <div className="px-4 overflow-x-hidden">
-          <div className={styles.logos}>
-            {logos.map((item) => {
-              return <img className="mx-[10px] h-[72px]" key={item} src={item} alt="customer-logo" draggable="false" />;
-            })}
+          <div className="relative border border-white border-solid">
+            <div className="absolute -left-1 h-full w-[30px] bg-gradient-to-r from-[#ffffff] to-transparent z-10"></div>
+            <div className="absolute -right-1 h-full w-[30px] bg-gradient-to-l from-[#ffffff] to-transparent z-10"></div>
+            <div className={cx(styles.logos)}>
+              {logos.map((item) => {
+                return <img className="mx-[10px] h-[72px]" key={item} src={item} alt="customer-logo" draggable="false" />;
+              })}
+            </div>
           </div>
         </div>
 
-        <div>
-          <div></div>
-        </div>
-        <div className="card-bannar">
+        <div className="px-4 pb-[72px] bg-[url(/static/icons/index-hero-feature-bg.svg)] bg-no-repeat bg-left-bottom bg-contain">
           <FeatureCard
-            iconUrl="https://cdn-official-website.juzibot.com/images/icons/cloud.png"
+            iconUrl="/static/icons/index-hero-feature-1.svg"
             title={t('card-1-title')}
             subTitle={t('card-1-subtitle')}
             iconWidth="93"
             iconHeight="77"
           />
           <FeatureCard
-            iconUrl="https://cdn-official-website.juzibot.com/images/icons/solution.png"
+            iconUrl="/static/icons/index-hero-feature-2.svg"
             title={t('card-2-title')}
             subTitle={t('card-2-subtitle')}
             iconWidth="92"
             iconHeight="85"
           />
           <FeatureCard
-            iconUrl="https://cdn-official-website.juzibot.com/images/icons/crown.png"
+            iconUrl="/static/icons/index-hero-feature-3.svg"
             title={t('card-3-title')}
             subTitle={t('card-3-subtitle')}
             iconWidth="92"
