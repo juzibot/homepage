@@ -15,7 +15,7 @@ const FeatureCard: NextPage<IFeatureCardProps> = (props) => {
       <div className="flex items-center">
         <img
           alt="icon"
-          className="flex-shrink-0 w-[66px] h-[54px] -ml-2"
+          className="flex-shrink-0 h-[54px] -ml-2"
           src={props.iconUrl}
         />
         <h4 className="flex-1 text-jz-text-1 text-[17px] mb-3">{props.title}</h4>
@@ -104,21 +104,21 @@ const HeroPage: NextPage = () => {
 
         <div className="px-4 pb-[72px] bg-[url(/static/icons/index-hero-feature-bg.svg)] bg-no-repeat bg-left-bottom bg-contain">
           <FeatureCard
-            iconUrl="/static/icons/index-hero-feature-1.svg"
+            iconUrl="/static/icons/index-hero-feature-1.png"
             title={t('card-1-title')}
             subTitle={t('card-1-subtitle')}
             iconWidth="93"
             iconHeight="77"
           />
           <FeatureCard
-            iconUrl="/static/icons/index-hero-feature-2.svg"
+            iconUrl="/static/icons/index-hero-feature-2.png"
             title={t('card-2-title')}
             subTitle={t('card-2-subtitle')}
             iconWidth="92"
             iconHeight="85"
           />
           <FeatureCard
-            iconUrl="/static/icons/index-hero-feature-3.svg"
+            iconUrl="/static/icons/index-hero-feature-3.png"
             title={t('card-3-title')}
             subTitle={t('card-3-subtitle')}
             iconWidth="92"

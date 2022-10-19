@@ -271,7 +271,7 @@ const FooterMobile: NextPage = () => {
               type="primary"
               className="mx-2 h-[44px] !rounded-3xl !bg-jz-blue !border-jz-blue"
               onClick={() => {
-                open('https://work.weixin.qq.com/kfid/kfc5cc63bb1c17cd40f');
+                open('https://work.weixin.qq.com/kfid/kfcbfceaec6e8e30afe');
               }}
             >微信咨询</Button>
           </div>
