@@ -88,7 +88,7 @@ const FeatureSwiperMobile: NextPage = () => {
       } else {
         s.slideNext(300);
       }
-    }, 6000000);
+    }, 6000);
     setAutoPlayInterval(_autoPlayInterval);
   }
 
