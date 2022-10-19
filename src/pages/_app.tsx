@@ -27,30 +27,13 @@ const JuziApp: NextPage<AppProps> = ({ Component, pageProps }) => {
   const { i18n } = useTranslation('common');
   const isSmallDevice = useMediaQuery('only screen and (max-width : 600px)');
 
-  if (isSmallDevice) {
-    return (
-      <>
-        <HeaderBarMobile />
-        <div className={`app ${i18n.language}`}>
-          <Component {...pageProps} key='mobile' />
-        </div>
-        <FooterMobile />
-        <style global jsx>{`
-          #__next {
-            min-width: auto;
-          }
-        `}</style>
-      </>
-    )
-  }
-
   return (
     <>
-      <HeaderBar />
+      {isSmallDevice ? <HeaderBarMobile /> : <HeaderBar />}
       <div className={`app ${i18n.language}`}>
-        <Component {...pageProps} key='pc' />
+        <Component {...pageProps} />
       </div>
-      <Footer />
+      {isSmallDevice ? <FooterMobile /> : <Footer />}
       <Script
         src="https://www.googletagmanager.com/gtag/js?id=G-855RJWL7LP"
         strategy="afterInteractive"
@@ -74,7 +57,7 @@ const JuziApp: NextPage<AppProps> = ({ Component, pageProps }) => {
           })();
         `}
       </Script>
-      <ContactButton />
+      {!isSmallDevice && <ContactButton />}
     </>
   );
 };

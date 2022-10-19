@@ -5,7 +5,7 @@
 @import '@styles/footer.module.scss';
 
 // @tailwind base;
-@tailwind components;
+// @tailwind components;
 @tailwind utilities;
 .redText{
   color: red;
@@ -22,6 +22,11 @@
 
 #__next {
   min-width: 1400px;
+}
+@media only screen and (max-width : 600px) {
+  #__next {
+    min-width: auto;
+  }
 }
 
 #contact-modal {
