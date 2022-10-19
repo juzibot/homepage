@@ -2,11 +2,9 @@
   max-width: none !important;
   padding: 0 !important;
   margin: 0 !important;
-
   position: fixed !important;
   bottom: 0 !important;
   top: auto !important;
-
   border-top-left-radius: 20px;
   border-top-right-radius: 20px;
   overflow: auto;
@@ -24,10 +22,7 @@
 }
 
 .input{
-  background-color: #FAFAFA !important;
   border-radius: 4px !important;
-  border: 1px solid #EEEEEE !important;
-  color: red;
 }
 
 .submit{
@@ -45,7 +40,6 @@
   width: 136px;
   height: 48px;
   background: #0555FF !important;
-  border-color: #0555FF !important;
   font-weight: 500;
 }
 

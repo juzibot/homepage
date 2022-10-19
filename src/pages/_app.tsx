@@ -1,5 +1,6 @@
 import type { AppProps } from 'next/app';
 import { appWithTranslation, useTranslation } from 'next-i18next';
+import 'antd/dist/antd.css';
 import '@styles/global.scss';
 import HeaderBar from '@src/components/HeaderBar';
 import { GetStaticProps, NextPage } from 'next';
@@ -13,7 +14,6 @@ import { useMediaQuery } from '@react-hookz/web';
 import HeaderBarMobile from '@src/components/HeaderBarMobile';
 import FooterMobile from '@src/components/FooterMobile';
 // import { juziAnalysis } from '@src/utils/analysis';
-import 'antd/dist/antd.css';
 
 
 const JuziApp: NextPage<AppProps> = ({ Component, pageProps }) => {

@@ -1,49 +1,15 @@
 import { NextPage } from 'next';
 import Image from 'next/image';
-import Link from 'next/link';
-import { IMenuItemProps } from '@src/interfaces';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { host } from '@src/config';
 import { useTranslation } from 'react-i18next';
-import { useRouter } from 'next/router';
-import { isBrowserChrome } from '@src/utils/isBrowserChrome';
-import { useShowModalMobile } from '@src/utils/showModalMobile';
 import cx from '@src/utils/cx';
 import ContactUsModal from '../ContactUsModal';
 
-
-const headerbarExtraClassMap: { [path: string]: string } = {
-  '/about-us': 'about-us',
-  '/features/': 'feature-page-header',
-  '/solutions/': 'feature-page-header',
-  '/culture': 'about-us',
-};
-
 const HeaderBarMobile: NextPage = () => {
-  const { t, i18n } = useTranslation(['common']);
-  const [borderBottomVisible, setBorderBottomVisible] = useState(false);
-  const [isChrome, setIsChrome] = useState(true);
-  const [headerbarExtraClass, setHeaderbarExtraClass] = useState('');
+  const { i18n } = useTranslation(['common']);
   const isZh = i18n.language === 'zh';
-  const { pathname } = useRouter();
   const [showContactUsModal, setShowContactUsModal] = useState(false);
-
-  useEffect(() => {
-    for (const path in headerbarExtraClassMap) {
-      if (pathname.includes(path)) {
-        setHeaderbarExtraClass(headerbarExtraClassMap[path]);
-      }
-    }
-  }, [pathname]);
-
-  useEffect(() => {
-    if (process.browser) {
-      window.addEventListener('scroll', () => {
-        setBorderBottomVisible(window.scrollY > 0);
-      });
-      setIsChrome(isBrowserChrome());
-    }
-  }, []);
 
   function changeLanguage() {
     location.href = host + (isZh ? '/en' : '/zh');
@@ -63,9 +29,13 @@ const HeaderBarMobile: NextPage = () => {
           {isZh ? 'EN' : '中文'}
           <img src="/static/icons/arrow.svg" alt="" />
         </span>
-        <img className="ml-4" src="/static/icons/contact-us.svg" alt="" onClick={() => setShowContactUsModal(true)}/>
-        <img className="ml-4" src="/static/icons/user.svg" alt="" onClick={() => setShowContactUsModal(true)}/>
-        <img className="ml-4 hidden" src="/static/icons/menu-more.svg" alt="" />
+        {isZh && (
+          <>
+            <img className="ml-4" src="/static/icons/contact-us.svg" alt="" onClick={() => setShowContactUsModal(true)} />
+            <img className="ml-4" src="/static/icons/user.svg" alt="" onClick={() => setShowContactUsModal(true)} />
+            <img className="ml-4 hidden" src="/static/icons/menu-more.svg" alt="" />
+          </>
+        )}
       </div>
       <ContactUsModal
         visible={showContactUsModal}

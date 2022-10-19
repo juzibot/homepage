@@ -41,7 +41,7 @@ const SwiperItem: NextPage<ICompanyProps> = (props) => {
 };
 
 const FeatureSwiperMobile: NextPage = () => {
-  const { t, i18n } = useTranslation(['homepage']);
+  const { t } = useTranslation(['homepage']);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [swiper, setSwiper] = useState<SwiperType | undefined>(undefined);
   const [autoPlayInterval, setAutoPlayInterval] = useState<NodeJS.Timer>();

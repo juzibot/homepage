@@ -1,21 +1,17 @@
-import cx from "@src/utils/cx";
-import { Button, Form, Input, Modal } from "antd";
+import { Modal } from "antd";
 import { useRouter } from "next/router";
-import { FC, ReactElement, useEffect, useState } from "react";
+import { FC, ReactElement, useState } from "react";
 import { CloseOutlined } from '@ant-design/icons';
 import { getQrcode, RightIcon } from "../common/ContactModal";
 import styles from './index.module.scss';
-import axios from "axios";
 import React from "react";
+import ContactForm from "../ContactForm";
 
 type Props = {
   visible?: boolean,
   onCancel?: () => void,
   onOk?: () => void,
 }
-
-export const phoneRegex = /^1\d{10}$/;
-export const phoneErrMsg = '手机号格式错误';
 
 const list = [
   {
@@ -45,13 +41,6 @@ const list = [
 
 const ContactUsModal: FC<Props> = props => {
   const router = useRouter();
-  const [submitting, setSubmitting] = useState(false);
-
-  useEffect(() => {
-    if (props.visible === false) {
-      setSubmitting(false);
-    }
-  }, [props.visible]);
 
   const handleCancel = () => {
     Modal.confirm({
@@ -113,72 +102,14 @@ const ContactUsModal: FC<Props> = props => {
             <p className="text-[#666666]">微信扫一扫，与陪跑数百家头部企业的顾问聊聊</p>
           </div>
         </div>
-
-
-        <div className="pt-8 px-6 pb-7 bg-white">
-          <h4 className="text-center text-lg">提交信息添加咨询顾问</h4>
-          <p className="text-center">咨询顾问会尽快与您取得联系</p>
-          <Form
-            className=""
-            onFinish={values => {
-              setSubmitting(true);
-              axios
-                .post('/api/contact', values)
-                .then(() => {
-                  Modal.success({
-                    centered: true,
-                    content: '提交成功，我们将在 24 小时内联系您！',
-                    okText: '继续浏览',
-                    okButtonProps: { className: '!bg-[#0555FF] !border-[#0555FF]' },
-                  });
-                  props.onOk?.();
-                })
-                .finally(() => setSubmitting(false));
-            }}
-          >
-            <Form.Item
-              label={null}
-              name="name"
-              rules={[{ required: true, message: '请填写姓名!' }]}
-            >
-              <Input size="large" placeholder="姓名" className={styles.input} maxLength={32} />
-            </Form.Item>
-            <Form.Item
-              label={null}
-              name="phone"
-              rules={[{ required: true, message: '请填写电话!' }, { pattern: phoneRegex, message: phoneErrMsg }]}
-            >
-              <Input size="large" placeholder="电话" className={styles.input} />
-            </Form.Item>
-            <Form.Item
-              label={null}
-              name="company"
-              rules={[{ required: true, message: '请填写公司!' }]}
-            >
-              <Input size="large" placeholder="公司" className={styles.input} maxLength={32} />
-            </Form.Item>
-            <Form.Item
-              label={null}
-              name="remark"
-              rules={[{ required: false }]}
-            >
-              <Input size="large" placeholder="备注" className={styles.input} maxLength={200} />
-            </Form.Item>
-            <Form.Item>
-              <Button
-                type="primary"
-                htmlType="submit"
-                block
-                size="large"
-                className={cx('!rounded-3xl !bg-[#0555FF] font-medium !h-12', styles.submit)}
-                loading={submitting}
-              >
-                立即提交
-              </Button>
-            </Form.Item>
-          </Form>
-          <p className="text-[#0555FF] text-center text-base mt-1 mb-0">已有账号，建议在网页版登录</p>
-        </div>
+        
+        <ContactForm
+          className="bg-white pb-3"
+          classNameForInput="!bg-[#FAFAFA] !border-[#EEEEEE]"
+          classNameForDesc="text-[16px]"
+          onOk={props.onOk}
+        />
+        <p className="bg-white text-[#0555FF] text-center text-base pt-0 pb-7 mb-0">已有账号，建议在网页版登录</p>
         <CloseOutlined className="absolute top-3 right-3 !text-[#AAB9CA] p-1 cursor-pointer" onClick={handleCancel} />
       </div>
     </Modal>

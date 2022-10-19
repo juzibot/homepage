@@ -5,9 +5,9 @@ import { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Button, Input, message, Modal } from 'antd';
 import axios from 'axios';
-import { phoneErrMsg, phoneRegex } from '@src/components/ContactUsModal';
 import styles from './index.module.scss';
 import cx from '@src/utils/cx';
+import { phoneErrMsg, phoneRegex } from '@src/utils/validatePhoneNum';
 
 const FeatureCard: NextPage<IFeatureCardProps> = (props) => {
   return (
@@ -33,7 +33,7 @@ const logos = Array(44)
   });
 
 const HeroPage: NextPage = () => {
-  const { t, i18n } = useTranslation(['homepage']);
+  const { t } = useTranslation(['homepage']);
   const [inputPhone, setInputPhone] = useState('');
   const [submitting, setSubmitting] = useState(false);
 
@@ -67,7 +67,7 @@ const HeroPage: NextPage = () => {
       <div className="">
         <h1 className="px-4 text-4xl text-center font-bold text-jz-text-1 mb-4">{t('slogan')}</h1>
         <p className="px-4 text-[15px]">{t('description')}</p>
-        <div className="px-4 bg-[#F9F9F9] rounded-3xl h-12 pl-4 pr-1 flex justify-between items-center max-w-[400px] mx-auto border border-solid border-[#EEEEEE]">
+        <div className="mx-4 px-4 bg-[#F9F9F9] rounded-3xl h-12 pl-4 pr-1 flex justify-between items-center max-w-[400px] border border-solid border-[#EEEEEE]">
           <Input
             className="!bg-[#F9F9F9] !border-none hover:!border-0 focus:!border-0 focus:!shadow-none !placeholder-[#AAB9CA]"
             placeholder="输入手机号立刻开始"
@@ -84,15 +84,15 @@ const HeroPage: NextPage = () => {
           >免费使用</Button>
         </div>
         <div className="px-4 flex justify-center">
-          <img className="mt-6 max-w-full" src="/static/index-picture-mobile.svg" alt="" />
+          <img className="mt-6 max-w-full" src="/static/index-picture-mobile.png" alt="" />
         </div>
       </div>
 
       <div className="">
         <h2 className="px-4 text-xl text-center text-jz-text-1 mt-6 mb-4">{t('logos-wall-title')}</h2>
 
-        <div className="px-4 overflow-x-hidden">
-          <div className="relative border border-white border-solid">
+        <div className="px-4 overflow-x-hidden bg-white">
+          <div className="relative border border-white border-solid overflow-hidden">
             <div className="absolute -left-1 h-full w-[30px] bg-gradient-to-r from-[#ffffff] to-transparent z-10"></div>
             <div className="absolute -right-1 h-full w-[30px] bg-gradient-to-l from-[#ffffff] to-transparent z-10"></div>
             <div className={cx(styles.logos)}>

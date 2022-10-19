@@ -9,11 +9,20 @@ import styles from './index.module.scss';
 import AppealBarMobile from '../index/AppealBarMobile';
 import { getQrcode } from '../common/ContactModal';
 import { useRouter } from 'next/router';
-const { Panel } = Collapse; 
+import { CloseOutlined } from '@ant-design/icons';
+import { useState } from 'react';
+import { useSessionStorageValue } from '@react-hookz/web';
+import ContactForm from '../ContactForm';
+import { ContactUsModalWithButton } from '../ContactUsModal';
 
+const { Panel } = Collapse;
 const FooterMobile: NextPage = () => {
   const { t, i18n } = useTranslation(['common']);
   const router = useRouter();
+
+  const [isCloseFixed, setIsCloseFixed] = useSessionStorageValue<boolean>('isCloseFixed');
+  const [isScanQrcode, setIsScanQrcode] = useState(true);
+  const isZh = i18n.language === 'zh';
 
   const menus: (IFooterMenu | undefined)[] = [
     {
@@ -30,37 +39,37 @@ const FooterMobile: NextPage = () => {
         },
         { title: t('footer-menu-1-4-title'), url: '/features/data-center' },
       ].concat(
-        i18n.language === 'zh'
+        isZh
           ? [
-              {
-                title: t('footer-menu-1-5-title'),
-                url: '/features/management',
-              },
-              { title: t('footer-menu-1-6-title'), url: '/features/security' },
-            ]
+            {
+              title: t('footer-menu-1-5-title'),
+              url: '/features/management',
+            },
+            { title: t('footer-menu-1-6-title'), url: '/features/security' },
+          ]
           : []
       ),
     },
-    i18n.language === 'zh'
+    isZh
       ? {
-          title: t('footer-menu-2-title'),
-          child: [
-            { title: t('footer-menu-2-1-title'), url: '/solutions/general' },
-            { title: t('footer-menu-2-2-title'), url: '/solutions/increase' },
-            { title: t('footer-menu-2-3-title'), url: '/solutions/operate' },
-            {
-              title: t('footer-menu-2-4-title'),
-              url: '/solutions/customer-service',
-            },
-            {
-              title: t('footer-menu-2-5-title'),
-              url: '/solutions/consumer-goods',
-            },
-            { title: t('footer-menu-2-6-title'), url: '/solutions/education' },
-            { title: t('footer-menu-2-7-title'), url: '/solutions/finance' },
-            { title: t('footer-menu-2-8-title'), url: '/solutions/health' },
-          ],
-        }
+        title: t('footer-menu-2-title'),
+        child: [
+          { title: t('footer-menu-2-1-title'), url: '/solutions/general' },
+          { title: t('footer-menu-2-2-title'), url: '/solutions/increase' },
+          { title: t('footer-menu-2-3-title'), url: '/solutions/operate' },
+          {
+            title: t('footer-menu-2-4-title'),
+            url: '/solutions/customer-service',
+          },
+          {
+            title: t('footer-menu-2-5-title'),
+            url: '/solutions/consumer-goods',
+          },
+          { title: t('footer-menu-2-6-title'), url: '/solutions/education' },
+          { title: t('footer-menu-2-7-title'), url: '/solutions/finance' },
+          { title: t('footer-menu-2-8-title'), url: '/solutions/health' },
+        ],
+      }
       : undefined,
     {
       title: t('footer-menu-3-title'),
@@ -125,9 +134,54 @@ const FooterMobile: NextPage = () => {
       url: 'https://www.5g-msg.com/',
     },
   ];
+
+  const fixedNode = (
+    <div className={cx('px-4 pt-8 pb-5 mx-4 bg-white rounded-lg mt-5 mb-7 relative', styles.footerFixedForm)}>
+      <CloseOutlined className="!text-[#AAB9CA] text-[18px] absolute top-4 right-4" onClick={() => setIsCloseFixed(true)}/>
+      {
+        isScanQrcode ? (
+          <div className="flex flex-col items-center justify-center bf-tr">
+            <p className="text-lg text-center font-medium mb-2">
+              <span className="text-jz-blue mr-1">10倍</span>
+              <span>提高你的私域运营效率</span>
+            </p>
+            <p className="text-[#54657E] text-[15px] text-center mb-2">微信扫一扫，与陪跑数百家头部企业的顾问聊聊</p>
+            <img src={getQrcode(router.pathname)} height={124} width={124} alt="" className="flex-shrink-0 mr-[10px]" />
+          </div>
+        ) : (
+          <ContactForm
+            className="bg-transparent pb-0 px-6"
+            classNameForTitle="!text-[#54657E]"
+            classNameForDesc="text-[#54657E]"
+            classNameForInput="!bg-white"
+          />
+        )
+      }
+      <div className="text-[#869BB9] text-center mt-5 flex items-center justify-center cursor-pointer" onClick={() => setIsScanQrcode(!isScanQrcode)}>
+        <svg
+          className="icon mr-1"
+          viewBox="0 0 1024 1024"
+          version="1.1"
+          xmlns="http://www.w3.org/2000/svg"
+          p-id="9463"
+          width="16"
+          height="16"
+        >
+          <path
+            d="M956.994933 307.22722c4.950755-11.95017 2.214435-25.705452-6.931876-34.851763L799.528576 121.840976l-45.227064 45.227064 95.941096 95.941096-722.30068 0 0 63.960731 799.507086 0C940.384627 326.969866 952.046225 319.179436 956.994933 307.22722zM959.430402 646.774543L159.923316 646.774543c-12.935614 0-24.596188 7.791453-29.54592 19.741623-4.950755 11.95017-2.214435 25.705452 6.931876 34.851763l150.534482 150.534482 45.227064-45.226041-95.941096-95.941096 722.30068 0L959.430402 646.774543z"
+            p-id="9464"
+            fill="#869BB9"
+          ></path>
+        </svg>
+        {isScanQrcode
+          ? '不方便扫码？去留联系方式'
+          : '立即聊聊？微信扫码'}
+      </div>
+    </div>
+  );
   return (
     <>
-      <footer className={cx(i18n.language, styles.footer, 'pb-10 bg-[#F9F9F9]')}>
+      <footer className={cx(i18n.language, styles.footer, 'pb-16 bg-[#F9F9F9]')}>
         <AppealBarMobile />
         <div className="pl-2 pt-5 hidden">
           <Image
@@ -205,18 +259,21 @@ const FooterMobile: NextPage = () => {
           </div>
         </div>
 
-        <div className='fixed bottom-0 bg-white w-full z-50'>
-        <div className="px-4 mx-4 py-5 bg-white rounded-lg flex mt-5 mb-7">
-          <img src={getQrcode(router.pathname)} height={124} width={124} alt="" className="flex-shrink-0 mr-[10px]" />
-          <div>
-            <p className="text-[#FF5E1E] text-2xl font-semibold mb-2">10倍</p>
-            <p className="text-[#FF5E1E] text-base  font-medium mb-2">提高你的私域运营效率</p>
-            <p className="text-[#666666]">微信扫一扫，与陪跑数百家头部企业的顾问聊聊</p>
-          </div>
-        </div>
-          <div className="px-4 flex h-[64px] items-center">
-            <Button block size="large" className="mx-2 h-[44px] !rounded-3xl !border-jz-blue !text-jz-blue ">领取干货</Button>
-            <Button block size="large" type="primary" className="mx-2 h-[44px] !rounded-3xl !bg-jz-blue">微信咨询</Button>
+        <div className={cx('fixed bottom-0 bg-transparent w-full z-50', { 'hidden': !isZh })}>
+          { !isCloseFixed && fixedNode }
+          <div className="px-4 flex h-[64px] items-center bg-white">
+            <ContactUsModalWithButton>
+              <Button block size="large" className="mx-2 h-[44px] !rounded-3xl !border-jz-blue !text-jz-blue ">领取干货</Button>
+            </ContactUsModalWithButton>
+            <Button
+              block
+              size="large"
+              type="primary"
+              className="mx-2 h-[44px] !rounded-3xl !bg-jz-blue !border-jz-blue"
+              onClick={() => {
+                open('https://work.weixin.qq.com/kfid/kfc5cc63bb1c17cd40f');
+              }}
+            >微信咨询</Button>
           </div>
         </div>
       </footer>
