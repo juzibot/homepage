@@ -44,7 +44,6 @@ const HeroPage: NextPage = () => {
   }, []);
 
   const handleSubmit = () => {
-    console.log('object', { name: '', phone: inputPhone, company: '', remark: '' });
     if (!phoneRegex.test(inputPhone)) {
       return message.info(phoneErrMsg);
     }
