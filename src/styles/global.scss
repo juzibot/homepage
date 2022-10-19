@@ -23,9 +23,23 @@
 #__next {
   min-width: 1400px;
 }
+body{
+  line-height: normal;
+}
+p{
+  margin: 0;
+  padding: 0;
+}
+
 @media only screen and (max-width : 600px) {
   #__next {
     min-width: auto;
+  }
+  body{
+    line-height: 1.5715;
+  }
+  p{
+    margin-bottom: 1rem;
   }
 }
 
