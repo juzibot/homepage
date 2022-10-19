@@ -31,7 +31,7 @@ export const SolutionItem: NextPage<ISolutionItemProp> = ({
       <div className="solution-content" style={style}>
         <div className="text-[#364256] text-[19px] font-medium"> {title} </div>
         <LineWithDot fromColor={fromColor!} toColor={toColor!} className="mt-3 mb-2" />
-        <p className="brief text-[#869BB9] text-[15px] text-sm">{brief}</p>
+        <p className="brief text-[#869BB9] text-[15px]">{brief}</p>
       </div>
       <div className="flex justify-center">
         <img
@@ -58,7 +58,7 @@ const SolutionPageMobile: NextPage = () => {
   return (
     <div className="mt-20 px-4">
       <h1 className="text-jz-text-1 text-3xl text-center mb-6 px-10 text-[30px] font-bold" data-aos="fade-in">{t('solution-title')}</h1>
-      <div className="solution-groups pl-[26px] pt-[34px] bg-[url(/static/index-line-mobile.svg)] bg-no-repeat">
+      <div className="solution-groups pl-[26px] pt-[34px] bg-[url(/static/index-line-mobile.svg)] bg-no-repeat mb-10">
         <SolutionItem
           title={t('solution-1-title')}
           brief={t('solution-1-content')}

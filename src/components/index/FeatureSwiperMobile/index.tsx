@@ -43,7 +43,7 @@ const FeatureSwiperItem: NextPage<IFeatureSwiperItemProps> = ({
         </div>
 
         <h4 className="text-jz-text-1 text-center mb-4 text-[19px]" data-swiper-parallax="-300">{subTitle}</h4>
-        <p className="text-[#869BB9] text-center text-sm text-[15px]" data-swiper-parallax="-200">
+        <p className="text-[#869BB9] text-center text-[15px]" data-swiper-parallax="-200">
           {brief}
         </p>
 
@@ -125,7 +125,7 @@ const FeatureSwiperMobile: NextPage = () => {
   }, []);
 
   return (
-    <div className="px-4 mt-6">
+    <div className="px-4 pt-6 pb-10 bg-[#FBFBFD]">
       <div className="feature-swiper">
         <Swiper
           spaceBetween={0}

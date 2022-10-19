@@ -88,7 +88,7 @@ const HeroPage: NextPage = () => {
       </div>
 
       <div className="">
-        <h2 className="px-4 text-xl text-center text-jz-text-1 mt-6 mb-4">{t('logos-wall-title')}</h2>
+        <h2 className="px-4 text-xl text-center text-jz-text-1 mt-[56px] mb-4">{t('logos-wall-title')}</h2>
 
         <div className="px-4 overflow-x-hidden bg-white">
           <div className="relative border border-white border-solid overflow-hidden">
@@ -102,7 +102,7 @@ const HeroPage: NextPage = () => {
           </div>
         </div>
 
-        <div className="px-4 pb-[72px] bg-[url(/static/icons/index-hero-feature-bg.svg)] bg-no-repeat bg-left-bottom bg-contain">
+        <div className="px-4 pb-[72px] mt-10 bg-[url(/static/icons/index-hero-feature-bg.svg)] bg-no-repeat bg-left-bottom bg-contain">
           <FeatureCard
             iconUrl="/static/icons/index-hero-feature-1.png"
             title={t('card-1-title')}
