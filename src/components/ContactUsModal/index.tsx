@@ -74,7 +74,7 @@ const ContactUsModal: FC<Props> = props => {
       <div className={styles.content}>
         <h2 className="px-6 mt-10 text-center text-2xl">不止工具，更多全方位支持</h2>
         <p className="px-6 text-center">
-          <span className="text-[#555555]">右侧扫码或提交信息添加咨询顾问，</span>
+          <span className="text-[#555555]">下方扫码或提交信息添加咨询顾问，</span>
           <span className="text-[#F5790D]"> 即刻领取 {`>>>`}</span>
         </p>
         {list.map(({ title, desc = [] }, i) => (
