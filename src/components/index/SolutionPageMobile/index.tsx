@@ -63,7 +63,7 @@ const SolutionPageMobile: NextPage = () => {
           title={t('solution-1-title')}
           brief={t('solution-1-content')}
           imagePosition="left"
-          imageUrl="https://cdn-official-website.juzibot.com/images/solution-01.svg"
+          imageUrl="/static/index-solution-1.png"
           dividerUrl="https://cdn-official-website.juzibot.com/images/solution-01-divider.svg"
           fromColor="#6547FF"
           toColor="rgba(101, 71, 255, 0)"
@@ -74,7 +74,7 @@ const SolutionPageMobile: NextPage = () => {
           title={t('solution-2-title')}
           brief={t('solution-2-content')}
           imagePosition="right"
-          imageUrl="https://cdn-official-website.juzibot.com/images/solution-02.svg"
+          imageUrl="/static/index-solution-2.png"
           dividerUrl="https://cdn-official-website.juzibot.com/images/solution-02-divider.svg"
           fromColor="#0555FF"
           toColor="rgba(5, 85, 255, 0)"
@@ -85,7 +85,7 @@ const SolutionPageMobile: NextPage = () => {
           title={t('solution-3-title')}
           brief={t('solution-3-content')}
           imagePosition="left"
-          imageUrl="https://cdn-official-website.juzibot.com/images/solution-03.svg"
+          imageUrl="/static/index-solution-3.png"
           dividerUrl="https://cdn-official-website.juzibot.com/images/solution-03-divider.svg"
           fromColor="#FC790D"
           toColor="rgba(252, 121, 13, 0)"
@@ -96,7 +96,7 @@ const SolutionPageMobile: NextPage = () => {
           title={t('solution-4-title')}
           brief={t('solution-4-content')}
           imagePosition="right"
-          imageUrl="https://cdn-official-website.juzibot.com/images/solution-04.svg"
+          imageUrl="/static/index-solution-4.png"
           dividerUrl="https://cdn-official-website.juzibot.com/images/solution-04-divider.svg"
           fromColor="#0DE492"
           toColor="rgba(13, 228, 146, 0)"

@@ -57,7 +57,8 @@ const FeatureSwiperItem: NextPage<IFeatureSwiperItemProps> = ({
       </div>
       <div className="flex justify-center mt-6">
         <Image
-          src={iconUrl}
+          // src={iconUrl}
+          src={`/static/index-feature-${index}.png`}
           draggable="false"
           width="608"
           height="544"
