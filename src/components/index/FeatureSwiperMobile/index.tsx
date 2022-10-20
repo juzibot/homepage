@@ -20,6 +20,7 @@ const FeatureSwiperItem: NextPage<IFeatureSwiperItemProps> = ({
   index,
   redirectUrl,
 }) => {
+  // TODO: fix here, remove this var is we don't need it
   void iconUrl
   useEffect(() => {
     if (process.browser) {
