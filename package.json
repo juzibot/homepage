@@ -12,6 +12,7 @@
     "cdn": "./script/upload_to_cdn.sh"
   },
   "dependencies": {
+    "@ant-design/icons": "^4.7.0",
     "@react-hookz/web": "^16.0.0",
     "antd": "^4.23.5",
     "aos": "^3.0.0-beta.6",

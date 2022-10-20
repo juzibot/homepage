@@ -47,6 +47,8 @@ const FeatureSwiperMobile: NextPage = () => {
   const [autoPlayInterval, setAutoPlayInterval] = useState<NodeJS.Timer>();
   const [documentVisible, setDocumentVisible] = useState(true);
   const [isChrome, toggleIsChrome] = useState(true);
+  // TODO: fix here, remove if this var is not used.
+  void isChrome
   const items: ICompanyProps[] = [
     {
       iconUrl: 'https://cdn-official-website.juzibot.com/images/icons/contact.svg',
