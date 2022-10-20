@@ -1,0 +1,60 @@
+.box{
+  max-width: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+
+  position: fixed !important;
+  bottom: 0 !important;
+  top: auto !important;
+
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  overflow: auto;
+  :global{
+    .ant-modal-body{
+      padding: 0 !important;
+      position: relative;
+    }
+  }
+}
+.content{
+  overflow: auto;
+  max-height: 85vh;
+  background: linear-gradient(163.68deg, rgba(102, 71, 255, 0.088) 0%, rgba(5, 85, 255, 0.088) 100%), #FFFFFF;
+}
+
+.input{
+  background-color: #FAFAFA !important;
+  border-radius: 4px !important;
+  border: 1px solid #EEEEEE !important;
+  color: red;
+}
+
+.submit{
+  box-shadow: 0px 35px 50px -15px rgba(52, 128, 239, 0.3)
+}
+
+.confirmModal{
+  :global{
+    .ant-modal-confirm-btns{
+      text-align: center !important;
+    }
+  }
+}
+.cancelButton{
+  width: 136px;
+  height: 48px;
+  background: #0555FF !important;
+  border-color: #0555FF !important;
+  font-weight: 500;
+}
+
+.okButton{
+  width: 136px;
+  height: 48px;
+  font-weight: 500;
+  &:hover{
+    color: #0555FF !important;
+    border-color: #0555FF !important;
+  }
+}

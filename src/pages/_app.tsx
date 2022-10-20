@@ -1,5 +1,6 @@
 import type { AppProps } from 'next/app';
 import { appWithTranslation, useTranslation } from 'next-i18next';
+import 'antd/dist/antd.css';
 import '@styles/global.scss';
 import HeaderBar from '@src/components/HeaderBar';
 import { GetStaticProps, NextPage } from 'next';
@@ -9,7 +10,11 @@ import { logHireInfo } from '@src/utils/hire';
 import { useEffect } from 'react';
 import Script from 'next/script';
 import { ContactButton } from '@src/components/common/Contact';
+import { useMediaQuery } from '@react-hookz/web';
+import HeaderBarMobile from '@src/components/HeaderBarMobile';
+import FooterMobile from '@src/components/FooterMobile';
 // import { juziAnalysis } from '@src/utils/analysis';
+
 
 const JuziApp: NextPage<AppProps> = ({ Component, pageProps }) => {
   useEffect(() => {
@@ -20,14 +25,15 @@ const JuziApp: NextPage<AppProps> = ({ Component, pageProps }) => {
   }, []);
 
   const { i18n } = useTranslation('common');
+  const isSmallDevice = useMediaQuery('only screen and (max-width : 600px)');
 
   return (
     <>
-      <HeaderBar />
+      {isSmallDevice ? <HeaderBarMobile /> : <HeaderBar />}
       <div className={`app ${i18n.language}`}>
         <Component {...pageProps} />
       </div>
-      <Footer />
+      {isSmallDevice ? <FooterMobile /> : <Footer />}
       <Script
         src="https://www.googletagmanager.com/gtag/js?id=G-855RJWL7LP"
         strategy="afterInteractive"
@@ -51,7 +57,7 @@ const JuziApp: NextPage<AppProps> = ({ Component, pageProps }) => {
           })();
         `}
       </Script>
-      <ContactButton />
+      {!isSmallDevice && <ContactButton />}
     </>
   );
 };

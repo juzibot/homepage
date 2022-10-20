@@ -35,6 +35,9 @@ export interface ISolutionItemProp {
   brief: string;
   imagePosition: 'left' | 'right';
   style?: CSSProperties;
+  fromColor?: string,
+  toColor?: string,
+  className?: string,
 }
 
 export interface ICompanyProps {
