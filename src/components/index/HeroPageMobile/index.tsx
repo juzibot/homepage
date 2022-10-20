@@ -83,7 +83,7 @@ const HeroPage: NextPage = () => {
           >免费使用</Button>
         </div>
         <div className="px-4 flex justify-center">
-          <img className="mt-6 max-w-full" src="/static/index-picture-mobile.png" alt="" />
+          <img className="mt-6 max-w-full" src="https://cdn-official-website.juzibot.com/images/index-picture-mobile.png" alt="" />
         </div>
       </div>
 
@@ -102,23 +102,23 @@ const HeroPage: NextPage = () => {
           </div>
         </div>
 
-        <div className="px-4 pb-[72px] mt-10 bg-[url(/static/icons/index-hero-feature-bg.svg)] bg-no-repeat bg-left-bottom bg-contain">
+        <div className="px-4 pb-[72px] mt-10 bg-[url(https://cdn-official-website.juzibot.com/images/icons/index-hero-feature-bg.svg)] bg-no-repeat bg-left-bottom bg-contain">
           <FeatureCard
-            iconUrl="/static/icons/index-hero-feature-1.png"
+            iconUrl="https://cdn-official-website.juzibot.com/images/icons/index-hero-feature-1.png"
             title={t('card-1-title')}
             subTitle={t('card-1-subtitle')}
             iconWidth="93"
             iconHeight="77"
           />
           <FeatureCard
-            iconUrl="/static/icons/index-hero-feature-2.png"
+            iconUrl="https://cdn-official-website.juzibot.com/images/icons/index-hero-feature-2.png"
             title={t('card-2-title')}
             subTitle={t('card-2-subtitle')}
             iconWidth="92"
             iconHeight="85"
           />
           <FeatureCard
-            iconUrl="/static/icons/index-hero-feature-3.png"
+            iconUrl="https://cdn-official-website.juzibot.com/images/icons/index-hero-feature-3.png"
             title={t('card-3-title')}
             subTitle={t('card-3-subtitle')}
             iconWidth="92"

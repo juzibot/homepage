@@ -27,13 +27,13 @@ const HeaderBarMobile: NextPage = () => {
       <div className="text-jz-text-3 font-medium flex">
         <span className="inline-flex" onClick={changeLanguage}>
           {isZh ? 'EN' : '中文'}
-          <img src="/static/icons/arrow.svg" alt="" />
+          <img src="https://cdn-official-website.juzibot.com/images/icons/arrow.svg" alt="" />
         </span>
         {isZh && (
           <>
-            <img className="ml-4" src="/static/icons/contact-us.svg" alt="" onClick={() => setShowContactUsModal(true)} />
-            <img className="ml-4" src="/static/icons/user.svg" alt="" onClick={() => setShowContactUsModal(true)} />
-            <img className="ml-4 hidden" src="/static/icons/menu-more.svg" alt="" />
+            <img className="ml-4" src="https://cdn-official-website.juzibot.com/images/icons/contact-us.svg" alt="" onClick={() => setShowContactUsModal(true)} />
+            <img className="ml-4" src="https://cdn-official-website.juzibot.com/images/icons/user.svg" alt="" onClick={() => setShowContactUsModal(true)} />
+            <img className="ml-4 hidden" src="https://cdn-official-website.juzibot.com/images/icons/menu-more.svg" alt="" />
           </>
         )}
       </div>

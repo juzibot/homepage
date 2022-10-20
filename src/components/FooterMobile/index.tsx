@@ -143,7 +143,7 @@ const FooterMobile: NextPage = () => {
               <span>提高你的私域运营效率</span>
             </p>
             <p className="text-[#54657E] text-[15px] text-center mb-2">微信扫一扫，与陪跑数百家头部企业的顾问聊聊</p>
-            <img src='/static/contact_us_mobile.png' height={124} width={124} alt="" className="flex-shrink-0 mr-[10px]" />
+            <img src='https://cdn-official-website.juzibot.com/images/contact_us_mobile.png' height={124} width={124} alt="" className="flex-shrink-0 mr-[10px]" />
           </div>
         ) : (
           <ContactForm

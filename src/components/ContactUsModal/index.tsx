@@ -92,7 +92,7 @@ const ContactUsModal: FC<Props> = props => {
         ))}
 
         <div className="px-4 mx-4 py-5 bg-white rounded-lg flex mt-5 mb-7">
-        <img src='/static/contact_us_mobile.png' height={124} width={124} alt="" className="flex-shrink-0 mr-[10px]" onClick={() => open('https://work.weixin.qq.com/kfid/kfcbfceaec6e8e30afe')} />
+        <img src='https://cdn-official-website.juzibot.com/images/contact_us_mobile.png' height={124} width={124} alt="" className="flex-shrink-0 mr-[10px]" onClick={() => open('https://work.weixin.qq.com/kfid/kfcbfceaec6e8e30afe')} />
           <div>
             <p className="text-[#FF5E1E] text-2xl font-semibold mb-2">10倍</p>
             <p className="text-[#FF5E1E] text-base  font-medium mb-2">提高你的私域运营效率</p>
