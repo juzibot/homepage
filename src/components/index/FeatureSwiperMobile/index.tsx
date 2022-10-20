@@ -20,6 +20,7 @@ const FeatureSwiperItem: NextPage<IFeatureSwiperItemProps> = ({
   index,
   redirectUrl,
 }) => {
+  void iconUrl
   useEffect(() => {
     if (process.browser) {
       Aos.init();
@@ -75,6 +76,8 @@ const FeatureSwiperMobile: NextPage = () => {
   const [autoPlayInterval, setAutoPlayInterval] = useState<NodeJS.Timer>();
   const [documentVisible, setDocumentVisible] = useState(true);
   const [isChrome, toggleIsChrome] = useState(true);
+  // TODO: fix here, remove if we don't need it
+  void isChrome
   let items: IFeatureSwiperItemProps[] = Array(5)
     .fill(null)
     .map((_, index) => ({

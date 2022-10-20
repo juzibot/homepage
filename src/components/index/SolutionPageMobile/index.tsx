@@ -47,6 +47,7 @@ export const SolutionItem: NextPage<ISolutionItemProp> = ({
 
 const SolutionPageMobile: NextPage = () => {
   const { t, i18n } = useTranslation(['homepage']);
+  void i18n
   useEffect(() => {
     if (process.browser) {
       Aos.init({
