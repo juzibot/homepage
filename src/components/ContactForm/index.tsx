@@ -85,5 +85,4 @@ const ContactForm: FC<Props> = props => {
   );
 }
 
-
 export default ContactForm;

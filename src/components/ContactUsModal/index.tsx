@@ -1,8 +1,7 @@
 import { Modal } from "antd";
-import { useRouter } from "next/router";
 import { FC, ReactElement, useState } from "react";
 import { CloseOutlined } from '@ant-design/icons';
-import { getQrcode, RightIcon } from "../common/ContactModal";
+import { RightIcon } from "../common/ContactModal";
 import styles from './index.module.scss';
 import React from "react";
 import ContactForm from "../ContactForm";
@@ -40,8 +39,6 @@ const list = [
 ];
 
 const ContactUsModal: FC<Props> = props => {
-  const router = useRouter();
-
   const handleCancel = () => {
     Modal.confirm({
       icon: null,

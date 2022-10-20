@@ -7,8 +7,6 @@ import cx from '@src/utils/cx';
 import { Button, Collapse } from 'antd';
 import styles from './index.module.scss';
 import AppealBarMobile from '../index/AppealBarMobile';
-import { getQrcode } from '../common/ContactModal';
-import { useRouter } from 'next/router';
 import { CloseOutlined } from '@ant-design/icons';
 import { useState } from 'react';
 import { useSessionStorageValue } from '@react-hookz/web';
@@ -18,7 +16,6 @@ import { ContactUsModalWithButton } from '../ContactUsModal';
 const { Panel } = Collapse;
 const FooterMobile: NextPage = () => {
   const { t, i18n } = useTranslation(['common']);
-  const router = useRouter();
 
   const [isCloseFixed, setIsCloseFixed] = useSessionStorageValue<boolean>('isCloseFixed');
   const [isScanQrcode, setIsScanQrcode] = useState(true);
