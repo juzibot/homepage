@@ -98,7 +98,7 @@ const FooterMobile: NextPage = () => {
         },
         {
           title: t('footer-menu-4-4-title'),
-          url: 'https://qiwei.juzibot.com/agreement',
+          url: 'https://miaohui.juzibot.com/agreement',
         },
         {
           title: t('footer-menu-4-5-title'),
