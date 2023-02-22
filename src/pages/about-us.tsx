@@ -286,22 +286,22 @@ const CustomerDisplay: NextPage = () => {
       <h1>我们的客户</h1>
       <div className="subtitle">以下为部分客户，排名不分前后</div>
 
-      <div className="category">互联网服务</div>
-      <img
-        src="https://cdn-official-website.juzibot.com/images/about-us/internal.png"
-        alt="internal"
-        draggable="false"
-      ></img>
       <div className="category">消费品牌</div>
       <img
-        src="https://cdn-official-website.juzibot.com/images/about-us/consumer.png"
+        src="https://cdn-official-website.juzibot.com/images/about-us/consumer-20220222.png"
         alt="consumer"
         draggable="false"
       ></img>
-      <div className="category">政务金融</div>
+      <div className="category">政务/金融/医疗</div>
       <img
-        src="https://cdn-official-website.juzibot.com/images/about-us/finance.png"
+        src="https://cdn-official-website.juzibot.com/images/about-us/finance-20220222.png"
         alt="finance"
+        draggable="false"
+      ></img>
+      <div className="category">互联网服务在线教育</div>
+      <img
+        src="https://cdn-official-website.juzibot.com/images/about-us/internal-20220222.png"
+        alt="internal"
         draggable="false"
       ></img>
     </>
