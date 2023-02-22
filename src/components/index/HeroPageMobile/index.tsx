@@ -8,6 +8,7 @@ import axios from 'axios';
 import styles from './index.module.scss';
 import cx from '@src/utils/cx';
 import { phoneErrMsg, phoneRegex } from '@src/utils/validatePhoneNum';
+import { indexLogos } from '@src/config';
 
 const FeatureCard: NextPage<IFeatureCardProps> = (props) => {
   return (
@@ -24,13 +25,6 @@ const FeatureCard: NextPage<IFeatureCardProps> = (props) => {
     </div>
   );
 }
-
-const logos = Array(44)
-  .fill(null)
-  .map((_, index) => {
-    return `https://cdn-official-website.juzibot.com/images/index-logos/${index + 1
-      }.png`;
-  });
 
 const HeroPage: NextPage = () => {
   const { t } = useTranslation(['homepage']);
@@ -95,7 +89,7 @@ const HeroPage: NextPage = () => {
             <div className="absolute -left-1 h-full w-[30px] bg-gradient-to-r from-[#ffffff] to-transparent z-10"></div>
             <div className="absolute -right-1 h-full w-[30px] bg-gradient-to-l from-[#ffffff] to-transparent z-10"></div>
             <div className={cx(styles.logos)}>
-              {logos.map((item) => {
+              {indexLogos.map((item) => {
                 return <img className="mx-[10px] h-[72px]" key={item} src={item} alt="customer-logo" draggable="false" />;
               })}
             </div>
