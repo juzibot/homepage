@@ -300,7 +300,7 @@ const CustomerDisplay: NextPage = () => {
       ></img>
       <div className="category">互联网服务在线教育</div>
       <img
-        src="https://cdn-official-website.juzibot.com/images/about-us/internal-20220222.png"
+        src="https://cdn-official-website.juzibot.com/images/about-us/internal-20230316.png"
         alt="internal"
         draggable="false"
       ></img>
