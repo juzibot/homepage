@@ -1,0 +1,17 @@
+.box {
+  :global{
+    .ant-modal-content{
+      border-radius: 20px;
+      overflow: hidden;
+    }
+    .ant-modal-body{
+      height: 400px;
+      padding: 0 !important;
+
+    }
+  }
+}
+
+.content {
+  background: linear-gradient(rgba(102, 71, 255, 0.1), rgba(5, 85, 255, 0), white);
+}

@@ -35,7 +35,9 @@
     }
   }
 }
-
+.index-page-new {
+  background-image: url('/_images/background-new.svg');
+}
 .index-page {
   width: 100%;
   padding-top: calc(64px + 12px);
@@ -74,6 +76,48 @@
         font-size: 16px;
         line-height: 180%;
         color: #869bb9;
+      }
+
+      .start-button {
+        margin-top: 54px;
+      }
+    }
+  }
+
+  .hero-page-new-bg{
+    background: linear-gradient(#FF3234, #DD0000);
+    padding-top: 76px;
+  }
+  .hero-page-new {
+    width: 1200px;
+    height: 500px;
+    display: flex;
+    justify-content: space-between;
+    background-image: url('/_images/index-picture-new.svg');
+    background-repeat: no-repeat;
+    background-position: right;
+    margin: auto;
+    color: white;
+
+    .bannar {
+      padding-top: 72px;
+      .slogan {
+        font-family: PingFang SC;
+        font-style: normal;
+        font-weight: 600;
+        font-size: 56px;
+        color: white;
+      }
+
+      .description {
+        margin-top: 32px;
+        max-width: 620px;
+        font-family: PingFang SC;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 16px;
+        line-height: 180%;
+        color: white;
       }
 
       .start-button {

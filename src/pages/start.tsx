@@ -1,8 +1,10 @@
 import { useMediaQuery } from '@react-hookz/web';
 import Seo from '@src/components/common/Seo';
-import AppealBarNew from '@src/components/index/AppealBarNew';
-import HeroPageNew from '@src/components/index/HeroPageNew';
-import SolutionPageNew from '@src/components/index/SolutionPageNew';
+import AppealBar from '@src/components/index/AppealBar';
+import CompanyDisplayBar from '@src/components/index/CompanyDisplayBar/index';
+import FeatureSwiper from '@src/components/index/FeatureSwiper';
+import HeroPage from '@src/components/index/HeroPage';
+import SolutionPage from '@src/components/index/SolutionPage';
 import type { GetStaticProps, NextPage } from 'next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { useEffect, useState } from 'react';
@@ -11,7 +13,8 @@ import MobileIndexPage from './index-mobile';
 
 const Home: NextPage = () => {
   const isSmallDevice = useMediaQuery('only screen and (max-width : 600px)');
-  const [, setWidth] = useState(0);
+  const [width, setWidth] = useState(0);
+  const SHOW_MASK_WINDOW_WIDTH = 1200;
   useEffect(() => {
     if (process.browser) {
       window.addEventListener('resize', () =>
@@ -28,21 +31,42 @@ const Home: NextPage = () => {
   return (
     <div className={i18n.language}>
       <Seo page="homepage" />
-      <div className="wrapper index-page !p-0 bg-[url('/_images/background-red.svg')]">
-        <div className="container !w-full">
-          <HeroPageNew />
+      <div className="wrapper index-page">
+        <div className="container">
+          <HeroPage />
+        </div>
+      </div>
+
+      <div className="wrapper feature-page">
+        <div className="container">
+          <div
+            className="mask-wrapper"
+            style={{
+              visibility: width > SHOW_MASK_WINDOW_WIDTH ? 'visible' : 'hidden',
+            }}
+          >
+            <div className="mask" />
+            <div className="mask-reverse" />
+          </div>
+          <FeatureSwiper />
         </div>
       </div>
 
       <div className="wrapper solution-page">
         <div className="container">
-          <SolutionPageNew />
+          <SolutionPage />
         </div>
       </div>
 
-      <div className="wrapper appeal-bar-new">
+      <div className="wrapper company-display">
         <div className="container">
-          <AppealBarNew />
+          <CompanyDisplayBar />
+        </div>
+      </div>
+
+      <div className="wrapper appeal-bar">
+        <div className="container">
+          <AppealBar />
         </div>
       </div>
     </div>
