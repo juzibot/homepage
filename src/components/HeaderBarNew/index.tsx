@@ -146,7 +146,7 @@ const WeworkBar: NextPage<{ isWhiteIcon: boolean }> = ({ isWhiteIcon }) => {
       <a target="_blank" rel="noreferrer">
         <div className="wework-bar">
           <Image
-            src={isWhiteIcon ? '/_images/icons/wework-white.svg' : 'https://cdn-official-website.juzibot.com/images/icons/wework.svg'}
+            src={isWhiteIcon ? 'https://cdn-official-website.juzibot.com/images/icons/wework-white.svg' : 'https://cdn-official-website.juzibot.com/images/icons/wework.svg'}
             width="20"
             height="20"
             alt="wework-icon"
@@ -228,7 +228,7 @@ const HeaderBar: NextPage = () => {
             <a className="logo" href={host}>
               <Image
                 alt="logo"
-                src={borderBottomVisible ? 'https://cdn-official-website.juzibot.com/images/logo.png' : '/_images/logo-white.svg'}
+                src={borderBottomVisible ? 'https://cdn-official-website.juzibot.com/images/logo.png' : 'https://cdn-official-website.juzibot.com/images/logo-white.svg'}
                 width={106}
                 height={64}
                 draggable="false"

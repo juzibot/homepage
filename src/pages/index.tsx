@@ -28,7 +28,7 @@ const Home: NextPage = () => {
   return (
     <div className={i18n.language}>
       <Seo page="homepage" />
-      <div className="wrapper index-page !p-0 bg-[url('/_images/background-red.svg')]">
+      <div className="wrapper index-page !p-0 bg-[url('https://cdn-official-website.juzibot.com/images/background-red.svg')]">
         <div className="container !w-full">
           <HeroPageNew />
         </div>

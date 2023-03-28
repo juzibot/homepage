@@ -89,7 +89,7 @@ const HeroPage: NextPage = () => {
           />
           <FeatureCard
             className={styles.card}
-            iconUrl="/_images/icons/security.png"
+            iconUrl="https://cdn-official-website.juzibot.com/images/icons/security.png"
             title="安全·可靠的数据保护"
             subTitle="句子互动支持私有化部署，部署过程简单、规范。全方面的保护你的企业数据。安全、放心的提升企业服务效率"
             iconWidth="92"

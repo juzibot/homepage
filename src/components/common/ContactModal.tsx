@@ -38,7 +38,7 @@ export function getQrcode(routerPathname: string) {
       res = map[s];
     }
   });
-  return `/_images/qrcodes/官网弹窗${res}.png`;
+  return `https://cdn-official-website.juzibot.com/images/qrcodes/官网弹窗${res}.png`;
 }
 
 const DetentionModal: NextPage<{
