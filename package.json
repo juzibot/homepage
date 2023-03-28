@@ -14,7 +14,7 @@
   "dependencies": {
     "@ant-design/icons": "^4.7.0",
     "@react-hookz/web": "^16.0.0",
-    "antd": "^4.23.5",
+    "antd": "^4.24.8",
     "aos": "^3.0.0-beta.6",
     "axios": "^0.25.0",
     "classnames": "^2.3.2",

@@ -20,3 +20,26 @@
     }
   }
 }
+
+.appeal-bar-new {
+  background-image: url('https://cdn-official-website.juzibot.com/images/appeal-background-red.svg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  padding: 72px 0;
+
+  .container > .content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .title {
+      font-size: 28px;
+      line-height: 40px;
+      color: #ffffff;
+      margin-bottom: 36px;
+      font-weight: 500;
+    }
+  }
+}
