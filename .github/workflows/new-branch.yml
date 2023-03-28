@@ -1,10 +1,10 @@
-name: main-build-deploy
+name: new-page-deploy
 on:
   push:
     branches:
-      - main
+      - new
 env:
-  REPO: juzi-official-website
+  REPO: juzi-official-website-new
   ECR_URL: ${{ secrets.ECR_URL }}
 
 jobs:
