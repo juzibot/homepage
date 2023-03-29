@@ -4,9 +4,9 @@ import { NextPage } from 'next';
 import { useEffect } from 'react';
 import Image from 'next/image';
 import { useTranslation } from 'react-i18next';
-import { useShowModal } from '@src/utils/showModal';
 import LogosWallNew from '../LogosWallNew';
 import styles from './index.module.scss';
+import { ContactUsPureModalWithButton } from '@src/components/ContactUsPureModal';
 
 export const FeatureCard: NextPage<IFeatureCardProps> = ({
   title,
@@ -41,7 +41,6 @@ const HeroPage: NextPage = () => {
       Aos.init();
     }
   }, []);
-  const showModal = useShowModal();
   return (
     <>
       <div className="hero-page-new-bg">
@@ -54,9 +53,11 @@ const HeroPage: NextPage = () => {
               以客户体验为核心目标，贯穿场景化服务体系
             </h1>
             <div className="description">句子互动打通主流的通信工具和社交平台，帮助社区和金融行业建立以服务群众、客户沟通为核心的服务体系，高效触达与深度连接数以千万计的人群，让沟通事半功倍。</div>
-            <button className="white-button-pure start-button bg-white text-red !shadow-none" onClick={showModal}>
-              {t('start-free')}
-            </button>
+            <ContactUsPureModalWithButton>
+              <button className="white-button-pure start-button bg-white text-red !shadow-none">
+                {t('start-free')}
+              </button>
+            </ContactUsPureModalWithButton>
           </div>
         </div>
       </div>
