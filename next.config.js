@@ -9,6 +9,7 @@ module.exports = {
   images: {
     domains: ['cdn-official-website.juzibot.com'],
   },
+  assetPrefix: "enStatic",
   async redirects() {
     return [
       {
