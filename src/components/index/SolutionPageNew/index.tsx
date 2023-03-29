@@ -69,7 +69,7 @@ const SolutionPage: NextPage = () => {
       <div className="solution-groups">
         <SolutionItem
           title="AI智能知识库快速定位最佳回答"
-          brief="句子互动基于ChatGPT开发的智能问答系统，收集各类高频问题的最佳答案，让你在服务人群时事半功倍"
+          brief="句子互动基于大模型开发的智能问答系统，收集各类高频问题的最佳答案，让你在服务人群时事半功倍"
           imagePosition="left"
           imageUrl="https://cdn-official-website.juzibot.com/images/solution-05-divider.svg"
           dividerUrl="https://cdn-official-website.juzibot.com/images/solution-03-divider.svg"

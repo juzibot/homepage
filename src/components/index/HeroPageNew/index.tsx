@@ -47,12 +47,12 @@ const HeroPage: NextPage = () => {
         <div className="hero-page-new" data-aos="fade-in">
           <div className="bannar">
             <h1
-              className="slogan max-w-[546px]"
+              className="slogan max-w-[566px]"
               style={{ fontSize: language === 'en' ? 36 : 46 }}
             >
-              以客户体验为核心目标，贯穿场景化服务体系
+              面向大组织的对话式营销云
             </h1>
-            <div className="description">句子互动打通主流的通信工具和社交平台，帮助社区和金融行业建立以服务群众、客户沟通为核心的服务体系，高效触达与深度连接数以千万计的人群，让沟通事半功倍。</div>
+            <div className="description">面向大组织的对话式营销云，助力互联网时代党政军、央国企等大型组织建立以社交关系为核心的营销体系，高效触达与深度连接数以千万计的老百姓和终端用户，让消息触达和营销事半功倍。全力助力大型组织实现高效的数智化转型。</div>
             <ContactUsPureModalWithButton>
               <button className="white-button-pure start-button bg-white text-red !shadow-none">
                 {t('start-free')}

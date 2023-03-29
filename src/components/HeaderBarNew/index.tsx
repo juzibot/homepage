@@ -237,7 +237,7 @@ const HeaderBar: NextPage = () => {
               </HeaderMenu>
             )}
             {isZh && <HeaderMenu onClick={handleClickHideMenu}>{t('cases')}</HeaderMenu>}
-            <HeaderMenu onClick={handleClickHideMenu}>
+            <HeaderMenu href="https://blog.juzibot.com/" linkTarget="_blank">
               {t('course')}
             </HeaderMenu>
             <HeaderMenu href="https://wechaty.js.org/" linkTarget="_blank">
