@@ -67,11 +67,9 @@ jobs:
           key: ${{ secrets.KEY }}
           port: ${{ secrets.PORT }}
           script: |
-            export CI_VERSION=${{ needs.build.outputs.version }}
-            echo $CI_VERSION
             mkdir -p ${{ secrets.DEPLOY_DIR }}
             cd ${{ secrets.DEPLOY_DIR }}
-            sed -i -r 's/${{ env.REPO }}:[0-9a-z]{40}/${{ env.REPO }}:$CI_VERSION/g' docker-compose.yml
+            sed -i -r 's/${{ env.REPO }}:[0-9a-z]{40}/${{ env.REPO }}:${{ needs.build.outputs.version }}/g' docker-compose.yml
             AWS_CLI_MAJOR_VERSION=$(aws --version 2>&1 | cut -d " " -f1 | cut -d "/" -f2 | cut -d "." -f1)
             if [ "$AWS_CLI_MAJOR_VERSION" = "1" ]; then
                 $(aws ecr get-login --no-include-email --region cn-northwest-1)
