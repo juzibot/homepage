@@ -14,9 +14,6 @@ import FooterMobile from '@src/components/FooterMobile';
 import HeaderBarNew from '@src/components/HeaderBarNew';
 import FooterNew from '@src/components/FooterNew';
 import { useRouter } from 'next/router';
-import HeaderBar from '@src/components/HeaderBar';
-import { Footer } from 'antd/lib/layout/layout';
-import { ContactButton } from '@src/components/common/Contact';
 // import { juziAnalysis } from '@src/utils/analysis';
 
 
@@ -31,23 +28,18 @@ const JuziApp: NextPage<AppProps> = ({ Component, pageProps }) => {
   const { i18n } = useTranslation('common');
   const isSmallDevice = useMediaQuery('only screen and (max-width : 600px)');
   const { pathname } = useRouter();
-  const isNewIndex = ['/', 'index', '/zh', '/zh/index'].includes(pathname) && i18n.language === 'zh';
 
   if (pathname === '/_version') {
     return <Component {...pageProps} />
   }
 
-  const PcHeader = isNewIndex ? <HeaderBarNew /> : <HeaderBar />;
-  const PcFooter = isNewIndex ? <FooterNew /> : <Footer />;
-  const PcContactButton = isNewIndex ? <ContactButtonNew /> : <ContactButton />;
-
   return (
     <>
-      {isSmallDevice ? <HeaderBarMobile /> : PcHeader }
+      {isSmallDevice ? <HeaderBarMobile /> : <HeaderBarNew /> }
       <div className={`app ${i18n.language}`}>
         <Component {...pageProps} />
       </div>
-      {isSmallDevice ? <FooterMobile /> : PcFooter}
+      {isSmallDevice ? <FooterMobile /> : <FooterNew />}
       <Script
         src="https://www.googletagmanager.com/gtag/js?id=G-855RJWL7LP"
         strategy="afterInteractive"
@@ -71,7 +63,7 @@ const JuziApp: NextPage<AppProps> = ({ Component, pageProps }) => {
           })();
         `}
       </Script>
-      {!isSmallDevice && PcContactButton}
+      {!isSmallDevice && <ContactButtonNew />}
     </>
   );
 };

@@ -202,20 +202,13 @@ const HeaderBar: NextPage = () => {
 
   const isNewIndex = ['/', 'index', '/zh', '/zh/index'].includes(pathname) && i18n.language === 'zh';
 
-  let boxClass = 'header-bar-new';
-  if (borderBottomVisible) {
-    boxClass = 'header-bar-new-sticky';
-  }
-
-  if (!isNewIndex) {
-    boxClass = 'header-bar-new-sticky';
-  }
+  const isRedStyle = !borderBottomVisible && isNewIndex;
 
   return (
     <div className={i18n.language}>
       <header
         className={`wrapper ${!isChrome ? 'opacity' : ''
-          } ${headerbarExtraClass} ${borderBottomVisible ? 'has-bg ' : ''} ${boxClass}`}
+          } ${headerbarExtraClass} ${isRedStyle ? 'header-bar-new' : 'header-bar-new-sticky has-bg'}`}
       >
         <div className="container">
           <div style={{ display: 'none' }}>
@@ -228,13 +221,13 @@ const HeaderBar: NextPage = () => {
             <a className="logo" href={host}>
               <Image
                 alt="logo"
-                src={borderBottomVisible ? 'https://cdn-official-website.juzibot.com/images/logo.png' : 'https://cdn-official-website.juzibot.com/images/logo-white.svg'}
+                src={isRedStyle ? 'https://cdn-official-website.juzibot.com/images/logo-white.svg' : 'https://cdn-official-website.juzibot.com/images/logo.png'}
                 width={106}
                 height={64}
                 draggable="false"
               ></Image>
             </a>
-            {isZh && <WeworkBar isWhiteIcon={!borderBottomVisible && isNewIndex} />}
+            {isZh && <WeworkBar isWhiteIcon={isRedStyle} />}
             <HeaderMenu hasArrow onClick={handleClickHideMenu}>
               {t('products')}
             </HeaderMenu>
