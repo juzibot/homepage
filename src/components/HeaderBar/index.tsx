@@ -340,7 +340,7 @@ const HeaderBar: NextPage = () => {
   }, []);
 
   function changeLanguage() {
-    location.href = host + (isZh ? '/en' : '/zh');
+    location.href = host + (isZh ? '/en/start' : '/');
   }
 
   return (

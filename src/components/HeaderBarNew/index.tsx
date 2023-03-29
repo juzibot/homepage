@@ -193,21 +193,21 @@ const HeaderBar: NextPage = () => {
   }, []);
 
   function changeLanguage() {
-    location.href = host + (isZh ? '/en' : '/zh');
+    location.href = host + (isZh ? '/en/start' : '/');
   }
 
   const handleClickHideMenu = () => {
     setShowContactUs(true);
   }
 
-  const isIndex = pathname === '/' || pathname.startsWith('/index');
+  const isNewIndex = ['/', 'index', '/zh', '/zh/index'].includes(pathname) && i18n.language === 'zh';
 
   let boxClass = 'header-bar-new';
   if (borderBottomVisible) {
     boxClass = 'header-bar-new-sticky';
   }
 
-  if (!isIndex) {
+  if (!isNewIndex) {
     boxClass = 'header-bar-new-sticky';
   }
 
@@ -234,7 +234,7 @@ const HeaderBar: NextPage = () => {
                 draggable="false"
               ></Image>
             </a>
-            {isZh && <WeworkBar isWhiteIcon={!borderBottomVisible && isIndex} />}
+            {isZh && <WeworkBar isWhiteIcon={!borderBottomVisible && isNewIndex} />}
             <HeaderMenu hasArrow onClick={handleClickHideMenu}>
               {t('products')}
             </HeaderMenu>

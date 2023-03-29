@@ -9,6 +9,10 @@ module.exports = {
   images: {
     domains: ['cdn-official-website.juzibot.com'],
   },
+  publicRuntimeConfig: {
+    appVersion: process.env.npm_package_version,
+    startTime: new Date().toLocaleString(),
+  },
   async redirects() {
     return [
       {
@@ -19,6 +23,11 @@ module.exports = {
       {
         source: '/about.html',
         destination: '/about-us',
+        permanent: true,
+      },
+      {
+        source: '/en',
+        destination: '/en/start',
         permanent: true,
       },
     ];
