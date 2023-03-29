@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set +e
 
-imageName='juzi-official-website'
+imageName='juzi-official-website-new'
 
 # ECR_URL from CI build job
 
