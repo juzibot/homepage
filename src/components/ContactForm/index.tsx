@@ -11,9 +11,6 @@ type Props = {
   classNameForTitle?: string,
   classNameForDesc?: string,
   classNameForInput?: string,
-  classNameForSubmit?: string,
-  hideTitle?: boolean,
-  hideDesc?: boolean,
   onCancel?: () => void,
   onOk?: () => void,
 }
@@ -24,8 +21,8 @@ const ContactForm: FC<Props> = props => {
 
   return (
     <div className={cx('pt-8 px-6 pb-7 bg-white', props.className)}>
-      { !props.hideTitle && <h4 className={cx('text-center text-lg text-[#333333]', props.classNameForTitle)}>提交信息添加咨询顾问</h4> }
-      { !props.hideDesc && <p className={cx('text-center mb-8 text-[#666666]', props.classNameForDesc)}>咨询顾问会尽快与您取得联系</p> }
+      <h4 className={cx('text-center text-lg text-[#333333]', props.classNameForTitle)}>提交信息添加咨询顾问</h4>
+      <p className={cx('text-center mb-8 text-[#666666]', props.classNameForDesc)}>咨询顾问会尽快与您取得联系</p>
       <Form
         onFinish={values => {
           setSubmitting(true);
@@ -77,7 +74,7 @@ const ContactForm: FC<Props> = props => {
             htmlType="submit"
             block
             size="large"
-            className={cx('!rounded-3xl !bg-[#0555FF] font-medium !h-12', styles.submit, props.classNameForSubmit)}
+            className={cx('!rounded-3xl !bg-[#0555FF] font-medium !h-12', styles.submit)}
             loading={submitting}
           >
             立即提交

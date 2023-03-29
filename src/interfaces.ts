@@ -17,7 +17,6 @@ export interface IFeatureCardProps {
   redirectUrl?: string;
   iconWidth: string;
   iconHeight: string;
-  className?: string;
 }
 
 export interface IFeatureSwiperItemProps {
@@ -56,7 +55,6 @@ export interface ICompanyProps {
 
 export interface IFooterMenu {
   title: string;
-  isDisable?: boolean;
   child: {
     title: string;
     url?: string;

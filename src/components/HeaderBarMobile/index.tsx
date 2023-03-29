@@ -12,7 +12,7 @@ const HeaderBarMobile: NextPage = () => {
   const [showContactUsModal, setShowContactUsModal] = useState(false);
 
   function changeLanguage() {
-    location.href = host + (isZh ? '/en/start' : '/');
+    location.href = host + (isZh ? '/en' : '/zh');
   }
 
   return (
