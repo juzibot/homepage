@@ -61,6 +61,7 @@ export interface IFooterMenu {
     title: string;
     url?: string;
     tooltip?: string;
+    isDisable?: boolean;
   }[];
 }
 

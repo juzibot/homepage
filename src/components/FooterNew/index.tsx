@@ -64,10 +64,9 @@ const Footer: NextPage = () => {
       : undefined,
     {
       title: t('footer-menu-3-title'),
-      isDisable: true,
       child: [
         { title: t('footer-menu-3-3-title'), url: 'https://wechaty.js.org/' },
-        { title: t('footer-menu-3-4-title'), url: '/cases' },
+        { title: t('footer-menu-3-4-title'), url: '/cases', isDisable: true, },
         { title: t('footer-menu-3-5-title'), url: 'https://blog.juzibot.com/' },
         {
           title: t('footer-menu-3-6-title'),
@@ -148,17 +147,18 @@ const Footer: NextPage = () => {
                   <div key={menu.title} className="menu-group">
                     <div className="title">{menu.title}{menu.isDisable}</div>
                     <div className="menus">
-                      {menu.child.map((item, idx) =>
-                        item.tooltip ? (
+                      {menu.child.map((item, idx) => {
+                        const isDisable = menu.isDisable || item.isDisable;
+                        return item.tooltip ? (
                           <div className="tooltips" key={idx}>
                             <a
                               data-tip
                               data-for="address"
-                              href={menu.isDisable ? undefined : item.url}
+                              href={isDisable ? undefined : item.url}
                               {...(item.url?.includes('http')
                                 ? { target: '_blank', rel: 'noreferrer' }
                                 : { target: '_self' })}
-                              onClick={menu.isDisable ? handleClickHideMenu : undefined}
+                              onClick={isDisable ? handleClickHideMenu : undefined}
                             >
                               {item.title}
                             </a>
@@ -173,17 +173,17 @@ const Footer: NextPage = () => {
                           </div>
                         ) : (
                           <a
-                            href={menu.isDisable ? undefined : item.url}
+                            href={isDisable ? undefined : item.url}
                             key={idx}
                             {...(item.url?.includes('http')
                               ? { target: '_blank', rel: 'noreferrer' }
                               : { target: '_self' })}
-                            onClick={menu.isDisable ? handleClickHideMenu : undefined}
+                            onClick={isDisable ? handleClickHideMenu : undefined}
                           >
                             {item.title}
                           </a>
                         )
-                      )}
+                      })}
                     </div>
                   </div>
                 ) : undefined

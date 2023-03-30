@@ -6,6 +6,7 @@ import React from "react";
 import ContactForm from "../ContactForm";
 import { host } from '@src/config';
 import { useRouter } from "next/router";
+import cls from 'classnames';
 
 type Props = {
   visible?: boolean,
@@ -50,10 +51,10 @@ const ContactUsPureModal: FC<Props> = props => {
           <ContactForm
             hideTitle
             hideDesc
-            className="mx-8 bg-transparent pb-3"
+            className="mx-8 !bg-transparent pb-3"
             classNameForInput="!bg-[#FAFAFA] !border-[#EEEEEE]"
             classNameForDesc="text-[16px]"
-            classNameForSubmit="!rounded-md !border-0"
+            classNameForSubmit={cls('!rounded-md !border-0 !bg-[#BE1B2D]', styles.ContactFormSubmit)}
             onOk={props.onOk}
           /> 
           )

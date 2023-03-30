@@ -52,7 +52,7 @@ const HeroPage: NextPage = () => {
             >
               面向大组织的对话式营销云
             </h1>
-            <div className="description">面向大组织的对话式营销云，助力互联网时代党政军、央国企等大型组织建立以社交关系为核心的营销体系，高效触达与深度连接数以千万计的老百姓和终端用户，让消息触达和营销事半功倍。全力助力大型组织实现高效的数智化转型。</div>
+            <div className="description">面向大组织的对话式营销云，助力互联网时代党政军、央国企等大型组织建立以社交关系为核心（如 5G 消息、企业微信、飞书、钉钉等）为核心的营销体系，高效触达与深度连接数以千万计的老百姓和终端用户，让消息触达和营销事半功倍。全力助力大型组织实现高效的数智化转型。</div>
             <ContactUsPureModalWithButton>
               <button className="white-button-pure start-button bg-white text-red !shadow-none">
                 {t('start-free')}

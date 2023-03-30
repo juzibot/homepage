@@ -227,7 +227,7 @@ const HeaderBar: NextPage = () => {
                 draggable="false"
               ></Image>
             </a>
-            {isZh && <WeworkBar isWhiteIcon={isRedStyle} />}
+            {/* {isZh && <WeworkBar isWhiteIcon={isRedStyle} />} */}
             <HeaderMenu hasArrow onClick={handleClickHideMenu}>
               {t('products')}
             </HeaderMenu>
