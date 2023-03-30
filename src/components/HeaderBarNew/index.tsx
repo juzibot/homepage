@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import { NextPage } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -140,6 +141,7 @@ const HeaderMenu: NextPage<IMenuItemProps> = ({
   );
 };
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 const WeworkBar: NextPage<{ isWhiteIcon: boolean }> = ({ isWhiteIcon }) => {
   return (
     <Link href="https://work.weixin.qq.com/">
