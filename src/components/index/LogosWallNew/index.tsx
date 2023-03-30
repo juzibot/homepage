@@ -1,4 +1,5 @@
 /* eslint-disable */
+import PhotoCarousel from '@src/components/PhotoCarousel';
 import { NextPage } from 'next';
 import { useTranslation } from 'react-i18next';
 
@@ -10,20 +11,7 @@ const LogosWall: NextPage = () => {
   return (
     <>
       <h1 className="title">10倍提高政企、金融行业的服务效率</h1> 
-      <div className="logo-wall">
-        <div className="scroll-mask" />
-        <div className="logos-scroll-bar">
-          {indexLogos.map((item, index) => {
-            return (
-              <div className="logo" key={`${index}`}>
-                <div className="logo-item">
-                  <img src={item} alt="logo" draggable="false" />
-                </div>
-              </div>
-            );
-          })}
-        </div>
-      </div>
+      <PhotoCarousel photos={indexLogos} />
     </>
   );
 };
