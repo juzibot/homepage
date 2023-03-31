@@ -19,24 +19,40 @@ const PhotoCarousel: React.FC<Props> = ({ photos = [], itemWidth = 180, itemHeig
     }
   `;
 
+  const Box = styled.div`
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+  `;
+  const Mask = styled.div`
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    right: 0;
+    left: 0;
+    background-image: linear-gradient(90deg, #fff, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0), rgba(255, 255, 255, 0), rgba(255, 255, 255, 0), #fff);
+    pointer-events: none;
+    position: absolute;
+  `;
   const PhotoContainer = styled.div`
     display: inline-flex;
     overflow-x: scroll;
     animation: ${scroll} ${animationTime}s linear infinite;
   `;
-  const Img = styled.img`
-      width: ${itemWidth}px;
-      height: ${itemHeight}px;
-      margin-right: ${itemMarginRight}px;
-    `
+  const imgStyle = {
+    width: `${itemWidth}px`,
+    height: `${itemHeight}px`,
+    marginRight: `${itemMarginRight}px`,
+  }
   return (
-    <div className="logo-wall">
-      <div className="scroll-mask" />
+    <Box>
+      <Mask />
       <PhotoContainer className="gap-0">
-        {photos.map((photo) => (<Img key={photo} src={photo} />))}
-        {photos.map((photo) => (<Img key={photo} src={photo} />))}
+        {photos.map((photo) => (<img style={imgStyle} alt="" key={photo} src={photo} />))}
+        {photos.map((photo) => (<img style={imgStyle} alt="" key={photo} src={photo} />))}
       </PhotoContainer>
-    </div>
+    </Box>
   );
 };
 

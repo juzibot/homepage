@@ -16,24 +16,24 @@ const HeaderBarMobile: NextPage = () => {
   }
 
   return (
-    <div className={cx(i18n.language, 'px-4 flex justify-between items-center')}>
+    <div className={cx(i18n.language, 'px-4 flex justify-between items-center bg-red')}>
       <Image
         alt="logo"
-        src="https://cdn-official-website.juzibot.com/images/logo.png"
+        src="https://cdn-official-website.juzibot.com/images/logo-white.svg"
         width={106}
         height={64}
         draggable="false"
       />
-      <div className="text-jz-text-3 font-medium flex">
+      <div className="text-white font-medium flex">
         <span className="inline-flex" onClick={changeLanguage}>
           {isZh ? 'EN' : '中文'}
-          <img src="https://cdn-official-website.juzibot.com/images/icons/arrow.svg" alt="" />
+          <img src="https://cdn-official-website.juzibot.com/images/icons/arrow-white.svg" alt="" />
         </span>
         {isZh && (
           <>
-            <img className="ml-4" src="https://cdn-official-website.juzibot.com/images/icons/contact-us.svg" alt="" onClick={() => setShowContactUsModal(true)} />
-            <img className="ml-4" src="https://cdn-official-website.juzibot.com/images/icons/user.svg" alt="" onClick={() => setShowContactUsModal(true)} />
-            <img className="ml-4 hidden" src="https://cdn-official-website.juzibot.com/images/icons/menu-more.svg" alt="" />
+            <img className="ml-4" src="https://cdn-official-website.juzibot.com/images/icons/contact-us-white.svg" alt="" onClick={() => setShowContactUsModal(true)} />
+            <img className="ml-4" src="https://cdn-official-website.juzibot.com/images/icons/user-white.svg" alt="" onClick={() => setShowContactUsModal(true)} />
+            <img className="ml-4 hidden" src="https://cdn-official-website.juzibot.com/images/icons/menu-more-white.svg" alt="" />
           </>
         )}
       </div>

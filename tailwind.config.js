@@ -8,6 +8,9 @@ module.exports = {
     extend: {
       colors: {
         primary: 'var(--primary)',
+        red: {
+          DEFAULT: '#BE1B2D',
+        },
         label: '#8093AE',
         'jz-text-1': '#333333',
         'jz-text-2': '#364256',

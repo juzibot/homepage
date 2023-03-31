@@ -14,10 +14,15 @@ import FooterMobile from '@src/components/FooterMobile';
 import HeaderBarNew from '@src/components/HeaderBarNew';
 import FooterNew from '@src/components/FooterNew';
 import { useRouter } from 'next/router';
+import { setMobileStatusBarColor } from '@src/utils/mobileStatusBar';
 // import { juziAnalysis } from '@src/utils/analysis';
 
 
 const JuziApp: NextPage<AppProps> = ({ Component, pageProps }) => {
+  const { i18n } = useTranslation('common');
+  const isSmallDevice = useMediaQuery('only screen and (max-width : 600px)');
+  const { pathname } = useRouter();
+
   useEffect(() => {
     logHireInfo();
     // if (process.browser) {
@@ -25,9 +30,11 @@ const JuziApp: NextPage<AppProps> = ({ Component, pageProps }) => {
     // }
   }, []);
 
-  const { i18n } = useTranslation('common');
-  const isSmallDevice = useMediaQuery('only screen and (max-width : 600px)');
-  const { pathname } = useRouter();
+  useEffect(() => {
+    if (isSmallDevice) {
+      setMobileStatusBarColor('#BE1B2D');
+    }
+  }, [isSmallDevice]);
 
   if (pathname === '/_version') {
     return <Component {...pageProps} />

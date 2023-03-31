@@ -12,6 +12,7 @@ import { useState } from 'react';
 import { useSessionStorageValue } from '@react-hookz/web';
 import ContactForm from '../ContactForm';
 import { ContactUsModalWithButton } from '../ContactUsModal';
+import cls from 'classnames';
 
 const { Panel } = Collapse;
 const FooterMobile: NextPage = () => {
@@ -133,28 +134,28 @@ const FooterMobile: NextPage = () => {
   ];
 
   const fixedNode = (
-    <div className={cx('px-4 pt-8 pb-5 mx-4 bg-white rounded-lg mt-5 mb-7 relative', styles.footerFixedForm)}>
+    <div className={cx('px-4 pt-8 pb-5 mx-4 bg-white mt-5 mb-7 relative', styles.footerFixedForm)}>
       <CloseOutlined className="!text-[#AAB9CA] text-[18px] absolute top-4 right-4" onClick={() => setIsCloseFixed(true)}/>
       {
         isScanQrcode ? (
           <div className="flex flex-col items-center justify-center bf-tr">
             <p className="text-lg text-center font-medium mb-2">
-              <span className="text-jz-blue mr-1">10倍</span>
-              <span>提高你的私域运营效率</span>
+              <span>不止工具，更多全方位支持</span>
             </p>
             <p className="text-[#54657E] text-[15px] text-center mb-2">微信扫一扫，与陪跑数百家头部企业的顾问聊聊</p>
             <img src='https://cdn-official-website.juzibot.com/images/contact_us_mobile.png' height={124} width={124} alt="" className="flex-shrink-0 mr-[10px]" />
           </div>
         ) : (
           <ContactForm
-            className="bg-transparent pb-0 px-6"
+            className="!bg-transparent !pb-0 !pt-0 px-6 mb-0"
             classNameForTitle="!text-[#54657E]"
-            classNameForDesc="text-[#54657E]"
+            classNameForDesc="text-[#54657E] !mb-6"
             classNameForInput="!bg-white"
+            classNameForSubmit={cls('!rounded-full !border-0 !bg-[#BE1B2D]', styles.ContactFormSubmit)}
           />
         )
       }
-      <div className="text-[#869BB9] text-center mt-5 flex items-center justify-center cursor-pointer" onClick={() => setIsScanQrcode(!isScanQrcode)}>
+      <div className="text-[#869BB9] text-center mt-1 flex items-center justify-center cursor-pointer" onClick={() => setIsScanQrcode(!isScanQrcode)}>
         <svg
           className="icon mr-1"
           viewBox="0 0 1024 1024"
@@ -260,13 +261,13 @@ const FooterMobile: NextPage = () => {
           { !isCloseFixed && fixedNode }
           <div className="px-4 flex h-[64px] items-center bg-white">
             <ContactUsModalWithButton>
-              <Button block size="large" className="mx-2 h-[44px] !rounded-3xl !border-jz-blue !text-jz-blue ">领取干货</Button>
+              <Button block size="large" className="mx-2 h-[44px] !rounded-3xl !border-red !text-red ">领取干货</Button>
             </ContactUsModalWithButton>
             <Button
               block
               size="large"
               type="primary"
-              className="mx-2 h-[44px] !rounded-3xl !bg-jz-blue !border-jz-blue"
+              className="mx-2 h-[44px] !rounded-3xl !bg-red !border-red"
               onClick={() => {
                 open('https://work.weixin.qq.com/kfid/kfcbfceaec6e8e30afe');
               }}
