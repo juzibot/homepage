@@ -35,8 +35,8 @@ const ContactUsModal: FC<Props> = props => {
 
         <div className="px-4 mx-4 py-5 bg-white rounded-lg flex mt-5 mb-7">
         <img src='https://cdn-official-website.juzibot.com/images/contact_us_mobile.png' height={124} width={124} alt="" className="flex-shrink-0 mr-[10px]" onClick={() => open('https://work.weixin.qq.com/kfid/kfcbfceaec6e8e30afe')} />
-          <div className="flex flex-col justify-center">
-            <p className="text-[#FF5E1E] font-medium mb-2">截图后微信扫一扫</p>
+          <div className="flex flex-col justify-center text-[15px]">
+            <p className="text-[#FF5E1E] text-[15px] font-medium mb-2">截图后微信扫一扫</p>
             <p className="text-[#666666] mb-0">与陪跑数百家头部企业的</p>
             <p className="text-[#666666] mb-0">顾问聊聊</p>
           </div>

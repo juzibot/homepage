@@ -179,7 +179,7 @@ const FooterMobile: NextPage = () => {
   );
   return (
     <>
-      <footer className={cx(i18n.language, styles.footer, 'pb-16 bg-[#F9F9F9]')}>
+      <footer className={cx(i18n.language, styles.footer, 'pb-24 bg-[#F9F9F9]')}>
         <AppealBarMobile />
         <div className="pl-2 pt-5 hidden">
           <Image
