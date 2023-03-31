@@ -1,21 +1,36 @@
 export function setMobileStatusBarColor(color: string) {
   const head = document.getElementsByTagName('head')[0];
 
-  // Chrome, Firefox OS and Opera
-  const metaThemeColor = document.createElement('meta');
-  metaThemeColor.setAttribute('name', 'theme-color');
-  metaThemeColor.setAttribute('content', color);
-  head.appendChild(metaThemeColor);
+  // Check if meta tags already exist
+  const metaThemeColor = head.querySelector('meta[name="theme-color"]');
+  const metaMsApplicationNavButtonColor = head.querySelector('meta[name="msapplication-navbutton-color"]');
+  const metaAppleMobileWebAppStatusBarStyle = head.querySelector('meta[name="apple-mobile-web-app-status-bar-style"]');
 
-  // Windows Phone
-  const metaMsApplicationNavButtonColor = document.createElement('meta');
-  metaMsApplicationNavButtonColor.setAttribute('name', 'msapplication-navbutton-color');
-  metaMsApplicationNavButtonColor.setAttribute('content', color);
-  head.appendChild(metaMsApplicationNavButtonColor);
+  // Create meta tags if they don't exist
+  if (!metaThemeColor) {
+    const meta = document.createElement('meta');
+    meta.setAttribute('name', 'theme-color');
+    meta.setAttribute('content', color);
+    head.appendChild(meta);
+  } else {
+    metaThemeColor.setAttribute('content', color);
+  }
 
-  // iOS Safari
-  const metaAppleMobileWebAppStatusBarStyle = document.createElement('meta');
-  metaAppleMobileWebAppStatusBarStyle.setAttribute('name', 'apple-mobile-web-app-status-bar-style');
-  metaAppleMobileWebAppStatusBarStyle.setAttribute('content', color);
-  head.appendChild(metaAppleMobileWebAppStatusBarStyle);
+  if (!metaMsApplicationNavButtonColor) {
+    const meta = document.createElement('meta');
+    meta.setAttribute('name', 'msapplication-navbutton-color');
+    meta.setAttribute('content', color);
+    head.appendChild(meta);
+  } else {
+    metaMsApplicationNavButtonColor.setAttribute('content', color);
+  }
+
+  if (!metaAppleMobileWebAppStatusBarStyle) {
+    const meta = document.createElement('meta');
+    meta.setAttribute('name', 'apple-mobile-web-app-status-bar-style');
+    meta.setAttribute('content', color);
+    head.appendChild(meta);
+  } else {
+    metaAppleMobileWebAppStatusBarStyle.setAttribute('content', color);
+  }
 }
