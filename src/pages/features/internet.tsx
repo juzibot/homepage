@@ -4,8 +4,8 @@ import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 
 const CustomerAcquisitionPage: NextPage = () => {
   return (
-    <div className='m-auto'>
-      <img className='w-full' alt='' src="/_images/image-page/internet-1.png" />
+    <div className='m-auto pt-[60px]'>
+      <img className='w-full' alt='' src="/_images/image-page/internet-0.svg" />
     </div>
   );
 };

@@ -5,7 +5,7 @@ import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 const CustomerAcquisitionPage: NextPage = () => {
   return (
     <div className='m-auto'>
-      <img className='w-full' alt='' src="/_images/image-page/customer-1.png" />
+      <img className='w-full' alt='' src="/_images/image-page/customer-0.svg" />
     </div>
   );
 };
