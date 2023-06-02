@@ -1,3 +1,4 @@
+/* eslint-disable no-unreachable */
 import { NextPage } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -41,6 +42,33 @@ const MenuItem: NextPage<{
 };
 
 const SolutionsMenu: NextPage = () => {
+  return (
+    <div className="dropdown-menu product !h-[60px] !w-[220px]">
+      <div className="box">
+        <MenuItem
+          iconUrl="https://cdn-official-website.juzibot.com/images/icons/header-bar/ai.svg"
+          hoverIconUrl="https://cdn-official-website.juzibot.com/images/icons/header-bar/ai-o.svg"
+          href="/features/ai"
+        >
+          政务解决方案
+        </MenuItem>
+        <MenuItem
+          iconUrl="https://cdn-official-website.juzibot.com/images/icons/header-bar/rpa.svg"
+          hoverIconUrl="https://cdn-official-website.juzibot.com/images/icons/header-bar/rpa-o.svg"
+          href="/features/rpa"
+        >
+          互联网解决方案
+        </MenuItem>
+        <MenuItem
+          iconUrl="https://cdn-official-website.juzibot.com/images/icons/header-bar/rpa.svg"
+          hoverIconUrl="https://cdn-official-website.juzibot.com/images/icons/header-bar/rpa-o.svg"
+          href="/features/rpa"
+        >
+          消费品解决方案
+        </MenuItem>
+      </div>
+    </div>
+  );
   return (
     <div className="dropdown-menu cases">
       <div className="box">
@@ -132,6 +160,26 @@ const SolutionsMenu: NextPage = () => {
 
 const ProductMenu: NextPage = () => {
   const { t, i18n } = useTranslation('common');
+  return (
+    <div className="dropdown-menu product !h-[60px]">
+      <div className="box">
+        <MenuItem
+          iconUrl="https://cdn-official-website.juzibot.com/images/icons/header-bar/ai.svg"
+          hoverIconUrl="https://cdn-official-website.juzibot.com/images/icons/header-bar/ai-o.svg"
+          href="/features/ai"
+        >
+          AI 模块
+        </MenuItem>
+        <MenuItem
+          iconUrl="https://cdn-official-website.juzibot.com/images/icons/header-bar/rpa.svg"
+          hoverIconUrl="https://cdn-official-website.juzibot.com/images/icons/header-bar/rpa-o.svg"
+          href="/features/rpa"
+        >
+          RPA 模块
+        </MenuItem>
+      </div>
+    </div>
+  );
   return (
     <div
       className="dropdown-menu product"
@@ -372,7 +420,10 @@ const HeaderBar: NextPage = () => {
                 draggable="false"
               ></Image>
             </a>
-            {isZh && <WeworkBar />}
+            {/* {isZh && <WeworkBar />} */}
+            <HeaderMenu href="https://insight.juzibot.com/" linkTarget="_blank">
+              体验句子GPT
+            </HeaderMenu>
             <HeaderMenu hasArrow menu={<ProductMenu />}>
               {t('products')}
             </HeaderMenu>
