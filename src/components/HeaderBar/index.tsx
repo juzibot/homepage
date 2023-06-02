@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
+/* eslint-disable no-unused-vars */
 /* eslint-disable no-unreachable */
 import { NextPage } from 'next';
 import Image from 'next/image';
