@@ -372,7 +372,10 @@ const HeaderBar: NextPage = () => {
                 draggable="false"
               ></Image>
             </a>
-            {isZh && <WeworkBar />}
+            {/* {isZh && <WeworkBar />} */}
+            <HeaderMenu href="https://insight.juzibot.com/" linkTarget="_blank">
+              句子GPT
+            </HeaderMenu>
             <HeaderMenu hasArrow menu={<ProductMenu />}>
               {t('products')}
             </HeaderMenu>

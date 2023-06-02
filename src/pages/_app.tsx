@@ -15,6 +15,7 @@ import HeaderBarNew from '@src/components/HeaderBarNew';
 import FooterNew from '@src/components/FooterNew';
 import { useRouter } from 'next/router';
 import { setMobileStatusBarColor } from '@src/utils/mobileStatusBar';
+import HeaderBar from '@src/components/HeaderBar';
 // import { juziAnalysis } from '@src/utils/analysis';
 
 
@@ -42,7 +43,7 @@ const JuziApp: NextPage<AppProps> = ({ Component, pageProps }) => {
 
   return (
     <>
-      {isSmallDevice ? <HeaderBarMobile /> : <HeaderBarNew /> }
+      {isSmallDevice ? <HeaderBarMobile /> : <HeaderBar /> }
       <div className={`app ${i18n.language}`}>
         <Component {...pageProps} />
       </div>
