@@ -21,12 +21,12 @@ const CustomerAcquisitionPage: NextPage = () => {
   });
   return (
     <div className='m-auto'>
-      <img className='w-full' alt='' src="/_images/image-page/rpa-1.png" />
-      <img className='w-full' alt='' src="/_images/image-page/rpa-2.png" />
+      <img className='w-full' alt='' src="/_images/image-page/rpa-0.png" />
+      {/* <img className='w-full' alt='' src="/_images/image-page/rpa-2.png" />
       <img className='w-full' alt='' src="/_images/image-page/rpa-3.png" />
       <img className='w-full' alt='' src="/_images/image-page/rpa-4.png" />
       <img className='w-full' alt='' src="/_images/image-page/rpa-5.png" />
-      <img className='w-full' alt='' src="/_images/image-page/rpa-5.png" />
+      <img className='w-full' alt='' src="/_images/image-page/rpa-5.png" /> */}
     </div>
   );
   return (

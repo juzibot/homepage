@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
+/* eslint-disable no-unused-vars */
 /* eslint-disable no-unreachable */
 import { useMediaQuery } from '@react-hookz/web';
 import Seo from '@src/components/common/Seo';
@@ -24,27 +26,27 @@ const Home: NextPage = () => {
   }, []);
   const { i18n } = useTranslation('common');
 
-  if (isSmallDevice) {
-    return <MobileIndexPage />
-  }
+  // if (isSmallDevice) {
+  //   return <MobileIndexPage />
+  // }
 
   return (
     <div className={i18n.language}>
       <Seo page="homepage" />
-      <div className='m-auto'>
+      <div className='m-auto pt-[60px]'>
         <div className='relative'>
-          <img className='w-full' alt='' src="_images/image-page/index-1.png" />
+          <img className='w-full' alt='' src="_images/image-page/index-0.png" />
           <ContactUsPureModalWithButton>
             <div
-              className="w-[152px] h-[56px] bg-[#0555FF] rounded-full flex justify-center items-center text-[18px] font-semibold text-white absolute top-[52.4%] left-[50%] cursor-pointer"
+              className="w-[152px] h-[56px] bg-[#0555FF] rounded-full flex justify-center items-center text-[18px] font-semibold text-white absolute top-[462px] left-[50%] cursor-pointer"
               style={{ transform: 'translate(-50%)' }}
             >
               免费使用
             </div>
           </ContactUsPureModalWithButton>
         </div>
-        <img className='w-full' alt='' src="_images/image-page/index-2.png" />
-        <img className='w-full' alt='' src="_images/image-page/index-3.png" />
+        {/* <img className='w-full' alt='' src="_images/image-page/index-2.png" /> */}
+        {/* <img className='w-full' alt='' src="_images/image-page/index-3.png" /> */}
       </div>
     </div>
   );

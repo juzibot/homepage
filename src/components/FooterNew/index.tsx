@@ -79,7 +79,7 @@ const Footer: NextPage = () => {
       child: [
         {
           title: t('footer-menu-4-1-title'),
-          url: `/${i18n.language}/about-us`,
+          url: `/${i18n.language}/features/about-us`,
         },
         {
           title: t('footer-menu-4-3-title'),

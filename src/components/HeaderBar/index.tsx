@@ -158,18 +158,18 @@ const SolutionsMenu: NextPage = () => {
 const ProductMenu: NextPage = () => {
   const { t, i18n } = useTranslation('common');
   return (
-    <div className="dropdown-menu product !h-[160px] !w-[350px]" style={{ transform: "translate(-125px, -6px)"}}>
+    <div className="dropdown-menu product !h-[150px] !w-[350px]" style={{ transform: "translate(-125px, -6px)"}}>
       <div className="box">
         <MenuItem
-          iconUrl="https://cdn-official-website.juzibot.com/images/icons/header-bar/ai.svg"
-          hoverIconUrl="https://cdn-official-website.juzibot.com/images/icons/header-bar/ai-o.svg"
+          // iconUrl="https://cdn-official-website.juzibot.com/images/icons/header-bar/ai.svg"
+          // hoverIconUrl="https://cdn-official-website.juzibot.com/images/icons/header-bar/ai-o.svg"
           href="/features/ai"
         >
           AI 驱动的基于企业专属“ChatGPT”
         </MenuItem>
         <MenuItem
-          iconUrl="https://cdn-official-website.juzibot.com/images/icons/header-bar/rpa.svg"
-          hoverIconUrl="https://cdn-official-website.juzibot.com/images/icons/header-bar/rpa-o.svg"
+          // iconUrl="https://cdn-official-website.juzibot.com/images/icons/header-bar/rpa.svg"
+          // hoverIconUrl="https://cdn-official-website.juzibot.com/images/icons/header-bar/rpa-o.svg"
           href="/features/rpa"
         >
           RPA 驱动的营销服务一体化平台
@@ -426,7 +426,7 @@ const HeaderBar: NextPage = () => {
                 {t('solutions')}
               </HeaderMenu>
             )}
-            {isZh && <HeaderMenu href="/cases">{t('cases')}</HeaderMenu>}
+            {isZh && <HeaderMenu href="/features/case">{t('cases')}</HeaderMenu>}
             <HeaderMenu href="https://blog.juzibot.com/" linkTarget="_blank">
               {t('course')}
             </HeaderMenu>
@@ -436,13 +436,9 @@ const HeaderBar: NextPage = () => {
             <HeaderMenu href="https://chat.juzibot.com/" linkTarget="_blank">
               体验句子GPT
             </HeaderMenu>
-            {isZh ? (
-              <HeaderMenu hasArrow menu={<AboutUsMenu />}>
-                {t('about')}
-              </HeaderMenu>
-            ) : (
-              <HeaderMenu href="/about-us">{t('about')}</HeaderMenu>
-            )}
+            <HeaderMenu href="/features/about-us">
+              {t('about')}
+            </HeaderMenu>
           </menu>
 
           <menu className="header-right">
