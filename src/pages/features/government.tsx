@@ -8,8 +8,7 @@ import type { GetStaticProps, NextPage } from 'next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import MobileIndexPage from './index-mobile';
-import { ContactUsPureModalWithButton } from '@src/components/ContactUsPureModal';
+import MobileIndexPage from '../index-mobile';
 
 const Home: NextPage = () => {
   const isSmallDevice = useMediaQuery('only screen and (max-width : 600px)');
@@ -28,26 +27,6 @@ const Home: NextPage = () => {
     return <MobileIndexPage />
   }
 
-  return (
-    <div className={i18n.language}>
-      <Seo page="homepage" />
-      <div className='m-auto'>
-        <div className='relative'>
-          <img className='w-full' alt='' src="_images/image-page/index-1.png" />
-          <ContactUsPureModalWithButton>
-            <div
-              className="w-[152px] h-[56px] bg-[#0555FF] rounded-full flex justify-center items-center text-[18px] font-semibold text-white absolute top-[52.4%] left-[50%] cursor-pointer"
-              style={{ transform: 'translate(-50%)' }}
-            >
-              免费使用
-            </div>
-          </ContactUsPureModalWithButton>
-        </div>
-        <img className='w-full' alt='' src="_images/image-page/index-2.png" />
-        <img className='w-full' alt='' src="_images/image-page/index-3.png" />
-      </div>
-    </div>
-  );
   return (
     <div className={i18n.language}>
       <Seo page="homepage" />

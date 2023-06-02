@@ -11,8 +11,8 @@ import { isBrowserChrome } from '@src/utils/isBrowserChrome';
 import { useShowModal } from '@src/utils/showModal';
 
 const MenuItem: NextPage<{
-  iconUrl: string;
-  hoverIconUrl: string;
+  iconUrl?: string;
+  hoverIconUrl?: string;
   href: string;
 }> = ({ iconUrl, hoverIconUrl, href, children }) => {
   const [isHover, toggleHover] = useState(false);
@@ -24,16 +24,19 @@ const MenuItem: NextPage<{
           onMouseLeave={() => toggleHover(false)}
           onMouseMove={() => toggleHover(true)}
         >
-          <div style={{ flexShrink: 0 }}>
-            <Image
-              src={isHover ? hoverIconUrl : iconUrl}
-              alt="header-icon"
-              width="16"
-              height="16"
-              draggable="false"
-            />
-          </div>
-
+          {
+            iconUrl && hoverIconUrl && (
+              <div style={{ flexShrink: 0 }}>
+              <Image
+                  src={isHover ? hoverIconUrl : iconUrl}
+                  alt="header-icon"
+                  width="16"
+                  height="16"
+                  draggable="false"
+                />
+              </div>
+            )
+          }
           <div style={{ marginLeft: 12 }}>{children}</div>
         </div>
       </a>
@@ -43,26 +46,20 @@ const MenuItem: NextPage<{
 
 const SolutionsMenu: NextPage = () => {
   return (
-    <div className="dropdown-menu product !h-[60px] !w-[220px]">
+    <div className="dropdown-menu product !h-[200px] !w-[220px]" style={{ transform: "translate(-65px, -6px)"}}>
       <div className="box">
         <MenuItem
-          iconUrl="https://cdn-official-website.juzibot.com/images/icons/header-bar/ai.svg"
-          hoverIconUrl="https://cdn-official-website.juzibot.com/images/icons/header-bar/ai-o.svg"
-          href="/features/ai"
+          href="/features/government"
         >
           政务解决方案
         </MenuItem>
         <MenuItem
-          iconUrl="https://cdn-official-website.juzibot.com/images/icons/header-bar/rpa.svg"
-          hoverIconUrl="https://cdn-official-website.juzibot.com/images/icons/header-bar/rpa-o.svg"
-          href="/features/rpa"
+          href="/features/internet"
         >
           互联网解决方案
         </MenuItem>
         <MenuItem
-          iconUrl="https://cdn-official-website.juzibot.com/images/icons/header-bar/rpa.svg"
-          hoverIconUrl="https://cdn-official-website.juzibot.com/images/icons/header-bar/rpa-o.svg"
-          href="/features/rpa"
+          href="/features/customer"
         >
           消费品解决方案
         </MenuItem>
@@ -161,21 +158,21 @@ const SolutionsMenu: NextPage = () => {
 const ProductMenu: NextPage = () => {
   const { t, i18n } = useTranslation('common');
   return (
-    <div className="dropdown-menu product !h-[60px]">
+    <div className="dropdown-menu product !h-[160px] !w-[350px]" style={{ transform: "translate(-125px, -6px)"}}>
       <div className="box">
         <MenuItem
           iconUrl="https://cdn-official-website.juzibot.com/images/icons/header-bar/ai.svg"
           hoverIconUrl="https://cdn-official-website.juzibot.com/images/icons/header-bar/ai-o.svg"
           href="/features/ai"
         >
-          AI 模块
+          AI 驱动的基于企业专属“ChatGPT”
         </MenuItem>
         <MenuItem
           iconUrl="https://cdn-official-website.juzibot.com/images/icons/header-bar/rpa.svg"
           hoverIconUrl="https://cdn-official-website.juzibot.com/images/icons/header-bar/rpa-o.svg"
           href="/features/rpa"
         >
-          RPA 模块
+          RPA 驱动的营销服务一体化平台
         </MenuItem>
       </div>
     </div>
@@ -396,7 +393,7 @@ const HeaderBar: NextPage = () => {
       <header
         className={`wrapper header-bar ${
           !isChrome ? 'opacity' : ''
-        } ${headerbarExtraClass} ${borderBottomVisible ? 'has-bg' : ''}`}
+        } ${headerbarExtraClass} ${borderBottomVisible ? 'has-bg' : 'has-bg'}`}
         style={{
           borderBottom: borderBottomVisible
             ? '1px solid #eee'
@@ -421,9 +418,6 @@ const HeaderBar: NextPage = () => {
               ></Image>
             </a>
             {/* {isZh && <WeworkBar />} */}
-            <HeaderMenu href="https://insight.juzibot.com/" linkTarget="_blank">
-              体验句子GPT
-            </HeaderMenu>
             <HeaderMenu hasArrow menu={<ProductMenu />}>
               {t('products')}
             </HeaderMenu>
@@ -438,6 +432,9 @@ const HeaderBar: NextPage = () => {
             </HeaderMenu>
             <HeaderMenu href="https://wechaty.js.org/" linkTarget="_blank">
               {t('developer')}
+            </HeaderMenu>
+            <HeaderMenu href="https://chat.juzibot.com/" linkTarget="_blank">
+              体验句子GPT
             </HeaderMenu>
             {isZh ? (
               <HeaderMenu hasArrow menu={<AboutUsMenu />}>

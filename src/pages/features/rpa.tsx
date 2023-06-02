@@ -1,3 +1,4 @@
+/* eslint-disable no-unreachable */
 import { isBrowserChrome } from '@src/utils/isBrowserChrome';
 import { GetStaticProps, NextPage } from 'next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
@@ -18,6 +19,16 @@ const CustomerAcquisitionPage: NextPage = () => {
   const { t } = useTranslation('features', {
     keyPrefix: 'customer-acquisition',
   });
+  return (
+    <div className='m-auto'>
+      <img className='w-full' alt='' src="/_images/image-page/rpa-1.png" />
+      <img className='w-full' alt='' src="/_images/image-page/rpa-2.png" />
+      <img className='w-full' alt='' src="/_images/image-page/rpa-3.png" />
+      <img className='w-full' alt='' src="/_images/image-page/rpa-4.png" />
+      <img className='w-full' alt='' src="/_images/image-page/rpa-5.png" />
+      <img className='w-full' alt='' src="/_images/image-page/rpa-5.png" />
+    </div>
+  );
   return (
     <>
       <Seo page="feature-customer-acquisition" />
