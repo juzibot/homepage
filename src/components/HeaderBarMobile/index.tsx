@@ -5,6 +5,7 @@ import { host } from '@src/config';
 import { useTranslation } from 'react-i18next';
 import cx from '@src/utils/cx';
 import ContactUsModal from '../ContactUsModal';
+import MobileMenu from './mobileMenu';
 
 const HeaderBarMobile: NextPage = () => {
   const { i18n } = useTranslation(['common']);
@@ -16,24 +17,46 @@ const HeaderBarMobile: NextPage = () => {
   }
 
   return (
-    <div className={cx(i18n.language, 'px-4 flex justify-between items-center bg-red')}>
-      <Image
-        alt="logo"
-        src="https://cdn-official-website.juzibot.com/images/logo-white.svg"
-        width={106}
-        height={64}
-        draggable="false"
-      />
-      <div className="text-white font-medium flex">
-        <span className="inline-flex" onClick={changeLanguage}>
+    <div
+      className={cx(
+        i18n.language,
+        'px-4 flex justify-between items-center bg-[#fff]'
+      )}
+    >
+      <div className='h-[64px] flex items-center'>
+        <Image
+          onClick={changeLanguage}
+          alt='logo'
+          src='https://s3.cn-north-1.amazonaws.com.cn/xiaoju-material/public/e454f977-c304-49cd-a9a4-989a49237a54/%E5%AE%98%E7%BD%91logo%201%20(1).png'
+          width={106}
+          height={30}
+          draggable='false'
+        />
+      </div>
+      <div className='text-[#54657E] font-medium flex'>
+        <span className='inline-flex items-center' onClick={changeLanguage}>
           {isZh ? 'EN' : '中文'}
-          <img src="https://cdn-official-website.juzibot.com/images/icons/arrow-white.svg" alt="" />
+          <img
+            className='w-[16px] h-[16px]'
+            src='https://s3.cn-north-1.amazonaws.com.cn/xiaoju-material/public/2f5c8a5d-1069-4be3-aa56-3ba5f1ce9205/Frame.jpg'
+            alt=''
+          />
         </span>
         {isZh && (
           <>
-            <img className="ml-4" src="https://cdn-official-website.juzibot.com/images/icons/contact-us-white.svg" alt="" onClick={() => setShowContactUsModal(true)} />
-            <img className="ml-4" src="https://cdn-official-website.juzibot.com/images/icons/user-white.svg" alt="" onClick={() => setShowContactUsModal(true)} />
-            <img className="ml-4 hidden" src="https://cdn-official-website.juzibot.com/images/icons/menu-more-white.svg" alt="" />
+            <img
+              className='ml-4 w-[20px] h-[20px]'
+              src='https://s3.cn-north-1.amazonaws.com.cn/xiaoju-material/public/39e58645-fdf7-46a0-94c2-9cb4537734d1/%E5%AE%A2%E6%9C%8D.png'
+              alt=''
+              onClick={() => setShowContactUsModal(true)}
+            />
+            <img
+              className='ml-4 w-[20px] h-[20px]'
+              src='https://s3.cn-north-1.amazonaws.com.cn/xiaoju-material/public/51873a1e-18e9-4c10-bf64-adfb67909d55/%E7%99%BB%E5%BD%95.png'
+              alt=''
+              onClick={() => setShowContactUsModal(true)}
+            />
+            <MobileMenu />
           </>
         )}
       </div>
@@ -43,7 +66,7 @@ const HeaderBarMobile: NextPage = () => {
         onOk={() => setShowContactUsModal(false)}
       />
     </div>
-  )
+  );
 };
 
 export default HeaderBarMobile;

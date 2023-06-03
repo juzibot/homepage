@@ -10,8 +10,10 @@ import AppealBar from '@src/components/index/AppealBar';
 import FeatureBar from '@src/components/features/FeatureBar';
 import Seo from '@src/components/common/Seo';
 import { useTranslation } from 'react-i18next';
+import { useMediaQuery } from '@react-hookz/web';
 
 const CustomerAcquisitionPage: NextPage = () => {
+  const isSmallDevice = useMediaQuery('only screen and (max-width : 600px)');
   const [isChrome, toggleChrome] = useState(true);
   useEffect(() => {
     toggleChrome(isBrowserChrome());
@@ -19,6 +21,13 @@ const CustomerAcquisitionPage: NextPage = () => {
   const { t } = useTranslation('features', {
     keyPrefix: 'customer-acquisition',
   });
+  if (isSmallDevice) {
+    return (
+      <div className='m-auto pt-[50px]'>
+        <img className='w-full' alt='' src="/_images/image-page/case-00.png" />
+      </div>
+    );
+  }
   return (
     <div className='m-auto pt-[50px]'>
       <img className='w-full' alt='' src="/_images/image-page/case-0.png" />

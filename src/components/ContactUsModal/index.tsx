@@ -46,10 +46,10 @@ const ContactUsModal: FC<Props> = props => {
           className="bg-white pb-3"
           classNameForInput="!bg-[#FAFAFA] !border-[#EEEEEE]"
           classNameForDesc="text-[16px] !mb-6"
-          classNameForSubmit={cls('!rounded-full !border-0 !bg-[#BE1B2D]', styles.ContactFormSubmit)}
+          classNameForSubmit={cls('!rounded-full !border-0 !bg-[#0555FF]')}
           onOk={props.onOk}
         />
-        <p className="bg-white text-red text-center text-base pt-0 pb-7 mb-0">已有账号，建议在网页版登录</p>
+        <p className="bg-white text-[#0555FF] text-center text-base pt-0 pb-7 mb-0">已有账号，建议在网页版登录</p>
         <CloseOutlined className="absolute top-3 right-3 !text-[#AAB9CA] p-1 cursor-pointer" onClick={handleCancel} />
       </div>
     </Modal>
