@@ -104,8 +104,8 @@ const Footer: NextPage = () => {
 
   const friendLinks: IFriendLink[] = [
     {
-      title: t('friendlink-wework'),
-      url: 'https://work.weixin.qq.com/',
+      title: '36kr',
+      url: 'https://36kr.com/',
     },
     {
       title: t('friendlink-telrobot'),

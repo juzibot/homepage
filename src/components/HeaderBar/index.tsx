@@ -438,7 +438,7 @@ const HeaderBar: NextPage = () => {
             <HeaderMenu href="https://chat.juzibot.com/" linkTarget="_blank">
               体验句子GPT
             </HeaderMenu>
-            <HeaderMenu href="/features/about-us">
+            <HeaderMenu hasArrow menu={<AboutUsMenu />}>
               {t('about')}
             </HeaderMenu>
           </menu>
