@@ -8,14 +8,14 @@ import { useState } from 'react';
 const CustomerAcquisitionPage: NextPage = () => {
   const [showModal, setShowModal] = useState(false);
   return (
-    <div className='m-auto pt-[60px]'>
+    <div className='m-auto pt-[60px] relative'>
       <ContactUsSimpleModal
         open={showModal}
         onCancel={() => setShowModal(false)}
       />
       <div
         onClick={() => setShowModal(true)}
-        className='w-[352px] h-[106px] rounded-full flex justify-center items-center text-[18px] font-semibold text-white absolute top-[315px] left-[50%] cursor-pointer'
+        className='w-[calc(17%)] h-[calc(7%)] rounded-full flex justify-center items-center text-[18px] font-semibold text-white absolute top-[40%] left-[50%] cursor-pointer'
         style={{ transform: 'translate(-50%)' }}
       ></div>
       <img className='w-full' alt='' src='/_images/image-page/internet-0.png' />

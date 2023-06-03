@@ -41,7 +41,7 @@ const Home: NextPage = () => {
               href="https://insight.juzibot.com/"
               target="_blank"
               rel="noreferrer"
-              className="w-[352px] h-[106px] rounded-full flex justify-center items-center text-[18px] font-semibold text-white absolute top-[315px] left-[50%] cursor-pointer"
+              className="w-[calc(11%)] h-[calc(2.25%)] rounded-full flex justify-center items-center text-[18px] font-semibold text-white absolute top-[12.7%] left-[50%] cursor-pointer"
               style={{ transform: 'translate(-50%)' }}
             >
             </a>
