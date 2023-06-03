@@ -23,9 +23,9 @@ const Home: NextPage = () => {
   }, []);
   const { i18n } = useTranslation('common');
 
-  if (isSmallDevice) {
-    return <MobileIndexPage />
-  }
+  // if (isSmallDevice) {
+  //   return <MobileIndexPage />
+  // }
 
   return (
     <div className={i18n.language}>

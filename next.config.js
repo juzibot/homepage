@@ -7,7 +7,7 @@ module.exports = {
   reactStrictMode: true,
   i18n,
   images: {
-    domains: ['cdn-official-website.juzibot.com'],
+    domains: ['cdn-official-website.juzibot.com', 's3.cn-north-1.amazonaws.com.cn'],
   },
   publicRuntimeConfig: {
     appVersion: process.env.npm_package_version,

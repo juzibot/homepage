@@ -116,8 +116,8 @@ const FooterMobile: NextPage = () => {
 
   const friendLinks: IFriendLink[] = [
     {
-      title: t('friendlink-wework'),
-      url: 'https://work.weixin.qq.com/',
+      title: '36kr',
+      url: 'https://36kr.com/',
     },
     {
       title: t('friendlink-telrobot'),
@@ -151,7 +151,7 @@ const FooterMobile: NextPage = () => {
             classNameForTitle="!text-[#54657E]"
             classNameForDesc="text-[#54657E] !mb-6"
             classNameForInput="!bg-white"
-            classNameForSubmit={cls('!rounded-full !border-0 !bg-[#BE1B2D]', styles.ContactFormSubmit)}
+            classNameForSubmit={cls('!rounded-full !border-0 !bg-[#0555FF]')}
           />
         )
       }
@@ -218,7 +218,7 @@ const FooterMobile: NextPage = () => {
           </Collapse>
         </div>
 
-        <div className="mt-14">
+        <div className="pt-14">
           <div className="text-[#54657E] text-center">
             <span className="friendlink">{t('friendlink')}</span>
             {friendLinks.map(({ title, url }) => (
@@ -261,13 +261,13 @@ const FooterMobile: NextPage = () => {
           { !isCloseFixed && fixedNode }
           <div className="px-4 flex h-[64px] items-center bg-white">
             <ContactUsModalWithButton>
-              <Button block size="large" className="mx-2 h-[44px] !rounded-3xl !border-red !text-red ">领取干货</Button>
+              <Button block size="large" className="mx-2 h-[44px] !rounded-3xl !border-[#0555FF] !text-[#0555FF] ">领取干货</Button>
             </ContactUsModalWithButton>
             <Button
               block
               size="large"
               type="primary"
-              className="mx-2 h-[44px] !rounded-3xl !bg-red !border-red"
+              className="mx-2 h-[44px] !rounded-3xl !bg-[#0555FF] !border-[#0555FF]"
               onClick={() => {
                 open('https://work.weixin.qq.com/kfid/kfcbfceaec6e8e30afe');
               }}

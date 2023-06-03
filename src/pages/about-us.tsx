@@ -865,16 +865,18 @@ const AboutAiNativePage: NextPage = () => {
     <div className='first-page'>
       <Seo page='about-us' />
       <div className='flex flex-col items-center justify-center'>
-        <div className="!text-[32px] font-semibold">AI Native 团队，</div>
-        <div className="!text-[32px] font-semibold">在 IM 营销生态 & Chatbot 领域7 年积累磨一剑，对营场景有深刻认知</div>
+        <div className='!text-[32px] font-semibold'>AI Native 团队，</div>
+        <div className='!text-[32px] font-semibold'>
+          在 IM 营销生态 & Chatbot 领域7 年积累磨一剑，对营场景有深刻认知
+        </div>
       </div>
 
       <div className='info-box justify-center'>
-        <div className="flex-1 flex items-center justify-center">
+        <div className='flex-1 flex items-center justify-center'>
           <img
             src='_images/image-page/about-us-1.png'
             alt='photo'
-            className="w-[1220px]"
+            className='w-[1220px]'
             draggable='false'
           />
         </div>
@@ -902,6 +904,7 @@ const AboutUsPage: NextPage = () => {
   }, []);
   const { i18n } = useTranslation('about-us');
   const isZh = i18n.language === 'zh';
+
   return (
     <div className={i18n.language}>
       <Seo page='about-us' />

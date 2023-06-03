@@ -10,7 +10,7 @@ const MobileIndexPage: NextPage<{}> = () => {
       <div className="absolute top-[80px] flex items-center justify-center w-[100%]">
         <a href="https://insight.juzibot.com" target="_blank" className="w-[150px] h-[100px]" style={{ border: 'unset' }}></a>
       </div>
-      <img alt="" className='w-full' src="_images/image-page/index-0.png" />
+      <img alt="" className='w-full' src="/_images/image-page/index-0.png" />
     </div>
   );
   return (
