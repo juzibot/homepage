@@ -265,6 +265,7 @@ const HeaderBar: NextPage = () => {
               {isZh ? 'EN' : '中文'}
             </HeaderMenu>
             {isZh ? (
+              // eslint-disable-next-line @next/next/link-passhref
               <Link href="#">
                 <ContactUsPureModalWithButton>
                   <a
