@@ -1,5 +1,5 @@
 /* eslint-disable no-unreachable */
-import { ContactUsPureModalWithButton } from '@src/components/ContactUsPureModal';
+// import { ContactUsPureModalWithButton } from '@src/components/ContactUsPureModal';
 import ContactUsSimpleModal from '@src/components/ContactUsSimpleModal';
 import { GetStaticProps, NextPage } from 'next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';

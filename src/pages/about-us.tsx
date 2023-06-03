@@ -860,7 +860,7 @@ const AboutUsHeroPage: NextPage = () => {
 };
 
 const AboutAiNativePage: NextPage = () => {
-  const { t } = useTranslation('about-us');
+  // const { t } = useTranslation('about-us');
   return (
     <div className='first-page'>
       <Seo page='about-us' />
