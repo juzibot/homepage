@@ -14,9 +14,9 @@ export const AboutUsAppealBar: NextPage = () => {
   return (
     <>
       <h2>加入句子互动，与众多头部品牌一起打造中国私域新生态</h2>
-      <Link href="/join-us">
-        <a target="_blank">
-          <button className="primary-button start-button">加入我们</button>
+      <Link href='/join-us'>
+        <a target='_blank'>
+          <button className='primary-button start-button'>加入我们</button>
         </a>
       </Link>
     </>
@@ -31,11 +31,13 @@ const NewsPage: NextPage = () => {
     src: string;
   }[] = [
     {
-      imgUrl: 'https://cdn-official-website.juzibot.com/images/about-us/news/图-10.png',
+      imgUrl:
+        'https://cdn-official-website.juzibot.com/images/about-us/news/图-10.png',
       title: '句子互动获得高新技术企业认定',
       subtitle:
         '句子互动通过北京市认定管理机构 2021 年认定的高新技术企业，于 2021 年 12 月公示。',
-      src: 'http://www.innocom.gov.cn/gqrdw/c101407/202112/dfb1d5c2a6eb47ddb3f00bfe5f02413b.shtml',
+      src:
+        'http://www.innocom.gov.cn/gqrdw/c101407/202112/dfb1d5c2a6eb47ddb3f00bfe5f02413b.shtml',
     },
     {
       imgUrl:
@@ -67,7 +69,8 @@ const NewsPage: NextPage = () => {
       title: '句子互动 CEO 李佳芮入选中关村 2021 年度 U30 榜单',
       subtitle:
         '在2021中关村论坛平行论坛、开源创新发展论坛上，创青春-中关村 U30 发布 2021 年度优胜者榜单，句子…',
-      src: 'https://mp.weixin.qq.com/s?__biz=MzU3OTk2MzA1Nw==&mid=2247488046&idx=1&sn=0ea3d124434e0e7dffee1458936bfd59&chksm=fd5f43f0ca28cae6df1c093602819a535ed4e31615dbe60684a22aa2721342a458507f8f467b&token=625789963&lang=zh_CN#rd',
+      src:
+        'https://mp.weixin.qq.com/s?__biz=MzU3OTk2MzA1Nw==&mid=2247488046&idx=1&sn=0ea3d124434e0e7dffee1458936bfd59&chksm=fd5f43f0ca28cae6df1c093602819a535ed4e31615dbe60684a22aa2721342a458507f8f467b&token=625789963&lang=zh_CN#rd',
     },
     {
       imgUrl:
@@ -100,7 +103,8 @@ const NewsPage: NextPage = () => {
       title: '桔子互动和北邮人工智能实验室签署合作协议',
       subtitle:
         '致力于为人工智能(AI)智能会话服务的创业公司桔子互动近日于北京邮电大学人工智能实验室签署合作协…',
-      src: 'https://mp.weixin.qq.com/s?__biz=MzU3OTk2MzA1Nw==&mid=2247485050&idx=1&sn=d795e06e36384549d29a07691a34e2d7&source=41#wechat_redirect',
+      src:
+        'https://mp.weixin.qq.com/s?__biz=MzU3OTk2MzA1Nw==&mid=2247485050&idx=1&sn=d795e06e36384549d29a07691a34e2d7&source=41#wechat_redirect',
     },
   ];
   const data = chunk(items, 3);
@@ -140,14 +144,14 @@ const NewsPage: NextPage = () => {
     <>
       <h1>新闻报道</h1>
       <Swiper
-        className="news-swiper"
+        className='news-swiper'
         spaceBetween={30}
         style={{ width: '100%' }}
-        onSwiper={(swiper) => {
+        onSwiper={swiper => {
           setSwiper(swiper);
           autoplay(swiper);
         }}
-        onActiveIndexChange={(swiper) => {
+        onActiveIndexChange={swiper => {
           setCurrentIndex(swiper.activeIndex);
           debounceAutoPlay();
         }}
@@ -155,17 +159,17 @@ const NewsPage: NextPage = () => {
         {data.map((d, i) => {
           return (
             <SwiperSlide key={i}>
-              <div className="news-item-container">
+              <div className='news-item-container'>
                 {d.map((item, idx) => {
                   return (
                     <Link href={item.src} key={`${i}-${idx}`}>
-                      <a className="news" target="_blank">
-                        <img src={item.imgUrl} alt="news-cover"></img>
+                      <a className='news' target='_blank'>
+                        <img src={item.imgUrl} alt='news-cover'></img>
                         <div style={{ height: 116 }}>
-                          <div className="title">{item.title}</div>
-                          <div className="subtitle">{item.subtitle}</div>
+                          <div className='title'>{item.title}</div>
+                          <div className='subtitle'>{item.subtitle}</div>
                         </div>
-                        <div className="read-more">点击查看 →</div>
+                        <div className='read-more'>点击查看 →</div>
                       </a>
                     </Link>
                   );
@@ -175,7 +179,7 @@ const NewsPage: NextPage = () => {
           );
         })}
       </Swiper>
-      <div className="pagination">
+      <div className='pagination'>
         {data.map((_, idx) => (
           <div
             key={`p-${idx}`}
@@ -213,13 +217,13 @@ const Certificates: NextPage = () => {
     <>
       <h1>企业荣誉</h1>
       <Swiper
-        className="certificate-swiper"
-        slidesPerView="auto"
+        className='certificate-swiper'
+        slidesPerView='auto'
         centeredSlides
         spaceBetween={30}
         autoplay
         style={{ width: '100%' }}
-        onSwiper={(s) => {
+        onSwiper={s => {
           setSwiper(s);
           s.slideNext();
         }}
@@ -230,13 +234,13 @@ const Certificates: NextPage = () => {
           .fill(null)
           .map((_, idx) => {
             return (
-              <SwiperSlide key={idx} className="slide-item">
+              <SwiperSlide key={idx} className='slide-item'>
                 <img
                   src={`https://cdn-official-website.juzibot.com/images/about-us/certificate/图-${
                     idx + 1
                   }.png`}
-                  alt="certificate"
-                  draggable="false"
+                  alt='certificate'
+                  draggable='false'
                   onLoad={() => {
                     setImageLoadedCount(imageLoadedCount + 1);
                   }}
@@ -245,7 +249,7 @@ const Certificates: NextPage = () => {
             );
           })}
       </Swiper>
-      <div className="slider">
+      <div className='slider'>
         <div
           className={`left ${current === 1 ? 'disable' : ''}`}
           onClick={() => {
@@ -256,8 +260,8 @@ const Certificates: NextPage = () => {
           }}
         >
           <img
-            src="https://cdn-official-website.juzibot.com/images/icons/arrow-right.svg"
-            alt="arrow"
+            src='https://cdn-official-website.juzibot.com/images/icons/arrow-right.svg'
+            alt='arrow'
           ></img>
         </div>
 
@@ -271,8 +275,8 @@ const Certificates: NextPage = () => {
           }}
         >
           <img
-            src="https://cdn-official-website.juzibot.com/images/icons/arrow-right.svg"
-            alt="arrow"
+            src='https://cdn-official-website.juzibot.com/images/icons/arrow-right.svg'
+            alt='arrow'
           ></img>
         </div>
       </div>
@@ -284,25 +288,25 @@ const CustomerDisplay: NextPage = () => {
   return (
     <>
       <h1>我们的客户</h1>
-      <div className="subtitle">以下为部分客户，排名不分前后</div>
+      <div className='subtitle'>以下为部分客户，排名不分前后</div>
 
-      <div className="category">消费品牌</div>
+      <div className='category'>消费品牌</div>
       <img
-        src="https://cdn-official-website.juzibot.com/images/about-us/consumer-20220222.png"
-        alt="consumer"
-        draggable="false"
+        src='https://cdn-official-website.juzibot.com/images/about-us/consumer-20220222.png'
+        alt='consumer'
+        draggable='false'
       ></img>
-      <div className="category">政务/金融/医疗</div>
+      <div className='category'>政务/金融/医疗</div>
       <img
-        src="https://cdn-official-website.juzibot.com/images/about-us/finance-20220222.png"
-        alt="finance"
-        draggable="false"
+        src='https://cdn-official-website.juzibot.com/images/about-us/finance-20220222.png'
+        alt='finance'
+        draggable='false'
       ></img>
-      <div className="category">互联网服务在线教育</div>
+      <div className='category'>互联网服务在线教育</div>
       <img
-        src="https://cdn-official-website.juzibot.com/images/about-us/internal-20230316.png"
-        alt="internal"
-        draggable="false"
+        src='https://cdn-official-website.juzibot.com/images/about-us/internal-20230316.png'
+        alt='internal'
+        draggable='false'
       ></img>
     </>
   );
@@ -342,10 +346,10 @@ const Popup: NextPage<{
         id={`c${flag}`}
       >
         <div
-          className="line"
+          className='line'
           style={lineY ? { transform: `translateY(${lineY}px)` } : {}}
         ></div>
-        <div className="popup" style={style}>
+        <div className='popup' style={style}>
           <div>
             <strong>{title}</strong>
           </div>
@@ -361,14 +365,14 @@ const Popup: NextPage<{
         onMouseLeave={() => flagSetter('')}
         onMouseMove={() => flagSetter(flag)}
       >
-        <div className="popup" style={style}>
+        <div className='popup' style={style}>
           <div>
             <strong>{title}</strong>
           </div>
           {children}
         </div>
         <div
-          className="line"
+          className='line'
           style={lineY ? { transform: `translateY(${lineY}px)` } : {}}
         ></div>
       </div>
@@ -403,7 +407,7 @@ const Dot: NextPage<{
 const ExtraDialog: NextPage<{ flag: string }> = ({ flag }) => {
   if (flag === '2015') {
     return (
-      <div className="cover-dialog hover c-2015">
+      <div className='cover-dialog hover c-2015'>
         <strong>2015.02</strong>
         <div>
           句子互动前身桔子互动成立，为微信事业部、亚马逊、京东、华为等品牌提供新媒体运营服务
@@ -417,7 +421,7 @@ const ExtraDialog: NextPage<{ flag: string }> = ({ flag }) => {
   }
   if (flag === '2017') {
     return (
-      <div className="cover-dialog reverse hover c-2017">
+      <div className='cover-dialog reverse hover c-2017'>
         <strong>2017.03</strong>
         <div>Wechaty 的首个落地项目小桔机器人上线</div>
         <strong>2017.04</strong>
@@ -431,7 +435,7 @@ const ExtraDialog: NextPage<{ flag: string }> = ({ flag }) => {
   }
   if (flag === '2018') {
     return (
-      <div className="cover-dialog hover c-2018">
+      <div className='cover-dialog hover c-2018'>
         <strong>2018.01</strong>
         <div>
           与硅谷 chatbot 平台 Datalog 签署合作协议，作为 MyPolly 在中国的经销商
@@ -456,7 +460,7 @@ const ExtraDialog: NextPage<{ flag: string }> = ({ flag }) => {
   }
   if (flag === '2019') {
     return (
-      <div className="cover-dialog reverse hover c-2019">
+      <div className='cover-dialog reverse hover c-2019'>
         <strong>2019.01</strong>
         <div>句子秒回上线</div>
         <strong>2019.04</strong>
@@ -478,7 +482,7 @@ const ExtraDialog: NextPage<{ flag: string }> = ({ flag }) => {
   }
   if (flag === '2020') {
     return (
-      <div className="cover-dialog hover c-2020">
+      <div className='cover-dialog hover c-2020'>
         <strong>2020.03</strong>
         <div>
           句子互动企业微信产品上线，并获得首个客户京东金融；《Chatbot 从 0 到
@@ -502,7 +506,7 @@ const ExtraDialog: NextPage<{ flag: string }> = ({ flag }) => {
   }
   if (flag === '2021') {
     return (
-      <div className="cover-dialog reverse hover c-2021">
+      <div className='cover-dialog reverse hover c-2021'>
         <strong>2021.01</strong>
         <div>与学而思、聪明核桃、一起教育等头部教育公司达成合作</div>
         <strong>2021.03</strong>
@@ -533,7 +537,7 @@ const ExtraDialog: NextPage<{ flag: string }> = ({ flag }) => {
   }
   if (flag === '2022') {
     return (
-      <div className="cover-dialog hover c-2022">
+      <div className='cover-dialog hover c-2022'>
         <strong>2022.01</strong>
         <div>句子秒回 WhatsApp 版上线</div>
         <strong>2022.03</strong>
@@ -594,7 +598,7 @@ const GrowthWall: NextPage = () => {
     <>
       <h3>发展历程</h3>
       <div
-        className="growth-data"
+        className='growth-data'
         onMouseMove={() => {
           autoPlayRef.current && clearTimeout(autoPlayRef.current);
           toggleExtraPopopVisible(true);
@@ -606,11 +610,11 @@ const GrowthWall: NextPage = () => {
       >
         <ExtraDialog flag={extraPopopVisible ? flag : ''} />
         <Popup
-          title="2016.05"
+          title='2016.05'
           x={110}
           y={104}
           lineY={182}
-          flag="2016-05"
+          flag='2016-05'
           flagSetter={setFlag}
           currentFlag={flag}
         >
@@ -619,12 +623,12 @@ const GrowthWall: NextPage = () => {
         </Popup>
 
         <Popup
-          title="2017.12"
+          title='2017.12'
           x={284}
           y={194}
           lineY={162}
           isReverse
-          flag="2017-12"
+          flag='2017-12'
           flagSetter={setFlag}
           currentFlag={flag}
         >
@@ -632,12 +636,12 @@ const GrowthWall: NextPage = () => {
         </Popup>
 
         <Popup
-          title="2018.12"
+          title='2018.12'
           x={454}
           y={88}
           lineY={180}
           style={{ width: 260 }}
-          flag="2018-12"
+          flag='2018-12'
           flagSetter={setFlag}
           currentFlag={flag}
         >
@@ -645,13 +649,13 @@ const GrowthWall: NextPage = () => {
         </Popup>
 
         <Popup
-          title="2019.01"
+          title='2019.01'
           isReverse
           x={624}
           y={168}
           lineY={156}
           style={{ width: 128 }}
-          flag="2019-01"
+          flag='2019-01'
           flagSetter={setFlag}
           currentFlag={flag}
         >
@@ -659,12 +663,12 @@ const GrowthWall: NextPage = () => {
         </Popup>
 
         <Popup
-          title="2020.03"
+          title='2020.03'
           x={794}
           y={-40}
           lineY={250}
           style={{ width: 280 }}
-          flag="2020-03"
+          flag='2020-03'
           flagSetter={setFlag}
           currentFlag={flag}
         >
@@ -676,13 +680,13 @@ const GrowthWall: NextPage = () => {
         </Popup>
 
         <Popup
-          title="2021.07"
+          title='2021.07'
           x={964}
           y={66}
           lineY={0}
           style={{ width: 310 }}
           isReverse
-          flag="2021-07"
+          flag='2021-07'
           flagSetter={setFlag}
           currentFlag={flag}
         >
@@ -696,12 +700,12 @@ const GrowthWall: NextPage = () => {
         </Popup>
 
         <Popup
-          title="2022.01"
+          title='2022.01'
           x={1093}
           y={-62}
           lineY={160}
           style={{ width: 230 }}
-          flag="2022-01"
+          flag='2022-01'
           flagSetter={setFlag}
           currentFlag={flag}
         >
@@ -713,7 +717,7 @@ const GrowthWall: NextPage = () => {
           y={338}
           currentFlag={extraPopopVisible ? flag : ''}
           flagSetter={setFlag}
-          flag="2015"
+          flag='2015'
         />
         <Dot
           x={96}
@@ -721,14 +725,14 @@ const GrowthWall: NextPage = () => {
           isWhite
           currentFlag={flag}
           flagSetter={setFlag}
-          flag="2016-05"
+          flag='2016-05'
         />
         <Dot
           x={186}
           y={336}
           currentFlag={extraPopopVisible ? flag : ''}
           flagSetter={setFlag}
-          flag="2017"
+          flag='2017'
         />
         <Dot
           x={270}
@@ -736,14 +740,14 @@ const GrowthWall: NextPage = () => {
           isWhite
           currentFlag={flag}
           flagSetter={setFlag}
-          flag="2017-12"
+          flag='2017-12'
         />
         <Dot
           x={356}
           y={330}
           currentFlag={extraPopopVisible ? flag : ''}
           flagSetter={setFlag}
-          flag="2018"
+          flag='2018'
         />
         <Dot
           x={440}
@@ -751,14 +755,14 @@ const GrowthWall: NextPage = () => {
           isWhite
           currentFlag={flag}
           flagSetter={setFlag}
-          flag="2018-12"
+          flag='2018-12'
         />
         <Dot
           x={526}
           y={315}
           currentFlag={extraPopopVisible ? flag : ''}
           flagSetter={setFlag}
-          flag="2019"
+          flag='2019'
         />
         <Dot
           x={610}
@@ -766,14 +770,14 @@ const GrowthWall: NextPage = () => {
           isWhite
           currentFlag={flag}
           flagSetter={setFlag}
-          flag="2019-01"
+          flag='2019-01'
         />
         <Dot
           x={696}
           y={286}
           currentFlag={extraPopopVisible ? flag : ''}
           flagSetter={setFlag}
-          flag="2020"
+          flag='2020'
         />
         <Dot
           x={780}
@@ -781,14 +785,14 @@ const GrowthWall: NextPage = () => {
           isWhite
           currentFlag={flag}
           flagSetter={setFlag}
-          flag="2020-03"
+          flag='2020-03'
         />
         <Dot
           x={866}
           y={237}
           currentFlag={extraPopopVisible ? flag : ''}
           flagSetter={setFlag}
-          flag="2021"
+          flag='2021'
         />
         <Dot
           x={950}
@@ -796,14 +800,14 @@ const GrowthWall: NextPage = () => {
           isWhite
           currentFlag={flag}
           flagSetter={setFlag}
-          flag="2021-07"
+          flag='2021-07'
         />
         <Dot
           x={1038}
           y={170}
           currentFlag={extraPopopVisible ? flag : ''}
           flagSetter={setFlag}
-          flag="2022"
+          flag='2022'
         />
         <Dot
           x={1080}
@@ -811,7 +815,7 @@ const GrowthWall: NextPage = () => {
           isWhite
           currentFlag={flag}
           flagSetter={setFlag}
-          flag="2022-01"
+          flag='2022-01'
         />
       </div>
     </>
@@ -821,34 +825,58 @@ const GrowthWall: NextPage = () => {
 const AboutUsHeroPage: NextPage = () => {
   const { t } = useTranslation('about-us');
   return (
-    <div className="first-page">
-      <Seo page="about-us" />
+    <div className='first-page'>
+      <Seo page='about-us' />
       <h1>{t('hero-title')}</h1>
 
-      <div className="info-box">
-        <div className="left">
+      <div className='info-box'>
+        <div className='left'>
           <Image
-            src="https://cdn-official-website.juzibot.com/images/about-us/photo.png"
+            src='https://cdn-official-website.juzibot.com/images/about-us/photo.png'
             width={660}
             height={400}
-            alt="photo"
-            draggable="false"
+            alt='photo'
+            draggable='false'
           />
-          <div className="logo-box">
+          <div className='logo-box'>
             <img
-              src="https://cdn-official-website.juzibot.com/images/logo.png"
-              alt="logo"
-              draggable="false"
+              src='https://cdn-official-website.juzibot.com/images/logo.png'
+              alt='logo'
+              draggable='false'
             />
           </div>
         </div>
 
-        <div className="right">
+        <div className='right'>
           <div>{t('content-1')}</div>
           <div
             style={{ marginTop: 24 }}
             dangerouslySetInnerHTML={{ __html: t('content-2') }}
           ></div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+const AboutAiNativePage: NextPage = () => {
+  const { t } = useTranslation('about-us');
+  return (
+    <div className='first-page'>
+      <Seo page='about-us' />
+      <div className='flex flex-col items-center justify-center'>
+        <div className="!text-[32px] font-semibold">AI Native 团队，</div>
+        <div className="!text-[32px] font-semibold">在 IM 营销生态 & Chatbot 领域7 年积累磨一剑，对营场景有深刻认知</div>
+      </div>
+
+      <div className='info-box justify-center'>
+        <div className="flex-1 flex items-center justify-center">
+          <img
+            src='_images/image-page/about-us-1.png'
+            alt='photo'
+            className="w-[1220px]"
+            draggable='false'
+          />
         </div>
       </div>
     </div>
@@ -876,54 +904,58 @@ const AboutUsPage: NextPage = () => {
   const isZh = i18n.language === 'zh';
   return (
     <div className={i18n.language}>
-      <Seo page="about-us" />
-      <div className="wrapper about-us-page">
-        <div className="container">
+      <Seo page='about-us' />
+      <div className='wrapper about-us-page'>
+        <div className='container'>
           <AboutUsHeroPage />
         </div>
       </div>
-
+      <div className='wrapper about-us-page' style={{ background: 'unset' }}>
+        <div className='container'>
+          <AboutAiNativePage />
+        </div>
+      </div>
       {isZh ? (
         <>
-          <div className="wrapper growth-wall">
-            <div className="container">
+          <div className='wrapper growth-wall'>
+            <div className='container'>
               <GrowthWall />
             </div>
           </div>
 
-          <div className="wrapper video-box">
-            <div className="container">
-              <div className="video-container">
-                <div className="video" id="video"></div>
+          <div className='wrapper video-box'>
+            <div className='container'>
+              <div className='video-container'>
+                <div className='video' id='video'></div>
               </div>
             </div>
             <Script
-              src="https://cdn.jsdelivr.net/npm/dplayer/dist/DPlayer.min.js"
+              src='https://cdn.jsdelivr.net/npm/dplayer/dist/DPlayer.min.js'
               onLoad={initPlayer}
               async
             ></Script>
           </div>
 
-          <div className="wrapper customer-display">
-            <div className="container">
+          <div className='wrapper customer-display'>
+            <div className='container'>
               <CustomerDisplay />
             </div>
           </div>
 
-          <div className="wrapper certificates">
-            <div className="container">
+          <div className='wrapper certificates'>
+            <div className='container'>
               <Certificates />
             </div>
           </div>
 
-          <div className="wrapper news">
-            <div className="container">
+          <div className='wrapper news'>
+            <div className='container'>
               <NewsPage />
             </div>
           </div>
 
-          <div className="wrapper about-appeal">
-            <div className="container">
+          <div className='wrapper about-appeal'>
+            <div className='container'>
               <AboutUsAppealBar />
             </div>
           </div>

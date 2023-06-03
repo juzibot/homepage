@@ -35,15 +35,17 @@ const Home: NextPage = () => {
       <Seo page="homepage" />
       <div className='m-auto pt-[60px]'>
         <div className='relative'>
-          <img className='w-full' alt='' src="_images/image-page/index-0.png" />
-          <ContactUsPureModalWithButton>
-            <div
-              className="w-[152px] h-[56px] bg-[#0555FF] rounded-full flex justify-center items-center text-[18px] font-semibold text-white absolute top-[462px] left-[50%] cursor-pointer"
+          <img className='w-full' alt='' src="_images/image-page/index-00.png" />
+          {/* <ContactUsPureModalWithButton> */}
+            <a
+              href="https://insight.juzibot.com/"
+              target="_blank"
+              rel="noreferrer"
+              className="w-[352px] h-[106px] rounded-full flex justify-center items-center text-[18px] font-semibold text-white absolute top-[315px] left-[50%] cursor-pointer"
               style={{ transform: 'translate(-50%)' }}
             >
-              免费使用
-            </div>
-          </ContactUsPureModalWithButton>
+            </a>
+          {/* </ContactUsPureModalWithButton> */}
         </div>
         {/* <img className='w-full' alt='' src="_images/image-page/index-2.png" /> */}
         {/* <img className='w-full' alt='' src="_images/image-page/index-3.png" /> */}
