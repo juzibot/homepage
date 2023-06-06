@@ -11,6 +11,7 @@ import FeatureBar from '@src/components/features/FeatureBar';
 import Seo from '@src/components/common/Seo';
 import { useTranslation } from 'react-i18next';
 import { useMediaQuery } from '@react-hookz/web';
+import AppealBarNew from '@src/components/index/AppealBarNew';
 
 const CustomerAcquisitionPage: NextPage = () => {
   const isSmallDevice = useMediaQuery('only screen and (max-width : 600px)');
@@ -30,7 +31,12 @@ const CustomerAcquisitionPage: NextPage = () => {
   }
   return (
     <div className='m-auto'>
-      <img className='w-full' alt='' src='/_images/image-page/rpa-00.png' />
+      <img className='w-full mt-[72px]' alt='' src='/_images/image-page/rpa-00.png' />
+      <div className="wrapper appeal-bar">
+        <div className="container">
+          <AppealBarNew />
+        </div>
+      </div>
       {/* <img className='w-full' alt='' src="/_images/image-page/rpa-2.png" />
       <img className='w-full' alt='' src="/_images/image-page/rpa-3.png" />
       <img className='w-full' alt='' src="/_images/image-page/rpa-4.png" />

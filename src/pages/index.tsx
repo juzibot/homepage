@@ -11,7 +11,7 @@ import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import MobileIndexPage from './index-mobile';
-import { ContactUsPureModalWithButton } from '@src/components/ContactUsPureModal';
+import FooterBarButton from '@src/components/FooterBarButton';
 
 const Home: NextPage = () => {
   const isSmallDevice = useMediaQuery('only screen and (max-width : 600px)');
@@ -27,7 +27,7 @@ const Home: NextPage = () => {
   const { i18n } = useTranslation('common');
 
   if (isSmallDevice) {
-    return <MobileIndexPage />
+    return <MobileIndexPage />;
   }
 
   return (
@@ -37,15 +37,20 @@ const Home: NextPage = () => {
         <div className='relative'>
           <img className='w-full' alt='' src="_images/image-page/index-00.png" />
           {/* <ContactUsPureModalWithButton> */}
-            <a
-              href="https://insight.juzibot.com/"
-              target="_blank"
-              rel="noreferrer"
-              className="w-[calc(11%)] h-[calc(2.25%)] rounded-full flex justify-center items-center text-[18px] font-semibold text-white absolute top-[12.7%] left-[50%] cursor-pointer"
-              style={{ transform: 'translate(-50%)' }}
-            >
-            </a>
+          <a
+            href="https://insight.juzibot.com/"
+            target="_blank"
+            rel="noreferrer"
+            className="w-[calc(11%)] h-[calc(2.25%)] rounded-full flex justify-center items-center text-[18px] font-semibold text-white absolute top-[12.7%] left-[50%] cursor-pointer"
+            style={{ transform: 'translate(-50%)' }}
+          >
+          </a>
           {/* </ContactUsPureModalWithButton> */}
+        </div>
+        <div className="wrapper appeal-bar">
+          <div className="container">
+            <FooterBarButton url="https://insight.juzibot.com/" />
+          </div>
         </div>
         {/* <img className='w-full' alt='' src="_images/image-page/index-2.png" /> */}
         {/* <img className='w-full' alt='' src="_images/image-page/index-3.png" /> */}

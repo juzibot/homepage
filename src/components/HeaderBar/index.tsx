@@ -241,15 +241,15 @@ const AboutUsMenu: NextPage = () => {
     <div className="dropdown-menu about-us">
       <div className="box">
         <MenuItem
-          iconUrl="https://cdn-official-website.juzibot.com/images/icons/header-bar/16.svg"
-          hoverIconUrl="https://cdn-official-website.juzibot.com/images/icons/header-bar/16-o.svg"
+          // iconUrl="https://cdn-official-website.juzibot.com/images/icons/header-bar/16.svg"
+          // hoverIconUrl="https://cdn-official-website.juzibot.com/images/icons/header-bar/16-o.svg"
           href="/about-us"
         >
           公司介绍
         </MenuItem>
         <MenuItem
-          iconUrl="https://cdn-official-website.juzibot.com/images/icons/header-bar/17.svg"
-          hoverIconUrl="https://cdn-official-website.juzibot.com/images/icons/header-bar/17-o.svg"
+          // iconUrl="https://cdn-official-website.juzibot.com/images/icons/header-bar/17.svg"
+          // hoverIconUrl="https://cdn-official-website.juzibot.com/images/icons/header-bar/17-o.svg"
           href="/culture"
         >
           公司文化
