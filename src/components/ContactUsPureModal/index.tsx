@@ -23,12 +23,14 @@ const ContactUsPureModal: FC<Props> = props => {
   }
   return (
     <Modal
-      visible={props.visible}
+      open={props.visible}
+      onCancel={props.onCancel}
       destroyOnClose
       title={null}
       footer={null}
       closable={false}
       className={styles.box}
+      maskClosable
     >
       <div className={styles.content}>
         <h2 className="px-6 mt-10 text-center text-2xl">不止工具，更多全方位支持</h2>

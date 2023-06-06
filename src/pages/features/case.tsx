@@ -12,6 +12,7 @@ import Seo from '@src/components/common/Seo';
 import { useTranslation } from 'react-i18next';
 import { useMediaQuery } from '@react-hookz/web';
 import ContactUsSimpleModal from '@src/components/ContactUsSimpleModal';
+import AppealBarNew from '@src/components/index/AppealBarNew';
 
 const CustomerAcquisitionPage: NextPage = () => {
   const isSmallDevice = useMediaQuery('only screen and (max-width : 600px)');
@@ -44,6 +45,11 @@ const CustomerAcquisitionPage: NextPage = () => {
         预约咨询
       </div>
       <img className='w-full' alt='' src="/_images/image-page/case-0.png" />
+      <div className="wrapper appeal-bar">
+        <div className="container">
+          <AppealBarNew />
+        </div>
+      </div>
       {/* <img className='w-full' alt='' src="/_images/image-page/ai-2.png" />
       <img className='w-full' alt='' src="/_images/image-page/ai-3.png" />
       <img className='w-full' alt='' src="/_images/image-page/ai-4.png" />

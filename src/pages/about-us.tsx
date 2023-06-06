@@ -862,7 +862,7 @@ const AboutUsHeroPage: NextPage = () => {
 const AboutAiNativePage: NextPage = () => {
   // const { t } = useTranslation('about-us');
   return (
-    <div className='first-page'>
+    <div className='first-page !pt-0'>
       <Seo page='about-us' />
       <div className='flex flex-col items-center justify-center'>
         <div className='!text-[32px] font-semibold'>AI Native 团队，</div>
