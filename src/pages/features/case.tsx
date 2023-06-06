@@ -11,10 +11,12 @@ import FeatureBar from '@src/components/features/FeatureBar';
 import Seo from '@src/components/common/Seo';
 import { useTranslation } from 'react-i18next';
 import { useMediaQuery } from '@react-hookz/web';
+import ContactUsSimpleModal from '@src/components/ContactUsSimpleModal';
 
 const CustomerAcquisitionPage: NextPage = () => {
   const isSmallDevice = useMediaQuery('only screen and (max-width : 600px)');
   const [isChrome, toggleChrome] = useState(true);
+  const [showModal, setShowModal] = useState(false);
   useEffect(() => {
     toggleChrome(isBrowserChrome());
   }, []);
@@ -29,7 +31,18 @@ const CustomerAcquisitionPage: NextPage = () => {
     );
   }
   return (
-    <div className='m-auto pt-[50px]'>
+    <div className='m-auto pt-[50px] relative'>
+      <ContactUsSimpleModal
+        open={showModal}
+        onCancel={() => setShowModal(false)}
+      />
+      <div
+        onClick={() => setShowModal(true)}
+        className='w-[152px] bg-[#0555FF] h-[56px] rounded-[100px] flex justify-center items-center text-[18px] font-semibold text-white absolute top-[14%] left-[50%] cursor-pointer'
+        style={{ transform: 'translate(-50%)', boxShadow: ' 0px 35px 50px -15px rgba(52, 128, 239, 0.3)' }}
+      >
+        预约咨询
+      </div>
       <img className='w-full' alt='' src="/_images/image-page/case-0.png" />
       {/* <img className='w-full' alt='' src="/_images/image-page/ai-2.png" />
       <img className='w-full' alt='' src="/_images/image-page/ai-3.png" />

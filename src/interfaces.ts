@@ -56,6 +56,7 @@ export interface ICompanyProps {
 
 export interface IFooterMenu {
   title: string;
+  cIndex?: string;
   isDisable?: boolean;
   child: {
     title: string;

@@ -16,54 +16,29 @@ const Footer: NextPage = () => {
   const menus: (IFooterMenu | undefined)[] = [
     {
       title: t('footer-menu-1-title'),
-      isDisable: true,
+      cIndex: '1',
       child: [
         {
-          title: t('footer-menu-1-1-title'),
-          url: '/features/customer-acquisition',
+          title: 'AI 驱动的基于企业私有数据的“ChatGPT”',
+          url: '/features/ai',
         },
-        { title: t('footer-menu-1-2-title'), url: '/features/sop' },
-        {
-          title: t('footer-menu-1-3-title'),
-          url: '/features/contact-platform',
-        },
-        { title: t('footer-menu-1-4-title'), url: '/features/data-center' },
-      ].concat(
-        i18n.language === 'zh'
-          ? [
-              {
-                title: t('footer-menu-1-5-title'),
-                url: '/features/management',
-              },
-              { title: t('footer-menu-1-6-title'), url: '/features/security' },
-            ]
-          : []
-      ),
+        { title: 'RPA 驱动的营销服务一体化平台', url: '/features/rpa' },
+      ]
     },
     i18n.language === 'zh'
       ? {
-          title: t('footer-menu-2-title'),
-          isDisable: true,
-          child: [
-            { title: t('footer-menu-2-1-title'), url: '/solutions/general' },
-            { title: t('footer-menu-2-2-title'), url: '/solutions/increase' },
-            { title: t('footer-menu-2-3-title'), url: '/solutions/operate' },
-            {
-              title: t('footer-menu-2-4-title'),
-              url: '/solutions/customer-service',
-            },
-            {
-              title: t('footer-menu-2-5-title'),
-              url: '/solutions/consumer-goods',
-            },
-            { title: t('footer-menu-2-6-title'), url: '/solutions/education' },
-            { title: t('footer-menu-2-7-title'), url: '/solutions/finance' },
-            { title: t('footer-menu-2-8-title'), url: '/solutions/health' },
-          ],
-        }
+        title: t('footer-menu-2-title'),
+        cIndex: '2',
+        child: [
+          { title: t('政务解决方案'), url: '/features/government' },
+          { title: t('互联网解决方案'), url: '/features/internet' },
+          { title: t('消费品解决方案'), url: '/features/customer' },
+        ],
+      }
       : undefined,
     {
       title: t('footer-menu-3-title'),
+      cIndex: '3',
       child: [
         { title: t('footer-menu-3-3-title'), url: 'https://wechaty.js.org/' },
         { title: t('footer-menu-3-4-title'), url: '/cases', isDisable: true, },
@@ -76,6 +51,7 @@ const Footer: NextPage = () => {
     },
     {
       title: t('footer-menu-4-title'),
+      cIndex: '4',
       child: [
         {
           title: t('footer-menu-4-1-title'),
@@ -123,7 +99,7 @@ const Footer: NextPage = () => {
 
   const handleClickHideMenu = () => {
     setShowContactUs(true);
-  }
+  };
 
   return (
     <>
@@ -131,7 +107,7 @@ const Footer: NextPage = () => {
       <footer className={i18n.language}>
         <div className="wrapper footer-bar">
           <div className="container">
-            <div className="menu-container">
+            <div className="menu-container !flex justify-evenly">
               <div className="logo">
                 <Image
                   src="https://cdn-official-website.juzibot.com/images/logo.svg"
@@ -142,19 +118,41 @@ const Footer: NextPage = () => {
                 ></Image>
               </div>
 
-              {menus.map((menu) =>
-                menu ? (
-                  <div key={menu.title} className="menu-group">
-                    <div className="title">{menu.title}{menu.isDisable}</div>
-                    <div className="menus">
-                      {menu.child.map((item, idx) => {
-                        const isDisable = menu.isDisable || item.isDisable;
-                        return item.tooltip ? (
-                          <div className="tooltips" key={idx}>
+              {menus.map((menu) => {
+
+                if (menu) {
+                  return (
+                    <div key={menu.title} className="menu-group">
+                      <div className="title">{menu.title}{menu.isDisable}</div>
+                      <div className="menus">
+                        {menu.child.map((item, idx) => {
+                          const isDisable = menu.isDisable || item.isDisable;
+                          return item.tooltip ? (
+                            <div className="tooltips" key={idx}>
+                              <a
+                                data-tip
+                                data-for="address"
+                                href={isDisable ? undefined : item.url}
+                                {...(item.url?.includes('http')
+                                  ? { target: '_blank', rel: 'noreferrer' }
+                                  : { target: '_self' })}
+                                onClick={isDisable ? handleClickHideMenu : undefined}
+                              >
+                                {item.title}
+                              </a>
+                              <ReactTooltip
+                                id="address"
+                                place="right"
+                                effect="solid"
+                                type="dark"
+                              >
+                                <span>{item.tooltip}</span>
+                              </ReactTooltip>
+                            </div>
+                          ) : (
                             <a
-                              data-tip
-                              data-for="address"
                               href={isDisable ? undefined : item.url}
+                              key={idx}
                               {...(item.url?.includes('http')
                                 ? { target: '_blank', rel: 'noreferrer' }
                                 : { target: '_self' })}
@@ -162,31 +160,27 @@ const Footer: NextPage = () => {
                             >
                               {item.title}
                             </a>
-                            <ReactTooltip
-                              id="address"
-                              place="right"
-                              effect="solid"
-                              type="dark"
+                          );
+                        })}
+                      </div>
+                      {menu.cIndex === '1' && (
+                        <div className="mt-[40px]">
+                          <div className="title">客户故事</div>
+                          <div className="menus">
+                            <Link
+                              href="/features/case"
                             >
-                              <span>{item.tooltip}</span>
-                            </ReactTooltip>
+                              客户案例
+                            </Link>
                           </div>
-                        ) : (
-                          <a
-                            href={isDisable ? undefined : item.url}
-                            key={idx}
-                            {...(item.url?.includes('http')
-                              ? { target: '_blank', rel: 'noreferrer' }
-                              : { target: '_self' })}
-                            onClick={isDisable ? handleClickHideMenu : undefined}
-                          >
-                            {item.title}
-                          </a>
-                        )
-                      })}
+                        </div>
+                      )}
                     </div>
-                  </div>
-                ) : undefined
+                  );
+                }
+                return null;
+              }
+
               )}
             </div>
           </div>

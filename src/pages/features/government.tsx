@@ -44,7 +44,7 @@ const Home: NextPage = () => {
 
       <div className="wrapper appeal-bar-new">
         <div className="container">
-          <AppealBarNew />
+          <AppealBarNew isRed />
         </div>
       </div>
     </div>

@@ -1,6 +1,7 @@
 /* eslint-disable no-unreachable */
 // import { ContactUsPureModalWithButton } from '@src/components/ContactUsPureModal';
 import ContactUsSimpleModal from '@src/components/ContactUsSimpleModal';
+import AppealBarNew from '@src/components/index/AppealBarNew';
 import { GetStaticProps, NextPage } from 'next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { useState } from 'react';
@@ -19,6 +20,11 @@ const CustomerAcquisitionPage: NextPage = () => {
         style={{ transform: 'translate(-50%)' }}
       ></div>
       <img className='w-full' alt='' src='/_images/image-page/customer-0.svg' />
+      <div className="wrapper appeal-bar">
+        <div className="container">
+          <AppealBarNew />
+        </div>
+      </div>
     </div>
   );
 };
