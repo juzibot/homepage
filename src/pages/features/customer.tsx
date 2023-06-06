@@ -16,7 +16,7 @@ const CustomerAcquisitionPage: NextPage = () => {
       />
       <div
         onClick={() => setShowModal(true)}
-        className='w-[calc(15%)] h-[calc(8.25%)] rounded-full flex justify-center items-center text-[18px] font-semibold text-white absolute top-[39.7%] left-[50%] cursor-pointer'
+        className='w-[calc(15%)] h-[calc(8.25%)] rounded-full flex justify-center items-center text-[18px] font-semibold text-white absolute top-[28.7%] left-[50%] cursor-pointer'
         style={{ transform: 'translate(-50%)' }}
       ></div>
       <img className='w-full' alt='' src='/_images/image-page/customer-0.svg' />

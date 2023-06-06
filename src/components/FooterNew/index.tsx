@@ -41,7 +41,7 @@ const Footer: NextPage = () => {
       cIndex: '3',
       child: [
         { title: t('footer-menu-3-3-title'), url: 'https://wechaty.js.org/' },
-        { title: t('footer-menu-3-4-title'), url: '/cases', isDisable: true, },
+        // { title: t('footer-menu-3-4-title'), url: '/cases', isDisable: true, },
         { title: t('footer-menu-3-5-title'), url: 'https://blog.juzibot.com/' },
         {
           title: t('footer-menu-3-6-title'),
@@ -55,7 +55,7 @@ const Footer: NextPage = () => {
       child: [
         {
           title: t('footer-menu-4-1-title'),
-          url: `/${i18n.language}/features/about-us`,
+          url: `/${i18n.language}/about-us`,
         },
         {
           title: t('footer-menu-4-3-title'),
@@ -164,7 +164,7 @@ const Footer: NextPage = () => {
                         })}
                       </div>
                       {menu.cIndex === '1' && (
-                        <div className="mt-[40px]">
+                        <div className="mt-[18px]">
                           <div className="title">客户故事</div>
                           <div className="menus">
                             <Link
