@@ -35,7 +35,7 @@ const Home: NextPage = () => {
       <Seo page="homepage" />
       <div className='m-auto pt-[60px]'>
         <div className='relative'>
-          <img className='w-full' alt='' src="_images/image-page/index-00.png" />
+          <img className='w-full' alt='' src="_images/image-page/index-00.jpg" />
           {/* <ContactUsPureModalWithButton> */}
           <a
             href="https://insight.juzibot.com/"
