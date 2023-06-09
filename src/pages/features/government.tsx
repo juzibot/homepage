@@ -1,5 +1,6 @@
 /* eslint-disable no-unreachable */
 // import { useMediaQuery } from '@react-hookz/web';
+import { useMediaQuery } from '@react-hookz/web';
 import Seo from '@src/components/common/Seo';
 import AppealBarNew from '@src/components/index/AppealBarNew';
 import HeroPageNew from '@src/components/index/HeroPageNew';
@@ -11,7 +12,7 @@ import { useTranslation } from 'react-i18next';
 // import MobileIndexPage from '../index-mobile';
 
 const Home: NextPage = () => {
-  // const isSmallDevice = useMediaQuery('only screen and (max-width : 600px)');
+  const isSmallDevice = useMediaQuery('only screen and (max-width : 600px)');
   const [, setWidth] = useState(0);
   useEffect(() => {
     if (process.browser) {
@@ -26,6 +27,18 @@ const Home: NextPage = () => {
   // if (isSmallDevice) {
   //   return <MobileIndexPage />
   // }
+  if (isSmallDevice) {
+    return (
+      <div className='m-auto relative'>
+        <img className='w-full' alt='' src='/_images/image-page/government-0.png' />
+        <div className="wrapper appeal-bar-new">
+          <div className="container !w-[100%]">
+            <AppealBarNew isRed />
+          </div>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className={i18n.language}>

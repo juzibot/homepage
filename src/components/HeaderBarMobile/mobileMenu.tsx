@@ -2,6 +2,7 @@
 import { useState } from 'react';
 import { createPortal } from 'react-dom';
 import ContactUsSimpleModal from '../ContactUsSimpleModal';
+import Link from 'next/link';
 
 const MobileMenu = () => {
   const [showMenu, setShowMenu] = useState(false);
@@ -29,30 +30,44 @@ const MobileMenu = () => {
               <div className='text-[17px] leading-[24px] mt-[24px] font-semibold text-[#364256]'>
                 产品与服务
               </div>
-              <a href="/features/ai" className='text-[#364256] w-full text-[16px] mt-[32px] inline-block'>
-                AI 驱动的基于企业私有数据的“ChatGPT”
-              </a>
-              <a href="/features/rpa" className='text-[#364256] w-full text-[16px] mt-[32px] inline-block'>
-                RPA 驱动的营销服务一体化平台
-              </a>
+              <Link href="/features/ai" passHref>
+                <div onClick={() => setShowMenu(false)} className="text-[#364256] w-full text-[16px] mt-[32px] inline-block">
+                  AI 驱动的基于企业私有数据的“ChatGPT”
+                </div>
+              </Link>
+              <Link href="/features/rpa" passHref>
+                <div onClick={() => setShowMenu(false)} className='text-[#364256] w-full text-[16px] mt-[32px] inline-block'>
+                  RPA 驱动的营销服务一体化平台
+                </div>
+              </Link>
             </div>
             <div className='flex flex-col px-[28px] pt-[24px] pb-[32px] gap-[32px]'>
               <div className='text-[17px] leading-[24px] mt-[24px] font-semibold text-[#364256]'>
                 解决方案
               </div>
-              <a href="/features/government" className='text-[#364256] w-full text-[16px] inline-block'>
-                政务解决方案
-              </a>
-              <a href="/features/internet" className='text-[#364256] w-full text-[16px] inline-block'>
-                互联网解决方案
-              </a>
-              <a href="/features/customer" className='text-[#364256] w-full text-[16px] inline-block'>
-                消费品解决方案
-              </a>
+              <Link href="/features/government" passHref>
+                <div onClick={() => setShowMenu(false)} className='text-[#364256] w-full text-[16px] inline-block'>
+                  政务解决方案
+                </div>
+              </Link>
+              <Link href="/features/internet" passHref>
+                <div onClick={() => setShowMenu(false)} className='text-[#364256] w-full text-[16px] inline-block'>
+                  互联网解决方案
+                </div>
+              </Link>
+              <Link href="/features/customer" passHref>
+                <div onClick={() => setShowMenu(false)} className='text-[#364256] w-full text-[16px] inline-block'>
+                  消费品解决方案
+                </div>
+              </Link>
             </div>
             <div className="h-[1px] bg-[rgba(221,227,234,0.5)]" />
             <div className='h-[72px] flex items-center px-[28px]'>
-              <a href="/features/case" className='w-[100%] text-[17px] text-[#364256]'>客户案例</a>
+              <Link href="/features/case" passHref>
+                <div onClick={() => setShowMenu(false)} className='w-[100%] text-[17px] text-[#364256]'>
+                  客户案例
+                </div>
+              </Link>
             </div>
             <div className="h-[1px] bg-[rgba(221,227,234,0.5)]" />
             <div className='h-[72px] flex items-center px-[28px]'>
@@ -70,7 +85,19 @@ const MobileMenu = () => {
             </div>
             <div className="h-[1px] bg-[rgba(221,227,234,0.5)]" />
             <div className='h-[72px] flex items-center px-[28px]'>
-              <a href="/about-us-m" className='w-[100%] text-[17px] text-[#364256]'>关于我们</a>
+              <Link href="/about-us-m" passHref>
+                <div onClick={() => setShowMenu(false)} className='w-[100%] text-[17px] text-[#364256]'>
+                  关于我们
+                </div>
+              </Link>
+            </div>
+            <div className="h-[1px] bg-[rgba(221,227,234,0.5)]" />
+            <div className='h-[72px] flex items-center px-[28px]'>
+              <Link href="/culture-m" passHref>
+                <div onClick={() => setShowMenu(false)} className='w-[100%] text-[17px] text-[#364256]'>
+                  公司文化
+                </div>
+              </Link>
             </div>
             <div className="h-[1px] bg-[rgba(221,227,234,0.5)]" />
             <div className='h-[35px]' />

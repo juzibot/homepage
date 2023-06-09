@@ -26,8 +26,23 @@ const CustomerAcquisitionPage: NextPage = () => {
   });
   if (isSmallDevice) {
     return (
-      <div className='m-auto pt-[50px]'>
+      <div className='m-auto pt-[50px] relative'>
         <img className='w-full' alt='' src="/_images/image-page/case-00.png" />
+        <div
+          onClick={() => setShowModal(true)}
+          className='w-[152px] h-[56px] rounded-[100px] flex justify-center items-center text-[18px] font-semibold text-white absolute top-[7%] left-[50%] cursor-pointer'
+          style={{ transform: 'translate(-50%)', boxShadow: ' 0px 35px 50px -15px rgba(52, 128, 239, 0.3)' }}
+        >
+        </div>
+        <div className="wrapper appeal-bar">
+          <div className="container !w-[100%]">
+            <AppealBarNew />
+          </div>
+        </div>
+        <ContactUsSimpleModal
+          open={showModal}
+          onCancel={() => setShowModal(false)}
+        />
       </div>
     );
   }

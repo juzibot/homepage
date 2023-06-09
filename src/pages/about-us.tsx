@@ -867,7 +867,7 @@ const AboutAiNativePage: NextPage = () => {
       <div className='flex flex-col items-center justify-center'>
         <div className='!text-[32px] font-semibold'>AI Native 团队，</div>
         <div className='!text-[32px] font-semibold'>
-          在 IM 营销生态 & Chatbot 领域7 年积累磨一剑，对营场景有深刻认知
+          在 IM 营销生态 & Chatbot 领域7 年积累磨一剑，对营销场景有深刻认知
         </div>
       </div>
 
