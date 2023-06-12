@@ -14,7 +14,7 @@ import FooterMobile from '@src/components/FooterMobile';
 // import HeaderBarNew from '@src/components/HeaderBarNew';
 import FooterNew from '@src/components/FooterNew';
 import { useRouter } from 'next/router';
-import { setMobileStatusBarColor } from '@src/utils/mobileStatusBar';
+// import { setMobileStatusBarColor } from '@src/utils/mobileStatusBar';
 import HeaderBar from '@src/components/HeaderBar';
 // import { juziAnalysis } from '@src/utils/analysis';
 
@@ -32,9 +32,9 @@ const JuziApp: NextPage<AppProps> = ({ Component, pageProps }) => {
   }, []);
 
   useEffect(() => {
-    if (isSmallDevice) {
-      setMobileStatusBarColor('#BE1B2D');
-    }
+    // if (isSmallDevice) {
+    //   setMobileStatusBarColor('#BE1B2D');
+    // }
   }, [isSmallDevice]);
 
   if (pathname === '/_version') {
