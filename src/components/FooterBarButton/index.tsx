@@ -1,9 +1,16 @@
 import { useTranslation } from 'react-i18next';
+import ContactUsSimpleModal from '../ContactUsSimpleModal';
+import React, { useState } from 'react';
 
-const FooterBarButton = ({ url, isMobile }: { url: string; isMobile?: boolean; }) => {
+const FooterBarButton = ({ url, isMobile, useModal, imageNode }: { url: string; isMobile?: boolean; useModal?: boolean; imageNode?: React.ReactNode }) => {
   const { t } = useTranslation(['homepage']);
+  const [showContactUs, setShowContactUs] = useState(false);
   const handleClick = () => {
-    window.open(url);
+    if (useModal) {
+      setShowContactUs(true);
+    } else {
+      window.open(url);
+    }
   };
   return (
     <div className="content">
@@ -17,6 +24,11 @@ const FooterBarButton = ({ url, isMobile }: { url: string; isMobile?: boolean; }
       <button className="white-button start-button !shadow-none" onClick={handleClick}>
         {t('appeal-start-free')}
       </button>
+      <ContactUsSimpleModal
+        open={showContactUs}
+        onCancel={() => setShowContactUs(false)}
+        imageNode={imageNode}
+      />
     </div>
   );
 };

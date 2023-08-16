@@ -28,7 +28,12 @@ const CustomerAcquisitionPage: NextPage = () => {
         <img className='w-full' alt='' src='/_images/image-page/ai-00.png' />
         <div className="wrapper appeal-bar">
           <div className="container !w-[100%]">
-            <FooterBarButton isMobile url="https://insight.juzibot.com/" />
+            <FooterBarButton
+              isMobile
+              url="https://insight.juzibot.com/"
+              imageNode={<img src="/_images/contact-us-qrcode/ai.png" alt="" className="w-full h-full" />}
+              useModal
+            />
           </div>
         </div>
       </div>
@@ -39,7 +44,11 @@ const CustomerAcquisitionPage: NextPage = () => {
       <img className='w-full mt-[72px]' alt='' src='/_images/image-page/ai-0.jpg' />
       <div className="wrapper appeal-bar">
         <div className="container">
-          <FooterBarButton url="https://insight.juzibot.com/" />
+          <FooterBarButton
+            url="https://insight.juzibot.com/"
+            imageNode={<img src="/_images/contact-us-qrcode/ai.png" alt="" className="w-full h-full" />}
+            useModal
+          />
         </div>
       </div>
       {/* <img className='w-full' alt='' src="/_images/image-page/ai-2.png" />

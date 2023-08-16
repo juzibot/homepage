@@ -12,10 +12,12 @@ import { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import MobileIndexPage from './index-mobile';
 import FooterBarButton from '@src/components/FooterBarButton';
+import ContactUsSimpleModal from '@src/components/ContactUsSimpleModal';
 
 const Home: NextPage = () => {
   const isSmallDevice = useMediaQuery('only screen and (max-width : 600px)');
   const [, setWidth] = useState(0);
+  const [showContactUs, setShowContactUs] = useState(false);
   useEffect(() => {
     if (process.browser) {
       window.addEventListener('resize', () =>
@@ -38,18 +40,24 @@ const Home: NextPage = () => {
           <img className='w-full' alt='' src="_images/image-page/index-00.jpg" />
           {/* <ContactUsPureModalWithButton> */}
           <a
-            href="https://insight.juzibot.com/"
+            // href="https://insight.juzibot.com/"
+            onClick={() => setShowContactUs(true)}
             target="_blank"
             rel="noreferrer"
             className="w-[calc(11%)] h-[calc(2.25%)] rounded-full flex justify-center items-center text-[18px] font-semibold text-white absolute top-[12.7%] left-[50%] cursor-pointer"
             style={{ transform: 'translate(-50%)' }}
           >
           </a>
+          <ContactUsSimpleModal
+            open={showContactUs}
+            onCancel={() => setShowContactUs(false)}
+            imageNode={<img src="_images/contact-us-qrcode/homepage.png" alt="" className="w-full h-full" />}
+          />
           {/* </ContactUsPureModalWithButton> */}
         </div>
         <div className="wrapper appeal-bar">
           <div className="container">
-            <FooterBarButton url="https://insight.juzibot.com/" />
+            <FooterBarButton url="https://insight.juzibot.com/" imageNode={<img src="_images/contact-us-qrcode/homepage.png" alt="" className="w-full h-full" />} useModal />
           </div>
         </div>
         {/* <img className='w-full' alt='' src="_images/image-page/index-2.png" /> */}
