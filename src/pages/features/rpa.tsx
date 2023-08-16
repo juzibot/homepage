@@ -28,7 +28,7 @@ const CustomerAcquisitionPage: NextPage = () => {
         <img className='w-full' alt='' src='/_images/image-page/rpa-0.png' />
         <div className="wrapper appeal-bar">
           <div className="container !w-[100%]">
-            <AppealBarNew />
+            <AppealBarNew useSimpleModal imageNode={<img src="/_images/contact-us-qrcode/rpa.png"alt="" className="w-full h-full" />} />
           </div>
         </div>
       </div>
@@ -39,7 +39,7 @@ const CustomerAcquisitionPage: NextPage = () => {
       <img className='w-full mt-[72px]' alt='' src='/_images/image-page/rpa-00.jpg' />
       <div className="wrapper appeal-bar">
         <div className="container">
-          <AppealBarNew />
+          <AppealBarNew useSimpleModal imageNode={<img src="/_images/contact-us-qrcode/rpa.png"alt="" className="w-full h-full" />} />
         </div>
       </div>
       {/* <img className='w-full' alt='' src="/_images/image-page/rpa-2.png" />
