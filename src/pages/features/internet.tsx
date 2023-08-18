@@ -2,6 +2,7 @@
 // import { ContactUsPureModalWithButton } from '@src/components/ContactUsPureModal';
 import { useMediaQuery } from '@react-hookz/web';
 import ContactUsSimpleModal from '@src/components/ContactUsSimpleModal';
+import Seo from '@src/components/common/Seo';
 import AppealBarNew from '@src/components/index/AppealBarNew';
 import { GetStaticProps, NextPage } from 'next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
@@ -13,6 +14,7 @@ const CustomerAcquisitionPage: NextPage = () => {
   if (isSmallDevice) {
     return (
       <div className='m-auto pt-[60px] relative'>
+        <Seo page="features-internet" />
         <img className='w-full' alt='' src='/_images/image-page/internet-00.png' />
         <div className="wrapper appeal-bar">
           <div className="container !w-[100%]">
@@ -33,6 +35,7 @@ const CustomerAcquisitionPage: NextPage = () => {
   }
   return (
     <div className='m-auto pt-[60px] relative'>
+      <Seo page="features-internet" />
       <ContactUsSimpleModal
         open={showModal}
         onCancel={() => setShowModal(false)}

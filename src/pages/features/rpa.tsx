@@ -25,6 +25,7 @@ const CustomerAcquisitionPage: NextPage = () => {
   if (isSmallDevice) {
     return (
       <div className='m-auto'>
+        <Seo page="features-rpa" />
         <img className='w-full' alt='' src='/_images/image-page/rpa-0.png' />
         <div className="wrapper appeal-bar">
           <div className="container !w-[100%]">
@@ -36,6 +37,7 @@ const CustomerAcquisitionPage: NextPage = () => {
   }
   return (
     <div className='m-auto'>
+      <Seo page="features-rpa" />
       <img className='w-full mt-[72px]' alt='' src='/_images/image-page/rpa-00.jpg' />
       <div className="wrapper appeal-bar">
         <div className="container">

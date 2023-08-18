@@ -30,6 +30,7 @@ const Home: NextPage = () => {
   if (isSmallDevice) {
     return (
       <div className='m-auto relative'>
+        <Seo page="features-government" />
         <img className='w-full' alt='' src='/_images/image-page/government-0.png' />
         <div className="wrapper appeal-bar-new">
           <div className="container !w-[100%]">
@@ -42,7 +43,7 @@ const Home: NextPage = () => {
 
   return (
     <div className={i18n.language}>
-      <Seo page="homepage" />
+      <Seo page="features-government" />
       <div className="wrapper index-page !p-0 bg-[url('https://cdn-official-website.juzibot.com/images/background-red.svg')]">
         <div className="container !w-full">
           <HeroPageNew />
