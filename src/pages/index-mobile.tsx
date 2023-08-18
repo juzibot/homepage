@@ -6,11 +6,13 @@ import HeroPageMobile from '@src/components/index/HeroPageMobile';
 import FooterBarButton from "@src/components/FooterBarButton";
 import { useState } from "react";
 import ContactUsSimpleModal from "@src/components/ContactUsSimpleModal";
+import Seo from "@src/components/common/Seo";
 
 const MobileIndexPage: NextPage<{}> = () => {
   const [showContactUs, setShowContactUs] = useState(false);
   return (
     <div className="text-jz-text-3 relative">
+      <Seo page="homepage" />
       <div className="absolute top-[221px] flex items-center justify-center w-[100%]">
         <a onClick={() => setShowContactUs(true)} target="_blank" className="w-[150px] h-[50px]" style={{ border: 'unset' }}></a>
       </div>

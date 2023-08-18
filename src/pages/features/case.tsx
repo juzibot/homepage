@@ -27,6 +27,7 @@ const CustomerAcquisitionPage: NextPage = () => {
   if (isSmallDevice) {
     return (
       <div className='m-auto pt-[50px] relative'>
+        <Seo page="features-case" />
         <img className='w-full' alt='' src="/_images/image-page/case-00.png" />
         <div
           onClick={() => setShowModal(true)}
@@ -48,6 +49,7 @@ const CustomerAcquisitionPage: NextPage = () => {
   }
   return (
     <div className='m-auto pt-[50px] relative'>
+      <Seo page="features-case" />
       <ContactUsSimpleModal
         open={showModal}
         onCancel={() => setShowModal(false)}
