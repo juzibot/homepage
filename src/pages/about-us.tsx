@@ -32,79 +32,79 @@ const NewsPage: NextPage = () => {
   }[] = [
     {
       imgUrl:
-        'https://cdn-official-website.juzibot.com/images/about-us/news/图-10.png',
-      title: '句子互动获得高新技术企业认定',
+        '/_images/media-reports/img-1.png',
+      title: '「句子互动」完成数百万美元Pre-A轮融资，打造大模型驱动的下一代对话式营销云',
       subtitle:
-        '句子互动通过北京市认定管理机构 2021 年认定的高新技术企业，于 2021 年 12 月公示。',
+        '北京句子互动科技有限公司已完成数百万美元Pre-A轮融资，由真成投资领投，奇绩创坛跟投。本轮融资主要用于搭建大模型驱动的下一代对话式营销云……',
       src:
-        'http://www.innocom.gov.cn/gqrdw/c101407/202112/dfb1d5c2a6eb47ddb3f00bfe5f02413b.shtml',
+        'https://mp.weixin.qq.com/s/TSMHK8niDFsbR-jOWWCC0g',
     },
     {
       imgUrl:
-        'https://cdn-official-website.juzibot.com/images/about-us/news/图-8.png',
-      title: '句子互动入选 2020 中关村金种子企业',
+        '/_images/media-reports/img-2.png',
+      title: '句子互动抢先获得微软 Azure OpenAI 服务授权,持续深耕智能对话领域',
       subtitle:
-        '经过路演选拔，句子互动与 206 家高成长型创业企业共同入选 2020 中关村金种子企业，助力中关村…',
-      src: 'http://zgcgw.beijing.gov.cn/zgc/zwgk/tzgg/10870021/',
+        '微软 Azure 作为 OpenAI 的独家云服务提供商，提供了不可或缺的技术支持和服务，助力 OpenAI 在人工智能和自然语言生成等领域持续发展和创新……',
+      src: 'https://mp.weixin.qq.com/s/L33EkP_86rtgIlnWc0OHjA',
     },
     {
       imgUrl:
-        'https://cdn-official-website.juzibot.com/images/about-us/news/图-9.png',
-      title: '句子互动 CEO 入选 2021 科创中国·青年创业榜',
+        '/_images/media-reports/img-3.png',
+      title: '句子互动亮相 WAIC 2023，共话 Chatbot 产业新未来',
       subtitle:
-        '“青年创业榜”面向全国科技创新高地，联合北京、上海、深圳等三地政府以及大型双创平台组织，遴选…',
-      src: 'https://mp.weixin.qq.com/s/BhuyDxDfbfawpaYG1hdcnQ',
+        '“句子互动应上海人工智能投资基金邀请参会，在本次会展中，句子互动展示最新产品 — AI 知识库，与众多行业从业者探讨企业级 AI 机器人的落地应用以及在不同场景下的跨界创新……',
+      src: 'https://mp.weixin.qq.com/s/_8erRH--gNVH4EGU_WUvKA',
     },
     {
       imgUrl:
-        'https://cdn-official-website.juzibot.com/images/about-us/news/图-6.png',
-      title: '句子互动 CEO 李佳芮入选福布斯中国 2021 年度 30 Under 30',
+        '/_images/media-reports/img-4.png',
+      title: '130页 PPT 深入浅出了解 ChatGPT —— ChatGPT 从 0 到 1',
       subtitle:
-        '福布斯发布了“2021年度30Under30榜单”。榜单聚焦中国30岁以下，在广告营销、教育、零售与电商、…',
-      src: 'http://www.forbeschina.com/billionaires/57511',
+        '130 页 PPT尽可能深入浅出地为大家做一个 ChatGPT 的介绍，从技术原理、发展背景、应用场景和 prompt 等多个角度来进行阐述，献给拥抱 AGI 时代来临的你们……',
+      src: 'https://mp.weixin.qq.com/s?__biz=Mzk0NzQzNzIwMQ==&mid=2247484302&idx=1&sn=e8a3de361651e991a25819efc334fee1&scene=21#wechat_redirect',
     },
     {
       imgUrl:
-        'https://cdn-official-website.juzibot.com/images/about-us/news/图-7.png',
-      title: '句子互动 CEO 李佳芮入选中关村 2021 年度 U30 榜单',
+        '/_images/media-reports/img-5.png',
+      title: '12 节课 从 0 到 1 ，快速成为 ChatGPT 的受益者',
       subtitle:
-        '在2021中关村论坛平行论坛、开源创新发展论坛上，创青春-中关村 U30 发布 2021 年度优胜者榜单，句子…',
+        '希望通过本课程的学习，你能享受到 ChatGPT 带来的极致体验，如写代码、约会指南等，同时你将极大地拓展自己的技能和视野，真正体验 AI 技术与人类共生的奇妙之处……',
       src:
-        'https://mp.weixin.qq.com/s?__biz=MzU3OTk2MzA1Nw==&mid=2247488046&idx=1&sn=0ea3d124434e0e7dffee1458936bfd59&chksm=fd5f43f0ca28cae6df1c093602819a535ed4e31615dbe60684a22aa2721342a458507f8f467b&token=625789963&lang=zh_CN#rd',
+        'https://mp.weixin.qq.com/s?__biz=MzU3OTk2MzA1Nw==&mid=2247535279&idx=1&sn=cb7688563d61b753fdaf60741a8bd80d&chksm=fd5c1b71ca2b92675a2f955f35c654b83170a36f8080e818b588eb3418e5e2b54111aebe149e&scene=21#wechat_redirect',
     },
     {
       imgUrl:
-        'https://cdn-official-website.juzibot.com/images/about-us/news/图-5.png',
-      title: '句子互动入选 Facebook 中国大陆首期加速器，校友总估值近 20 亿',
+        '/_images/media-reports/img-6.png',
+      title: '句子互动整合ChatGPT等生成模型，通过Chatbot提供真正意义上基于对话的AI工具',
       subtitle:
-        '句子互动以一家专注于微信生态的智能营销服务商的身份，在报名的数千家企业中通过甄选，成为入选…',
-      src: 'https://mp.weixin.qq.com/s/mrKFr5BY-9wZGbemXeaZBQ',
+        '句子互动创始人李佳芮作为全球最大的 RPA 聊天机器人开源框架 Wechaty 的联合作者，自 2016 年起致力于通过 Chatbot 将对话式服务落地的业务场景中……',
+      src: 'https://mp.weixin.qq.com/s?__biz=MzU3OTk2MzA1Nw==&mid=2247528198&idx=1&sn=5af2a6a1d39cbd3979d167aec9f27c7c&chksm=fd5c3ed8ca2bb7ce72bdf8223dcd36651aef693ac99f73f25a9bb34eb3c20f30e846d06397bf&token=915112483&lang=zh_CN#rd',
     },
     {
       imgUrl:
-        'https://cdn-official-website.juzibot.com/images/about-us/news/图-4.png',
-      title: '句子互动与微软共同举办 Microsoft Online Tech Forum',
+        '/_images/media-reports/img-7.png',
+      title: '句子互动参加硬核桃5G开发者社区两周年庆典，与百度、中国搜索、来也科技助力智能化，赋能5G产业！',
       subtitle:
-        '首届 Microsoft Online Tech Forum 微软在线技术峰会在线上正式拉开帷幕！句子互动与 Wechaty 社区作…',
-      src: 'https://mp.weixin.qq.com/s/fZOZoTHSogUb8ZKh-KOpmA',
+        '很荣幸句子互动成为首批核能商店共创企业，并在庆典中与百度、中国搜索、来也等公司一起上台，共同见证了 5G 与新型技术金融应用联合实验室的揭牌仪式……',
+      src: 'https://mp.weixin.qq.com/s/IEYjUlE480roE9I30bkbpg',
     },
     {
       imgUrl:
-        'https://cdn-official-website.juzibot.com/images/about-us/news/图-3.png',
+        '/_images/media-reports/img-8.png',
       title:
-        '句子互动 CEO 李佳芮参加 2019 Microsoft Ignite The Tour 并做主题分享',
+        '句子互动被 2000+ 品牌评选为“年度最值得推荐的私域工具”',
       subtitle:
-        '微软 2019 Ignite The Tour 是面向开发者和合作伙伴的技术盛宴！句子互动 CEO 作为微软 MVP，代表…',
-      src: 'https://mp.weixin.qq.com/s/uqD3cVF6RxkKBcTgGd7eew',
+        '从2022年 8月开始，业内知名媒体团队见实开展了一项私域行业调研，3 个月内共收到了来自 2000+ 品牌的有效问卷反馈……',
+      src: 'https://mp.weixin.qq.com/s/gQTgvxMWagdpQnlYLzcRhw',
     },
     {
       imgUrl:
-        'https://cdn-official-website.juzibot.com/images/about-us/news/图-2.png',
-      title: '桔子互动和北邮人工智能实验室签署合作协议',
+        '/_images/media-reports/img-9.png',
+      title: '2023ChatGPT未来大会成功举办，《Chatbot从0到1》被推荐',
       subtitle:
-        '致力于为人工智能(AI)智能会话服务的创业公司桔子互动近日于北京邮电大学人工智能实验室签署合作协…',
+        '微软技术俱乐部（苏州）执行主席潘淳带来主题分享《ChatGPT如何带动产业升级》。分享中潘淳向与会观众推荐了李佳芮《Chatbot 从 0 到 1：对话式交互设计实践指南》……',
       src:
-        'https://mp.weixin.qq.com/s?__biz=MzU3OTk2MzA1Nw==&mid=2247485050&idx=1&sn=d795e06e36384549d29a07691a34e2d7&source=41#wechat_redirect',
+        'https://mp.weixin.qq.com/s/t_-WStNg5YJh2vOXvundMA',
     },
   ];
   const data = chunk(items, 3);
@@ -166,8 +166,8 @@ const NewsPage: NextPage = () => {
                       <a className='news' target='_blank'>
                         <img src={item.imgUrl} alt='news-cover'></img>
                         <div style={{ height: 116 }}>
-                          <div className='title'>{item.title}</div>
-                          <div className='subtitle'>{item.subtitle}</div>
+                          <div className='title line-clamp-2'>{item.title}</div>
+                          <div className='subtitle line-clamp-2'>{item.subtitle}</div>
                         </div>
                         <div className='read-more'>点击查看 →</div>
                       </a>
