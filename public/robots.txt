@@ -1,18 +1,9 @@
+# *
 User-agent: *
-Disallow: /dashboard
-Disallow: /wp-admin/
-Disallow: /wp-json/
-Disallow: /wp-content/
-Disallow: /wp-includes/
-Disallow: /*/comment-page-*
-Disallow: /*?replytocom=*
-Disallow: /*/trackback
-Disallow: /feed
-Disallow: /*/feed
-Disallow: /comments/feed
-Disallow: /?s=*
-Disallow: /*/?s=*\
-Disallow: /attachment/
-Allow:/wp-content/uploads/
-Allow:/wp-content/plugins/
+Allow: /
+
+# Host
+Host: https://juzibot.com
+
+# Sitemaps
 Sitemap: https://juzibot.com/sitemap.xml
