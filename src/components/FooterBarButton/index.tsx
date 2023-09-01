@@ -1,13 +1,21 @@
 import { useTranslation } from 'react-i18next';
 import ContactUsSimpleModal from '../ContactUsSimpleModal';
 import React, { useState } from 'react';
+import { useShowModal } from '@src/utils/showModal';
+import { useRouter } from 'next/router';
 
 const FooterBarButton = ({ url, isMobile, useModal, imageNode }: { url: string; isMobile?: boolean; useModal?: boolean; imageNode?: React.ReactNode }) => {
   const { t } = useTranslation(['homepage']);
   const [showContactUs, setShowContactUs] = useState(false);
+  const showModal = useShowModal();
+  const router = useRouter();
   const handleClick = () => {
     if (useModal) {
-      setShowContactUs(true);
+      if (['/', '/features/ai', '/features/rpa'].includes(router.pathname)) {
+        showModal();
+      } else {
+        setShowContactUs(true);
+      }
     } else {
       window.open(url);
     }

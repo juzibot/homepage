@@ -1,5 +1,5 @@
 import { NextPage } from 'next';
-import { useEffect, useRef, useState } from 'react';
+import { CSSProperties, Fragment, useEffect, useRef, useState } from 'react';
 import axios from 'axios';
 import { validatePhoneNum } from '@src/utils/validatePhoneNum';
 import { host } from '@src/config';
@@ -161,6 +161,172 @@ const ContactModal: NextPage = () => {
     }
   }
 
+  let leftTips: { title: string, items: string[] }[] = [
+    {
+      title: '实战陪跑',
+      items: [
+        '1 对 1 全程辅助注册',
+        '7 天免费试用，PoC 实战陪跑',
+        '私域实战专家 1 对 1 咨询解决运营问题',
+      ],
+    },
+    {
+      title: '运营干货',
+      items: [
+        '赠送 600+ 私域 SOP 合集',
+        '80+ 头部企业真实运营案例针对性解析',
+      ],
+    },
+    {
+      title: '社群交流',
+      items: [
+        '与 5000+ 一线操盘手实时交流',
+        '300+ 份实操干货弹药，200+ 行业案例供给',
+        '最新私域行业情报实时更新解读',
+      ],
+    },
+  ];
+  let leftBg: CSSProperties = { background: 'linear-gradient(147.8deg, rgba(102, 71, 255, 0.1) 19.05%, rgba(5, 85, 255, 0.1) 87.88%)' };
+  let qrCode = getQrcode(router.pathname);
+  let appeal = <span>10 倍提高你的私域运营效率</span>;
+  let footer = (
+    <div className="login" style={{ marginTop: 42 }}>
+      已有账号，
+      <a href={`https://miaohui.juzibot.com/auth/login?from=login&rediect=${host + router.pathname}`} target="_blank" rel="noreferrer">
+        立即登录
+      </a>
+    </div>
+  );
+  if (router.pathname === '/') {
+    leftTips = [
+      {
+        title: '实战陪跑',
+        items: [
+          '1 对 1 全程辅助注册',
+          '实战专家全程帮辅解决问题',
+        ],
+      },
+      {
+        title: '运营干货',
+        items: [
+          '80+ 头部企业真实运营案例针对性解析',
+          '赠送 600+ 私域、AI 干货合集',
+        ],
+      },
+      {
+        title: '社群交流',
+        items: [
+          '与5000+ 一线业务操盘手实时交流',
+          '300+ 份实操干货弹药，200+ 行业案例供给',
+          '最新私域行业情报实时更新解读',
+        ],
+      },
+    ];
+    leftBg = { background: 'linear-gradient(169deg, #F6F7FD 4.15%, #EAF2FF 94.03%)' };
+    qrCode = '_images/contact-us-qrcode/homepage.png';
+    appeal = (
+      <span>
+        <span className='text-[18px]'>对话式 AI，轻松盘活私域</span>
+        <br />
+        <span className='text-[16px]'>句子互动和你一起抓住变现商机</span>
+      </span>
+    );
+    footer = (
+      <div className="login relative " style={{ marginTop: 22 }}>
+        <div className='w-[350px] absolute flex justify-between left-1/2' style={{ transform: 'translateX(-50%)' }}>
+          <span>
+            已有句子AI知识库账号
+            <a href={`https://insight.juzibot.com/auth/login?from=juzibot.com`} target="_blank" rel="noreferrer">立即登录</a>
+          </span>
+          <span>
+            已有句子秒回账号
+            <a href={`https://miaohui.juzibot.com/auth/login?from=login&rediect=${host + router.pathname}`} target="_blank" rel="noreferrer">立即登录</a>
+          </span>
+        </div>
+      </div>
+    );
+  } else if (router.pathname === '/features/ai') {
+    leftTips = [
+      {
+        title: '实战陪跑',
+        items: [
+          'AI 工程师 1 对 1 辅助搭建调优知识库',
+          'AI 实战专家全程咨询解决问题',
+        ],
+      },
+      {
+        title: '运营干货',
+        items: [
+          '80+ 头部企业真实运营案例针对性解析',
+          '赠送 600 +业务 SOP 合集',
+        ],
+      },
+      {
+        title: '社群交流',
+        items: [
+          '与5000+ 一线业务操盘手实时交流',
+          '300+ 份实操干货弹药，200+ 行业案例供给',
+          '最新 AI 行业情报实时更新解读',
+        ],
+      },
+    ];
+    leftBg = { background: 'linear-gradient(174deg, #FFFBF1 2.78%, #FFF4DF 95.55%)' };
+    qrCode = '/_images/contact-us-qrcode/ai.png';
+    appeal = (
+      <span>
+        <span className='text-[18px]'>立刻搭建大模型驱动的数字员工</span>
+      </span>
+    );
+    footer = (
+      <div className="login" style={{ marginTop: 42 }}>
+        已有账号，
+        <a href={`https://miaohui.juzibot.com/auth/login?from=login&rediect=${host + router.pathname}`} target="_blank" rel="noreferrer">
+          立即登录
+        </a>
+      </div>
+    );
+  } else if (router.pathname === '/features/rpa') {
+    leftTips = [
+      {
+        title: '实战陪跑',
+        items: [
+          '1 对 1 全程辅助注册',
+          '7 天免费试用，PoC 实战陪跑',
+          '私域实战专家 1 对 1 咨询解决运营问题',
+        ],
+      },
+      {
+        title: '运营干货',
+        items: [
+          '赠送 600 +业务 SOP 合集',
+          '80+ 头部企业真实运营案例针对性解析',
+        ],
+      },
+      {
+        title: '社群交流',
+        items: [
+          '与5000+ 一线业务操盘手实时交流',
+          '300+ 份实操干货弹药，200+ 行业案例供给',
+          '最新私域行业情报实时更新解读',
+        ],
+      },
+    ];
+    qrCode = '/_images/contact-us-qrcode/rpa.png';
+    appeal = (
+      <span>
+        <span className='text-[18px]'>10 倍提高你的私域运营效率</span>
+      </span>
+    );
+    footer = (
+      <div className="login" style={{ marginTop: 42 }}>
+        已有账号，
+        <a href={`https://miaohui.juzibot.com/auth/login?from=login&rediect=${host + router.pathname}`} target="_blank" rel="noreferrer">
+          立即登录
+        </a>
+      </div>
+    );
+  }
+
   return (
     <>
       <div
@@ -173,63 +339,35 @@ const ContactModal: NextPage = () => {
             e.stopPropagation();
           }}
         >
-          <div className="left">
+          <div className="left" style={{ ...leftBg }}>
             <h2>不止工具，更多全方位支持</h2>
             <div style={{ marginTop: 8 }}>
               {isScanQrcode ? '右侧扫码' : '提交信息'}添加咨询顾问，
               <span className="orange">
-                即刻领取
+                即刻了解
                 {' >>>'}
               </span>
             </div>
 
-            <div className="content">
-              <div className="title" style={{ marginTop: 42 }}>
-                <span className="num">01</span>
-                实战陪跑
-              </div>
-              <div className="item" style={{ marginTop: 16 }}>
-                <RightIcon />
-                <span>1 对 1 全程辅助注册</span>
-              </div>
-              <div className="item">
-                <RightIcon />
-                <span>7 天免费试用，PoC 实战陪跑</span>
-              </div>
-              <div className="item">
-                <RightIcon />
-                <span>私域实战专家 1 对 1 咨询解决运营问题</span>
-              </div>
-
-              <div className="title" style={{ marginTop: 28 }}>
-                <span className="num">02</span>
-                运营干货
-              </div>
-              <div className="item" style={{ marginTop: 16 }}>
-                <RightIcon />
-                <span>赠送 600+ 私域 SOP 合集</span>
-              </div>
-              <div className="item">
-                <RightIcon />
-                <span>80+ 头部企业真实运营案例针对性解析</span>
-              </div>
-
-              <div className="title" style={{ marginTop: 28 }}>
-                <span className="num">03</span>
-                社群交流
-              </div>
-              <div className="item" style={{ marginTop: 16 }}>
-                <RightIcon />
-                <span>与 5000+ 一线操盘手实时交流</span>
-              </div>
-              <div className="item">
-                <RightIcon />
-                <span>300+ 分实操干货弹药，200+ 行业案例供给</span>
-              </div>
-              <div className="item">
-                <RightIcon />
-                <span>最新私域行业情报实时更新解读</span>
-              </div>
+            <div className="content pt-[14px]">
+              {
+                leftTips.map((d, i) => (
+                  <Fragment key={d.title}>
+                    <div className="title" style={{ marginTop: 28, marginBottom: 16 }}>
+                      <span className="num">{`0${i+1}`}</span>
+                      {d.title}
+                    </div>
+                    {
+                      d.items?.map(e => (
+                        <div key={e} className="item">
+                          <RightIcon />
+                          <span>{e}</span>
+                        </div>
+                      ))
+                    }
+                  </Fragment>
+                ))
+              }
             </div>
           </div>
           <div className="right">
@@ -239,23 +377,12 @@ const ContactModal: NextPage = () => {
                 display: isScanQrcode ? 'flex' : 'none',
               }}
             >
-              <img src={getQrcode(router.pathname)} alt="qrcode" className="qrcode" />
+              <img src={qrCode} alt="qrcode" className="qrcode" />
               <div className="tips">
-                微信扫一扫，与陪跑数百家头部企业的顾问聊聊
+                微信扫一扫，与顾问聊一聊
               </div>
-              <div className="appeal">10 倍提高你的私域运营效率</div>
-              <div className="login" style={{ marginTop: 42 }}>
-                已有账号，
-                <a
-                  href={`https://miaohui.juzibot.com/auth/login?from=login&rediect=${
-                    host + router.pathname
-                  }`}
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  立即登录
-                </a>
-              </div>
+              <div className="appeal">{appeal}</div>
+              {footer}
             </div>
             <div
               className="form"
@@ -294,18 +421,7 @@ const ContactModal: NextPage = () => {
               </button>
 
               <div className="tips">咨询顾问会尽快与您取得联系</div>
-              <div className="login" style={{ marginTop: 12 }}>
-                已有账号，
-                <a
-                  href={`https://miaohui.juzibot.com/auth/login?from=login&rediect=${
-                    host + router.pathname
-                  }`}
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  立即登录
-                </a>
-              </div>
+              {footer}
             </div>
 
             <div
