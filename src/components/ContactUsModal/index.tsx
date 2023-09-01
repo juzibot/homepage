@@ -5,6 +5,7 @@ import styles from './index.module.scss';
 import React from "react";
 import ContactForm from "../ContactForm";
 import cls from 'classnames';
+import { useRouter } from "next/router";
 
 type Props = {
   visible?: boolean,
@@ -13,9 +14,19 @@ type Props = {
 }
 
 const ContactUsModal: FC<Props> = props => {
+  const router = useRouter();
   const handleCancel = () => {
     props.onCancel?.();
   }
+  let qrCode = 'https://cdn-official-website.juzibot.com/images/contact_us_mobile.png';
+  if (router.pathname === '/') {
+    qrCode = '_images/contact-us-qrcode/homepage.png';
+  } else if (router.pathname === '/features/ai') {
+    qrCode = '/_images/contact-us-qrcode/ai.png';
+  } else if (router.pathname === '/features/rpa') {
+    qrCode = '/_images/contact-us-qrcode/rpa.png';
+  }
+
   return (
     <Modal
       visible={props.visible}
@@ -34,7 +45,7 @@ const ContactUsModal: FC<Props> = props => {
         </p>
 
         <div className="px-4 mx-4 py-5 bg-white rounded-lg flex mt-5 mb-7">
-        <img src='https://cdn-official-website.juzibot.com/images/contact_us_mobile.png' height={124} width={124} alt="" className="flex-shrink-0 mr-[10px]" onClick={() => open('https://work.weixin.qq.com/kfid/kfcbfceaec6e8e30afe')} />
+        <img src={qrCode} height={124} width={124} alt="" className="flex-shrink-0 mr-[10px]" onClick={() => open('https://work.weixin.qq.com/kfid/kfcbfceaec6e8e30afe')} />
           <div className="flex flex-col justify-center text-[15px]">
             <p className="text-[#FF5E1E] text-[15px] font-medium mb-2">截图后微信扫一扫</p>
             <p className="text-[#666666] mb-0">与陪跑数百家头部企业的</p>

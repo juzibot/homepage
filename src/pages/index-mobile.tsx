@@ -1,12 +1,12 @@
 /* eslint-disable react/jsx-no-target-blank */
 /* eslint-disable no-unreachable */
 import { NextPage } from "next";
-import SolutionPageMobile from '@src/components/index/SolutionPageMobile';
-import HeroPageMobile from '@src/components/index/HeroPageMobile';
 import FooterBarButton from "@src/components/FooterBarButton";
 import { useState } from "react";
 import ContactUsSimpleModal from "@src/components/ContactUsSimpleModal";
 import Seo from "@src/components/common/Seo";
+import ContactUsPureModal from "@src/components/ContactUsPureModal";
+import ContactUsModal from "@src/components/ContactUsModal";
 
 const MobileIndexPage: NextPage<{}> = () => {
   const [showContactUs, setShowContactUs] = useState(false);
@@ -22,17 +22,11 @@ const MobileIndexPage: NextPage<{}> = () => {
           <FooterBarButton isMobile url="https://insight.juzibot.com/" imageNode={<img src="_images/contact-us-qrcode/homepage.png" alt="" className="w-full h-full" />} useModal />
         </div>
       </div>
-      <ContactUsSimpleModal
-        open={showContactUs}
+      <ContactUsModal
+        visible={showContactUs}
         onCancel={() => setShowContactUs(false)}
-        imageNode={<img src="_images/contact-us-qrcode/homepage.png" alt="" className="w-full h-full" />}
+        // imageNode={<img src="_images/contact-us-qrcode/homepage.png" alt="" className="w-full h-full" />}
       />
-    </div>
-  );
-  return (
-    <div className="text-jz-text-3">
-      <HeroPageMobile />
-      <SolutionPageMobile />
     </div>
   );
 };
