@@ -2,7 +2,7 @@ import { NextPage } from 'next';
 import { CSSProperties, Fragment, useEffect, useRef, useState } from 'react';
 import axios from 'axios';
 import { validatePhoneNum } from '@src/utils/validatePhoneNum';
-import { host } from '@src/config';
+import { defaultContactUsPaths, host } from '@src/config';
 import { useRouter } from 'next/router';
 import { shuffle } from 'lodash';
 
@@ -197,7 +197,7 @@ const ContactModal: NextPage = () => {
       </a>
     </div>
   );
-  if (router.pathname === '/') {
+  if (defaultContactUsPaths.find(d => d === router.pathname)) {
     leftTips = [
       {
         title: '实战陪跑',
@@ -223,7 +223,7 @@ const ContactModal: NextPage = () => {
       },
     ];
     leftBg = { background: 'linear-gradient(169deg, #F6F7FD 4.15%, #EAF2FF 94.03%)' };
-    qrCode = '_images/contact-us-qrcode/homepage.png';
+    qrCode = '/_images/contact-us-qrcode/homepage.png';
     appeal = (
       <span>
         <span className='text-[18px]'>对话式 AI，轻松盘活私域</span>

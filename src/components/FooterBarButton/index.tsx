@@ -5,16 +5,17 @@ import { useShowModal } from '@src/utils/showModal';
 import { useRouter } from 'next/router';
 import ContactUsModal from '../ContactUsModal';
 import cls from 'classnames';
+import { defaultContactUsPaths } from '@src/config';
 
-const FooterBarButton = ({ url, isMobile, useModal, imageNode }: { url: string; isMobile?: boolean; useModal?: boolean; imageNode?: React.ReactNode }) => {
+const FooterBarButton = ({ url, isMobile, useModal, imageNode }: { url?: string; isMobile?: boolean; useModal?: boolean; imageNode?: React.ReactNode }) => {
   const { t } = useTranslation(['homepage']);
   const [showContactUs, setShowContactUs] = useState(false);
-  const showModal = useShowModal();
+  const showPcModal = useShowModal();
   const router = useRouter();
   const handleClick = () => {
     if (useModal) {
-      if (!isMobile && ['/', '/features/ai', '/features/rpa'].includes(router.pathname)) {
-        showModal();
+      if (!isMobile && defaultContactUsPaths.includes(router.pathname)) {
+        showPcModal();
       } else {
         setShowContactUs(true);
       }

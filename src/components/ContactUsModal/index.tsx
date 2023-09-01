@@ -7,6 +7,7 @@ import ContactForm from "../ContactForm";
 import cls from 'classnames';
 import { useRouter } from "next/router";
 import { RightIcon } from "../common/ContactModal";
+import { defaultContactUsPaths } from "@src/config";
 
 type Props = {
   open?: boolean,
@@ -31,8 +32,8 @@ const ContactUsModal: FC<Props> = props => {
     </>
   );
 
-  if (router.pathname === '/') {
-    qrCode = '_images/contact-us-qrcode/homepage.png';
+  if (defaultContactUsPaths.find(d => d === router.pathname)) {
+    qrCode = '/_images/contact-us-qrcode/homepage.png';
     leftTips = [
       {
         title: '实战陪跑',

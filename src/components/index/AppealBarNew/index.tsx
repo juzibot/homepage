@@ -1,5 +1,6 @@
 import { ContactUsPureModalWithButton } from '@src/components/ContactUsPureModal';
 import ContactUsSimpleModal from '@src/components/ContactUsSimpleModal';
+import { defaultContactUsPaths } from '@src/config';
 import { useShowModal } from '@src/utils/showModal';
 import { NextPage } from 'next';
 import { useRouter } from 'next/router';
@@ -12,7 +13,7 @@ const AppealBar: NextPage<{ isRed?: boolean; useSimpleModal?: boolean; imageNode
   const showModal = useShowModal();
   const router = useRouter();
   const handleClick = () => {
-    if (['/', '/features/ai', '/features/rpa'].includes(router.pathname)) {
+    if (defaultContactUsPaths.includes(router.pathname)) {
       showModal();
     } else {
       setShowContactUs(true);

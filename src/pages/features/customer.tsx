@@ -1,9 +1,9 @@
 /* eslint-disable no-unreachable */
-// import { ContactUsPureModalWithButton } from '@src/components/ContactUsPureModal';
 import { useMediaQuery } from '@react-hookz/web';
-import ContactUsSimpleModal from '@src/components/ContactUsSimpleModal';
+import ContactUsModal from '@src/components/ContactUsModal';
+import FooterBarButton from '@src/components/FooterBarButton';
 import Seo from '@src/components/common/Seo';
-import AppealBarNew from '@src/components/index/AppealBarNew';
+import { useShowModal } from '@src/utils/showModal';
 import { GetStaticProps, NextPage } from 'next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { useState } from 'react';
@@ -11,6 +11,7 @@ import { useState } from 'react';
 const CustomerAcquisitionPage: NextPage = () => {
   const [showModal, setShowModal] = useState(false);
   const isSmallDevice = useMediaQuery('only screen and (max-width : 600px)');
+  const showPcModal = useShowModal();
   if (isSmallDevice) {
     return (
       <div className='m-auto pt-[60px] relative'>
@@ -23,10 +24,10 @@ const CustomerAcquisitionPage: NextPage = () => {
         ></div>
         <div className="wrapper appeal-bar">
           <div className="container !w-[100%]">
-            <AppealBarNew />
+            <FooterBarButton useModal isMobile />
           </div>
         </div>
-        <ContactUsSimpleModal
+        <ContactUsModal
           open={showModal}
           onCancel={() => setShowModal(false)}
         />
@@ -37,19 +38,15 @@ const CustomerAcquisitionPage: NextPage = () => {
   return (
     <div className='m-auto relative'>
       <Seo page="features-customer" />
-      <ContactUsSimpleModal
-        open={showModal}
-        onCancel={() => setShowModal(false)}
-      />
       <div
-        onClick={() => setShowModal(true)}
+        onClick={() => showPcModal()}
         className='w-[calc(15%)] h-[calc(8.25%)] rounded-full flex justify-center items-center text-[18px] font-semibold text-white absolute top-[28.7%] left-[50%] cursor-pointer'
         style={{ transform: 'translate(-50%)' }}
       ></div>
       <img className='w-full' alt='' src='/_images/image-page/customer-0.svg' />
       <div className="wrapper appeal-bar">
         <div className="container">
-          <AppealBarNew />
+          <FooterBarButton useModal />
         </div>
       </div>
     </div>
