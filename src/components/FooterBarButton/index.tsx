@@ -3,6 +3,8 @@ import ContactUsSimpleModal from '../ContactUsSimpleModal';
 import React, { useState } from 'react';
 import { useShowModal } from '@src/utils/showModal';
 import { useRouter } from 'next/router';
+import ContactUsModal from '../ContactUsModal';
+import cls from 'classnames';
 
 const FooterBarButton = ({ url, isMobile, useModal, imageNode }: { url: string; isMobile?: boolean; useModal?: boolean; imageNode?: React.ReactNode }) => {
   const { t } = useTranslation(['homepage']);
@@ -11,7 +13,7 @@ const FooterBarButton = ({ url, isMobile, useModal, imageNode }: { url: string; 
   const router = useRouter();
   const handleClick = () => {
     if (useModal) {
-      if (['/', '/features/ai', '/features/rpa'].includes(router.pathname)) {
+      if (!isMobile && ['/', '/features/ai', '/features/rpa'].includes(router.pathname)) {
         showModal();
       } else {
         setShowContactUs(true);
@@ -22,20 +24,18 @@ const FooterBarButton = ({ url, isMobile, useModal, imageNode }: { url: string; 
   };
   return (
     <div className="content">
-      {isMobile ? (
-        <div className="title text-center">
-          RPA + AI，打造下一代基于 IM 跨平台，对话式营销云
-        </div>
-      ) : (
-        <div className="title">RPA + AI，打造下一代基于 IM 跨平台，对话式营销云</div>
-      )}
+      <div className={cls(isMobile ? 'title text-center' : 'title')}>RPA + AI，打造下一代基于 IM 跨平台，对话式营销云</div>
       <button className="white-button start-button !shadow-none" onClick={handleClick}>
         {t('appeal-start-free')}
       </button>
       <ContactUsSimpleModal
-        open={showContactUs}
+        open={!isMobile && showContactUs}
         onCancel={() => setShowContactUs(false)}
         imageNode={imageNode}
+      />
+      <ContactUsModal
+        open={isMobile && showContactUs}
+        onCancel={() => setShowContactUs(false)}
       />
     </div>
   );

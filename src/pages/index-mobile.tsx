@@ -2,10 +2,8 @@
 /* eslint-disable no-unreachable */
 import { NextPage } from "next";
 import FooterBarButton from "@src/components/FooterBarButton";
-import { useState } from "react";
-import ContactUsSimpleModal from "@src/components/ContactUsSimpleModal";
 import Seo from "@src/components/common/Seo";
-import ContactUsPureModal from "@src/components/ContactUsPureModal";
+import { useState } from "react";
 import ContactUsModal from "@src/components/ContactUsModal";
 
 const MobileIndexPage: NextPage<{}> = () => {
@@ -23,9 +21,8 @@ const MobileIndexPage: NextPage<{}> = () => {
         </div>
       </div>
       <ContactUsModal
-        visible={showContactUs}
+        open={showContactUs}
         onCancel={() => setShowContactUs(false)}
-        // imageNode={<img src="_images/contact-us-qrcode/homepage.png" alt="" className="w-full h-full" />}
       />
     </div>
   );

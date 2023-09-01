@@ -61,7 +61,7 @@ const HeaderBarMobile: NextPage = () => {
         )}
       </div>
       <ContactUsModal
-        visible={showContactUsModal}
+        open={showContactUsModal}
         onCancel={() => setShowContactUsModal(false)}
         onOk={() => setShowContactUsModal(false)}
       />
