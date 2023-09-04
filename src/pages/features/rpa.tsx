@@ -5,8 +5,7 @@ import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { useEffect, useState } from 'react';
 import Seo from '@src/components/common/Seo';
 import { useMediaQuery } from '@react-hookz/web';
-import AppealBarNew from '@src/components/index/AppealBarNew';
-import FooterBarButton from '@src/components/FooterBarButton';
+import FooterBarWithButton from '@src/components/FooterBarWithButton';
 
 const CustomerAcquisitionPage: NextPage = () => {
   const isSmallDevice = useMediaQuery('only screen and (max-width : 600px)');
@@ -21,7 +20,9 @@ const CustomerAcquisitionPage: NextPage = () => {
         <img className='w-full' alt='' src='/_images/image-page/rpa-0.png' />
         <div className="wrapper appeal-bar">
           <div className="container !w-[100%]">
-          <FooterBarButton isMobile url="https://insight.juzibot.com/" imageNode={<img src="_images/contact-us-qrcode/homepage.png" alt="" className="w-full h-full" />} useModal />
+          <FooterBarWithButton
+            contactUsOption={{ type: 'rpa', qrCode: 'sf-03' }}
+          />
           </div>
         </div>
       </div>
@@ -33,7 +34,9 @@ const CustomerAcquisitionPage: NextPage = () => {
       <img className='w-full mt-[72px]' alt='' src='/_images/image-page/rpa-00.jpg' />
       <div className="wrapper appeal-bar">
         <div className="container">
-          <AppealBarNew useSimpleModal imageNode={<img src="/_images/contact-us-qrcode/rpa.png"alt="" className="w-full h-full" />} />
+          <FooterBarWithButton
+            contactUsOption={{ type: 'rpa', qrCode: 'sf-03' }}
+          />
         </div>
       </div>
     </div>

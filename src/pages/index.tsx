@@ -8,8 +8,8 @@ import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import MobileIndexPage from './index-mobile';
-import FooterBarButton from '@src/components/FooterBarButton';
 import { useShowModal } from '@src/utils/showModal';
+import FooterBarWithButton from '@src/components/FooterBarWithButton';
 
 const Home: NextPage = () => {
   const isSmallDevice = useMediaQuery('only screen and (max-width : 600px)');
@@ -37,7 +37,7 @@ const Home: NextPage = () => {
           <img className='w-full' alt='' src="_images/image-page/index-00.jpg" />
           <a
             // href="https://insight.juzibot.com/"
-            onClick={() =>{ showModal() }}
+            onClick={() =>{ showModal({}) }}
             target="_blank"
             rel="noreferrer"
             className="w-[calc(11%)] h-[calc(2.25%)] rounded-full flex justify-center items-center text-[18px] font-semibold text-white absolute top-[12.7%] left-[50%] cursor-pointer"
@@ -47,7 +47,7 @@ const Home: NextPage = () => {
         </div>
         <div className="wrapper appeal-bar">
           <div className="container">
-            <FooterBarButton url="https://insight.juzibot.com/" imageNode={<img src="_images/contact-us-qrcode/homepage.png" alt="" className="w-full h-full" />} useModal />
+            <FooterBarWithButton />
           </div>
         </div>
       </div>

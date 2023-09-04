@@ -5,9 +5,9 @@ import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { useEffect, useState } from 'react';
 import Seo from '@src/components/common/Seo';
 import { useMediaQuery } from '@react-hookz/web';
-import FooterBarButton from '@src/components/FooterBarButton';
 import ContactUsModal from '@src/components/ContactUsModal';
 import { useShowModal } from '@src/utils/showModal';
+import FooterBarWithButton from '@src/components/FooterBarWithButton';
 
 const CustomerAcquisitionPage: NextPage = () => {
   const isSmallDevice = useMediaQuery('only screen and (max-width : 600px)');
@@ -30,10 +30,13 @@ const CustomerAcquisitionPage: NextPage = () => {
         </div>
         <div className="wrapper appeal-bar">
           <div className="container !w-[100%]">
-            <FooterBarButton useModal isMobile />
+            <FooterBarWithButton 
+              contactUsOption={{ qrCode: 'sf-04' }}
+            />
           </div>
         </div>
         <ContactUsModal
+          qrCode='sf-04'
           open={showModal}
           onCancel={() => setShowModal(false)}
         />
@@ -44,7 +47,7 @@ const CustomerAcquisitionPage: NextPage = () => {
     <div className='m-auto pt-[50px] relative'>
       <Seo page="features-case" />
       <div
-        onClick={() => showPcModal()}
+        onClick={() => showPcModal({ qrCode: 'sf-04' })}
         className='w-[152px] bg-[#0555FF] h-[56px] rounded-[100px] flex justify-center items-center text-[18px] font-semibold text-white absolute top-[14%] left-[50%] cursor-pointer'
         style={{ transform: 'translate(-50%)', boxShadow: ' 0px 35px 50px -15px rgba(52, 128, 239, 0.3)' }}
       >
@@ -53,7 +56,9 @@ const CustomerAcquisitionPage: NextPage = () => {
       <img className='w-full' alt='' src="/_images/image-page/case-0.png" />
       <div className="wrapper appeal-bar">
         <div className="container">
-          <FooterBarButton useModal />
+          <FooterBarWithButton 
+            contactUsOption={{ qrCode: 'sf-04' }}
+          />
         </div>
       </div>
     </div>

@@ -1,7 +1,7 @@
 /* eslint-disable no-unreachable */
 import { useMediaQuery } from '@react-hookz/web';
 import ContactUsModal from '@src/components/ContactUsModal';
-import FooterBarButton from '@src/components/FooterBarButton';
+import FooterBarWithButton from '@src/components/FooterBarWithButton';
 import Seo from '@src/components/common/Seo';
 import { useShowModal } from '@src/utils/showModal';
 import { GetStaticProps, NextPage } from 'next';
@@ -19,15 +19,20 @@ const CustomerAcquisitionPage: NextPage = () => {
         <img className='w-full' alt='' src='/_images/image-page/internet-00.png' />
         <div className="wrapper appeal-bar">
           <div className="container !w-[100%]">
-            <FooterBarButton useModal isMobile />
+            <FooterBarWithButton
+              contactUsOption={{ qrCode: 'sf-04' }}
+            />
           </div>
         </div>
+
+        {/* 获取解决方案-按钮 */}
         <div
           onClick={() => setShowModal(true)}
           className='w-[calc(41%)] h-[calc(5%)] rounded-full flex justify-center items-center text-[18px] font-semibold text-white absolute top-[26%] left-[49%] cursor-pointer'
           style={{ transform: 'translate(-50%)' }}
         ></div>
         <ContactUsModal
+          qrCode='sf-04'
           open={showModal}
           onCancel={() => setShowModal(false)}
         />
@@ -38,14 +43,16 @@ const CustomerAcquisitionPage: NextPage = () => {
     <div className='m-auto pt-[60px] relative'>
       <Seo page="features-internet" />
       <div
-        onClick={() => showPcModal()}
+        onClick={() => showPcModal({ qrCode: 'sf-04' })}
         className='w-[calc(17%)] h-[calc(7%)] rounded-full flex justify-center items-center text-[18px] font-semibold text-white absolute top-[29%] left-[50%] cursor-pointer'
         style={{ transform: 'translate(-50%)' }}
       ></div>
       <img className='w-full' alt='' src='/_images/image-page/internet-0.png' />
       <div className="wrapper appeal-bar">
         <div className="container">
-          <FooterBarButton useModal />
+          <FooterBarWithButton 
+            contactUsOption={{ qrCode: 'sf-04' }}
+          />
         </div>
       </div>
     </div>

@@ -1,10 +1,10 @@
 /* eslint-disable react/jsx-no-target-blank */
 /* eslint-disable no-unreachable */
 import { NextPage } from "next";
-import FooterBarButton from "@src/components/FooterBarButton";
 import Seo from "@src/components/common/Seo";
 import { useState } from "react";
 import ContactUsModal from "@src/components/ContactUsModal";
+import FooterBarWithButton from "@src/components/FooterBarWithButton";
 
 const MobileIndexPage: NextPage<{}> = () => {
   const [showContactUs, setShowContactUs] = useState(false);
@@ -17,7 +17,7 @@ const MobileIndexPage: NextPage<{}> = () => {
       <img alt="" className='w-full' src="/_images/image-page/index-0.png" />
       <div className="wrapper appeal-bar !px-[16px]">
         <div className="container !w-[100%]">
-          <FooterBarButton isMobile url="https://insight.juzibot.com/" imageNode={<img src="_images/contact-us-qrcode/homepage.png" alt="" className="w-full h-full" />} useModal />
+          <FooterBarWithButton />
         </div>
       </div>
       <ContactUsModal

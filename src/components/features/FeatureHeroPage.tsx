@@ -16,7 +16,7 @@ export const FeatureHeroPage: NextPage<IFeatureHeroPageProps> = ({
       <h1>{title}</h1>
       <section className="brief">{brief}</section>
       <div className="buttons-bar">
-        <button className="primary-button start-button" onClick={showModal}>
+        <button className="primary-button start-button" onClick={() => showModal()}>
           {t('usage')}
         </button>
       </div>

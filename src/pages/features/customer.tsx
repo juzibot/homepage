@@ -1,7 +1,7 @@
 /* eslint-disable no-unreachable */
 import { useMediaQuery } from '@react-hookz/web';
 import ContactUsModal from '@src/components/ContactUsModal';
-import FooterBarButton from '@src/components/FooterBarButton';
+import FooterBarWithButton from '@src/components/FooterBarWithButton';
 import Seo from '@src/components/common/Seo';
 import { useShowModal } from '@src/utils/showModal';
 import { GetStaticProps, NextPage } from 'next';
@@ -24,10 +24,13 @@ const CustomerAcquisitionPage: NextPage = () => {
         ></div>
         <div className="wrapper appeal-bar">
           <div className="container !w-[100%]">
-            <FooterBarButton useModal isMobile />
+            <FooterBarWithButton 
+              contactUsOption={{ qrCode: 'sf-04' }}
+            />
           </div>
         </div>
         <ContactUsModal
+          qrCode='sf-04'
           open={showModal}
           onCancel={() => setShowModal(false)}
         />
@@ -39,14 +42,16 @@ const CustomerAcquisitionPage: NextPage = () => {
     <div className='m-auto relative'>
       <Seo page="features-customer" />
       <div
-        onClick={() => showPcModal()}
+        onClick={() => showPcModal({ qrCode: 'sf-04' })}
         className='w-[calc(15%)] h-[calc(8.25%)] rounded-full flex justify-center items-center text-[18px] font-semibold text-white absolute top-[28.7%] left-[50%] cursor-pointer'
         style={{ transform: 'translate(-50%)' }}
       ></div>
       <img className='w-full' alt='' src='/_images/image-page/customer-0.svg' />
       <div className="wrapper appeal-bar">
         <div className="container">
-          <FooterBarButton useModal />
+          <FooterBarWithButton 
+            contactUsOption={{ qrCode: 'sf-04' }}
+          />
         </div>
       </div>
     </div>
