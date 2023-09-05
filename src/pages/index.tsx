@@ -34,7 +34,7 @@ const Home: NextPage = () => {
       <Seo page="homepage" />
       <div className='m-auto pt-[60px]'>
         <div className='relative'>
-          <img className='w-full' alt='' src="_images/image-page/index-00.jpg" />
+          <img className='w-full' alt='' src="_images/image-page/index-20230905.png" />
           <a
             // href="https://insight.juzibot.com/"
             onClick={() =>{ showModal({}) }}
