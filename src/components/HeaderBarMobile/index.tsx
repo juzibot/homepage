@@ -6,14 +6,24 @@ import { useTranslation } from 'react-i18next';
 import cx from '@src/utils/cx';
 import ContactUsModal from '../ContactUsModal';
 import MobileMenu from './mobileMenu';
+import { useRouter } from 'next/router';
+import { ContactUsOption } from '../common/emitter';
 
 const HeaderBarMobile: NextPage = () => {
   const { i18n } = useTranslation(['common']);
   const isZh = i18n.language === 'zh';
   const [showContactUsModal, setShowContactUsModal] = useState(false);
+  const { pathname } = useRouter();
 
   function changeLanguage() {
     location.href = host + (isZh ? '/en' : '/zh');
+  }
+
+  let qrCode: ContactUsOption['qrCode'] = 'sf-01';
+  if (pathname === '/about-us-m') {
+   qrCode = 'juzibot-01';
+  } else if (pathname === '/culture-m') {
+   qrCode = 'juzibot-02';
   }
 
   return (
@@ -61,6 +71,7 @@ const HeaderBarMobile: NextPage = () => {
         )}
       </div>
       <ContactUsModal
+        qrCode={qrCode}
         open={showContactUsModal}
         onCancel={() => setShowContactUsModal(false)}
         onOk={() => setShowContactUsModal(false)}
