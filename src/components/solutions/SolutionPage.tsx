@@ -24,7 +24,7 @@ export const SolutionDetailPage: NextPage<ISolutionPageProps> = ({
           <h1>{heroTitle}</h1>
           <div className="subtitle">{heroSubtitle}</div>
 
-          <button className="primary-button start-button" onClick={showModal}>
+          <button className="primary-button start-button" onClick={() => showModal()}>
             立即使用
           </button>
         </div>

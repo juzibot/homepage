@@ -6,7 +6,6 @@ import { useTranslation } from 'react-i18next';
 import cx from '@src/utils/cx';
 import { Button, Collapse } from 'antd';
 import styles from './index.module.scss';
-import AppealBarMobile from '../index/AppealBarMobile';
 import { CloseOutlined } from '@ant-design/icons';
 import { useState } from 'react';
 import { useSessionStorageValue } from '@react-hookz/web';
@@ -180,7 +179,6 @@ const FooterMobile: NextPage = () => {
   return (
     <>
       <footer className={cx(i18n.language, styles.footer, 'pb-24 bg-[#F9F9F9]')}>
-        <AppealBarMobile />
         <div className="pl-2 pt-5 hidden">
           <Image
             src="https://cdn-official-website.juzibot.com/images/logo.svg"

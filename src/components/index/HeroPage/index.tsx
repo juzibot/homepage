@@ -51,7 +51,7 @@ const HeroPage: NextPage = () => {
             {t('slogan')}
           </h1>
           <div className="description">{t('description')}</div>
-          <button className="primary-button start-button" onClick={showModal}>
+          <button className="primary-button start-button" onClick={() => showModal()}>
             {t('start-free')}
           </button>
         </div>

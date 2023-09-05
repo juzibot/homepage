@@ -1,10 +1,11 @@
 import { NextPage } from 'next';
-import { useEffect, useRef, useState } from 'react';
+import { Fragment, useEffect, useRef, useState } from 'react';
 import axios from 'axios';
 import { validatePhoneNum } from '@src/utils/validatePhoneNum';
-import { host } from '@src/config';
 import { useRouter } from 'next/router';
 import { shuffle } from 'lodash';
+import { EventType, emitter } from './emitter';
+import { appealMap, footerMap, leftStyleMap, leftTipMap, qrCodeMap } from './contactOptionsMap';
 
 export function getQrcode(routerPathname: string) {
   const arr = [
@@ -47,10 +48,7 @@ const DetentionModal: NextPage<{
   text: string;
 }> = ({ onCancel, onConfirm, text }) => {
   const contents: string[] = [
-    '<p><strong>你将失去与5000+ 操盘手</p><p>实时交流的机会</strong></p>',
-    '<strong><p>80+ 行业头部企业的案例拆解</p><p>添加顾问即可自动领取</p></strong>',
-    '你可能会错过：<strong><p>7 天免费试用、PoC 实战全程陪跑</p></strong>',
-    '<strong><p>600+ 份私域实操 SOP</p><p>添加顾问即可自动领取</p></strong>',
+    '你可能会错过：<strong><p>POC实战全程陪跑、800+运营干货</p></strong>',
   ];
   return (
     <div className="detention-modal">
@@ -105,6 +103,7 @@ const ContactModal: NextPage = () => {
   const [isDetentionModalVisible, toggleDetentionModalVisible] =
     useState(false);
   const router = useRouter();
+  const [state, setState] = useState<EventType['contact_us']>();
 
   function hideModal() {
     refs.forEach((item) => {
@@ -129,6 +128,17 @@ const ContactModal: NextPage = () => {
       hideModal();
     }
   }, [countdown]);
+
+  useEffect(() => {
+    const onShowEvent = (options: EventType['contact_us']) => {
+      document.getElementById('contact-modal')?.setAttribute('style', 'display: flex');
+      setState(options);
+    }
+    emitter.on('contact_us', onShowEvent);
+    return () => {
+      emitter.off('contact_us', onShowEvent);
+    }
+  }, [])
 
   async function submit() {
     const [name, phone, company, remark] = refs.map(
@@ -161,6 +171,12 @@ const ContactModal: NextPage = () => {
     }
   }
 
+  const qrCode = qrCodeMap[state?.qrCode!];
+  const leftTips = leftTipMap[state?.type!] || [];
+  const leftStyle = leftStyleMap[state?.type!]
+  const appeal = appealMap[state?.type!];
+  const footer = footerMap(router)[state?.type!]
+
   return (
     <>
       <div
@@ -173,63 +189,35 @@ const ContactModal: NextPage = () => {
             e.stopPropagation();
           }}
         >
-          <div className="left">
+          <div className="left" style={leftStyle}>
             <h2>不止工具，更多全方位支持</h2>
             <div style={{ marginTop: 8 }}>
               {isScanQrcode ? '右侧扫码' : '提交信息'}添加咨询顾问，
               <span className="orange">
-                即刻领取
+                即刻了解
                 {' >>>'}
               </span>
             </div>
 
-            <div className="content">
-              <div className="title" style={{ marginTop: 42 }}>
-                <span className="num">01</span>
-                实战陪跑
-              </div>
-              <div className="item" style={{ marginTop: 16 }}>
-                <RightIcon />
-                <span>1 对 1 全程辅助注册</span>
-              </div>
-              <div className="item">
-                <RightIcon />
-                <span>7 天免费试用，PoC 实战陪跑</span>
-              </div>
-              <div className="item">
-                <RightIcon />
-                <span>私域实战专家 1 对 1 咨询解决运营问题</span>
-              </div>
-
-              <div className="title" style={{ marginTop: 28 }}>
-                <span className="num">02</span>
-                运营干货
-              </div>
-              <div className="item" style={{ marginTop: 16 }}>
-                <RightIcon />
-                <span>赠送 600+ 私域 SOP 合集</span>
-              </div>
-              <div className="item">
-                <RightIcon />
-                <span>80+ 头部企业真实运营案例针对性解析</span>
-              </div>
-
-              <div className="title" style={{ marginTop: 28 }}>
-                <span className="num">03</span>
-                社群交流
-              </div>
-              <div className="item" style={{ marginTop: 16 }}>
-                <RightIcon />
-                <span>与 5000+ 一线操盘手实时交流</span>
-              </div>
-              <div className="item">
-                <RightIcon />
-                <span>300+ 分实操干货弹药，200+ 行业案例供给</span>
-              </div>
-              <div className="item">
-                <RightIcon />
-                <span>最新私域行业情报实时更新解读</span>
-              </div>
+            <div className="content pt-[14px]">
+              {
+               leftTips?.map((d, i) => (
+                  <Fragment key={d.title}>
+                    <div className="title" style={{ marginTop: 28, marginBottom: 16 }}>
+                      <span className="num">{`0${i + 1}`}</span>
+                      {d.title}
+                    </div>
+                    {
+                      d.items?.map(e => (
+                        <div key={e} className="item">
+                          <RightIcon />
+                          <span>{e}</span>
+                        </div>
+                      ))
+                    }
+                  </Fragment>
+                ))
+              }
             </div>
           </div>
           <div className="right">
@@ -239,23 +227,12 @@ const ContactModal: NextPage = () => {
                 display: isScanQrcode ? 'flex' : 'none',
               }}
             >
-              <img src={getQrcode(router.pathname)} alt="qrcode" className="qrcode" />
+              <img src={qrCode} alt={`type-${state?.type}`} className="qrcode" />
               <div className="tips">
-                微信扫一扫，与陪跑数百家头部企业的顾问聊聊
+                微信扫一扫，与顾问聊一聊
               </div>
-              <div className="appeal">10 倍提高你的私域运营效率</div>
-              <div className="login" style={{ marginTop: 42 }}>
-                已有账号，
-                <a
-                  href={`https://miaohui.juzibot.com/auth/login?from=login&rediect=${
-                    host + router.pathname
-                  }`}
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  立即登录
-                </a>
-              </div>
+              <div className="appeal">{appeal}</div>
+              {footer}
             </div>
             <div
               className="form"
@@ -294,18 +271,7 @@ const ContactModal: NextPage = () => {
               </button>
 
               <div className="tips">咨询顾问会尽快与您取得联系</div>
-              <div className="login" style={{ marginTop: 12 }}>
-                已有账号，
-                <a
-                  href={`https://miaohui.juzibot.com/auth/login?from=login&rediect=${
-                    host + router.pathname
-                  }`}
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  立即登录
-                </a>
-              </div>
+              {footer}
             </div>
 
             <div
@@ -386,7 +352,7 @@ const ContactModal: NextPage = () => {
 
       {isDetentionModalVisible ? (
         <DetentionModal
-          text={isScanQrcode ? '去扫码' : '去填写'}
+          text={isScanQrcode ? '了解一下' : '去填写'}
           onCancel={() => {
             toggleDetentionModalVisible(false);
             hideModal();

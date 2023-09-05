@@ -1,9 +1,9 @@
 /* eslint-disable no-unreachable */
-// import { ContactUsPureModalWithButton } from '@src/components/ContactUsPureModal';
 import { useMediaQuery } from '@react-hookz/web';
-import ContactUsSimpleModal from '@src/components/ContactUsSimpleModal';
+import ContactUsModal from '@src/components/ContactUsModal';
+import FooterBarWithButton from '@src/components/FooterBarWithButton';
 import Seo from '@src/components/common/Seo';
-import AppealBarNew from '@src/components/index/AppealBarNew';
+import { useShowModal } from '@src/utils/showModal';
 import { GetStaticProps, NextPage } from 'next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { useState } from 'react';
@@ -11,6 +11,7 @@ import { useState } from 'react';
 const CustomerAcquisitionPage: NextPage = () => {
   const [showModal, setShowModal] = useState(false);
   const isSmallDevice = useMediaQuery('only screen and (max-width : 600px)');
+  const showPcModal = useShowModal();
   if (isSmallDevice) {
     return (
       <div className='m-auto pt-[60px] relative'>
@@ -18,15 +19,20 @@ const CustomerAcquisitionPage: NextPage = () => {
         <img className='w-full' alt='' src='/_images/image-page/internet-00.png' />
         <div className="wrapper appeal-bar">
           <div className="container !w-[100%]">
-            <AppealBarNew />
+            <FooterBarWithButton
+              contactUsOption={{ qrCode: 'sf-04' }}
+            />
           </div>
         </div>
+
+        {/* 获取解决方案-按钮 */}
         <div
           onClick={() => setShowModal(true)}
           className='w-[calc(41%)] h-[calc(5%)] rounded-full flex justify-center items-center text-[18px] font-semibold text-white absolute top-[26%] left-[49%] cursor-pointer'
           style={{ transform: 'translate(-50%)' }}
         ></div>
-        <ContactUsSimpleModal
+        <ContactUsModal
+          qrCode='sf-04'
           open={showModal}
           onCancel={() => setShowModal(false)}
         />
@@ -36,19 +42,17 @@ const CustomerAcquisitionPage: NextPage = () => {
   return (
     <div className='m-auto pt-[60px] relative'>
       <Seo page="features-internet" />
-      <ContactUsSimpleModal
-        open={showModal}
-        onCancel={() => setShowModal(false)}
-      />
       <div
-        onClick={() => setShowModal(true)}
+        onClick={() => showPcModal({ qrCode: 'sf-04' })}
         className='w-[calc(17%)] h-[calc(7%)] rounded-full flex justify-center items-center text-[18px] font-semibold text-white absolute top-[29%] left-[50%] cursor-pointer'
         style={{ transform: 'translate(-50%)' }}
       ></div>
       <img className='w-full' alt='' src='/_images/image-page/internet-0.png' />
       <div className="wrapper appeal-bar">
         <div className="container">
-          <AppealBarNew />
+          <FooterBarWithButton 
+            contactUsOption={{ qrCode: 'sf-04' }}
+          />
         </div>
       </div>
     </div>

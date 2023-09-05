@@ -8,7 +8,7 @@ const AppealBar: NextPage = () => {
   return (
     <div className="content">
       <div className="title">{t('appeal-title')}</div>
-      <button className="white-button start-button" onClick={showModal}>
+      <button className="white-button start-button" onClick={() => showModal()}>
         {t('appeal-start-free')}
       </button>
     </div>

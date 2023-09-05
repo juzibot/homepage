@@ -1,13 +1,11 @@
 import { ContactUsPureModalWithButton } from '@src/components/ContactUsPureModal';
 import ContactUsSimpleModal from '@src/components/ContactUsSimpleModal';
-import { useShowModalNew } from '@src/utils/showModalNew';
 import { NextPage } from 'next';
 import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 
 const AppealBar: NextPage<{ isRed?: boolean; useSimpleModal?: boolean; imageNode?: React.ReactNode; }> = ({ isRed, useSimpleModal, imageNode }) => {
   const { t } = useTranslation(['homepage']);
-  const showModal = useShowModalNew();
   const [showContactUs, setShowContactUs] = useState(false);
   return (
     <div className="content">
@@ -18,7 +16,7 @@ const AppealBar: NextPage<{ isRed?: boolean; useSimpleModal?: boolean; imageNode
         </button>
       ) : (
         <ContactUsPureModalWithButton>
-          <button className="white-button start-button !shadow-none" onClick={showModal}>
+          <button className="white-button start-button !shadow-none">
             {t('appeal-start-free')}
           </button>
         </ContactUsPureModalWithButton>

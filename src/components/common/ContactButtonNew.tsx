@@ -2,6 +2,7 @@ import { NextPage } from 'next';
 import { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import ContactUsPureModal from '../ContactUsPureModal';
+import { useShowModal } from '@src/utils/showModal';
 
 const TIMEOUT = 5 * 1000;
 
@@ -11,6 +12,7 @@ export const ContactButtonNew: NextPage = () => {
   const { i18n } = useTranslation();
 
   const [showContactUsPureModal, setShowContactUsPureModal] = useState(false);
+  const showModal = useShowModal();
 
   useEffect(() => {
     setTimeout(() => {
@@ -55,7 +57,7 @@ export const ContactButtonNew: NextPage = () => {
         onMouseLeave={() => togglePopupVisible(false)}
         onClick={() => {
           toggleAutoVisible(false);
-          setShowContactUsPureModal(true);
+          showModal({ qrCode: 'sf-04' });
         }}
       >
         <div className="wave w1"></div>

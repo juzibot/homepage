@@ -11,6 +11,7 @@ import { useTranslation } from 'react-i18next';
 import { useRouter } from 'next/router';
 import { isBrowserChrome } from '@src/utils/isBrowserChrome';
 import { useShowModal } from '@src/utils/showModal';
+import { ContactUsOption } from '../common/emitter';
 
 const MenuItem: NextPage<{
   iconUrl?: string;
@@ -458,7 +459,15 @@ const HeaderBar: NextPage = () => {
                 <a
                   className="menu-item primary-link"
                   draggable="false"
-                  onClick={showModal}
+                  onClick={() => {
+                    let qrCode: ContactUsOption['qrCode'] = 'sf-01';
+                     if (pathname === '/about-us') {
+                      qrCode = 'juzibot-01';
+                     } else if (pathname === '/culture') {
+                      qrCode = 'juzibot-02';
+                     }
+                    showModal({ qrCode });
+                  }}
                 >
                   {t('lets-talk')}
                 </a>
@@ -474,7 +483,15 @@ const HeaderBar: NextPage = () => {
             <div
               className="menu-item primary-link round"
               draggable="false"
-              onClick={showModal}
+              onClick={() => {
+                let qrCode: ContactUsOption['qrCode'] = 'sf-01';
+                 if (pathname === '/about-us') {
+                  qrCode = 'juzibot-01';
+                 } else if (pathname === '/culture') {
+                  qrCode = 'juzibot-02';
+                 }
+                showModal({ qrCode });
+              }}
               style={{
                 userSelect: 'none',
                 cursor: 'pointer',

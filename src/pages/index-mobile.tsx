@@ -1,12 +1,10 @@
 /* eslint-disable react/jsx-no-target-blank */
 /* eslint-disable no-unreachable */
 import { NextPage } from "next";
-import SolutionPageMobile from '@src/components/index/SolutionPageMobile';
-import HeroPageMobile from '@src/components/index/HeroPageMobile';
-import FooterBarButton from "@src/components/FooterBarButton";
-import { useState } from "react";
-import ContactUsSimpleModal from "@src/components/ContactUsSimpleModal";
 import Seo from "@src/components/common/Seo";
+import { useState } from "react";
+import ContactUsModal from "@src/components/ContactUsModal";
+import FooterBarWithButton from "@src/components/FooterBarWithButton";
 
 const MobileIndexPage: NextPage<{}> = () => {
   const [showContactUs, setShowContactUs] = useState(false);
@@ -19,20 +17,13 @@ const MobileIndexPage: NextPage<{}> = () => {
       <img alt="" className='w-full' src="/_images/image-page/index-0.png" />
       <div className="wrapper appeal-bar !px-[16px]">
         <div className="container !w-[100%]">
-          <FooterBarButton isMobile url="https://insight.juzibot.com/" imageNode={<img src="_images/contact-us-qrcode/homepage.png" alt="" className="w-full h-full" />} useModal />
+          <FooterBarWithButton />
         </div>
       </div>
-      <ContactUsSimpleModal
+      <ContactUsModal
         open={showContactUs}
         onCancel={() => setShowContactUs(false)}
-        imageNode={<img src="_images/contact-us-qrcode/homepage.png" alt="" className="w-full h-full" />}
       />
-    </div>
-  );
-  return (
-    <div className="text-jz-text-3">
-      <HeroPageMobile />
-      <SolutionPageMobile />
     </div>
   );
 };

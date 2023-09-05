@@ -11,7 +11,6 @@ import { ContactButtonNew } from '@src/components/common/ContactButtonNew';
 import { useMediaQuery } from '@react-hookz/web';
 import HeaderBarMobile from '@src/components/HeaderBarMobile';
 import FooterMobile from '@src/components/FooterMobile';
-// import HeaderBarNew from '@src/components/HeaderBarNew';
 import FooterNew from '@src/components/FooterNew';
 import { useRouter } from 'next/router';
 // import { setMobileStatusBarColor } from '@src/utils/mobileStatusBar';
