@@ -459,7 +459,15 @@ const HeaderBar: NextPage = () => {
                 <a
                   className="menu-item primary-link"
                   draggable="false"
-                  onClick={() => showModal()}
+                  onClick={() => {
+                    let qrCode: ContactUsOption['qrCode'] = 'sf-01';
+                     if (pathname === '/about-us') {
+                      qrCode = 'juzibot-01';
+                     } else if (pathname === '/culture') {
+                      qrCode = 'juzibot-02';
+                     }
+                    showModal({ qrCode });
+                  }}
                 >
                   {t('lets-talk')}
                 </a>

@@ -10,23 +10,22 @@ export const leftTipMap: { [key in Key]: { title: string, items: string[] }[] } 
       title: '实战陪跑',
       items: [
         '1 对 1 全程辅助注册',
-        '7 天免费试用，PoC 实战陪跑',
-        '私域实战专家 1 对 1 咨询解决运营问题',
+        '实战专家全程帮辅解决问题',
       ],
     },
     {
       title: '运营干货',
       items: [
-        '赠送 600+ 私域 SOP 合集',
         '80+ 头部企业真实运营案例针对性解析',
+        '赠送 600+ 私域、AI 干货合集',
       ],
     },
     {
       title: '社群交流',
       items: [
-        '与 5000+ 一线操盘手实时交流',
+        '与 5000+ 一线业务操盘手实时交流',
         '300+ 份实操干货弹药，200+ 行业案例供给',
-        '最新私域行业情报实时更新解读',
+        '最新私域、AI 行业情报实时更新解读',
       ],
     },
   ],
@@ -112,14 +111,14 @@ export const footerMap = (router: NextRouter) => {
     {
       default: (
         <div className="login relative " style={{ marginTop: 22 }}>
-          <div className='w-[350px] absolute flex justify-between left-1/2' style={{ transform: 'translateX(-50%)' }}>
+          <div className='w-[300px] absolute flex justify-between left-1/2' style={{ transform: 'translateX(-50%)' }}>
             <span>
-              已有句子AI知识库账号
-              <a href={`https://insight.juzibot.com/auth/login?from=juzibot.com`} target="_blank" rel="noreferrer">立即登录</a>
+              登录
+              <a href={`https://insight.juzibot.com/auth/login?from=juzibot.com`} target="_blank" rel="noreferrer">句子AI知识库账号</a>
             </span>
             <span>
-              已有句子秒回账号
-              <a href={`https://miaohui.juzibot.com/auth/login?from=login&rediect=${host + router.pathname}`} target="_blank" rel="noreferrer">立即登录</a>
+              登录
+              <a href={`https://miaohui.juzibot.com/auth/login?from=login&rediect=${host + router.pathname}`} target="_blank" rel="noreferrer">句子秒回账号</a>
             </span>
           </div>
         </div>
@@ -127,7 +126,7 @@ export const footerMap = (router: NextRouter) => {
       ai: (
         <div className="login" style={{ marginTop: 42 }}>
           已有账号，
-          <a href={`https://miaohui.juzibot.com/auth/login?from=login&rediect=${host + router.pathname}`} target="_blank" rel="noreferrer">
+          <a href="https://insight.juzibot.com/auth/login?from=juzibot.com" target="_blank" rel="noreferrer">
             立即登录
           </a>
         </div>

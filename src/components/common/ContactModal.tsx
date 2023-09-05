@@ -48,10 +48,7 @@ const DetentionModal: NextPage<{
   text: string;
 }> = ({ onCancel, onConfirm, text }) => {
   const contents: string[] = [
-    '<p><strong>你将失去与5000+ 操盘手</p><p>实时交流的机会</strong></p>',
-    '<strong><p>80+ 行业头部企业的案例拆解</p><p>添加顾问即可自动领取</p></strong>',
-    '你可能会错过：<strong><p>7 天免费试用、PoC 实战全程陪跑</p></strong>',
-    '<strong><p>600+ 份私域实操 SOP</p><p>添加顾问即可自动领取</p></strong>',
+    '你可能会错过：<strong><p>POC实战全程陪跑、800+运营干货</p></strong>',
   ];
   return (
     <div className="detention-modal">
@@ -355,7 +352,7 @@ const ContactModal: NextPage = () => {
 
       {isDetentionModalVisible ? (
         <DetentionModal
-          text={isScanQrcode ? '去扫码' : '去填写'}
+          text={isScanQrcode ? '了解一下' : '去填写'}
           onCancel={() => {
             toggleDetentionModalVisible(false);
             hideModal();
