@@ -106,6 +106,33 @@ const NewsPage: NextPage = () => {
       src:
         'https://mp.weixin.qq.com/s/t_-WStNg5YJh2vOXvundMA',
     },
+    {
+      imgUrl:
+        '/_images/media-reports/img-10.png',
+      title: '句子互动助力企业信息安全，荣获公安部颁发「国家信息安全等级保护三级」认证',
+      subtitle:
+        '经过公安厅的认证评估，句子互动旗下RPA营销服务一体化平台句子秒回成功获得了“信息系统安全等级保护备案证明第3级”（以下简称“等保三级”）证明。',
+      src:
+        'https://mp.weixin.qq.com/s/VkLkdpowpdJ5awgqSqIifA',
+    },
+    {
+      imgUrl:
+        '/_images/media-reports/img-11.png',
+      title: '句子互动树立对话式营销行业新标杆，荣获 ISO9001 质量管理体系认证',
+      subtitle:
+        '句子互动申请并通过了 ISO9001 质量管理认证机构专家全面、严格、细致的审查，获得GB/T19001-2016 / ISO9001:2015 标准质量管理体系认证证书，认证范围为应用软件技术开发，自行开发的SaaS产品销售……',
+      src:
+        'https://mp.weixin.qq.com/s/r_uNiPIjNMm4mfUQ7_QKFg',
+    },
+    {
+      imgUrl:
+        '/_images/media-reports/img-12.png',
+      title: '句子互动获得高新技术企业认定',
+      subtitle:
+        '句子互动通过北京市认定管理机构2021年认定的高新技术企业，于2021年12月公示。',
+      src:
+        'http://www.innocom.gov.cn/gqrdw/c101407/202112/dfb1d5c2a6eb47ddb3f00bfe5f02413b.shtml',
+    },
   ];
   const data = chunk(items, 3);
   const [autoPlayInterval, setAutoPlayInterval] = useState<NodeJS.Timer>();
@@ -166,7 +193,7 @@ const NewsPage: NextPage = () => {
                       <a className='news' target='_blank'>
                         <img src={item.imgUrl} alt='news-cover'></img>
                         <div style={{ height: 116 }}>
-                          <div className='title line-clamp-2'>{item.title}</div>
+                          <div className='title line-clamp-2 min-h-[50px]'>{item.title}</div>
                           <div className='subtitle line-clamp-2'>{item.subtitle}</div>
                         </div>
                         <div className='read-more'>点击查看 →</div>
