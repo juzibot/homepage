@@ -17,7 +17,7 @@ const CustomerAcquisitionPage: NextPage = () => {
     return (
       <div className='m-auto'>
         <Seo page="features-ai" />
-        <img className='w-full' alt='' src='/_images/image-page/ai-00.png' />
+        <img className='w-full' alt='' src='/_images/image-page/ai-20231023-m.png' />
         <div className="wrapper appeal-bar">
           <div className="container !w-[100%]">
             <FooterBarWithButton
@@ -31,7 +31,7 @@ const CustomerAcquisitionPage: NextPage = () => {
   return (
     <div className='m-auto'>
       <Seo page="features-ai" />
-      <img className='w-full mt-[72px]' alt='' src='/_images/image-page/ai-0.jpg' />
+      <img className='w-full mt-[72px]' alt='' src='/_images/image-page/ai-20231023.png' />
       <div className="wrapper appeal-bar">
         <div className="container">
           <FooterBarWithButton

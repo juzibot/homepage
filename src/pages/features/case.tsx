@@ -21,7 +21,7 @@ const CustomerAcquisitionPage: NextPage = () => {
     return (
       <div className='m-auto pt-[50px] relative'>
         <Seo page="features-case" />
-        <img className='w-full' alt='' src="/_images/image-page/case-00.png" />
+        <img className='w-full' alt='' src="/_images/image-page/case-20231023-m.png" />
         <div
           onClick={() => setShowModal(true)}
           className='w-[152px] h-[56px] rounded-[100px] flex justify-center items-center text-[18px] font-semibold text-white absolute top-[7%] left-[50%] cursor-pointer'
@@ -53,7 +53,7 @@ const CustomerAcquisitionPage: NextPage = () => {
       >
         预约咨询
       </div>
-      <img className='w-full' alt='' src="/_images/image-page/case-0.png" />
+      <img className='w-full' alt='' src="/_images/image-page/case-20231023.png" />
       <div className="wrapper appeal-bar">
         <div className="container">
           <FooterBarWithButton 

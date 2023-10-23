@@ -14,7 +14,7 @@ const MobileIndexPage: NextPage<{}> = () => {
       <div className="absolute top-[221px] flex items-center justify-center w-[100%]">
         <a onClick={() => setShowContactUs(true)} target="_blank" className="w-[150px] h-[50px]" style={{ border: 'unset' }}></a>
       </div>
-      <img alt="" className='w-full' src="/_images/image-page/index-0.png" />
+      <img alt="" className='w-full' src="/_images/image-page/index-20231023-m.png" />
       <div className="wrapper appeal-bar !px-[16px]">
         <div className="container !w-[100%]">
           <FooterBarWithButton />
