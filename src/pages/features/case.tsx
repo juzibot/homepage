@@ -24,7 +24,7 @@ const CustomerAcquisitionPage: NextPage = () => {
         <img className='w-full' alt='' src="/_images/image-page/case-20231023-m.png" />
         <div
           onClick={() => setShowModal(true)}
-          className='w-[152px] h-[56px] rounded-[100px] flex justify-center items-center text-[18px] font-semibold text-white absolute top-[7%] left-[50%] cursor-pointer'
+          className='w-[152px] h-[56px] rounded-[100px] flex justify-center items-center text-[18px] font-semibold text-white absolute top-[9.3%] left-[50%] cursor-pointer'
           style={{ transform: 'translate(-50%)', boxShadow: ' 0px 35px 50px -15px rgba(52, 128, 239, 0.3)' }}
         >
         </div>
@@ -48,7 +48,7 @@ const CustomerAcquisitionPage: NextPage = () => {
       <Seo page="features-case" />
       <div
         onClick={() => showPcModal({ qrCode: 'sf-04' })}
-        className='w-[152px] bg-[#0555FF] h-[56px] rounded-[100px] flex justify-center items-center text-[18px] font-semibold text-white absolute top-[14%] left-[50%] cursor-pointer'
+        className='w-[162px] bg-[#0555FF] h-[60px] rounded-[100px] flex justify-center items-center text-[18px] font-semibold text-white absolute top-[16.75%] left-[50%] cursor-pointer'
         style={{ transform: 'translate(-50%)', boxShadow: ' 0px 35px 50px -15px rgba(52, 128, 239, 0.3)' }}
       >
         预约咨询

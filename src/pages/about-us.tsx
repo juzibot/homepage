@@ -519,7 +519,7 @@ const ExtraDialog: NextPage<{ flag: string }> = ({ flag }) => {
         <strong>2020.05</strong>
         <div>入选 Facebook 中国大陆首期加速器</div>
         <strong>2020.08</strong>
-        <div>与行业头部品牌腾讯广告、核桃编程等达成合作</div>
+        <div>与行业头部品牌核桃编程等达成合作</div>
         <strong>2020.09</strong>
         <div>
           与母婴行业新消费品牌 Babycare 、教育行业头部品牌猿辅导等达成合作
