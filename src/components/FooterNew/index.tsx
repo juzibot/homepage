@@ -25,17 +25,17 @@ const Footer: NextPage = () => {
         { title: 'RPA 驱动的营销服务一体化平台', url: '/features/rpa' },
       ]
     },
-    i18n.language === 'zh'
-      ? {
-        title: t('footer-menu-2-title'),
-        cIndex: '2',
-        child: [
-          { title: t('政务解决方案'), url: '/features/government' },
-          { title: t('互联网解决方案'), url: '/features/internet' },
-          { title: t('消费品解决方案'), url: '/features/customer' },
-        ],
-      }
-      : undefined,
+    // i18n.language === 'zh'
+    //   ? {
+    //     title: t('footer-menu-2-title'),
+    //     cIndex: '2',
+    //     child: [
+    //       { title: t('政务解决方案'), url: '/features/government' },
+    //       { title: t('互联网解决方案'), url: '/features/internet' },
+    //       { title: t('消费品解决方案'), url: '/features/customer' },
+    //     ],
+    //   }
+    //   : undefined,
     {
       title: t('footer-menu-3-title'),
       cIndex: '3',

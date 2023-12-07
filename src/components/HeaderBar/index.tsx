@@ -424,11 +424,11 @@ const HeaderBar: NextPage = () => {
             <HeaderMenu hasArrow menu={<ProductMenu />}>
               {t('products')}
             </HeaderMenu>
-            {isZh && (
+            {/* {isZh && (
               <HeaderMenu hasArrow menu={<SolutionsMenu />}>
                 {t('solutions')}
               </HeaderMenu>
-            )}
+            )} */}
             {isZh && <HeaderMenu href="/features/case">{t('cases')}</HeaderMenu>}
             <HeaderMenu href="https://blog.juzibot.com/" linkTarget="_blank">
               {t('course')}
