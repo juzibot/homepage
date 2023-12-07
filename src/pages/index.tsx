@@ -40,7 +40,7 @@ const Home: NextPage = () => {
             onClick={() =>{ showModal({}) }}
             target="_blank"
             rel="noreferrer"
-            className="w-[calc(11%)] h-[calc(2.25%)] rounded-full flex justify-center items-center text-[18px] font-semibold text-white absolute top-[12.7%] left-[50%] cursor-pointer"
+            className="w-[calc(11%)] h-[calc(3.25%)] rounded-full flex justify-center items-center text-[18px] font-semibold text-white absolute top-[19.4%] left-[50%] cursor-pointer"
             style={{ transform: 'translate(-50%)' }}
           >
           </a>
