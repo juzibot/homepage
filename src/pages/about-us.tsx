@@ -947,11 +947,11 @@ const AboutUsPage: NextPage = () => {
       </div>
       {isZh ? (
         <>
-          <div className='wrapper growth-wall'>
+          {/* <div className='wrapper growth-wall'>
             <div className='container'>
               <GrowthWall />
             </div>
-          </div>
+          </div> */}
 
           <div className='wrapper video-box'>
             <div className='container'>
@@ -966,11 +966,11 @@ const AboutUsPage: NextPage = () => {
             ></Script>
           </div>
 
-          <div className='wrapper customer-display'>
+          {/* <div className='wrapper customer-display'>
             <div className='container'>
               <CustomerDisplay />
             </div>
-          </div>
+          </div> */}
 
           <div className='wrapper certificates'>
             <div className='container'>

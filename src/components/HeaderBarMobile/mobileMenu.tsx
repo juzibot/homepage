@@ -41,7 +41,7 @@ const MobileMenu = () => {
                 </div>
               </Link>
             </div>
-            <div className='flex flex-col px-[28px] pt-[24px] pb-[32px] gap-[32px]'>
+            {/* <div className='flex flex-col px-[28px] pt-[24px] pb-[32px] gap-[32px]'>
               <div className='text-[17px] leading-[24px] mt-[24px] font-semibold text-[#364256]'>
                 解决方案
               </div>
@@ -60,7 +60,7 @@ const MobileMenu = () => {
                   消费品解决方案
                 </div>
               </Link>
-            </div>
+            </div> */}
             <div className="h-[1px] bg-[rgba(221,227,234,0.5)]" />
             <div className='h-[72px] flex items-center px-[28px]'>
               <Link href="/features/case" passHref>
