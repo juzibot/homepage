@@ -6,6 +6,7 @@ import { useEffect, useState } from 'react';
 import Seo from '@src/components/common/Seo';
 import { useMediaQuery } from '@react-hookz/web';
 import FooterBarWithButton from '@src/components/FooterBarWithButton';
+import Typewriter from 'typewriter-effect';
 
 const CustomerAcquisitionPage: NextPage = () => {
   const isSmallDevice = useMediaQuery('only screen and (max-width : 600px)');
@@ -13,11 +14,51 @@ const CustomerAcquisitionPage: NextPage = () => {
   useEffect(() => {
     toggleChrome(isBrowserChrome());
   }, []);
+
+  // if (isSmallDevice) {
+  //   return (
+  //     <div className='m-auto'>
+  //       <Seo page="features-ai" />
+  //       <img className='w-full' alt='' src='/_images/image-page/ai-20231023-m.png' />
+  //       <div className="wrapper appeal-bar">
+  //         <div className="container !w-[100%]">
+  //           <FooterBarWithButton
+  //             contactUsOption={{ type: 'ai', qrCode: 'sf-02' }}
+  //           />
+  //         </div>
+  //       </div>
+  //     </div>
+  //   );
+  // }
+
+  const strings = ['数字销售', '数字 SDR', '数字网格员', '数字民警', '数字电力管家'];
+
   if (isSmallDevice) {
     return (
       <div className='m-auto'>
         <Seo page="features-ai" />
-        <img className='w-full' alt='' src='/_images/image-page/ai-20231023-m.png' />
+        <div className="relative">
+          <img className='w-full' alt='' src="/_images/image-page/ai-top-20240206-m.png"/>
+          <div className="absolute top-0 h-[200px] w-full flex justify-center items-center">
+            {/* 文字 */}
+            <div className="w-full font-sans">
+              <div className="text-center text-[19px] text-block">生成式 AI 流程引擎，快速构建 AI 原生应用</div>
+              <div className="flex text-[29px] font-medium">
+                <span className="w-1/2 flex-shrink-0 text-block text-right">搭建企业专属</span>
+                <Typewriter
+                  options={{
+                    wrapperClassName: 'text-[29px] text-[#DA37E8]',
+                    cursorClassName: 'text-[#DA37E8]',
+                    strings,
+                    autoStart: true,
+                    loop: true,
+                  }}
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+        <img className='w-full' alt='' src='/_images/image-page/ai-middle-20240206-m.png' />
         <div className="wrapper appeal-bar">
           <div className="container !w-[100%]">
             <FooterBarWithButton
@@ -28,6 +69,43 @@ const CustomerAcquisitionPage: NextPage = () => {
       </div>
     );
   }
+
+  return (
+    <div className='m-auto'>
+      <Seo page="features-ai" />
+      <div className="relative">
+        <img className='w-full' alt='' src="/_images/image-page/ai-top-20240206.png"/>
+        <div className="absolute top-10 h-[50vh] w-full flex justify-center items-center">
+          {/* 文字 */}
+          <div className="w-full font-sans">
+            <div className="text-center text-[56px] text-block">生成式 AI 流程引擎，快速构建 AI 原生应用</div>
+            <div className="flex text-[65px] font-medium">
+              <span className="w-1/2 flex-shrink-0 text-block text-right">搭建企业专属</span>
+              <Typewriter
+                options={{
+                  wrapperClassName: 'text-[65px] text-[#DA37E8]',
+                  cursorClassName: 'text-[#DA37E8]',
+                  strings,
+                  autoStart: true,
+                  loop: true,
+                }}
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+      <img className='w-full' alt='' src='/_images/image-page/ai-middle-20240206.png' />
+      <div className="wrapper appeal-bar">
+        <div className="container">
+          <FooterBarWithButton
+            contactUsOption={{ type: 'ai', qrCode: 'sf-02' }}
+          />
+        </div>
+      </div>
+    </div>
+  )
+
+  // 旧的
   return (
     <div className='m-auto'>
       <Seo page="features-ai" />

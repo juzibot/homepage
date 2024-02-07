@@ -4,7 +4,7 @@ import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 const ContactUsM: NextPage = () => {
   return (
     <div className='m-auto'>
-      <img className='w-full' alt='' src='/_images/image-page/about-us-20231207-m.png' />
+      <img className='w-full' alt='' src='/_images/image-page/about-us-20220207-m.png' />
     </div>
   );
 };

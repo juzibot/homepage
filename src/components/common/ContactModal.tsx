@@ -189,7 +189,7 @@ const ContactModal: NextPage = () => {
             e.stopPropagation();
           }}
         >
-          <div className="left" style={leftStyle}>
+          <div className="left !px-10" style={leftStyle}>
             <h2>不止工具，更多全方位支持</h2>
             <div style={{ marginTop: 8 }}>
               {isScanQrcode ? '右侧扫码' : '提交信息'}添加咨询顾问，
@@ -209,8 +209,8 @@ const ContactModal: NextPage = () => {
                     </div>
                     {
                       d.items?.map(e => (
-                        <div key={e} className="item">
-                          <RightIcon />
+                        <div key={e} className="item flex">
+                          <span className="flex-shrink-0"><RightIcon /></span>
                           <span>{e}</span>
                         </div>
                       ))

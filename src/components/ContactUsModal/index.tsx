@@ -8,6 +8,8 @@ import cls from 'classnames';
 import { RightIcon } from "../common/ContactModal";
 import { ContactUsOption } from "../common/emitter";
 import { leftStyleMap, leftTipMap, qrCodeMap } from "../common/contactOptionsMap";
+import { useMediaQuery } from "@react-hookz/web";
+import { useShowModal } from "@src/utils/showModal";
 
 type Props = Pick<ContactUsOption, 'type' | 'qrCode'> & {
   open?: boolean,
@@ -88,8 +90,8 @@ const ContactUsModal: FC<Props> = ({ type = 'default', qrCode = 'sf-01', open, o
                 </div>
                 {
                   d.items?.map(e => (
-                    <div key={e} className="text-[#555]">
-                      <RightIcon />
+                    <div key={e} className="text-[#555] flex">
+                      <span className="flex-shrink-0"><RightIcon /></span>
                       <span className="ml-1">{e}</span>
                     </div>
                   ))
@@ -131,8 +133,17 @@ const ContactUsModal: FC<Props> = ({ type = 'default', qrCode = 'sf-01', open, o
 const ContactUsModalWithButton: FC<{ children: ReactElement }> = ({
   children
 }) => {
+  const isMobile = useMediaQuery('only screen and (max-width : 600px)');
+  const showPcModal = useShowModal();
   const [visible, setVisible] = useState(false);
-  const handleClick = () => setVisible(true);
+
+  const handleClick = () => {
+    if (isMobile) {
+      setVisible(true);
+      return;
+    }
+    showPcModal();
+  };
   return (
     <>
       {React.cloneElement(children, { onClick: handleClick })}

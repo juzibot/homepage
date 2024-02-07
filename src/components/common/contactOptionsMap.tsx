@@ -7,49 +7,50 @@ type Key = Required<ContactUsOption>['type'];
 export const leftTipMap: { [key in Key]: { title: string, items: string[] }[] } = {
   default: [
     {
-      title: '实战陪跑',
+      title: '业务咨询',
       items: [
-        '1 对 1 全程辅助注册',
-        '实战专家全程帮辅解决问题',
+        '提供专业的业务咨询及解决方案',
+        '结合RPA和AI技术，协助企业制定有效的运营策略',
       ],
     },
     {
-      title: '运营干货',
+      title: '实战陪跑',
       items: [
-        '80+ 头部企业真实运营案例针对性解析',
-        '赠送 600+ 私域、AI 干货合集',
+        '提供一对一辅导，全程协助深入了解RPA和AI',
+        '实战专家解答问题，提供全方位工具支持',
       ],
     },
     {
       title: '社群交流',
       items: [
-        '与 5000+ 一线业务操盘手实时交流',
-        '300+ 份实操干货弹药，200+ 行业案例供给',
-        '最新私域、AI 行业情报实时更新解读',
+        '实时与5000+一线业务操盘手交流',
+        '获取最新私域和AI行业情报',
+        '赠送600+私域和AI干货合集，持续更新解读',
       ],
     },
   ],
   ai: [
     {
-      title: '实战陪跑',
+      title: '业务咨询',
       items: [
-        'AI 工程师 1 对 1 辅助搭建调优知识库',
-        'AI 实战专家全程咨询解决问题',
+        '为企业制定数字员工发展战略和规划',
+        '帮助企业利用数字员工驱动业务决策',
+        '为企业提供人工智能方面的咨询和指导',
       ],
     },
     {
-      title: '运营干货',
+      title: '实战陪跑',
       items: [
-        '80+ 头部企业真实运营案例针对性解析',
-        '赠送 600 +业务 SOP 合集',
+        '协助企业进行数字员工的搭建和优化',
+        '提供数字员工的性能监控和维护服务，确保数字员工持续性能和准确性',
       ],
     },
     {
       title: '社群交流',
       items: [
-        '与5000+ 一线业务操盘手实时交流',
-        '300+ 份实操干货弹药，200+ 行业案例供给',
         '最新 AI 行业情报实时更新解读',
+        '与一线业务操盘手实时交流',
+        '实操干货弹药、行业案例持续供给',
       ],
     },
   ],
@@ -82,7 +83,7 @@ export const leftTipMap: { [key in Key]: { title: string, items: string[] }[] } 
 
 export const leftStyleMap: { [key in Key]: CSSProperties } = {
   default: { background: 'linear-gradient(169deg, #F6F7FD 4.15%, #EAF2FF 94.03%)' },
-  ai: { background: 'linear-gradient(174deg, #FFFBF1 2.78%, #FFF4DF 95.55%)' },
+  ai: { background: 'linear-gradient(174deg, #FBF5FF 2.78%, #F0E1FF 95.55%)' },
   rpa: { background: 'linear-gradient(147.8deg, rgba(102, 71, 255, 0.1) 19.05%, rgba(5, 85, 255, 0.1) 87.88%)' },
 }
 
@@ -94,6 +95,7 @@ export const appealMap: { [key in Key]: ReactNode } = {
       <span className='text-[16px]'>句子互动和你一起抓住变现商机</span>
     </span>
   ),
+
   ai: (
     <span>
       <span className='text-[18px]'>立刻搭建大模型驱动的数字员工</span>
