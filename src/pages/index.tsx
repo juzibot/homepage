@@ -78,7 +78,7 @@ const Home: NextPage = () => {
               <div className="w-[400px] h-[170px] p-5 rounded-xl bg-black flex flex-col">
                 <div className="text-white text-[21px] font-medium mb-2">句子互动产品</div>
                 <p className="flex-1 text-white">只需上传学习素材或添加提示语，即可获得独特个性和超强能力的专属助理机器人。</p>
-                <ContactUsModalWithButton>
+                <ContactUsModalWithButton contactUsOption={{ type: 'ai', qrCode: 'sf-02' }}>
                   <span className="text-[#EF3BFB] mt-2 inline-flex items-center gap-2 cursor-pointer">联系我们 <RightArrow /> </span>
                 </ContactUsModalWithButton>
               </div>

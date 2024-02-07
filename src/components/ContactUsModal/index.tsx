@@ -10,6 +10,7 @@ import { ContactUsOption } from "../common/emitter";
 import { leftStyleMap, leftTipMap, qrCodeMap } from "../common/contactOptionsMap";
 import { useMediaQuery } from "@react-hookz/web";
 import { useShowModal } from "@src/utils/showModal";
+import { pick } from "lodash";
 
 type Props = Pick<ContactUsOption, 'type' | 'qrCode'> & {
   open?: boolean,
@@ -130,8 +131,8 @@ const ContactUsModal: FC<Props> = ({ type = 'default', qrCode = 'sf-01', open, o
   );
 }
 
-const ContactUsModalWithButton: FC<{ children: ReactElement }> = ({
-  children
+const ContactUsModalWithButton: FC<{ children: ReactElement, contactUsOption?: ContactUsOption }> = ({
+  children, contactUsOption
 }) => {
   const isMobile = useMediaQuery('only screen and (max-width : 600px)');
   const showPcModal = useShowModal();
@@ -142,13 +143,14 @@ const ContactUsModalWithButton: FC<{ children: ReactElement }> = ({
       setVisible(true);
       return;
     }
-    showPcModal();
+    showPcModal(contactUsOption);
   };
   return (
     <>
       {React.cloneElement(children, { onClick: handleClick })}
       <ContactUsModal
         open={visible}
+        {... pick(contactUsOption, ['type', 'qrCode'])}
         onCancel={() => setVisible(false)}
         onOk={() => setVisible(false)}
       />
