@@ -267,9 +267,9 @@ const FooterMobile: NextPage = () => {
               type="primary"
               className="mx-2 h-[44px] !rounded-3xl !bg-[#0555FF] !border-[#0555FF]"
               onClick={() => {
-                open('https://work.weixin.qq.com/kfid/kfcbfceaec6e8e30afe');
+                open('https://chat.juzibot.com');
               }}
-            >微信咨询</Button>
+            >立即体验</Button>
           </div>
         </div>
       </footer>
