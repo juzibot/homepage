@@ -109,7 +109,7 @@ const ContactUsModal: FC<Props> = ({ type = 'default', qrCode = 'sf-01', open, o
             width={124}
             alt={`type-${type}`}
             className="flex-shrink-0 mr-[10px]"
-            onClick={() => window.open('https://work.weixin.qq.com/kfid/kfcbfceaec6e8e30afe')}
+            onClick={() => window.open('https://chat.juzibot.com')}
           />
           <div className="flex flex-col justify-center text-[15px]">
             <p className="text-[#FF5E1E] text-[15px] font-medium mb-2">{appeal}</p>
