@@ -87,16 +87,45 @@ const PracticeGuidePage: NextPage = () => {
     <div className='m-auto'>
       <Seo page="features-ai" />
       <div className="relative">
-        <img className='w-full' alt='' src="/_images/image-page/practice-guide-content-0.png" />
+        <img className='w-full -mt-[4rem]' alt='' src="/_images/image-page/practice-guide-top-bg.png" />
 
-        <div
-          className="w-[13%] h-[4vw] min-h-[56px] absolute top-[41.5%] left-[64.5%] cursor-pointer"
-          onClick={showModal}
-        />
+        <div className="absolute top-[43px] h-[620px] w-full flex gap-14 justify-center items-center 3xl:scale-150 3xl:top-[14rem]">
+          <img className='h-[400px]' alt='' src="/_images/image-page/practice-guide-book-img2.x.png" />
+          <div className="flex flex-col gap-8 items-start">
+            <img className='h-[190px]' alt='' src="/_images/image-page/practice-guide-book-desc.png" />
+            {/* 文字 */}
+            <div className="bg-white flex items-center rounded-full">
+              <div className="text-[18px] inline-flex px-5 gap-2">
+                <div className="text-[#FC790D] font-medium">句子互动专属优惠价：￥59.5[5折]</div>
+                <div className="text-[#AAB9CA] line-through">原价￥119</div>
+              </div>
+              <div
+                className="h-[56px] px-[58px] bg-[#0555FF] rounded-full font-semibold text-[18px] text-white flex justify-start items-center cursor-pointer"
+                style={{ boxShadow: '0px 35px 50px -15px rgba(52, 128, 239, 0.30)' }}
+                onClick={showModal}
+              >
+                立即购买
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
 
-        <Link passHref href='/features/ai'>
-          <div className="w-[14.3%] h-[2.9vw] min-h-[42px] absolute top-[80.2%] left-[75.3%] cursor-pointer"/>
-        </Link>
+      <div className="flex justify-center mb-7 3xl:scale-150 3xl:mb-[10rem] 3xl:-mt-[10rem]">
+        <img className='h-[98px]' alt='' src="/_images/image-page/practice-guide-book-keyword.png" />
+      </div>
+      <div className="h-[211px] flex justify-center mb-20 3xl:scale-150 3xl:mb-[13rem]">
+        <div className='h-[211px] w-[1200px] relative'>
+          <img className='h-[211px]' alt='' src="/_images/image-page/practice-guide-book-author.png" />
+          <Link passHref href='/features/ai'>
+            <div
+              style={{ transform: 'translateY(-50%)' }}
+              className="h-[44px] absolute top-1/2 right-5 border border-solid border-[#0555FF] rounded-full px-6 text-[#0555FF] text-[18px] flex items-center font-medium cursor-pointer"
+            >
+              了解句子互动AI产品
+            </div>
+          </Link>
+        </div>
       </div>
 
       <img className='w-full' alt='' src='/_images/image-page/practice-guide-content-1.png' />
