@@ -71,6 +71,10 @@ const MobileMenu = () => {
             </div> */}
             <div className="h-[1px] bg-[rgba(221,227,234,0.5)]" />
             <div className='h-[72px] flex items-center px-[28px]'>
+              <a href="/chatbot/practice-guide" rel="noreferrer" target="_self" className='w-[100%] text-[17px] text-[#364256]'>Chatbot实践指南</a>
+            </div>
+            <div className="h-[1px] bg-[rgba(221,227,234,0.5)]" />
+            <div className='h-[72px] flex items-center px-[28px]'>
               <a href="https://juzibot.com/blog/" rel="noreferrer" target="_blank" className='w-[100%] text-[17px] text-[#364256]'>增长情报局</a>
             </div>
             <div className="h-[1px] bg-[rgba(221,227,234,0.5)]" />

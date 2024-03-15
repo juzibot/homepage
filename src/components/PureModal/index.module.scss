@@ -1,0 +1,25 @@
+.PureModalInfoNoContent{
+  :global{
+    .ant-modal-content{
+      border-radius: 12px;
+      overflow: hidden;
+    }
+    .ant-modal-body{
+      padding: 0;
+    }
+    .ant-modal-confirm-content{
+      margin: 0;
+    }
+    .ant-modal-confirm-body{
+      .anticon-info-circle{
+        display: none;
+      }
+    }
+    .ant-modal-confirm-title{
+      display: none;
+    }
+    .ant-modal-confirm-btns{
+      display: none;
+    }
+  }
+}

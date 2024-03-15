@@ -4,8 +4,8 @@
 @import '@styles/features.module.scss';
 @import '@styles/footer.module.scss';
 
-// @tailwind base;
-// @tailwind components;
+@tailwind base;
+@tailwind components;
 @tailwind utilities;
 .redText{
   color: red;

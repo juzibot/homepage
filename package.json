@@ -37,6 +37,7 @@
     "sass": "^1.44.0",
     "styled-components": "^5.3.9",
     "swiper": "^7.3.1",
+    "tailwind-merge": "^2.2.1",
     "typewriter-effect": "^2.21.0"
   },
   "devDependencies": {
