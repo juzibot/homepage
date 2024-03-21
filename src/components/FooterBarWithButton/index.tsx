@@ -5,6 +5,7 @@ import { ContactUsOption } from '../common/emitter';
 import { useMediaQuery } from '@react-hookz/web';
 import ContactUsModal from '../ContactUsModal';
 import { pick } from 'lodash';
+import { useTranslation } from 'react-i18next';
 
 type Props = {
   // title?: string
@@ -38,18 +39,19 @@ const FooterBarWithButton = (props: Props = {}) => {
     showPcModal(contactUsOption);
   };
 
+  const { t, i18n } = useTranslation('common');
   const pcTitle = (
     <div className={cls('title')}>
-      <span>AI+RPA，大模型驱动的</span>
-      <span className="text-[#EF3BFB] ml-2">AI 数字员工</span>
+      <span>{t('title-1')}</span>
+      <span className="text-[#EF3BFB] ml-2">{t('title-2')}</span>
     </div>
   );
   const mobileTitle = (
     <div className={cls('title')}>
-      <div className='text-center text-[28px]'>AI+RPA，</div>
-      <div className='text-[22px]'>
-        <span>大模型驱动的</span>
-        <span className="text-[#EF3BFB] ml-2">AI 数字员工</span>
+      <div className='text-center text-[28px]'>{t('mobile-title-1')}</div>
+      <div style={{ fontSize: i18n.language === 'en' ? 18 : 22 }}>
+        <span>{t('mobile-title-2')}</span>
+        <span className="text-[#EF3BFB] ml-1.5">{t('mobile-title-3')}</span>
       </div>
     </div>
   );
@@ -62,7 +64,7 @@ const FooterBarWithButton = (props: Props = {}) => {
         className="rounded-full px-10 py-4 text-white cursor-pointer text-[18px]"
         onClick={handleClick}
       >
-        立即体验
+        {t('contact')}
       </span>
       <ContactUsModal
         {...pick(props.contactUsOption, ['type', 'qrCode'])}

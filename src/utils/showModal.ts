@@ -9,11 +9,11 @@ export function useShowModal() {
       type = 'default',
       qrCode = 'sf-01',
     } = options
-    if (i18n.language === 'zh') {
+    //if (i18n.language === 'zh') {
       emitter.emit('contact_us', { ...options, type, qrCode });
-    } else {
-      window.open('https://miaohui.juzibot.com/auth/login', '_blank');
-    }
+    //} else {
+    //  window.open('https://miaohui.juzibot.com/auth/login', '_blank');
+    //}
   };
 }
 

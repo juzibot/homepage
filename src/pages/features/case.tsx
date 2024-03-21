@@ -8,8 +8,10 @@ import { useMediaQuery } from '@react-hookz/web';
 import ContactUsModal from '@src/components/ContactUsModal';
 import { useShowModal } from '@src/utils/showModal';
 import FooterBarWithButton from '@src/components/FooterBarWithButton';
+import { useTranslation } from 'react-i18next';
 
 const CustomerAcquisitionPage: NextPage = () => {
+  const { t } = useTranslation('common');
   const isSmallDevice = useMediaQuery('only screen and (max-width : 600px)');
   const [, toggleChrome] = useState(true);
   const [showModal, setShowModal] = useState(false);
@@ -51,7 +53,7 @@ const CustomerAcquisitionPage: NextPage = () => {
         className='w-[162px] bg-[#0555FF] h-[60px] rounded-[100px] flex justify-center items-center text-[18px] font-semibold text-white absolute top-[16.75%] left-[50%] cursor-pointer'
         style={{ transform: 'translate(-50%)', boxShadow: ' 0px 35px 50px -15px rgba(52, 128, 239, 0.3)' }}
       >
-        预约咨询
+        {t('lets-talk')}
       </div>
       <img className='w-full' alt='' src="/_images/image-page/case-20231023.png" />
       <div className="wrapper appeal-bar">

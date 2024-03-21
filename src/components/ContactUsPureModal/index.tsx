@@ -7,6 +7,7 @@ import ContactForm from "../ContactForm";
 import { host } from '@src/config';
 import { useRouter } from "next/router";
 import cls from 'classnames';
+import { useTranslation } from 'react-i18next';
 
 type Props = {
   visible?: boolean,
@@ -17,6 +18,7 @@ type Props = {
 const ContactUsPureModal: FC<Props> = props => {
   const router = useRouter();
   const [isScanQrcode, toggleScanQrcode] = useState(true);
+  const { t, i18n } = useTranslation(['common']);
 
   const handleCancel = () => {
     props.onCancel?.();
@@ -33,10 +35,10 @@ const ContactUsPureModal: FC<Props> = props => {
       maskClosable
     >
       <div className={styles.content}>
-        <h2 className="px-6 mt-10 text-center text-2xl">不止工具，更多全方位支持</h2>
+        <h2 className="px-6 mt-10 text-center text-2xl">{t('contact-us-title')}</h2>
         <p className="px-6 text-center">
-          <span className="text-[#555555]">下方扫码或提交信息添加咨询顾问，</span>
-          <span className="text-[#F5790D]"> 即刻领取 {`>>>`}</span>
+          <span className="text-[#555555]">{i18n.language === 'en' ? "Scan or submit information to chat with a consultant" : "下方扫码或提交信息添加咨询顾问，"}</span>
+          <span className="text-[#F5790D]"> {i18n.language === 'en' ? "Learn more" : "即刻了解"} {`>>>`}</span>
         </p>
 
         {
@@ -47,7 +49,7 @@ const ContactUsPureModal: FC<Props> = props => {
                 src='https://cdn-official-website.juzibot.com/images/contact_us_mobile.png'
                 className="w-[200px] h-[200px] mr-[10px]"
               />
-              <p className="text-[#666666] mt-1">微信扫一扫，与陪跑数百家头部企业的顾问聊聊</p>
+              <p className="text-[#666666] mt-1">{t('contact-footer')}</p>
             </div>
           ) : (
           <ContactForm
@@ -64,14 +66,14 @@ const ContactUsPureModal: FC<Props> = props => {
 
         <div className="flex justify-between mt-10 mx-8 mb-8">
           <div>
-            已有账号，
+            {i18n.language === 'en' ? "Already have an account? " : "已有账号，"}
             <a
               href={`https://miaohui.juzibot.com/auth/login?from=login&rediect=${host + router.pathname}`}
               target="_blank"
               rel="noreferrer"
               className="text-[#F5790D] hover:text-[#F5790D]"
             >
-              立即登录
+              {i18n.language === 'en' ? "Login" : "立即登录"}
             </a>
           </div>
           <div className="text-[#858585] inline-flex items-center cursor-pointer" onClick={() => toggleScanQrcode(!isScanQrcode)}>
@@ -90,7 +92,7 @@ const ContactUsPureModal: FC<Props> = props => {
                 fill="currentColor"
               ></path>
             </svg>
-            {isScanQrcode ? '不方便扫码？去留联系方式' : '立即聊聊？微信扫码'}
+            {isScanQrcode ? t('unable-to-scan') : t('go-to-scan') }
           </div>
         </div>
         <CloseOutlined className="absolute top-3 right-3 !text-[#AAB9CA] p-1 cursor-pointer" onClick={handleCancel} />

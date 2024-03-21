@@ -171,6 +171,14 @@
             font-size: 16px;
             color: #54657e;
           }
+
+          div:lang(en) {
+            font-family: Gill Sans, sans-serif;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 16px;
+            color: #54657e;
+          }
         }
       }
     }
@@ -255,6 +263,16 @@
 
             .title {
               font-family: PingFang SC;
+              font-style: normal;
+              font-weight: 500;
+              font-size: 18px;
+              line-height: 24px;
+              color: #54657e;
+              margin-bottom: 4px;
+            }
+
+            .title:lang(en) {
+              font-family: Gill Sans, sans-serif;
               font-style: normal;
               font-weight: 500;
               font-size: 18px;
@@ -472,6 +490,7 @@
 .en {
   .left {
     h3 {
+      font-family: Gill Sans, sans-serif;
       font-size: 24px !important;
       line-height: unset !important;
     }
@@ -480,6 +499,7 @@
   .contact-platform,
   .data-center {
     h1 {
+      font-family: Gill Sans, sans-serif;
       font-size: 40px !important;
     }
   }

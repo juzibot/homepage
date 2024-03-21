@@ -7,8 +7,11 @@ import Seo from '@src/components/common/Seo';
 import { useMediaQuery } from '@react-hookz/web';
 import FooterBarWithButton from '@src/components/FooterBarWithButton';
 import Typewriter from 'typewriter-effect';
+import { useTranslation } from 'react-i18next';
 
 const CustomerAcquisitionPage: NextPage = () => {
+  const { t, i18n } = useTranslation('common');
+  const isZh = i18n.language === 'zh';
   const isSmallDevice = useMediaQuery('only screen and (max-width : 600px)');
   const [, toggleChrome] = useState(true);
   useEffect(() => {
@@ -31,34 +34,60 @@ const CustomerAcquisitionPage: NextPage = () => {
   //   );
   // }
 
-  const strings = ['数字销售', '数字 SDR', '数字网格员', '数字民警', '数字电力管家'];
-
   if (isSmallDevice) {
     return (
       <div className='m-auto'>
         <Seo page="features-ai" />
         <div className="relative">
+        { isZh ? (
           <img className='w-full' alt='' src="/_images/image-page/ai-top-20240206-m.png"/>
+        ) : 
+          <img className='w-full' alt='' src="/_images/image-page/ai-top-20240206-m-en.png"/>
+        }
           <div className="absolute top-0 h-[200px] w-full flex justify-center items-center">
             {/* 文字 */}
-            <div className="w-full font-sans">
-              <div className="text-center text-[19px] text-block">生成式 AI 流程引擎，快速构建 AI 原生应用</div>
+            { isZh ? (
+              <div className="w-full font-sans">
+              <div className="text-center text-[19px] text-block">{t('ai-title')}</div>
               <div className="flex text-[29px] font-medium">
-                <span className="w-1/2 flex-shrink-0 text-block text-right">搭建企业专属</span>
+                <span className="w-1/2 flex-shrink-0 text-block text-right">{t('ai-subtitle')}</span>
                 <Typewriter
                   options={{
                     wrapperClassName: 'text-[29px] text-[#DA37E8]',
                     cursorClassName: 'text-[#DA37E8]',
-                    strings,
+                    strings: ["数字销售", "数字 SDR", "数字网格员", "数字民警", "数字电力管家"],
                     autoStart: true,
                     loop: true,
                   }}
                 />
               </div>
             </div>
+            ) : 
+            <div className="w-full font-sans">
+              <div className="text-center text-[19px] text-block">{t('ai-title')}</div>
+              <div className="flex text-[20px] font-medium">
+                <span className="w-[200px] flex-shrink-0 text-block text-right mr-2">{t('ai-subtitle')}</span>
+                <Typewriter
+                  options={{
+                    wrapperClassName: 'text-[20px] text-[#DA37E8]',
+                    cursorClassName: 'text-[#DA37E8]',
+                    strings: ["Customer Inquiries", "Complaints", "Subscriptions", "Product Inquiries", "Post-Sale Follow-Up"],
+                    autoStart: true,
+                    delay: 80,
+                    deleteSpeed: 0.8,
+                    loop: true,
+                  }}
+                />
+              </div>
+            </div>
+            }
           </div>
         </div>
-        <img className='w-full' alt='' src='/_images/image-page/ai-middle-20240206-m.png' />
+        {isZh ? (
+          <img className='w-full' alt='' src='/_images/image-page/ai-middle-20240206-m.png' />
+        ): 
+        <img className='w-full' alt='' src='/_images/image-page/ai-middle-20240206-m-en.png' />
+        }
         <div className="wrapper appeal-bar">
           <div className="container !w-[100%]">
             <FooterBarWithButton
@@ -74,27 +103,54 @@ const CustomerAcquisitionPage: NextPage = () => {
     <div className='m-auto'>
       <Seo page="features-ai" />
       <div className="relative">
+      {isZh ? (
         <img className='w-full' alt='' src="/_images/image-page/ai-top-20240206.png"/>
+      ): 
+        <img className='w-full' alt='' src="/_images/image-page/ai-top-20240206-en.png"/>
+      }
         <div className="absolute top-10 h-[50vh] w-full flex justify-center items-center">
           {/* 文字 */}
-          <div className="w-full font-sans">
-            <div className="text-center text-[56px] text-block">生成式 AI 流程引擎，快速构建 AI 原生应用</div>
-            <div className="flex text-[65px] font-medium">
-              <span className="w-1/2 flex-shrink-0 text-block text-right">搭建企业专属</span>
-              <Typewriter
-                options={{
-                  wrapperClassName: 'text-[65px] text-[#DA37E8]',
-                  cursorClassName: 'text-[#DA37E8]',
-                  strings,
-                  autoStart: true,
-                  loop: true,
-                }}
-              />
+          { isZh ? (
+              <div className="w-full font-sans">
+              <div className="text-center text-[56px] text-block">{t('ai-title')}</div>
+              <div className="flex text-[65px] font-medium">
+                <span className="w-1/2 flex-shrink-0 text-block text-right">{t('ai-subtitle')}</span>
+                <Typewriter
+                  options={{
+                    wrapperClassName: 'text-[65px] text-[#DA37E8]',
+                    cursorClassName: 'text-[#DA37E8]',
+                    strings: ["数字销售", "数字 SDR", "数字网格员", "数字民警", "数字电力管家"],
+                    autoStart: true,
+                    loop: true,
+                  }}
+                />
+              </div>
             </div>
-          </div>
+            ) : 
+            <div className="w-full font-sans">
+              <div className="text-center text-[56px] text-block">{t('ai-title')}</div>
+              <div className="flex text-[65px] font-medium">
+                <span className="w-1/2 flex-shrink-0 text-block text-right mr-4">{t('ai-subtitle')}</span>
+                <Typewriter
+                  options={{
+                    wrapperClassName: 'text-[65px] text-[#DA37E8]',
+                    cursorClassName: 'text-[#DA37E8]',
+                    strings: ["Customer Inquiries", "Subscriptions", "Product Inquiries", "Post-Sale Follow-Up"],
+                    autoStart: true,
+                    delay: 80,
+                    deleteSpeed: 0.8,
+                    loop: true,
+                  }}
+                />
+              </div>
+            </div>
+            }
         </div>
       </div>
-      <img className='w-full' alt='' src='/_images/image-page/ai-middle-20240206.png' />
+      {isZh ? (
+        <img className='w-full' alt='' src='/_images/image-page/ai-middle-20240206.png' />
+      ): <img className='w-full' style={{marginTop: -60}} alt='' src='/_images/image-page/ai-middle-20240206-en.png' />
+      }
       <div className="wrapper appeal-bar">
         <div className="container">
           <FooterBarWithButton

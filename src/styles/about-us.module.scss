@@ -632,6 +632,17 @@
         color: #364256;
       }
 
+      h1:lang(en) {
+        font-family: 'PingFang SC';
+        font-style: normal;
+        font-weight: 600;
+        font-size: 56px;
+        line-height: 60px;
+        text-align: center;
+        color: #364256;
+        margin-top: -10px;
+      }
+
       .info-box {
         margin-top: 80px;
         display: flex;
@@ -675,6 +686,13 @@
         .right {
           font-weight: 300;
           font-size: 18px;
+          line-height: 160%;
+          color: #54657e;
+        }
+
+        .right:lang(en) {
+          font-weight: 300;
+          font-size: 17px;
           line-height: 160%;
           color: #54657e;
         }

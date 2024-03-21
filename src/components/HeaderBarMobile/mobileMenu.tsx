@@ -3,8 +3,11 @@ import { useState } from 'react';
 import { createPortal } from 'react-dom';
 import ContactUsSimpleModal from '../ContactUsSimpleModal';
 import Link from 'next/link';
+import { useTranslation } from 'react-i18next';
 
 const MobileMenu = () => {
+  const { t, i18n } = useTranslation('common');
+  const isZh = i18n.language === 'zh';
   const [showMenu, setShowMenu] = useState(false);
   const [showContactModal, setShowContactModal] = useState(false);
   return (
@@ -28,22 +31,24 @@ const MobileMenu = () => {
               style={{ borderBottom: '1px solid rgba(221, 227, 234, 0.5)' }}
             >
               <div className='text-[17px] leading-[24px] mt-[24px] font-semibold text-[#364256]'>
-                产品与服务
+                {t('products')}
               </div>
               <Link href="/features/ai" passHref>
                 <div onClick={() => setShowMenu(false)} className="text-[#364256] w-full text-[16px] mt-[32px] inline-block">
-                  AI 驱动的基于企业私有数据的“ChatGPT”
+                  {t('products-1')}
                 </div>
               </Link>
               <Link href="/features/rpa" passHref>
                 <div onClick={() => setShowMenu(false)} className='text-[#364256] w-full text-[16px] mt-[32px] inline-block'>
-                  RPA 驱动的营销服务一体化平台
+                {t('products-2')}
                 </div>
               </Link>
             </div>
             <div className='flex flex-col px-[28px] pt-[24px] pb-[32px] gap-[32px]'>
+              {isZh ? (
+              <>
               <div className='text-[17px] leading-[24px] mt-[24px] font-semibold text-[#364256]'>
-                解决方案
+              {t('solutions')}
               </div>
               <Link href="/features/government" passHref>
                 <div onClick={() => setShowMenu(false)} className='text-[#364256] w-full text-[16px] inline-block'>
@@ -60,6 +65,12 @@ const MobileMenu = () => {
                   消费品解决方案
                 </div>
               </Link>
+              </>
+              ): 
+              <div className='text-[17px] leading-[24px] mt-[24px] text-[#364256]'>
+              {t('solutions')}
+              </div>
+              }
             </div>
             <div className="h-[1px] bg-[rgba(221,227,234,0.5)]" />
             {/* <div className='h-[72px] flex items-center px-[28px]'>
@@ -69,40 +80,48 @@ const MobileMenu = () => {
                 </div>
               </Link>
             </div> */}
+            {isZh ? (
+              <>
+              <div className="h-[1px] bg-[rgba(221,227,234,0.5)]" />
+              <div className='h-[72px] flex items-center px-[28px]'>
+                <a href="/chatbot/practice-guide" rel="noreferrer" target="_self" className='w-[100%] text-[17px] text-[#364256]'>{t('chatbot')}</a>
+              </div>
+              <div className="h-[1px] bg-[rgba(221,227,234,0.5)]" />
+              <div className='h-[72px] flex items-center px-[28px]'>
+                <a href="https://juzibot.com/blog/" rel="noreferrer" target="_blank" className='w-[100%] text-[17px] text-[#364256]'>{t('course')}</a>
+              </div>
+              </>
+            ) : null }
             <div className="h-[1px] bg-[rgba(221,227,234,0.5)]" />
             <div className='h-[72px] flex items-center px-[28px]'>
-              <a href="/chatbot/practice-guide" rel="noreferrer" target="_self" className='w-[100%] text-[17px] text-[#364256]'>Chatbot实践指南</a>
-            </div>
-            <div className="h-[1px] bg-[rgba(221,227,234,0.5)]" />
-            <div className='h-[72px] flex items-center px-[28px]'>
-              <a href="https://juzibot.com/blog/" rel="noreferrer" target="_blank" className='w-[100%] text-[17px] text-[#364256]'>增长情报局</a>
-            </div>
-            <div className="h-[1px] bg-[rgba(221,227,234,0.5)]" />
-            <div className='h-[72px] flex items-center px-[28px]'>
-              <a href="https://wechaty.js.org/" rel="noreferrer" target="_blank" className='w-[100%] text-[17px] text-[#364256]'>开发者</a>
+              <a href="https://wechaty.js.org/" rel="noreferrer" target="_blank" className='w-[100%] text-[17px] text-[#364256]'>{t('developer')}</a>
             </div>
             <div className="h-[1px] bg-[rgba(221,227,234,0.5)]" />
             <div className='h-[72px] flex items-center px-[28px]'>
               <a href="https://chat.juzibot.com/" rel="noreferrer" target="_blank" className='w-[100%] text-[17px] text-[#364256]'>
-                体验句子 GPT
+                {t('gpt')}
               </a>
             </div>
             <div className="h-[1px] bg-[rgba(221,227,234,0.5)]" />
             <div className='h-[72px] flex items-center px-[28px]'>
               <Link href="/about-us-m" passHref>
                 <div onClick={() => setShowMenu(false)} className='w-[100%] text-[17px] text-[#364256]'>
-                  关于我们
+                  {t('about')}
                 </div>
               </Link>
             </div>
-            <div className="h-[1px] bg-[rgba(221,227,234,0.5)]" />
-            <div className='h-[72px] flex items-center px-[28px]'>
-              <Link href="/culture-m" passHref>
-                <div onClick={() => setShowMenu(false)} className='w-[100%] text-[17px] text-[#364256]'>
-                  公司文化
-                </div>
-              </Link>
-            </div>
+            {isZh ? (
+              <>
+              <div className="h-[1px] bg-[rgba(221,227,234,0.5)]" />
+              <div className='h-[72px] flex items-center px-[28px]'>
+                <Link href="/culture-m" passHref>
+                  <div onClick={() => setShowMenu(false)} className='w-[100%] text-[17px] text-[#364256]'>
+                    {t('about-culture')}
+                  </div>
+                </Link>
+              </div>
+              </>
+            ) : null }
             <div className="h-[1px] bg-[rgba(221,227,234,0.5)]" />
             <div className='h-[35px]' />
           </div>

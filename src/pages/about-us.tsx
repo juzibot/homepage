@@ -8,15 +8,18 @@ import { SwiperSlide, Swiper } from 'swiper/react';
 import { Swiper as SwiperType } from 'swiper';
 import { chunk, debounce } from 'lodash';
 import Link from 'next/link';
+import { useMediaQuery } from '@react-hookz/web';
 import { useTranslation } from 'react-i18next';
+import ContactUsM from './about-us-m';
 
 export const AboutUsAppealBar: NextPage = () => {
+  const { i18n } = useTranslation('about-us');
   return (
     <>
-      <h2>加入句子互动，与众多头部品牌一起打造中国私域新生态</h2>
+      <h2>{i18n.language === 'en' ? 'Join Juzi.bot and work together with numerous top brands' :'加入句子互动，与众多头部品牌一起打造中国私域新生态'}</h2>
       <Link href='/join-us'>
         <a target='_blank'>
-          <button className='primary-button start-button'>加入我们</button>
+          <button className='primary-button start-button'>{i18n.language === 'en' ? 'Join Us' :'加入我们'}</button>
         </a>
       </Link>
     </>
@@ -232,6 +235,7 @@ const Certificates: NextPage = () => {
   const [swiper, setSwiper] = useState<SwiperType | undefined>(undefined);
   const [current, setCurrent] = useState(1);
   const [imageLoadedCount, setImageLoadedCount] = useState(0);
+  const { t } = useTranslation('about-us');
   const TOTAL_COUNT = 18;
   useEffect(() => {
     if (swiper) {
@@ -242,7 +246,7 @@ const Certificates: NextPage = () => {
   }, [imageLoadedCount]);
   return (
     <>
-      <h1>企业荣誉</h1>
+      <h1>{t('awards-title')}</h1>
       <Swiper
         className='certificate-swiper'
         slidesPerView='auto'
@@ -433,17 +437,20 @@ const Dot: NextPage<{
 };
 
 const ExtraDialog: NextPage<{ flag: string }> = ({ flag }) => {
+  const { t } = useTranslation('about-us');
+  const { i18n } = useTranslation('about-us');
+  const isZh = i18n.language === 'zh';
   if (flag === '2015') {
     return (
       <div className='cover-dialog hover c-2015'>
         <strong>2015.02</strong>
         <div>
-          句子互动前身桔子互动成立，为微信事业部、亚马逊、京东、华为等品牌提供新媒体运营服务
+          {t('2015.02-text')}
         </div>
         <strong>2016.05</strong>
-        <div>为聊天机器人开源框架 Wechay 写下第一行代码</div>
+        <div>{t('2016.05-text')}</div>
         <strong>2016.06</strong>
-        <div>桔子互动获得 PreAngel 天使投资</div>
+        <div>{t('2016.06-text')}</div>
       </div>
     );
   }
@@ -451,13 +458,13 @@ const ExtraDialog: NextPage<{ flag: string }> = ({ flag }) => {
     return (
       <div className='cover-dialog reverse hover c-2017'>
         <strong>2017.03</strong>
-        <div>Wechaty 的首个落地项目小桔机器人上线</div>
+        <div>{t('2017.03-text')}</div>
         <strong>2017.04</strong>
-        <div>为美团提供聊天机器人技术支持，微信自动化的第一笔收入</div>
+        <div>{t('2017.04-text')}</div>
         <strong>2017.07</strong>
-        <div>与新华网签订合同，提供新媒体运营服务</div>
+        <div>{t('2017.07-text')}</div>
         <strong>2017.12</strong>
-        <div>入围第一期百度 AI 加速器</div>
+        <div>{t('2017.12-text')}</div>
       </div>
     );
   }
@@ -466,23 +473,25 @@ const ExtraDialog: NextPage<{ flag: string }> = ({ flag }) => {
       <div className='cover-dialog hover c-2018'>
         <strong>2018.01</strong>
         <div>
-          与硅谷 chatbot 平台 Datalog 签署合作协议，作为 MyPolly 在中国的经销商
+          {t('2018.01-text')}
         </div>
         <strong>2018.03</strong>
-        <div>获得硅谷著名的孵化加速器之一 Plug And Play 的投资</div>
-        <strong>2018.05</strong>
-        <div>
-          与北邮人工智能实验室签署合作协议，在自然语言处理方面双方进行深度合作
-        </div>
+        <div>{t('2018.03-text')}</div>
+        {isZh ? (
+          <>
+          <strong>2018.05</strong><div>
+            {t('2018.05-text')}
+          </div>
+          </>
+        ) : null}
         <strong>2018.08</strong>
         <div>
-          获得第七届全国社会媒体处理大会（SMP 2018）SMP 任务型人机对话在线评测第
-          4 名，回复自然度排名第 1
+          {t('2018.08-text')}
         </div>
         <strong>2018.09</strong>
-        <div>句子互动 CEO 李佳芮获得微软 MVP 称号</div>
+        <div>{t('2018.09-text')}</div>
         <strong>2018.12</strong>
-        <div>入选Y Combinator，成为 YC 进入中国招募的第一批孵化项目</div>
+        <div>{t('2018.12-text')}</div>
       </div>
     );
   }
@@ -490,20 +499,18 @@ const ExtraDialog: NextPage<{ flag: string }> = ({ flag }) => {
     return (
       <div className='cover-dialog reverse hover c-2019'>
         <strong>2019.01</strong>
-        <div>句子秒回上线</div>
+        <div>{t('2019.01-text')}</div>
         <strong>2019.04</strong>
         <div>
-          获得知名投资机构TSVC、阿尔法公社的投资；以NLP处理技术和精准的市场定位，获得了2019
-          CCFA年度零售技术新锐得奖
+          {t('2019.04-text')}
         </div>
         <strong>2019.07</strong>
-        <div>联合腾讯举办 bot5 系列沙龙</div>
+        <div>{t('2019.07-text')}</div>
         <strong>2019.10</strong>
-        <div>句子秒回与第一个海外客户达成合作</div>
+        <div>{t('2019.10-text')}</div>
         <strong>2019.12</strong>
         <div>
-          句子互动 CEO 李佳芮参加 2019 Microsoft Ignite The Tour
-          并做主题分享；企业战略重新定位，All in 企业微信
+          {t('2019.12-text')}
         </div>
       </div>
     );
@@ -513,22 +520,24 @@ const ExtraDialog: NextPage<{ flag: string }> = ({ flag }) => {
       <div className='cover-dialog hover c-2020'>
         <strong>2020.03</strong>
         <div>
-          句子互动企业微信产品上线，并获得首个客户京东金融；《Chatbot 从 0 到
-          1：对话式交互设计实践指南》出版；句子互动和 Wechaty
-          作为特邀合作社区与微软共同举办 Microsoft Online Tech Forum
+          {t('2020.03-text')}
         </div>
         <strong>2020.05</strong>
-        <div>入选 Facebook 中国大陆首期加速器</div>
-        <strong>2020.08</strong>
-        <div>与行业头部品牌核桃编程等达成合作</div>
+        <div>{t('2020.05-text')}</div>
+        {isZh ? (
+          <>
+          <strong>2020.08</strong>
+          <div>{t('2020.08-text')}</div>
+          </>
+        ) : null }
         <strong>2020.09</strong>
         <div>
-          与母婴行业新消费品牌 Babycare 、教育行业头部品牌猿辅导等达成合作
+          {t('2020.09-text')}
         </div>
         <strong>2020.11</strong>
-        <div>与美团、元气森林、网易有道、京东等品牌达成合作</div>
+        <div>{t('2020.11-text')}</div>
         <strong>2020.12</strong>
-        <div>与美宝莲纽约、 58 同城、衣恋、乐凯撒等品牌达成合作</div>
+        <div>{t('2020.12-text')}</div>
       </div>
     );
   }
@@ -536,30 +545,31 @@ const ExtraDialog: NextPage<{ flag: string }> = ({ flag }) => {
     return (
       <div className='cover-dialog reverse hover c-2021'>
         <strong>2021.01</strong>
-        <div>与学而思、聪明核桃、一起教育等头部教育公司达成合作</div>
+        <div>{t('2021.01-text')}</div>
         <strong>2021.03</strong>
-        <div>与泡泡玛特、屈臣氏、YOOZ 电子烟、雪玲妃等头部消费品牌达成合作</div>
+        <div>{t('2021.03-text')}</div>
         <strong>2021.05</strong>
-        <div>
-          与厦门银行、啄木鸟唯修、安克、元宝保险、亿学学堂等知名企业达成合作
-        </div>
-        <strong>2021.07</strong>
-        <div>
-          与北京民政、美的、蒙牛、高德、朝阳大悦城、谦寻（薇娅）等品牌达成合作
-        </div>
+          <div>
+            {t('2021.05-text')}
+          </div>
+        {isZh ? (
+          <>
+          <strong>2021.07</strong>
+          <div>
+            {t('2021.07-text')}
+          </div>
+          </>
+        ) : null }
         <strong>2021.08</strong>
         <div>
-          获得真成投资数百万美元 A 轮投资；与北京邮电大学安全学院成立 RPA
-          联合实验室；句子互动 CEO
-          李佳芮受邀参加联合国开发计划署与清华大学联合举办的人工智能圆桌论坛
+          {t('2021.08-text')}
         </div>
         <strong>2021.09</strong>
         <div>
-          创始人 CEO 李佳芮入选福布斯中国2021年度30 Under 30、中关村 2021 年度
-          U30 榜单
+          {t('2021.09-text')}
         </div>
         <strong>2021.12</strong>
-        <div>句子互动上线 Wechaty Puppet Walnut，入局 5G 消息</div>
+        <div>{t('2021.12-text')}</div>
       </div>
     );
   }
@@ -567,9 +577,9 @@ const ExtraDialog: NextPage<{ flag: string }> = ({ flag }) => {
     return (
       <div className='cover-dialog hover c-2022'>
         <strong>2022.01</strong>
-        <div>句子秒回 WhatsApp 版上线</div>
+        <div>{t('2022.01-text')}</div>
         <strong>2022.03</strong>
-        <div>与宝洁、科沃斯等知名品牌签约</div>
+        <div>{t('2022.03-text')}</div>
       </div>
     );
   }
@@ -577,6 +587,9 @@ const ExtraDialog: NextPage<{ flag: string }> = ({ flag }) => {
 };
 
 const GrowthWall: NextPage = () => {
+  const { t } = useTranslation('about-us');
+  const { i18n } = useTranslation('about-us');
+  const isZh = i18n.language === 'zh';
   const [flag, setFlag] = useState('');
   const popupFlags = [
     '2015',
@@ -624,7 +637,7 @@ const GrowthWall: NextPage = () => {
 
   return (
     <>
-      <h3>发展历程</h3>
+      <h3>{t('timeline-title')}</h3>
       <div
         className='growth-data'
         onMouseMove={() => {
@@ -646,8 +659,7 @@ const GrowthWall: NextPage = () => {
           flagSetter={setFlag}
           currentFlag={flag}
         >
-          <div>为聊天机器人开源框架</div>
-          <div>Wechaty 写下第一行代码</div>
+          <div>{t('2016.05-text')}</div>
         </Popup>
 
         <Popup
@@ -660,7 +672,7 @@ const GrowthWall: NextPage = () => {
           flagSetter={setFlag}
           currentFlag={flag}
         >
-          <div>入围第一期百度 AI 加速器</div>
+          <div>{t('2017.12-text')}</div>
         </Popup>
 
         <Popup
@@ -673,7 +685,7 @@ const GrowthWall: NextPage = () => {
           flagSetter={setFlag}
           currentFlag={flag}
         >
-          <div>入选 Y Combinator，成为 YC 进入中国招募的第一批孵化项目</div>
+          <div>{t('2018.12-text')}</div>
         </Popup>
 
         <Popup
@@ -687,7 +699,7 @@ const GrowthWall: NextPage = () => {
           flagSetter={setFlag}
           currentFlag={flag}
         >
-          <div>句子秒回上线</div>
+          <div>{t('2019.01-text')}</div>
         </Popup>
 
         <Popup
@@ -700,11 +712,15 @@ const GrowthWall: NextPage = () => {
           flagSetter={setFlag}
           currentFlag={flag}
         >
-          <div>句子互动企业微信产品上线，并获得首个客户京东金融</div>
+          <div>{t('2020.03-text')}</div>
+          {isZh ? (
+          <>
           <div style={{ marginTop: 8 }}>
             <strong>2020.11</strong>
           </div>
-          <div>与美团、元气森林、网易有道、京东等品牌达成合作</div>
+          <div>{t('2020.11-text')}</div>
+          </>
+          ): null }
         </Popup>
 
         <Popup
@@ -719,12 +735,12 @@ const GrowthWall: NextPage = () => {
           currentFlag={flag}
         >
           <div>
-            与北京民政、美的、蒙牛、高德、朝阳大悦城、谦寻（薇娅）等品牌达成合作
+          {t('2021.07-text')}
           </div>
           <div style={{ marginTop: 8 }}>
             <strong>2021.12</strong>
           </div>
-          <div>句子互动上线 Wechaty Puppet Walnut，入局 5G 消息</div>
+          <div>{t('2021.12-text')}</div>
         </Popup>
 
         <Popup
@@ -737,7 +753,7 @@ const GrowthWall: NextPage = () => {
           flagSetter={setFlag}
           currentFlag={flag}
         >
-          <div>句子秒回 WhatsApp 版上线</div>
+          <div>{t('2022.01-text')}</div>
         </Popup>
 
         <Dot
@@ -888,25 +904,36 @@ const AboutUsHeroPage: NextPage = () => {
 };
 
 const AboutAiNativePage: NextPage = () => {
-  // const { t } = useTranslation('about-us');
+  const { i18n } = useTranslation('about-us');
+  const isZh = i18n.language === 'zh';
+  const { t } = useTranslation('about-us');
   return (
     <div className='first-page !pt-0'>
       <Seo page='about-us' />
       <div className='flex flex-col items-center justify-center'>
-        <div className='!text-[32px] font-semibold'>AI Native 团队，</div>
+        <div className='!text-[32px] font-semibold'>{t('section-2-title')}</div>
         <div className='!text-[32px] font-semibold'>
-          在 IM 营销生态 & Chatbot 领域7 年积累磨一剑，对营销场景有深刻认知
+        {t('section-2-subtitle')}
         </div>
       </div>
 
       <div className='info-box justify-center'>
         <div className='flex-1 flex items-center justify-center'>
+        {isZh ? (
           <img
             src='_images/image-page/about-us-1.png'
             alt='photo'
             className='w-[1220px]'
             draggable='false'
           />
+        ) : 
+        <img
+            src='_images/image-page/about-us-1-en.png'
+            alt='photo'
+            className='w-[1220px]'
+            draggable='false'
+          />
+        }
         </div>
       </div>
     </div>
@@ -932,6 +959,13 @@ const AboutUsPage: NextPage = () => {
   }, []);
   const { i18n } = useTranslation('about-us');
   const isZh = i18n.language === 'zh';
+  const isSmallDevice = useMediaQuery('only screen and (max-width : 600px)');
+
+  if (isSmallDevice) {
+    return (
+      <ContactUsM />
+    )
+  }
 
   return (
     <div className={i18n.language}>
@@ -946,14 +980,13 @@ const AboutUsPage: NextPage = () => {
           <AboutAiNativePage />
         </div>
       </div>
-      {isZh ? (
-        <>
-          <div className='wrapper growth-wall'>
+      <div className='wrapper growth-wall'>
             <div className='container'>
               <GrowthWall />
             </div>
           </div>
-
+      {isZh ? (
+        <>
           <div className='wrapper video-box'>
             <div className='container'>
               <div className='video-container'>
@@ -972,26 +1005,28 @@ const AboutUsPage: NextPage = () => {
               <CustomerDisplay />
             </div>
           </div>
-
-          <div className='wrapper certificates'>
+        </>
+      ) : null}
+      <div className='wrapper certificates'>
             <div className='container'>
               <Certificates />
             </div>
           </div>
-
+      {isZh ? (
+        <> 
           <div className='wrapper news'>
             <div className='container'>
               <NewsPage />
             </div>
           </div>
 
-          <div className='wrapper about-appeal'>
+        </>
+      ) : null}
+      <div className='wrapper about-appeal'>
             <div className='container'>
               <AboutUsAppealBar />
             </div>
           </div>
-        </>
-      ) : null}
     </div>
   );
 };

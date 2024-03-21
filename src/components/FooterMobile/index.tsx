@@ -139,9 +139,9 @@ const FooterMobile: NextPage = () => {
         isScanQrcode ? (
           <div className="flex flex-col items-center justify-center bf-tr">
             <p className="text-lg text-center font-medium mb-2">
-              <span>不止工具，更多全方位支持</span>
+              <span>{t('contact-us-title')}</span>
             </p>
-            <p className="text-[#54657E] text-[15px] text-center mb-2">微信扫一扫，与陪跑数百家头部企业的顾问聊聊</p>
+            <p className="text-[#54657E] text-[15px] text-center mb-2">{t('contact-footer')}</p>
             <img src='https://cdn-official-website.juzibot.com/images/contact_us_mobile.png' height={124} width={124} alt="" className="flex-shrink-0 mr-[10px]" />
           </div>
         ) : (
@@ -171,8 +171,8 @@ const FooterMobile: NextPage = () => {
           ></path>
         </svg>
         {isScanQrcode
-          ? '不方便扫码？去留联系方式'
-          : '立即聊聊？微信扫码'}
+          ? t('unable-to-scan')
+          : t('go-to-scan') }
       </div>
     </div>
   );
@@ -269,7 +269,7 @@ const FooterMobile: NextPage = () => {
               onClick={() => {
                 open('https://chat.juzibot.com');
               }}
-            >立即体验</Button>
+            >{t('title-button')}</Button>
           </div>
         </div>
       </footer>

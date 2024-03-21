@@ -7,8 +7,11 @@ import Seo from '@src/components/common/Seo';
 import { useMediaQuery } from '@react-hookz/web';
 import FooterBarWithButton from '@src/components/FooterBarWithButton';
 import Typewriter from 'typewriter-effect';
+import { useTranslation } from 'react-i18next';
 
 const CustomerAcquisitionPage: NextPage = () => {
+  const { t, i18n } = useTranslation('common');
+  const isZh = i18n.language === 'zh';
   const isSmallDevice = useMediaQuery('only screen and (max-width : 600px)');
   const [, toggleChrome] = useState(true);
   useEffect(() => {
@@ -30,34 +33,60 @@ const CustomerAcquisitionPage: NextPage = () => {
   //   );
   // }
 
-  const strings = ['企业微信', '微信客服', '微信公众号', '小程序', 'WhatsApp', '飞书', '5G消息', '小红书', '抖音'];
-
   if (isSmallDevice) {
     return (
       <div className='m-auto'>
         <Seo page="features-rpa" />
         <div className="relative">
+        { isZh ? (
           <img className='w-full' alt='' src="/_images/image-page/rpa-top-20240206-m.png"/>
+        ) : 
+          <img className='w-full' alt='' src="/_images/image-page/rpa-top-20240206-m-en.png"/>
+        }
           <div className="absolute top-0 h-[200px] w-full flex justify-center items-center">
             {/* 文字 */}
+            { isZh ? (
             <div className="w-full font-sans">
-              <div className="text-center text-[18px] text-block">RPA 驱动的，基于 IM 的营销服务一体化平台</div>
+              <div className="text-center text-[18px] text-block">{t('rpa-title')}</div>
               <div className="flex text-[29px] font-medium">
-                <span className="w-1/2 flex-shrink-0 text-block text-right">可自由接入</span>
+                <span className="w-1/2 flex-shrink-0 text-block text-right">{t('rpa-subtitle')}</span>
                 <Typewriter
                   options={{
                     wrapperClassName: 'text-[29px] text-[#0555FF]',
                     cursorClassName: 'text-[#0555FF]',
-                    strings,
+                    strings: ['企业微信', '微信客服', '微信公众号', '小程序', 'WhatsApp', '飞书', '5G消息', '小红书', '抖音'],
                     autoStart: true,
                     loop: true,
                   }}
                 />
               </div>
             </div>
+            ) : 
+            <div className="w-full font-sans">
+              <div className="text-center text-[18px] text-block">{t('rpa-title')}</div>
+              <div className="flex text-[20px] font-medium">
+                <span className="w-[280px] flex-shrink-0 text-block text-right mr-2">{t('rpa-subtitle')}</span>
+                <Typewriter
+                  options={{
+                    wrapperClassName: 'text-[20px] text-[#0555FF]',
+                    cursorClassName: 'text-[#0555FF]',
+                    strings: ['WeCom', 'WeChat', 'WhatsApp', 'Lark', '5G SMS', 'Instagram', 'TikTok'],
+                    delay: 80,
+                    deleteSpeed: 0.8,
+                    autoStart: true,
+                    loop: true,
+                  }}
+                />
+              </div>
+            </div>
+            }
           </div>
         </div>
+        { isZh ? (
         <img className='w-full' alt='' src='/_images/image-page/rpa-middle-20240206-m.png' />
+        ): 
+        <img className='w-full' alt='' src='/_images/image-page/rpa-middle-20240206-m-en.png' />
+        }
         <div className="wrapper appeal-bar">
           <div className="container !w-[100%]">
             <FooterBarWithButton
@@ -73,27 +102,55 @@ const CustomerAcquisitionPage: NextPage = () => {
     <div className='m-auto'>
       <Seo page="features-rpa" />
       <div className="relative">
+      { isZh ? (
         <img className='w-full' alt='' src="/_images/image-page/rpa-top-20240206.png"/>
+      ):
+        <img className='w-full' alt='' src="/_images/image-page/rpa-top-20240206-en.png"/>
+      }
         <div className="absolute top-10 h-[50vh] w-full flex justify-center items-center">
           {/* 文字 */}
+          { isZh ? (
           <div className="w-full font-sans">
-            <div className="text-center text-[56px] text-block">RPA 驱动的，基于 IM 的营销服务一体化平台</div>
+            <div className="text-center text-[56px] text-block">{t('rpa-title')}</div>
             <div className="flex text-[65px] font-medium">
-              <span className="w-1/2 flex-shrink-0 text-block text-right">可自由接入</span>
+              <span className="w-1/2 flex-shrink-0 text-block text-right">{t('rpa-subtitle')}</span>
               <Typewriter
                 options={{
                   wrapperClassName: 'text-[65px] text-[#0555FF]',
                   cursorClassName: 'text-[#0555FF]',
-                  strings,
+                  strings: ['企业微信', '微信客服', '微信公众号', '小程序', 'WhatsApp', '飞书', '5G消息', '小红书', '抖音'],
                   autoStart: true,
                   loop: true,
                 }}
               />
             </div>
           </div>
+          ): // English
+          <div className="w-full font-sans">
+            <div className="text-center text-[56px] text-block">{t('rpa-title')}</div>
+            <div className="flex text-[65px] font-medium">
+              <span className="w-[930px] flex-shrink-0 text-block text-right mr-4">{t('rpa-subtitle')}</span>
+              <Typewriter
+                options={{
+                  wrapperClassName: 'text-[65px] text-[#0555FF]',
+                  cursorClassName: 'text-[#0555FF]',
+                  strings: ['WeCom', 'WeChat', 'WhatsApp', 'Lark', '5G SMS', 'Instagram', 'TikTok'],
+                  delay: 80,
+                  deleteSpeed: 0.8,
+                  autoStart: true,
+                  loop: true,
+                }}
+              />
+            </div>
+          </div>
+          }
         </div>
       </div>
+      { isZh ? (
       <img className='w-full' alt='' src='/_images/image-page/rpa-middle-20240206.png' />
+      ): 
+      <img className='w-full' alt='' src='/_images/image-page/rpa-middle-20240206-en.png' />
+      }
       <div className="wrapper appeal-bar">
         <div className="container">
           <FooterBarWithButton
