@@ -18,7 +18,7 @@ type Props = {
 const ContactUsPureModal: FC<Props> = props => {
   const router = useRouter();
   const [isScanQrcode, toggleScanQrcode] = useState(true);
-  const { t, i18n } = useTranslation(['common']);
+  const { t } = useTranslation(['common']);
 
   const handleCancel = () => {
     props.onCancel?.();
@@ -37,8 +37,8 @@ const ContactUsPureModal: FC<Props> = props => {
       <div className={styles.content}>
         <h2 className="px-6 mt-10 text-center text-2xl">{t('contact-us-title')}</h2>
         <p className="px-6 text-center">
-          <span className="text-[#555555]">{i18n.language === 'en' ? "Scan or submit information to chat with a consultant" : "下方扫码或提交信息添加咨询顾问，"}</span>
-          <span className="text-[#F5790D]"> {i18n.language === 'en' ? "Learn more" : "即刻了解"} {`>>>`}</span>
+          <span className="text-[#555555]">{t('contact-scan-submit')}</span>
+          <span className="text-[#F5790D]"> {t('learn-more')} {`>>>`}</span>
         </p>
 
         {
@@ -66,14 +66,14 @@ const ContactUsPureModal: FC<Props> = props => {
 
         <div className="flex justify-between mt-10 mx-8 mb-8">
           <div>
-            {i18n.language === 'en' ? "Already have an account? " : "已有账号，"}
+            {t('have-account')}
             <a
               href={`https://miaohui.juzibot.com/auth/login?from=login&rediect=${host + router.pathname}`}
               target="_blank"
               rel="noreferrer"
               className="text-[#F5790D] hover:text-[#F5790D]"
             >
-              {i18n.language === 'en' ? "Login" : "立即登录"}
+              {t('login-now')}
             </a>
           </div>
           <div className="text-[#858585] inline-flex items-center cursor-pointer" onClick={() => toggleScanQrcode(!isScanQrcode)}>

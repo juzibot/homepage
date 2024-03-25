@@ -54,7 +54,7 @@ const DetentionModal: NextPage<{
   ];
   return (
     <div className="detention-modal">
-      <div className="title" style={{ fontSize: i18n.language === 'en' ? 16 : 18 }}>{i18n.language === 'en' ? "Are you sure you want to leave?" : "确定离开？"}</div>
+      <div className="title" style={{ fontSize: i18n.language === 'en' ? 16 : 18 }}>{t('close-contact-question')}</div>
       <div
         className="content"
         dangerouslySetInnerHTML={{
@@ -67,7 +67,7 @@ const DetentionModal: NextPage<{
           {text}
         </div>
         <div className="btn" onClick={onCancel}>
-          {i18n.language === 'en' ? "Yes, I'm sure" : "暂不需要"}
+          {t('close-contact-yes')}
         </div>
       </div>
     </div>
@@ -115,7 +115,7 @@ const ContactModal: NextPage = () => {
       item.current!.value = '';
     });
     buttonRef.current?.removeAttribute('disabled');
-    buttonRef.current!.innerText = i18n.language === 'en' ? "Submit" : "立即提交";
+    buttonRef.current!.innerText = t('submit')
     document
       .getElementById('contact-modal')
       ?.setAttribute('style', 'display: none');
@@ -161,7 +161,7 @@ const ContactModal: NextPage = () => {
     }
     refs.forEach((item) => (item.current!.disabled = true));
     buttonRef.current?.setAttribute('disabled', 'true');
-    buttonRef.current!.innerText = i18n.language === 'en' ? "Submitting" : "正在提交";
+    buttonRef.current!.innerText = t('submitting')
     const data = { name, phone, company, remark };
     if (process.browser) {
       axios
@@ -255,33 +255,33 @@ const ContactModal: NextPage = () => {
               }}
             >
               <input
-                placeholder={i18n.language === 'en' ? "Name" : "姓名"}
+                placeholder={t('name')}
                 name="name"
                 ref={nameRef}
                 maxLength={16}
               />
               <input
-                placeholder={i18n.language === 'en' ? "Phone" : "电话"}
+                placeholder={t('phone')}
                 name="phone"
                 type="number"
                 ref={phoneRef}
                 maxLength={11}
               />
               <input
-                placeholder={i18n.language === 'en' ? "Company" : "公司"}
+                placeholder={t('company')}
                 name="company"
                 ref={companyRef}
                 maxLength={48}
               />
               <input
-                placeholder={i18n.language === 'en' ? "Notes" : "备注"}
+                placeholder={t('notes')}
                 name="remark"
                 ref={remarkRef}
                 maxLength={100}
               />
 
               <button ref={buttonRef} onClick={submit}>
-                {i18n.language === 'en' ? "Submit" : "立即提交"}
+                {t('submit')}
               </button>
 
               <div className="tips">{t('contact-us-tips')}</div>

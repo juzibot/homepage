@@ -22,12 +22,12 @@ type Props = {
 const ContactForm: FC<Props> = props => {
   const [submitting, setSubmitting] = useState(false);
   const inputClassName = cx(styles.input, props.classNameForInput);
-  const { i18n } = useTranslation(['common']);
+  const { t } = useTranslation(['common']);
 
   return (
     <div className={cx('pt-8 px-6 pb-7 bg-white', props.className)}>
-      { !props.hideTitle && <h4 className={cx('text-center text-lg text-[#333333]', props.classNameForTitle)}>{i18n.language === 'en' ? "Submit information to chat with a consultant" : "提交信息添加咨询顾问"}</h4> }
-      { !props.hideDesc && <p className={cx('text-center mb-8 text-[#666666]', props.classNameForDesc)}>{i18n.language === 'en' ? "We will respond as soon as possible" : "咨询顾问会尽快与您取得联系"}</p> }
+      { !props.hideTitle && <h4 className={cx('text-center text-lg text-[#333333]', props.classNameForTitle)}>{t('contact-submit-1')}</h4> }
+      { !props.hideDesc && <p className={cx('text-center mb-8 text-[#666666]', props.classNameForDesc)}>{t('contact-submit-2')}</p> }
       <Form
         onFinish={values => {
           setSubmitting(true);
@@ -36,8 +36,8 @@ const ContactForm: FC<Props> = props => {
             .then(() => {
               Modal.success({
                 centered: true,
-                content: i18n.language === 'en' ? "Submission complete, we'll get back to you soon!" : "提交成功，我们将在 24 小时内联系您！",
-                okText: i18n.language === 'en' ? "Continue" : "继续浏览",
+                content: t('contact-submitted-1'),
+                okText: t('contact-submitted-2'),
                 okButtonProps: { className: '!bg-[#0555FF] !border-[#0555FF]' },
               });
               props.onOk?.();
@@ -48,30 +48,30 @@ const ContactForm: FC<Props> = props => {
         <Form.Item
           label={null}
           name="name"
-          rules={[{ required: true, message: i18n.language === 'en' ? "Please enter your name" : "请填写姓名！" }]}
+          rules={[{ required: true, message: t('enter-name')}]}
         >
-          <Input size="large" placeholder={i18n.language === 'en' ? "Name" : "姓名"} className={inputClassName} maxLength={32} />
+          <Input size="large" placeholder={t('name')} className={inputClassName} maxLength={32} />
         </Form.Item>
         <Form.Item
           label={null}
           name="phone"
-          rules={[{ required: true, message: i18n.language === 'en' ? "Please enter your phone number" : '请填写电话!' }, { pattern: phoneRegex, message: phoneErrMsg }]}
+          rules={[{ required: true, message: t('enter-phone')}, { pattern: phoneRegex, message: phoneErrMsg }]}
         >
-          <Input size="large" placeholder={i18n.language === 'en' ? "Phone" : "电话"}  className={inputClassName} />
+          <Input size="large" placeholder={t('phone')}  className={inputClassName} />
         </Form.Item>
         <Form.Item
           label={null}
           name="company"
-          rules={[{ required: true, message: i18n.language === 'en' ? "Please enter your company name" : '请填写公司!' }]}
+          rules={[{ required: true, message: t('enter-company')}]}
         >
-          <Input size="large" placeholder={i18n.language === 'en' ? "Company" : "公司"} className={inputClassName} maxLength={32} />
+          <Input size="large" placeholder={t('company')} className={inputClassName} maxLength={32} />
         </Form.Item>
         <Form.Item
           label={null}
           name="remark"
           rules={[{ required: false }]}
         >
-          <Input size="large" placeholder={i18n.language === 'en' ? "Notes" : "备注"} className={inputClassName} maxLength={200} />
+          <Input size="large" placeholder={t('notes')} className={inputClassName} maxLength={200} />
         </Form.Item>
         <Form.Item>
           <Button
@@ -82,7 +82,7 @@ const ContactForm: FC<Props> = props => {
             className={cx('!rounded-3xl !bg-[#0555FF] font-medium !h-12', styles.submit, props.classNameForSubmit)}
             loading={submitting}
           >
-            {i18n.language === 'en' ? "Submit" : "立即提交"}
+            {t('submit')}
           </Button>
         </Form.Item>
       </Form>
