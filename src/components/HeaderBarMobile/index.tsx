@@ -52,7 +52,6 @@ const HeaderBarMobile: NextPage = () => {
             alt=''
           />
         </span>
-        {isZh && (
           <>
             <img
               className='ml-4 w-[20px] h-[20px]'
@@ -68,7 +67,6 @@ const HeaderBarMobile: NextPage = () => {
             />
             <MobileMenu />
           </>
-        )}
       </div>
       <ContactUsModal
         qrCode={qrCode}

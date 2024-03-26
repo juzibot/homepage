@@ -9,6 +9,7 @@ import { useEffect, useState } from 'react';
 import { chunk } from 'lodash';
 import Seo from '@src/components/common/Seo';
 import { useShowModal } from '@src/utils/showModal';
+import { useTranslation } from 'react-i18next';
 
 export const CompanyItem: NextPage<ICompanyItemProps> = ({
   title,
@@ -327,6 +328,7 @@ export const companies: ICompanyItemProps[] = [
 const PAGE_SIZE = 12;
 
 const CasesPage: NextPage = () => {
+  const { t } = useTranslation('common');
   const [tabIndex, setTabIndex] = useState(0);
   const [currentPage, setCurrentPage] = useState(1);
   const [companiesList, setCompaniesList] = useState<ICompanyItemProps[][]>([]);
@@ -389,7 +391,7 @@ const CasesPage: NextPage = () => {
           </section>
 
           <button className="primary-button start-button" onClick={() => showModal()}>
-            预约咨询
+            {t('lets-talk')}
           </button>
         </div>
       </div>

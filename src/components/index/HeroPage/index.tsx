@@ -4,7 +4,7 @@ import { NextPage } from 'next';
 import { useEffect } from 'react';
 import Image from 'next/image';
 import { useTranslation } from 'react-i18next';
-import LogosWall from '../LogosWall';
+import LogosWallNew from '../LogosWallNew';
 import { useShowModal } from '@src/utils/showModal';
 
 export const FeatureCard: NextPage<IFeatureCardProps> = ({
@@ -59,7 +59,7 @@ const HeroPage: NextPage = () => {
 
       <div className="logos-wall">
         <div className="container">
-          <LogosWall />
+          <LogosWallNew />
         </div>
       </div>
 

@@ -2,83 +2,87 @@ import { CSSProperties, ReactNode } from "react"
 import { ContactUsOption } from "./emitter"
 import { NextRouter } from "next/router";
 import { host } from "@src/config";
+import { useTranslation } from 'react-i18next';
 
 type Key = Required<ContactUsOption>['type'];
-export const leftTipMap: { [key in Key]: { title: string, items: string[] }[] } = {
+export const LeftTipMap = () => { 
+const { t } = useTranslation(['common']);
+return {
   default: [
     {
-      title: '业务咨询',
+      title: t('contact-business-title'),
       items: [
-        '提供专业的业务咨询及解决方案',
-        '结合RPA和AI技术，协助企业制定有效的运营策略',
+        t('contact-business-1'),
+        t('contact-business-2')
       ],
     },
     {
-      title: '实战陪跑',
+      title: t('contact-assistance-title'),
       items: [
-        '提供一对一辅导，全程协助深入了解RPA和AI',
-        '实战专家解答问题，提供全方位工具支持',
+        t('contact-assistance-1'),
+        t('contact-assistance-2')
       ],
     },
     {
-      title: '社群交流',
+      title: t('contact-community-title'),
       items: [
-        '实时与5000+一线业务操盘手交流',
-        '获取最新私域和AI行业情报',
-        '赠送600+私域和AI干货合集，持续更新解读',
+        t('contact-community-1'),
+        t('contact-community-2'),
+        t('contact-community-3'),
       ],
     },
   ],
   ai: [
     {
-      title: '业务咨询',
+      title: t('contact-business-title'),
       items: [
-        '为企业制定数字员工发展战略和规划',
-        '帮助企业利用数字员工驱动业务决策',
-        '为企业提供人工智能方面的咨询和指导',
+        t('contact-business-ai-1'),
+        t('contact-business-ai-2'),
+        t('contact-business-ai-3'),
       ],
     },
     {
-      title: '实战陪跑',
+      title: t('contact-assistance-title'),
       items: [
-        '协助企业进行数字员工的搭建和优化',
-        '提供数字员工的性能监控和维护服务，确保数字员工持续性能和准确性',
+        t('contact-assistance-ai-1'),
+        t('contact-assistance-ai-2'),
       ],
     },
     {
-      title: '社群交流',
+      title: t('contact-community-title'),
       items: [
-        '最新 AI 行业情报实时更新解读',
-        '与一线业务操盘手实时交流',
-        '实操干货弹药、行业案例持续供给',
+        t('contact-community-ai-1'),
+        t('contact-community-ai-2'),
+        t('contact-community-ai-3'),
       ],
     },
   ],
   rpa: [
     {
-      title: '实战陪跑',
+      title: t('contact-assistance-title'),
       items: [
-        '1 对 1 全程辅助注册',
-        '7 天免费试用，PoC 实战陪跑',
-        '私域实战专家 1 对 1 咨询解决运营问题',
+        t('contact-assistance-rpa-1'),
+        t('contact-assistance-rpa-2'),
+        t('contact-assistance-rpa-3'),
       ],
     },
     {
-      title: '运营干货',
+      title: t('contact-operations-title'),
       items: [
-        '赠送 600 +业务 SOP 合集',
-        '80+ 头部企业真实运营案例针对性解析',
+        t('contact-operations-1'),
+        t('contact-operations-2'),
       ],
     },
     {
-      title: '社群交流',
+      title: t('contact-community-title'),
       items: [
-        '与5000+ 一线业务操盘手实时交流',
-        '300+ 份实操干货弹药，200+ 行业案例供给',
-        '最新私域行业情报实时更新解读',
+        t('contact-community-rpa-1'),
+        t('contact-community-rpa-2'),
+        t('contact-community-rpa-3'),
       ],
     },
   ],
+}
 }
 
 export const leftStyleMap: { [key in Key]: CSSProperties } = {
@@ -87,57 +91,61 @@ export const leftStyleMap: { [key in Key]: CSSProperties } = {
   rpa: { background: 'linear-gradient(147.8deg, rgba(102, 71, 255, 0.1) 19.05%, rgba(5, 85, 255, 0.1) 87.88%)' },
 }
 
-export const appealMap: { [key in Key]: ReactNode } = {
-  default: (
-    <span>
-      <span className='text-[18px]'>对话式 AI，轻松盘活私域</span>
-      <br />
-      <span className='text-[16px]'>句子互动和你一起抓住变现商机</span>
-    </span>
-  ),
+export const AppealMap = () => {
+  const { t, i18n } = useTranslation(['common']);
+  return {
+    default: (
+      <span>
+        <span style={{ fontSize: i18n.language === 'en' ? 13 : 18 }}>{t('appeal-1')}</span>
+        <br />
+        <span className='text-[16px]'>{t('appeal-2')}</span>
+      </span>
+    ),
 
-  ai: (
-    <span>
-      <span className='text-[18px]'>立刻搭建大模型驱动的数字员工</span>
-    </span>
-  ),
-  rpa: (
-    <span>
-      <span className='text-[18px]'>10 倍提高你的私域运营效率</span>
-    </span>
-  ),
+    ai: (
+      <span>
+        <span style={{ fontSize: i18n.language === 'en' ? 15 : 18 }}>{t('appeal-ai')}</span>
+      </span>
+    ),
+    rpa: (
+      <span>
+        <span className='text-[18px]'>{t('appeal-rpa')}</span>
+      </span>
+    ),
+  }
 }
 
-export const footerMap = (router: NextRouter) => {
+export const FooterMap = (router: NextRouter) => {
+  const { t,i18n } = useTranslation(['common']);
   return (
     {
       default: (
         <div className="login relative " style={{ marginTop: 22 }}>
           <div className='w-[300px] absolute flex justify-between left-1/2' style={{ transform: 'translateX(-50%)' }}>
             <span>
-              登录
-              <a href={`https://insight.juzibot.com/auth/login?from=juzibot.com`} target="_blank" rel="noreferrer">句子AI知识库账号</a>
+             {t('login-only')}
+              <a href={`https://insight.juzibot.com/auth/login?from=juzibot.com`} target="_blank" rel="noreferrer"> {t('ai-knowledge-center')}</a>
             </span>
             <span>
-              登录
-              <a href={`https://miaohui.juzibot.com/auth/login?from=login&rediect=${host + router.pathname}`} target="_blank" rel="noreferrer">句子秒回账号</a>
+            {t('login-only')}
+              <a href={`https://miaohui.juzibot.com/auth/login?from=login&rediect=${host + router.pathname}`} target="_blank" rel="noreferrer"> {t('juzibot')}</a>
             </span>
           </div>
         </div>
       ),
       ai: (
-        <div className="login" style={{ marginTop: 42 }}>
-          已有账号，
+        <div className="login" style={{ marginTop: i18n.language === 'en' ? 20 : 42 }}>
+          {t('have-account')}
           <a href="https://insight.juzibot.com/auth/login?from=juzibot.com" target="_blank" rel="noreferrer">
-            立即登录
+            {t('login-now')}
           </a>
         </div>
       ),
       rpa: (
-        <div className="login" style={{ marginTop: 42 }}>
-          已有账号，
+        <div className="login" style={{ marginTop: i18n.language === 'en' ? 20 : 42 }}>
+          {t('have-account')}
           <a href={`https://miaohui.juzibot.com/auth/login?from=login&rediect=${host + router.pathname}`} target="_blank" rel="noreferrer">
-            立即登录
+          {t('login-now')}
           </a>
         </div>
       ),

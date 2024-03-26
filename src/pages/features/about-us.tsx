@@ -13,6 +13,8 @@ import { useTranslation } from 'react-i18next';
 
 const CustomerAcquisitionPage: NextPage = () => {
   const [isChrome, toggleChrome] = useState(true);
+  const { i18n } = useTranslation('common');
+  const isZh = i18n.language === 'zh';
   useEffect(() => {
     toggleChrome(isBrowserChrome());
   }, []);
@@ -21,7 +23,11 @@ const CustomerAcquisitionPage: NextPage = () => {
   });
   return (
     <div className='m-auto pt-[50px]'>
-      <img className='w-full' alt='' src="/_images/image-page/about-us-0.png" />
+      { isZh ? (
+        <img className='w-full' alt='' src="/_images/image-page/about-us-0.png" />
+      ): 
+        <img className='w-full' alt='' src="/_images/image-page/about-us-0-en.png" />
+      }
       {/* <img className='w-full' alt='' src="/_images/image-page/ai-2.png" />
       <img className='w-full' alt='' src="/_images/image-page/ai-3.png" />
       <img className='w-full' alt='' src="/_images/image-page/ai-4.png" />

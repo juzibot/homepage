@@ -5,7 +5,8 @@ import { validatePhoneNum } from '@src/utils/validatePhoneNum';
 import { useRouter } from 'next/router';
 import { shuffle } from 'lodash';
 import { EventType, emitter } from './emitter';
-import { appealMap, footerMap, leftStyleMap, leftTipMap, qrCodeMap } from './contactOptionsMap';
+import { AppealMap, FooterMap, leftStyleMap, LeftTipMap, qrCodeMap } from './contactOptionsMap';
+import { useTranslation } from 'react-i18next';
 
 export function getQrcode(routerPathname: string) {
   const arr = [
@@ -47,12 +48,13 @@ const DetentionModal: NextPage<{
   onCancel: () => void;
   text: string;
 }> = ({ onCancel, onConfirm, text }) => {
+  const { t, i18n } = useTranslation(['common']);
   const contents: string[] = [
-    '你可能会错过：<strong><p>POC实战全程陪跑、800+运营干货</p></strong>',
+    t('miss-out')
   ];
   return (
     <div className="detention-modal">
-      <div className="title">确定离开？</div>
+      <div className="title" style={{ fontSize: i18n.language === 'en' ? 16 : 18 }}>{t('close-contact-question')}</div>
       <div
         className="content"
         dangerouslySetInnerHTML={{
@@ -65,7 +67,7 @@ const DetentionModal: NextPage<{
           {text}
         </div>
         <div className="btn" onClick={onCancel}>
-          暂不需要
+          {t('close-contact-yes')}
         </div>
       </div>
     </div>
@@ -104,6 +106,8 @@ const ContactModal: NextPage = () => {
     useState(false);
   const router = useRouter();
   const [state, setState] = useState<EventType['contact_us']>();
+  const { t, i18n } = useTranslation(['common']);
+  const isZh = i18n.language === 'zh';
 
   function hideModal() {
     refs.forEach((item) => {
@@ -111,7 +115,7 @@ const ContactModal: NextPage = () => {
       item.current!.value = '';
     });
     buttonRef.current?.removeAttribute('disabled');
-    buttonRef.current!.innerText = '立即提交';
+    buttonRef.current!.innerText = t('submit')
     document
       .getElementById('contact-modal')
       ?.setAttribute('style', 'display: none');
@@ -157,7 +161,7 @@ const ContactModal: NextPage = () => {
     }
     refs.forEach((item) => (item.current!.disabled = true));
     buttonRef.current?.setAttribute('disabled', 'true');
-    buttonRef.current!.innerText = '正在提交';
+    buttonRef.current!.innerText = t('submitting')
     const data = { name, phone, company, remark };
     if (process.browser) {
       axios
@@ -172,10 +176,10 @@ const ContactModal: NextPage = () => {
   }
 
   const qrCode = qrCodeMap[state?.qrCode!];
-  const leftTips = leftTipMap[state?.type!] || [];
+  const leftTips = LeftTipMap()[state?.type!] || [];
   const leftStyle = leftStyleMap[state?.type!]
-  const appeal = appealMap[state?.type!];
-  const footer = footerMap(router)[state?.type!]
+  const appeal = AppealMap()[state?.type!];
+  const footer = FooterMap(router)[state?.type!]
 
   return (
     <>
@@ -190,26 +194,36 @@ const ContactModal: NextPage = () => {
           }}
         >
           <div className="left !px-10" style={leftStyle}>
-            <h2>不止工具，更多全方位支持</h2>
-            <div style={{ marginTop: 8 }}>
-              {isScanQrcode ? '右侧扫码' : '提交信息'}添加咨询顾问，
+            <h2 style={{ fontSize: i18n.language === 'en' ? 19 : 22, marginTop: i18n.language === 'en' ? -8 : 0}}>{t('contact-us-title')}</h2>
+            {isZh ? (
+              <div style={{ marginTop: 8 }}>
+              {isScanQrcode ? t('contact-us-subtitle-1') : t('contact-us-subtitle-2')}{t('contact-us-subtitle-3')}，
               <span className="orange">
-                即刻了解
+                {t('learn-more')}
                 {' >>>'}
               </span>
             </div>
+            ):
+            <div style={{ marginTop: 6 }}>
+              {isScanQrcode ? t('contact-us-subtitle-1') : t('contact-us-subtitle-2')} {t('contact-us-subtitle-3')}，
+              <span className="orange">
+                {t('learn-more')}
+                {' >>>'}
+              </span>
+            </div>
+            }
 
             <div className="content pt-[14px]">
               {
                leftTips?.map((d, i) => (
                   <Fragment key={d.title}>
-                    <div className="title" style={{ marginTop: 28, marginBottom: 16 }}>
+                    <div className="title" style={{ marginTop: i18n.language === 'en' ? 16: 28, marginBottom: 16}}>
                       <span className="num">{`0${i + 1}`}</span>
                       {d.title}
                     </div>
                     {
                       d.items?.map(e => (
-                        <div key={e} className="item flex">
+                        <div key={e} className="item flex" style={{ fontSize: i18n.language === 'en' ? 12 : 13}}>
                           <span className="flex-shrink-0"><RightIcon /></span>
                           <span>{e}</span>
                         </div>
@@ -228,8 +242,8 @@ const ContactModal: NextPage = () => {
               }}
             >
               <img src={qrCode} alt={`type-${state?.type}`} className="qrcode" />
-              <div className="tips">
-                微信扫一扫，与顾问聊一聊
+              <div className="tips" style={{ fontSize: i18n.language === 'en' ? 12 : 14 }}>
+                {t('scan-wechat')}
               </div>
               <div className="appeal">{appeal}</div>
               {footer}
@@ -241,36 +255,36 @@ const ContactModal: NextPage = () => {
               }}
             >
               <input
-                placeholder="姓名"
+                placeholder={t('name')}
                 name="name"
                 ref={nameRef}
                 maxLength={16}
               />
               <input
-                placeholder="电话"
+                placeholder={t('phone')}
                 name="phone"
                 type="number"
                 ref={phoneRef}
                 maxLength={11}
               />
               <input
-                placeholder="公司"
+                placeholder={t('company')}
                 name="company"
                 ref={companyRef}
                 maxLength={48}
               />
               <input
-                placeholder="备注"
+                placeholder={t('notes')}
                 name="remark"
                 ref={remarkRef}
                 maxLength={100}
               />
 
               <button ref={buttonRef} onClick={submit}>
-                立即提交
+                {t('submit')}
               </button>
 
-              <div className="tips">咨询顾问会尽快与您取得联系</div>
+              <div className="tips">{t('contact-us-tips')}</div>
               {footer}
             </div>
 
@@ -297,10 +311,14 @@ const ContactModal: NextPage = () => {
               </svg>
 
               <h4 style={{ marginTop: 24 }}>
-                提交成功，我们将在 24 小时内联系您！
+                {t('submit-complete')}
               </h4>
 
-              <div className="auto-close">{countdown} 秒后自动关闭</div>
+              { isZh ? (
+                <div className="auto-close">{countdown} 秒后自动关闭</div>
+              ) : 
+                <div className="auto-close">Will close in {countdown} seconds</div>
+              }
             </div>
           </div>
           <div className="close-bar">
@@ -325,8 +343,8 @@ const ContactModal: NextPage = () => {
               </svg>
               <span className="tips">
                 {isScanQrcode
-                  ? '不方便扫码？去留联系方式'
-                  : '立即聊聊？微信扫码'}
+                  ? t('unable-to-scan')
+                  : t('go-to-scan') }
               </span>
             </div>
             <div className="close-btn" onClick={handleCloseModal}>
@@ -352,7 +370,7 @@ const ContactModal: NextPage = () => {
 
       {isDetentionModalVisible ? (
         <DetentionModal
-          text={isScanQrcode ? '了解一下' : '去填写'}
+          text={isScanQrcode ? t('understand') : t('fill-out')}
           onCancel={() => {
             toggleDetentionModalVisible(false);
             hideModal();

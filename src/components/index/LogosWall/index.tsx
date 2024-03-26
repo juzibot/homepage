@@ -1,7 +1,6 @@
 /* eslint-disable */
 import { NextPage } from 'next';
 import { useTranslation } from 'react-i18next';
-import { useState } from 'react';
 import { indexLogos } from '@src/config';
 
 const LogosWall: NextPage = () => {

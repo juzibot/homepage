@@ -11,6 +11,7 @@ const ReactTooltip = dynamic(() => import('react-tooltip'), { ssr: false });
 
 const Footer: NextPage = () => {
   const { t, i18n } = useTranslation(['common']);
+  const isZh = i18n.language === 'zh';
   const [showContactUs, setShowContactUs] = useState(false);
 
   const menus: (IFooterMenu | undefined)[] = [
@@ -19,10 +20,10 @@ const Footer: NextPage = () => {
       cIndex: '1',
       child: [
         {
-          title: 'AI 驱动的基于企业私有数据的“ChatGPT”',
-          url: '/features/ai',
+          title: t('products-1'),
+          url: t('products-1-url'),
         },
-        { title: 'RPA 驱动的营销服务一体化平台', url: '/features/rpa' },
+        { title: t('products-2'), url: t('products-2-url') },
       ]
     },
     // i18n.language === 'zh'
@@ -163,18 +164,18 @@ const Footer: NextPage = () => {
                           );
                         })}
                       </div>
-                      {menu.cIndex === '1' && (
-                        <div className="mt-[18px]">
-                          <div className="title">客户故事</div>
-                          <div className="menus">
-                            <Link
-                              href="/features/case"
-                            >
-                              客户案例
-                            </Link>
+                        {menu.cIndex === '1' && isZh && (
+                          <div className="mt-[18px]">
+                            <div className="title">客户故事</div>
+                            <div className="menus">
+                              <Link
+                                href="/features/case"
+                              >
+                                客户案例
+                              </Link>
+                            </div>
                           </div>
-                        </div>
-                      )}
+                        )}
                     </div>
                   );
                 }
