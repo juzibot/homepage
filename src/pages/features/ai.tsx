@@ -65,11 +65,11 @@ const CustomerAcquisitionPage: NextPage = () => {
             ) : 
             <div className="w-full font-sans">
               <div className="text-center text-[19px] text-block">{t('ai-title')}</div>
-              <div className="flex text-[20px] font-medium">
-                <span className="w-[200px] flex-shrink-0 text-block text-right mr-2">{t('ai-subtitle')}</span>
+              <div className="flex text-[18px] font-medium">
+                <span className="w-[51%] flex-shrink-0 text-block text-right mr-1">{t('ai-subtitle')}</span>
                 <Typewriter
                   options={{
-                    wrapperClassName: 'text-[20px] text-[#DA37E8]',
+                    wrapperClassName: 'text-[18px] text-[#DA37E8]',
                     cursorClassName: 'text-[#DA37E8]',
                     strings: ["Customer Inquiries", "Complaints", "Subscriptions", "Product Inquiries", "Post-Sale Follow-Up"],
                     autoStart: true,

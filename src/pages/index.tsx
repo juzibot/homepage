@@ -70,10 +70,10 @@ const Home: NextPage = () => {
               </div>
             ) : // English
               <div className="w-full">
-              <div className="text-center font-semibold text-[55px] text-white mt-10" style={{ fontFamily: '"Gill Sans", sans-serif' }}>{t('title-1')}</div>
+              <div className="text-center font-semibold text-[55px] text-white" style={{ fontFamily: '"Gill Sans", sans-serif' }}>{t('title-1')}</div>
               <div className="text-center font-semibold text-[65px] text-white mb-2" style={{ fontFamily: '"Gill Sans", sans-serif' }}>{t('title-2')}</div>
                 <div className="flex text-[50px] font-sans">
-                  <span className="w-[550px] flex-shrink-0 text-white text-right mr-4">{t('subtitle')}</span>
+                  <span className="w-[45%] flex-shrink-0 text-white text-right mr-4">{t('subtitle')}</span>
                   <Typewriter
                     options={{
                       wrapperClassName: 'text-[50px] text-[#DA37E8]',
@@ -97,15 +97,17 @@ const Home: NextPage = () => {
               </div>
             }
 
+            
+
             {/* 两个卡片 */}
-            <div className="flex gap-6 justify-center mt-[50px] 2xl:mt-[200px]">
+            <div className="flex gap-6 justify-center mt-[50px]">
               <div className="w-[400px] h-[170px] p-5 rounded-xl bg-black flex flex-col">
-                <div className="text-white text-[21px] font-medium mb-2" style={{ fontFamily: '"Gill Sans", sans-serif' }}>{t('try-gpt')}</div>
+                <div className="text-white text-[21px] font-medium mb-2">{t('try-gpt')}</div>
                 <p className="flex-1 text-white">{t('try-gpt-subtitle')}</p>
                 <a className="text-[#EF3BFB] hover:text-[#EF3BFB] mt-2 inline-flex items-center gap-2 cursor-pointer" href="https://chat.juzibot.com/" rel="noreferrer" target="_blank">{t('lets-chat')} <RightArrow /> </a>
               </div>
               <div className="w-[400px] h-[170px] p-5 rounded-xl bg-black flex flex-col">
-                <div className="text-white text-[21px] font-medium mb-2" style={{ fontFamily: '"Gill Sans", sans-serif' }}>{t('discover-products')}</div>
+                <div className="text-white text-[21px] font-medium mb-2">{t('discover-products')}</div>
                 <p className="flex-1 text-white">{t('discover-products-subtitle')}</p>
                 <ContactUsModalWithButton contactUsOption={{ type: 'ai', qrCode: 'sf-02' }}>
                   <span className="text-[#EF3BFB] mt-2 inline-flex items-center gap-2 cursor-pointer">{t('contact')} <RightArrow /> </span>
@@ -119,7 +121,7 @@ const Home: NextPage = () => {
         <img className='w-full' alt='' src="/_images/image-page/index-content.png"/>
         ) :
         <><img className='w-full' alt='' src="/_images/image-page/index-content-en.png" />
-        <LogosWallNew />
+          <LogosWallNew />
         </>
         }
       </div>

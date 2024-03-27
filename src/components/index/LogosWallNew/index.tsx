@@ -13,7 +13,7 @@ const LogosWall: NextPage = () => {
   const { i18n } = useTranslation(['homepage']);
   const isZh = i18n.language === 'zh';
   return (
-    <>
+    <> 
       {isZh ? (
         <PhotoCarousel photos={indexLogos} />
       ) : 

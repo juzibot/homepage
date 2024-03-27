@@ -20,7 +20,7 @@ const MobileIndexPage: NextPage<{}> = () => {
 
       <div>
         <img className='w-full' src="/_images/image-page/index-top-bg-m.png" alt='' />
-        <div className="absolute top-[100px] w-full font-sans">
+        <div className="absolute top-[80px] w-full font-sans">
           <div className="text-center text-[22px] text-white">{t('title')}</div>
             {isZh ? (
               <>
@@ -38,7 +38,7 @@ const MobileIndexPage: NextPage<{}> = () => {
                 ) : 
                 <>
                 <div className="flex text-[20px] font-medium">
-                <span className="w-[170px] flex-shrink-0 text-white text-right mr-2">{t('subtitle')}</span><Typewriter
+                <span className="w-[40%] flex-shrink-0 text-white text-right mr-2">{t('subtitle')}</span><Typewriter
                 options={{
                   wrapperClassName: 'text-[20px] text-[#DA37E8]',
                   cursorClassName: 'text-[#DA37E8]',
@@ -51,7 +51,7 @@ const MobileIndexPage: NextPage<{}> = () => {
                 </div>
                 </>
             }
-          <div className='w-full mt-8 flex justify-center'>
+          <div className='w-full mt-5 flex justify-center'>
             <a
               style={{ background: 'linear-gradient(96deg, #EF3BFB 0.67%, #6721FF 98.48%)' }}
               className="h-12 px-10 flex justify-center items-center rounded-full text-white cursor-pointer text-[18px] hover:text-white"
@@ -61,17 +61,17 @@ const MobileIndexPage: NextPage<{}> = () => {
             </a>
           </div>
           {/* 两个卡片 */}
-          <div className="flex flex-col gap-3 justify-center items-center mt-10">
-            <div className="w-[calc(100vw-60px)] h-[170px] p-5 rounded-xl bg-black flex flex-col">
-              <div className="text-white font-medium mb-2" style={{ fontSize: i18n.language === 'en' ? 18 : 21, fontFamily: '"Gill Sans", sans-serif' }}>{t('try-gpt')}</div>
-              <p className="flex-1 text-white" style={{ fontSize: i18n.language === 'en' ? 12 : 16 }}>{t('try-gpt-subtitle')}</p>
-              <a className="text-[#EF3BFB] hover:text-[#EF3BFB] mt-2 inline-flex items-center gap-2 cursor-pointer" href="https://chat.juzibot.com/" rel="noreferrer" target="_blank">{t('lets-chat')} <RightArrow /> </a>
+          <div className="flex flex-col gap-5 justify-center items-center mt-8">
+            <div className="w-[calc(100vw-60px)] h-[20%] p-5 rounded-xl bg-black flex flex-col">
+              <div className="text-white font-medium mb-2" style={{ fontSize: i18n.language === 'en' ? 18 : 20 }}>{t('try-gpt')}</div>
+              <p className="flex-1 text-white" style={{ fontSize: i18n.language === 'en' ? 12 : 15 }}>{t('try-gpt-subtitle')}</p>
+              <a className="text-[#EF3BFB] hover:text-[#EF3BFB] mt-1 inline-flex items-center gap-2 cursor-pointer" href="https://chat.juzibot.com/" rel="noreferrer" target="_blank">{t('lets-chat')} <RightArrow /> </a>
             </div>
-            <div className="w-[calc(100vw-60px)] h-[170px] p-5 rounded-xl bg-black flex flex-col">
-              <div className="text-white font-medium mb-2" style={{ fontSize: i18n.language === 'en' ? 18 : 21, fontFamily: '"Gill Sans", sans-serif' }}>{t('discover-products')}</div>
-              <p className="flex-1 text-white" style={{ fontSize: i18n.language === 'en' ? 12 : 16 }}>{t('discover-products-subtitle')}</p>
+            <div className="w-[calc(100vw-60px)] h-[20%] p-5 rounded-xl bg-black flex flex-col">
+              <div className="text-white font-medium mb-2" style={{ fontSize: i18n.language === 'en' ? 18 : 20 }}>{t('discover-products')}</div>
+              <p className="flex-1 text-white" style={{ fontSize: i18n.language === 'en' ? 12 : 15 }}>{t('discover-products-subtitle')}</p>
               <ContactUsModalWithButton>
-                <span className="text-[#EF3BFB] mt-2 inline-flex items-center gap-2 cursor-pointer">{t('contact')} <RightArrow /> </span>
+                <span className="text-[#EF3BFB] inline-flex mt-1 items-center gap-2 cursor-pointer">{t('contact')} <RightArrow /> </span>
               </ContactUsModalWithButton>
             </div>
           </div>

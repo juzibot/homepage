@@ -1,9 +1,11 @@
 /* eslint-disable no-unreachable */
 // import { useMediaQuery } from '@react-hookz/web';
 import { useMediaQuery } from '@react-hookz/web';
+import { ContactUsPureModalWithButton } from '@src/components/ContactUsPureModal';
 import Seo from '@src/components/common/Seo';
 import AppealBarNew from '@src/components/index/AppealBarNew';
 import HeroPageNew from '@src/components/index/HeroPageNew';
+import LogosWallNew from '@src/components/index/LogosWallNew';
 import SolutionPageNew from '@src/components/index/SolutionPageNew';
 import type { GetStaticProps, NextPage } from 'next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
@@ -14,6 +16,8 @@ import { useTranslation } from 'react-i18next';
 const Home: NextPage = () => {
   const isSmallDevice = useMediaQuery('only screen and (max-width : 600px)');
   const [, setWidth] = useState(0);
+  const { t, i18n } = useTranslation('homepage');
+  const isZh = i18n.language === 'zh';
   useEffect(() => {
     if (process.browser) {
       window.addEventListener('resize', () =>
@@ -22,7 +26,6 @@ const Home: NextPage = () => {
       setWidth(document.body.clientWidth);
     }
   }, []);
-  const { i18n } = useTranslation('common');
 
   // if (isSmallDevice) {
   //   return <MobileIndexPage />
@@ -42,10 +45,60 @@ const Home: NextPage = () => {
   }
 
   return (
-    <div className={i18n.language}>
+    <>
+    { isZh ? (
+        <div className="hero-page-new-bg" >
+        <div className="hero-page-new" data-aos="fade-in">
+          <div className="bannar">
+            <h1
+              className="slogan max-w-[566px]"
+              style={{ fontSize: i18n.language === 'en' ? 36 : 46 }}
+            >
+              {t('government-title')}
+            </h1>
+            <div className="description">{t('government-body')}</div>
+            <ContactUsPureModalWithButton>
+              <button className="white-button-pure start-button bg-white text-red !shadow-none">
+                {t('start-free')}
+              </button>
+            </ContactUsPureModalWithButton>
+          </div>
+        </div>
+      </div>
+      ): // English
+      <div className="hero-page-new-bg" style={{ background: "linear-gradient(#FE9900, #FE9900)" }}>
+      <div className="hero-page-new" data-aos="fade-in">
+        <div className="bannar">
+          <h1
+            className="slogan max-w-[566px]"
+            style={{ fontSize: 55, fontFamily: '"Gill Sans", sans-serif' }}
+          >
+            {t('government-title')}
+          </h1>
+          <div className="description">{t('government-body')}</div>
+          <ContactUsPureModalWithButton>
+            <button className="white-button-pure start-button bg-white text-red !shadow-none">
+              {t('start-free')}
+            </button>
+          </ContactUsPureModalWithButton>
+        </div>
+      </div>
+    </div>
+      }
+
+      <div className="m-auto">
+        <div className="logos-wall">
+          <div className="container">
+            <h1 className="title">{t('logos-wall-title')}</h1> 
+            <LogosWallNew />
+          </div>
+        </div>
+      </div>
+
+
       <Seo page="features-government" />
-      <div className="wrapper index-page !p-0 bg-[url('https://cdn-official-website.juzibot.com/images/background-red.svg')]">
-        <div className="container !w-full">
+      <div className="wrapper index-page">
+        <div className="container">
           <HeroPageNew />
         </div>
       </div>
@@ -61,7 +114,7 @@ const Home: NextPage = () => {
           <AppealBarNew isRed />
         </div>
       </div>
-    </div>
+    </>
   );
 };
 
