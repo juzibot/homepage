@@ -4,9 +4,7 @@ import { NextPage } from 'next';
 import { useEffect } from 'react';
 import Image from 'next/image';
 import { useTranslation } from 'react-i18next';
-import LogosWallNew from '../LogosWallNew';
 import styles from './index.module.scss';
-import { ContactUsPureModalWithButton } from '@src/components/ContactUsPureModal';
 
 export const FeatureCard: NextPage<IFeatureCardProps> = ({
   title,
@@ -34,9 +32,7 @@ export const FeatureCard: NextPage<IFeatureCardProps> = ({
 };
 
 const HeroPage: NextPage = () => {
-  const { t, i18n } = useTranslation(['homepage']);
-  const isZh = i18n.language === 'zh';
-  const { language } = i18n;
+  const { t } = useTranslation(['homepage']);
   useEffect(() => {
     if (process.browser) {
       Aos.init();
@@ -44,56 +40,7 @@ const HeroPage: NextPage = () => {
   }, []);
   return (
     <>
-      { isZh ? (
-        <div className="hero-page-new-bg">
-        <div className="hero-page-new" data-aos="fade-in">
-          <div className="bannar">
-            <h1
-              className="slogan max-w-[566px]"
-              style={{ fontSize: language === 'en' ? 36 : 46 }}
-            >
-              {t('government-title')}
-            </h1>
-            <div className="description">{t('government-body')}</div>
-            <ContactUsPureModalWithButton>
-              <button className="white-button-pure start-button bg-white text-red !shadow-none">
-                {t('start-free')}
-              </button>
-            </ContactUsPureModalWithButton>
-          </div>
-        </div>
-      </div>
-      ): // English
-      <div className="hero-page-new-bg" style={{ background: "linear-gradient(#FE9900, #FE9900)" }}>
-      <div className="hero-page-new" data-aos="fade-in">
-        <div className="bannar">
-          <h1
-            className="slogan max-w-[566px]"
-            style={{ fontSize: 55, fontFamily: '"Gill Sans", sans-serif' }}
-          >
-            {t('government-title')}
-          </h1>
-          <div className="description">{t('government-body')}</div>
-          <ContactUsPureModalWithButton>
-            <button className="white-button-pure start-button bg-white text-red !shadow-none">
-              {t('start-free')}
-            </button>
-          </ContactUsPureModalWithButton>
-        </div>
-      </div>
-    </div>
-      }
-
-      <div className="w-[1200px] m-auto">
-        <div className="logos-wall">
-          <div className="container">
-            <h1 className="title">{t('logos-wall-title')}</h1> 
-            <LogosWallNew />
-          </div>
-        </div>
-      </div>
-
-      <div className="w-[1200px] m-auto">
+      <div className="w-[1200px] mt-[50px]">
         <div className="card-bannar">
           <FeatureCard
             className={styles.card}

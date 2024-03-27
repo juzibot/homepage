@@ -29,8 +29,8 @@ const ContactUsModal: FC<Props> = ({ type = 'default', qrCode = 'sf-01', open, o
     return {
       default: (
         <>
-          <p className="text-[#666666] mb-0"  style={{ fontSize: i18n.language === 'en' ? 14 : 16 }}>{t('contact-footer-1')}</p>
-          <p className="text-[#666666] mb-0" style={{ fontSize: i18n.language === 'en' ? 14 : 16 }}>{t('contact-footer-2')}</p>
+          <p className="text-[#666666] mb-0"  style={{ fontSize: i18n.language === 'en' ? 10 : 16 }}>{t('contact-footer-1')}</p>
+          <p className="text-[#666666] mb-0" style={{ fontSize: i18n.language === 'en' ? 12 : 16 }}>{t('contact-footer-2')}</p>
         </>
       ),
       ai: <span>{t('contact-scan')}</span>,

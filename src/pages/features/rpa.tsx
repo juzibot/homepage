@@ -64,11 +64,11 @@ const CustomerAcquisitionPage: NextPage = () => {
             ) : 
             <div className="w-full font-sans">
               <div className="text-center text-[18px] text-block">{t('rpa-title')}</div>
-              <div className="flex text-[20px] font-medium">
-                <span className="w-[280px] flex-shrink-0 text-block text-right mr-2">{t('rpa-subtitle')}</span>
+              <div className="flex text-[18px] font-medium">
+                <span className="w-[65%] flex-shrink-0 text-block text-right mr-2">{t('rpa-subtitle')}</span>
                 <Typewriter
                   options={{
-                    wrapperClassName: 'text-[20px] text-[#0555FF]',
+                    wrapperClassName: 'text-[18px] text-[#0555FF]',
                     cursorClassName: 'text-[#0555FF]',
                     strings: ['WeCom', 'WeChat', 'WhatsApp', 'Lark', '5G SMS', 'Instagram', 'TikTok'],
                     delay: 80,
@@ -129,7 +129,7 @@ const CustomerAcquisitionPage: NextPage = () => {
           <div className="w-full font-sans">
             <div className="text-center text-[56px] text-block">{t('rpa-title')}</div>
             <div className="flex text-[65px] font-medium">
-              <span className="w-[930px] flex-shrink-0 text-block text-right mr-4">{t('rpa-subtitle')}</span>
+              <span className="w-[68%] flex-shrink-0 text-block text-right mr-4">{t('rpa-subtitle')}</span>
               <Typewriter
                 options={{
                   wrapperClassName: 'text-[65px] text-[#0555FF]',
@@ -149,7 +149,7 @@ const CustomerAcquisitionPage: NextPage = () => {
       { isZh ? (
       <img className='w-full' alt='' src='/_images/image-page/rpa-middle-20240206.png' />
       ): 
-      <img className='w-full' alt='' src='/_images/image-page/rpa-middle-20240206-en.png' />
+      <img className='w-full' alt='' src='/_images/image-page/rpa-middle-20240206-en.png' style={{marginTop:-250}} />
       }
       <div className="wrapper appeal-bar">
         <div className="container">

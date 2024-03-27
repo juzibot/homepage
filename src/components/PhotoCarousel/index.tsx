@@ -6,10 +6,11 @@ interface Props {
   itemWidth?: number;
   itemHeight?: number;
   itemMarginRight?: number;
+  itemMarginBottom?: number;
   animationTime?: number;
 }
 
-const PhotoCarousel: React.FC<Props> = ({ photos = [], itemWidth = 180, itemHeight = 80, itemMarginRight = 20, animationTime= 60 }) => {
+const PhotoCarousel: React.FC<Props> = ({ photos = [], itemWidth = 180, itemHeight = 80, itemMarginRight = 20, itemMarginBottom = 50, animationTime= 60 }) => {
   const scroll = keyframes`
     0% {
       transform: translateX(0);
@@ -44,11 +45,12 @@ const PhotoCarousel: React.FC<Props> = ({ photos = [], itemWidth = 180, itemHeig
     width: `${itemWidth}px`,
     height: `${itemHeight}px`,
     marginRight: `${itemMarginRight}px`,
+    marginBottom: `${itemMarginBottom}px`,
   }
   return (
     <Box>
-      <Mask />
-      <PhotoContainer className="gap-0">
+      <Mask/>
+      <PhotoContainer className="gap-0" style={{columnGap: 10}}>
         {photos.map((photo) => (<img style={imgStyle} alt="" key={photo} src={photo} />))}
         {photos.map((photo) => (<img style={imgStyle} alt="" key={photo} src={photo} />))}
       </PhotoContainer>

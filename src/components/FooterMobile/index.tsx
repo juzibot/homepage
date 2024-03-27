@@ -255,11 +255,11 @@ const FooterMobile: NextPage = () => {
           </div>
         </div>
 
-        <div className={cx('fixed bottom-0 bg-transparent w-full z-50', { 'hidden': !isZh })}>
+        <div className={cx('fixed bottom-0 bg-transparent w-full z-50')}>
           { !isCloseFixed && fixedNode }
           <div className="px-4 flex h-[64px] items-center bg-white">
             <ContactUsModalWithButton>
-              <Button block size="large" className="mx-2 h-[44px] !rounded-3xl !border-[#0555FF] !text-[#0555FF] ">领取干货</Button>
+              <Button block size="large" className="mx-2 h-[44px] !rounded-3xl !border-[#0555FF] !text-[#0555FF] ">{t('bullet-button-1')}</Button>
             </ContactUsModalWithButton>
             <Button
               block

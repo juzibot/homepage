@@ -9,7 +9,7 @@ const TIMEOUT = 5 * 1000;
 export const ContactButtonNew: NextPage = () => {
   const [popupVisible, togglePopupVisible] = useState(false);
   const [autoVisible, toggleAutoVisible] = useState(false);
-  const { i18n } = useTranslation();
+  const { t } = useTranslation(['common']);
 
   const [showContactUsPureModal, setShowContactUsPureModal] = useState(false);
   const showModal = useShowModal();
@@ -20,12 +20,12 @@ export const ContactButtonNew: NextPage = () => {
     }, TIMEOUT);
   }, []);
 
-  return i18n.language === 'zh' ? (
+  return (
     <>
       {autoVisible && !popupVisible ? (
         <div className="contact-popup">
-          <strong>遇到问题了么？</strong>
-          <div>点击头像跟我聊聊，让私域专家来解决你的问题</div>
+          <strong>{t('contact-button-question')}</strong>
+          <div>{t('contact-button-click')}</div>
           <div className="close-btn" onClick={() => toggleAutoVisible(false)}>
             <svg
               className="icon"
@@ -47,8 +47,8 @@ export const ContactButtonNew: NextPage = () => {
 
       {popupVisible ? (
         <div className="contact-popup">
-          <strong>点击头像跟我聊聊</strong>
-          <div>7 天产品免费试用，私域运营专家 PoC 实战陪跑</div>
+          <strong>{t('contact-button-click-1')}</strong>
+          <div>{t('contact-button-click-2')}</div>
         </div>
       ) : null}
       <div
@@ -70,5 +70,5 @@ export const ContactButtonNew: NextPage = () => {
         onOk={() => setShowContactUsPureModal(false)}
       />
     </>
-  ) : null;
+  )
 };

@@ -10,9 +10,11 @@ import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import HeroPageNew from '@src/components/index/HeroPageNew';
 import SolutionPageNew from '@src/components/index/SolutionPageNew';
+import { ContactUsPureModalWithButton } from '@src/components/ContactUsPureModal';
+import LogosWallNew from '@src/components/index/LogosWallNew';
 
 const CustomerAcquisitionPage: NextPage = () => {
-  const { i18n } = useTranslation('common');
+  const { t, i18n } = useTranslation('homepage');
   const isZh = i18n.language === 'zh';
   const [showModal, setShowModal] = useState(false);
   const isSmallDevice = useMediaQuery('only screen and (max-width : 600px)');
@@ -77,9 +79,38 @@ const CustomerAcquisitionPage: NextPage = () => {
           onClick={() => showPcModal({ qrCode: 'sf-04' })}
           className='w-[calc(15%)] h-[calc(8.25%)] rounded-full flex justify-center items-center text-[18px] font-semibold text-white absolute top-[28.7%] left-[50%] cursor-pointer'
           style={{ transform: 'translate(-50%)' }}
-        ></div>          
-          <div className="wrapper index-page !p-0 bg-[url('https://cdn-official-website.juzibot.com/images/background-red.svg')]">
-            <div className="container !w-full">
+        ></div>   
+
+        <div className="hero-page-new-bg" style={{ background: "linear-gradient(#FF8000, #FF8000)" }}>
+            <div className="hero-page-new" data-aos="fade-in">
+              <div className="bannar">
+                <h1
+                  className="slogan max-w-[566px]"
+                  style={{ fontSize: 55, fontFamily: '"Gill Sans", sans-serif' }}
+                >
+                  {t('government-title')}
+                </h1>
+                <div className="description">{t('government-body')}</div>
+                <ContactUsPureModalWithButton>
+                  <button className="white-button-pure-en start-button !shadow-none">
+                    {t('start-free')}
+                  </button>
+                </ContactUsPureModalWithButton>
+              </div>
+            </div>
+          </div>
+
+          <div className="m-auto">
+            <div className="logos-wall">
+              <div className="container">
+                <h1 className="title">{t('logos-wall-title')}</h1> 
+                <LogosWallNew />
+              </div>
+            </div>
+          </div>
+      
+          <div className="wrapper index-page">
+            <div className="container">
               <HeroPageNew />
             </div>
           </div>

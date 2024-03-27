@@ -438,7 +438,6 @@ const HeaderBar: NextPage = () => {
               {t('chatbot')}
             </HeaderMenu>
             )}
-            {/* {isZh && <HeaderMenu href="/features/case">{t('cases')}</HeaderMenu>} */}
             {isZh && (
             <HeaderMenu href="https://blog.juzibot.com/" linkTarget="_blank">
               {t('course')}

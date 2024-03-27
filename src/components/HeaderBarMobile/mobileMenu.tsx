@@ -67,9 +67,11 @@ const MobileMenu = () => {
               </Link>
               </>
               ): 
-              <div className='text-[17px] leading-[24px] mt-[24px] text-[#364256]'>
-              {t('solutions')}
-              </div>
+              <Link href="/features/customer" passHref>
+                <div onClick={() => setShowMenu(false)} className="w-[100%] text-[17px] text-[#364256]">
+                  {t('solutions')}
+                </div>
+              </Link>
               }
             </div>
             <div className="h-[1px] bg-[rgba(221,227,234,0.5)]" />
